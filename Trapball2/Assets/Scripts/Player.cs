@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpLimit; //Define la mayor fuerza de salto posible a aplicar.
     [SerializeField] float gravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
     bool shouldJump;
+    bool jumpEnabled = true;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,32 +31,15 @@ public class Player : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log(jumpForce);
-        if(Input.GetMouseButton(0)) 
-        {
-            Debug.Log("dado");
-            if(TouchingFloor() && jumpForce < jumpLimit) //Limite de fuerza 20 en el salto.
-                jumpForce += jumpDelta * Time.deltaTime;
-        }
-        else if(Input.GetMouseButtonUp(0))
-        {
-            if(TouchingFloor())
-                shouldJump = true;
-        }
-#if UNITY_STANDALONE
-            h = Input.GetAxisRaw("Horizontal");
-#endif
-#if UNITY_ANDROID
-        h = Input.acceleration.x * 2;
-#endif
+        MovementInput();
+        JumpInput();
     }
     void FixedUpdate()
     {
         rb.AddForce(new Vector3(h, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
-        if(shouldJump)
+        if (shouldJump)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
             jumpForce = 0;
@@ -67,13 +51,61 @@ public class Player : MonoBehaviour
         //{
         //    //GameManager.gM.ChangeGravityScale(-29.43f);
         //    ManageBallSpeed();
-            
+
         //}
         //else
         //{
         //   // GameManager.gM.ChangeGravityScale(-9.81f);
         //}
         //NotJumpWithMovingPlatform();
+    }
+
+    void MovementInput()
+    {
+    #if UNITY_STANDALONE
+            h = Input.GetAxisRaw("Horizontal");
+    #endif
+    #if UNITY_ANDROID
+                    h = Input.acceleration.x * 2;
+    #endif
+    }
+    void JumpInput()
+    {
+        //Primero hay que comprobar si tenemos salto disponible: 
+        //Si se ha ejecutado uno anterior, no podemos hacer otro hasta que no se levante el ratón.
+        if (jumpEnabled)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                //Si se está tocando el suelo y podemos seguir cargando hasta el límite ...
+                if (TouchingFloor() && jumpForce <= jumpLimit)
+                {
+                    jumpForce += (jumpDelta * Time.deltaTime);
+
+                    // Y si se alcanza el 30 % del límite, se saltará el máximo (100%) de forma automática.
+                    if (jumpForce > jumpLimit * 0.30f)
+                    {
+                        jumpForce = jumpLimit;
+                        //Y además se salta la lectura de levantar el ratón en este mismo frame.
+                        jumpEnabled = false;
+                        shouldJump = true;
+                    }
+
+                }
+
+            }
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            //Si al levantar el ratón no se alcanza ni siquiera el 30%...
+            if (jumpForce > 0 && jumpForce <= jumpLimit * 0.30f)
+            {
+                //Se aplicará el 70% del límite.
+                jumpForce = jumpLimit * 0.70f;
+                shouldJump = true;
+            }
+            jumpEnabled = true;
+        }
     }
 
     bool TouchingFloor()
