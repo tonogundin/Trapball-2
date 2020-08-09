@@ -10,20 +10,28 @@ public class Player : MonoBehaviour
     float movementForce = 10f;
     [SerializeField] LayerMask ground;
     ParticlesExplosion particles;
+    SphereCollider coll;
     Vector3 offset;
     float jumpForce;
+    float bombForce;
+    [SerializeField] PhysicMaterial bouncy;
+    [SerializeField] float bombDelta; //Define cuánto de rápido se realizará el golpe bomba.
     [SerializeField] float jumpDelta; //Define cuánto de rápido se alcanza el límite de fuerza de salto.
     [SerializeField] float jumpLimit; //Define la mayor fuerza de salto posible a aplicar.
-    [SerializeField] float gravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
+    [SerializeField] float initGravityFactor;
+    float currentGravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
     bool shouldJump;
+    bool waitDueBounce;
+    float waitTimeDueBounce;
     bool jumpEnabled = true;
+    bool bombEnabled;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        coll = GetComponent<SphereCollider>();
         particles = transform.GetChild(0).GetComponent<ParticlesExplosion>();
         offset = new Vector3(0, 0, -0.5f);
-        Debug.Log("vuelvo");
-        GameManager.gM.ChangeGravityScale(Physics.gravity.y);
+        currentGravityFactor = initGravityFactor;
     }
     // Start is called before the first frame update
     void Start()
@@ -34,7 +42,20 @@ public class Player : MonoBehaviour
     void Update()
     {
         MovementInput();
-        JumpInput();
+        if(!waitDueBounce)
+        {
+            JumpInput();
+        }
+        else
+        {
+            waitTimeDueBounce += Time.deltaTime;
+            if(waitTimeDueBounce >= 0.5f)
+            {
+                waitDueBounce = false;
+                coll.material = null;
+                waitTimeDueBounce = 0;
+            }
+        }
     }
     void FixedUpdate()
     {
@@ -71,18 +92,18 @@ public class Player : MonoBehaviour
     }
     void JumpInput()
     {
-        //Primero hay que comprobar si tenemos salto disponible: 
-        //Si se ha ejecutado uno anterior, no podemos hacer otro hasta que no se levante el ratón.
-        if (jumpEnabled)
+        if(Input.GetMouseButton(0))
         {
-            if (Input.GetMouseButton(0))
+            //Dos mecánicas diferenciadas al mantener el ratón: Desde el suelo carga de salto. Desde el aire, golpe bomba.
+            if(TouchingFloor())
             {
-                //Si se está tocando el suelo y podemos seguir cargando hasta el límite ...
-                if (TouchingFloor() && jumpForce <= jumpLimit)
+                //Primero hay que comprobar si tenemos salto disponible: 
+                //Si se ha ejecutado uno anterior, no podemos hacer otro hasta que no se levante el ratón.
+                if (jumpEnabled)
                 {
+                    //Vamos cargando fuerza ...
                     jumpForce += (jumpDelta * Time.deltaTime);
-
-                    // Y si se alcanza el 30 % del límite, se saltará el máximo (100%) de forma automática.
+                    // Y si se alcanza el 30 % del límite, se saltará el máximo (100%) de forma automática. HABRÍA QUE INCREMENTAR EL LÍMITE.
                     if (jumpForce > jumpLimit * 0.30f)
                     {
                         jumpForce = jumpLimit;
@@ -90,9 +111,24 @@ public class Player : MonoBehaviour
                         jumpEnabled = false;
                         shouldJump = true;
                     }
-
                 }
+            }
+            //Implementación golpe bomba.
+            else
+            {
+                if(bombEnabled)
+                {
+                    bombForce += (bombDelta * Time.deltaTime);
 
+                    //Creo que con un límite pequeño debería ser más que suficiente....
+                    if (bombForce > 1.5f)
+                    {
+                        coll.material = bouncy; //Le ponemos un material rebotante.
+                        waitDueBounce = true;
+                        currentGravityFactor = 200;
+                        bombForce = 0;
+                    }
+                }
             }
         }
         if (Input.GetMouseButtonUp(0))
@@ -105,6 +141,7 @@ public class Player : MonoBehaviour
                 shouldJump = true;
             }
             jumpEnabled = true;
+            bombEnabled = true;
         }
     }
 
@@ -113,6 +150,9 @@ public class Player : MonoBehaviour
         Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.5f, ground.value);
         if (colls.Length > 0)
         {
+            //Por si volvemos de un golpe bomba.
+            currentGravityFactor = initGravityFactor;
+            bombEnabled = false;
             return true;
         }
         else
@@ -123,7 +163,7 @@ public class Player : MonoBehaviour
         if (!TouchingFloor())
         {
             Vector3 vel = rb.velocity;
-            vel.y -= gravityFactor * Time.fixedDeltaTime;
+            vel.y -= currentGravityFactor * Time.fixedDeltaTime;
             rb.velocity = vel;
         }
     }

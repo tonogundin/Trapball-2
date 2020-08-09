@@ -52,9 +52,11 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
+  bouncy: {fileID: 13400000, guid: 7b995d646de38154aa15473b6408da46, type: 2}
+  bombDelta: 20
   jumpDelta: 20
   jumpLimit: 10
-  gravityFactor: 10
+  initGravityFactor: 10
 --- !u!33 &8355018171138524629
 MeshFilter:
   m_ObjectHideFlags: 0
