@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
             //Significa que he caido tras un golpe bomba.
             if (currentGravityFactor != initGravityFactor)
             {
-                StartCoroutine(camShakeScript.Shake(0.15f, 0.5f));
+                StartCoroutine(camShakeScript.Shake(0.10f, 0.3f));
                 currentGravityFactor = initGravityFactor;
             }
             bombEnabled = false;
