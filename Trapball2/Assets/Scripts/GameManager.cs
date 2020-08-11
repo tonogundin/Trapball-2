@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public static event Event NewPlayer;
     //Singleton pattern.
     public static GameManager gM;
-    Camera cam;
+    public Camera cam;
     private void Awake()
     {
         if (gM == null)
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         if (gM == this) //Para prevenir llamadas por el evento desde el falso gM --> Pega nulo.
         {
             SetupCamera();
-            StopAllCoroutines(); //Prevenir fallos cuando Waiting se queda corriendo, se hace pausa y se carga una nueva escena retomando Waiting.
+            //StopAllCoroutines(); //Prevenir fallos cuando Waiting se queda corriendo, se hace pausa y se carga una nueva escena retomando Waiting.
             initPosForPlayer = new Vector3(-1.547f, 8.72f, 1.349f);
             InstantiateNewBall(0, initPosForPlayer);
         

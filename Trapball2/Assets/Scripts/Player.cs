@@ -25,31 +25,36 @@ public class Player : MonoBehaviour
     float waitTimeDueBounce;
     bool jumpEnabled = true;
     bool bombEnabled;
+    CameraShake camShakeScript;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<SphereCollider>();
         particles = transform.GetChild(0).GetComponent<ParticlesExplosion>();
-        offset = new Vector3(0, 0, -0.5f);
+        offset = new Vector3(0, -0.35f, 0);
         currentGravityFactor = initGravityFactor;
     }
     // Start is called before the first frame update
     void Start()
     {
-
+        camShakeScript = GameManager.gM.cam.GetComponent<CameraShake>();
     }
 
     void Update()
     {
         MovementInput();
-        if(!waitDueBounce)
+        if (!waitDueBounce)
         {
             JumpInput();
         }
         else
         {
             waitTimeDueBounce += Time.deltaTime;
-            if(waitTimeDueBounce >= 0.5f)
+
+            if(Input.GetMouseButtonUp(0))
+                jumpEnabled = true;
+
+            if (waitTimeDueBounce >= 0.5f)
             {
                 waitDueBounce = false;
                 coll.material = null;
@@ -83,19 +88,19 @@ public class Player : MonoBehaviour
 
     void MovementInput()
     {
-    #if UNITY_STANDALONE
-            h = Input.GetAxisRaw("Horizontal");
-    #endif
-    #if UNITY_ANDROID
+#if UNITY_STANDALONE
+        h = Input.GetAxisRaw("Horizontal");
+#endif
+#if UNITY_ANDROID
                     h = Input.acceleration.x * 2;
-    #endif
+#endif
     }
     void JumpInput()
     {
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             //Dos mecánicas diferenciadas al mantener el ratón: Desde el suelo carga de salto. Desde el aire, golpe bomba.
-            if(TouchingFloor())
+            if (TouchingFloor())
             {
                 //Primero hay que comprobar si tenemos salto disponible: 
                 //Si se ha ejecutado uno anterior, no podemos hacer otro hasta que no se levante el ratón.
@@ -116,15 +121,16 @@ public class Player : MonoBehaviour
             //Implementación golpe bomba.
             else
             {
-                if(bombEnabled)
+                if (bombEnabled)
                 {
                     bombForce += (bombDelta * Time.deltaTime);
 
                     //Creo que con un límite pequeño debería ser más que suficiente....
-                    if (bombForce > 1.5f)
+                    if (bombForce > 2.5f)
                     {
                         coll.material = bouncy; //Le ponemos un material rebotante.
                         waitDueBounce = true;
+                        jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
                         currentGravityFactor = 200;
                         bombForce = 0;
                     }
@@ -142,21 +148,30 @@ public class Player : MonoBehaviour
             }
             jumpEnabled = true;
             bombEnabled = true;
+            bombForce = 0; //Si no, bombForce empieza a contar desde el último intento de carga.
         }
     }
 
     bool TouchingFloor()
     {
-        Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.5f, ground.value);
+        Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, ground.value);
         if (colls.Length > 0)
         {
-            //Por si volvemos de un golpe bomba.
-            currentGravityFactor = initGravityFactor;
+            //Significa que he caido tras un golpe bomba.
+            if (currentGravityFactor != initGravityFactor)
+            {
+                StartCoroutine(camShakeScript.Shake(0.15f, 0.5f));
+                currentGravityFactor = initGravityFactor;
+            }
             bombEnabled = false;
             return true;
         }
         else
             return false;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position + offset, 0.1f);
     }
     void ManageExtraGravity()
     {
@@ -197,6 +212,6 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
         Handheld.Vibrate();
     }
-    
+
 
 }
