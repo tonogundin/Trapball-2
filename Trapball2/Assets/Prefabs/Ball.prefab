@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  ground:
+  jumpable:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
   bouncy: {fileID: 13400000, guid: 7b995d646de38154aa15473b6408da46, type: 2}
   bombDelta: 20
   jumpDelta: 20

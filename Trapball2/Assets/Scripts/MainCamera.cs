@@ -23,7 +23,8 @@ public class MainCamera : MonoBehaviour
             transform.position = player.position;
             float xClamped = Mathf.Clamp(transform.position.x, GameManager.gM.xLimits[0], GameManager.gM.xLimits[1]);
             float yClamped = Mathf.Clamp(transform.position.y, GameManager.gM.yLimits[0], GameManager.gM.yLimits[1]);
-            transform.position = new Vector3(xClamped, yClamped, GameManager.gM.zCamOffset);
+            //transform.position = new Vector3(xClamped, yClamped, GameManager.gM.zCamOffset);
+            transform.position = new Vector3(transform.position.x, transform.position.y + 3, GameManager.gM.zCamOffset);
         }
     }
     void FollowNewPlayer()

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     float h;
     float speedLimit = 5f;
     float movementForce = 10f;
-    [SerializeField] LayerMask ground;
+    [SerializeField] LayerMask jumpable;
     ParticlesExplosion particles;
     SphereCollider coll;
     Vector3 offset;
@@ -154,7 +154,7 @@ public class Player : MonoBehaviour
 
     bool TouchingFloor()
     {
-        Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, ground.value);
+        Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
         if (colls.Length > 0)
         {
             //Significa que he caido tras un golpe bomba.
