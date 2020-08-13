@@ -9,6 +9,7 @@ TagManager:
   - LaserBeam
   - Prueba
   - MovingPlatform
+  - Water
   layers:
   - Default
   - TransparentFX
