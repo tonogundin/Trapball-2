@@ -131,6 +131,7 @@ public class Player : MonoBehaviour
                         coll.material = bouncy; //Le ponemos un material rebotante.
                         waitDueBounce = true;
                         jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
+                        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
                         currentGravityFactor = 200;
                         bombForce = 0;
                     }
@@ -162,6 +163,7 @@ public class Player : MonoBehaviour
             {
                 StartCoroutine(camShakeScript.Shake(0.10f, 0.3f));
                 currentGravityFactor = initGravityFactor;
+                rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
             }
             bombEnabled = false;
             return true;

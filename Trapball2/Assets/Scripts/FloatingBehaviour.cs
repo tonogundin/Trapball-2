@@ -10,6 +10,7 @@ public class FloatingBehaviour : MonoBehaviour
     Rigidbody rb;
     float waterYPos;
     [SerializeField] float torque;
+    float offset = 0.4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class FloatingBehaviour : MonoBehaviour
         if (floating)
         {
             //Si la caja está por encima del agua, entonces la variable quedará como negativa y positiva al contrario
-            float displacementMultiplier = Mathf.Clamp01((waterYPos - transform.position.y) / depthBeforeSumerged) * displacementAmount;
+            float displacementMultiplier = Mathf.Clamp01((waterYPos + offset - transform.position.y) / depthBeforeSumerged) * displacementAmount;
             //Así, se va aplicando una fuerza en ambas direcciones (arriba y abajo) en función de la posición de la caja respecto al agua.
             //Finalmente, se acabará cancelando la fuerza aplicada ya que las posiciones se igualarán.
             rb.AddForce(new Vector3(0, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0), ForceMode.Acceleration);
