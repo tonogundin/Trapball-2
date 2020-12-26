@@ -25,6 +25,6 @@ Material:
     - Vector1_8A08353B: 4
     - Vector1_CC17C441: 7
     m_Colors:
-    - Color_CCD62221: {r: 0.0701762, g: 0.58500713, b: 0.7830189, a: 0}
-    - Color_E3E19A99: {r: 0.5803922, g: 1.552941, b: 1.905882, a: 0}
+    - Color_CCD62221: {r: 0, g: 0.779325, b: 1, a: 0}
+    - Color_E3E19A99: {r: 0.23699021, g: 1.6680644, b: 2.1844313, a: 0}
   m_BuildTextureStacks: []
