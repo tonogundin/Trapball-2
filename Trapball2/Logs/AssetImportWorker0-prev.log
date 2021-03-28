@@ -979,3 +979,4 @@ Received Import Request.
   path: Assets/Textures/Piperline/Tuberia_Tubo_Height.png
   artifactKey: Guid(b13bee53855dffa40952d8759c33888c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Textures/Piperline/Tuberia_Tubo_Height.png using Guid(b13bee53855dffa40952d8759c33888c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '758458ae207575257b1d46c33fef0e7d') in 0.034523 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
