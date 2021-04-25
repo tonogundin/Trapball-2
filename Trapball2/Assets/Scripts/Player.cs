@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpLimit; //Define la mayor fuerza de salto posible a aplicar.
     [SerializeField] float initGravityFactor;
     float currentGravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
-    bool shouldJump;
     bool waitDueBounce;
     float waitTimeDueBounce;
     bool jumpEnabled = true;
@@ -51,9 +50,6 @@ public class Player : MonoBehaviour
         {
             waitTimeDueBounce += Time.deltaTime;
 
-            if(Input.GetMouseButtonUp(0))
-                jumpEnabled = true;
-
             if (waitTimeDueBounce >= 0.5f)
             {
                 waitDueBounce = false;
@@ -65,12 +61,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.AddForce(new Vector3(h, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
-        if (shouldJump)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
-            jumpForce = 0;
-            shouldJump = false;
-        }
         ManageExtraGravity();
         ManageBallSpeed();
         //if(TouchingFloor())
@@ -114,12 +104,12 @@ public class Player : MonoBehaviour
                         jumpForce = jumpLimit;
                         //Y además se salta la lectura de levantar el ratón en este mismo frame.
                         jumpEnabled = false;
-                        shouldJump = true;
+                        SimpleJump();
                     }
                 }
             }
             //Implementación golpe bomba.
-            else
+            else //Si mantengo y no estoy tocando el suelo....
             {
                 if (bombEnabled)
                 {
@@ -145,7 +135,7 @@ public class Player : MonoBehaviour
             {
                 //Se aplicará el 70% del límite.
                 jumpForce = jumpLimit * 0.70f;
-                shouldJump = true;
+                SimpleJump();
             }
             jumpEnabled = true;
             bombEnabled = true;
@@ -153,18 +143,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    void SimpleJump()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
+        jumpForce = 0;
+    }
     bool TouchingFloor()
     {
         Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
         if (colls.Length > 0)
         {
             //Significa que he caido tras un golpe bomba.
-            if (currentGravityFactor != initGravityFactor)
-            {
-                StartCoroutine(camShakeScript.Shake(0.10f, 0.3f));
-                currentGravityFactor = initGravityFactor;
-                rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
-            }
+            //if (currentGravityFactor != initGravityFactor)  //currentGravityFactor != initGravityFactor
+            //{
+            //    Debug.Log("yo que se");
+            //    StartCoroutine(camShakeScript.Shake(0.10f, 0.3f));
+            //    currentGravityFactor = initGravityFactor;
+            //    rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
+            //}
             bombEnabled = false;
             return true;
         }
@@ -201,10 +197,32 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.CompareTag("Spikes") || other.CompareTag("LaserBeam"))
-        //{
-        //    Die();
-        //}
+        if (other.CompareTag("Water")) 
+        {
+            float verticalDistance = transform.position.y - other.transform.position.y;
+            if(verticalDistance > 0) //Estamos entrando en el agua.
+            {
+                if(rb.velocity.y < 0) //Si estamos cayendo "frenamos un poco" a la bola al entrar en el agua.
+                    rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+
+                currentGravityFactor = -5f;
+                rb.angularDrag = 4;
+                rb.drag = 2.2f;
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            float verticalDistance = transform.position.y - other.transform.position.y;
+            if (verticalDistance > 0) //Estamos saliendo del agua.
+            {
+                currentGravityFactor = initGravityFactor;
+                rb.angularDrag = 0.05f;
+                rb.drag = 0;
+            }
+        }
     }
     public void Die()
     {
