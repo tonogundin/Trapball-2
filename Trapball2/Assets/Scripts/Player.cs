@@ -20,11 +20,10 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpLimit; //Define la mayor fuerza de salto posible a aplicar.
     [SerializeField] float initGravityFactor;
     float currentGravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
-    bool waitDueBounce;
-    float waitTimeDueBounce;
     bool jumpEnabled = true;
     bool bombEnabled;
     CameraShake camShakeScript;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,38 +41,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         MovementInput();
-        if (!waitDueBounce)
-        {
-            JumpInput();
-        }
-        else
-        {
-            waitTimeDueBounce += Time.deltaTime;
-
-            if (waitTimeDueBounce >= 0.5f)
-            {
-                waitDueBounce = false;
-                coll.material = null;
-                waitTimeDueBounce = 0;
-            }
-        }
+        JumpInput();
+        
     }
     void FixedUpdate()
     {
         rb.AddForce(new Vector3(h, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
         ManageExtraGravity();
         ManageBallSpeed();
-        //if(TouchingFloor())
-        //{
-        //    //GameManager.gM.ChangeGravityScale(-29.43f);
-        //    ManageBallSpeed();
-
-        //}
-        //else
-        //{
-        //   // GameManager.gM.ChangeGravityScale(-9.81f);
-        //}
-        //NotJumpWithMovingPlatform();
     }
 
     void MovementInput()
@@ -118,12 +93,7 @@ public class Player : MonoBehaviour
                     //Creo que con un límite pequeño debería ser más que suficiente....
                     if (bombForce > 2.5f)
                     {
-                        coll.material = bouncy; //Le ponemos un material rebotante.
-                        waitDueBounce = true;
-                        jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
-                        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
-                        currentGravityFactor = 200;
-                        bombForce = 0;
+                        BombJump();
                     }
                 }
             }
@@ -139,7 +109,6 @@ public class Player : MonoBehaviour
             }
             jumpEnabled = true;
             bombEnabled = true;
-            bombForce = 0; //Si no, bombForce empieza a contar desde el último intento de carga.
         }
     }
 
@@ -148,29 +117,37 @@ public class Player : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
         jumpForce = 0;
     }
+    void BombJump()
+    {
+        jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
+        coll.material = bouncy; //Le ponemos un material rebotante.
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
+        rb.AddForce(Vector3.down * 2, ForceMode.Impulse);
+    }
+    void EndBombJump()
+    {
+        bombForce = 0; //Si no, bombForce empieza a contar desde el último intento de carga.
+        StartCoroutine(camShakeScript.Shake(0.10f, 0.15f));
+        coll.material = null;
+        rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
+    }
     bool TouchingFloor()
     {
         Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
         if (colls.Length > 0)
         {
             //Significa que he caido tras un golpe bomba.
-            //if (currentGravityFactor != initGravityFactor)  //currentGravityFactor != initGravityFactor
-            //{
-            //    Debug.Log("yo que se");
-            //    StartCoroutine(camShakeScript.Shake(0.10f, 0.3f));
-            //    currentGravityFactor = initGravityFactor;
-            //    rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
-            //}
+            if (bombForce > 2.5f)  //currentGravityFactor != initGravityFactor
+            {
+                EndBombJump();
+            }
             bombEnabled = false;
             return true;
         }
         else
             return false;
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(transform.position + offset, 0.1f);
-    }
+
     void ManageExtraGravity()
     {
         if (!TouchingFloor())
@@ -197,31 +174,25 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Water"))
+            rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+    }
+    private void OnTriggerStay(Collider other)
+    {
         if (other.CompareTag("Water")) 
         {
-            float verticalDistance = transform.position.y - other.transform.position.y;
-            if(verticalDistance > 0) //Estamos entrando en el agua.
-            {
-                if(rb.velocity.y < 0) //Si estamos cayendo "frenamos un poco" a la bola al entrar en el agua.
-                    rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
-
-                currentGravityFactor = -5f;
-                rb.angularDrag = 4;
-                rb.drag = 2.2f;
-            }
+            currentGravityFactor = -5f;
+            rb.angularDrag = 4;
+            rb.drag = 2.2f;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Water"))
         {
-            float verticalDistance = transform.position.y - other.transform.position.y;
-            if (verticalDistance > 0) //Estamos saliendo del agua.
-            {
-                currentGravityFactor = initGravityFactor;
-                rb.angularDrag = 0.05f;
-                rb.drag = 0;
-            }
+            currentGravityFactor = initGravityFactor;
+            rb.angularDrag = 0.05f;
+            rb.drag = 0;
         }
     }
     public void Die()
