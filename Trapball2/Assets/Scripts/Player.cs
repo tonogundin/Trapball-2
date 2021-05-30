@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     float currentGravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
     bool jumpEnabled = true;
     bool bombEnabled;
+    bool freeFall;
     CameraShake camShakeScript;
 
     void Awake()
@@ -48,7 +49,9 @@ public class Player : MonoBehaviour
     {
         rb.AddForce(new Vector3(h, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
         ManageExtraGravity();
-        ManageBallSpeed();
+        
+        if(!freeFall)
+            ManageBallSpeed();
     }
 
     void MovementInput()
@@ -174,8 +177,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Water"))
+        if (other.CompareTag("Water"))
             rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+
+        else if (other.CompareTag("TubeEnter"))
+            freeFall = true;
+
+        else if (other.CompareTag("TubeExit"))
+            freeFall = false;
     }
     private void OnTriggerStay(Collider other)
     {

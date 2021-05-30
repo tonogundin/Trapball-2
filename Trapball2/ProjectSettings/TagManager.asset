@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Water
   - Platform
+  - TubeEnter
+  - TubeExit
   layers:
   - Default
   - TransparentFX
