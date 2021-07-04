@@ -20,7 +20,7 @@ public class Death : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            other.transform.position = new Vector3(-1.547f, 8.72f, 0.8f);
+            other.transform.position = GameManager.gM.initPosForPlayer;
         }
     }
 }
