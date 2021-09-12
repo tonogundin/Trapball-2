@@ -11,6 +11,7 @@ public class FloatingBehaviour : MonoBehaviour
     float waterYPos;
     [SerializeField] float torque;
     float offset = 0.4f;
+    float initDisplacement;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class FloatingBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         float zRotation = transform.eulerAngles.z;
+        //Debug.Log(zRotation);
         int turnDirection;
         if (floating)
         {
@@ -34,21 +36,39 @@ public class FloatingBehaviour : MonoBehaviour
             //Finalmente, se acabará cancelando la fuerza aplicada ya que las posiciones se igualarán.
             rb.AddForce(new Vector3(0, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0), ForceMode.Acceleration);
 
-            if (zRotation > 0.2f && zRotation < 359.8f)
+            //1er cuadrante. Caja entra recta.
+            //if(initDisplacement <= 45 || initDisplacement > 315)
+            //{
+            if (zRotation > 0.5f || zRotation < 359.5f)
             {
-                turnDirection = zRotation > 0.2f && zRotation < 180 ? -1 : 1;
+                turnDirection = zRotation > 0.5f && zRotation < 180 ? -1 : 1;
                 rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
             }
-            
+
+            //}
+            ////2o cuadrante
+            //else if(initDisplacement > 45 && initDisplacement < 135)
+            //{
+            //    if (zRotation > 90.5f || zRotation < 89.5f)
+            //    {
+            //        Debug.Log("eee");
+            //        turnDirection = zRotation > 90.5f ? 1 : -1;
+            //        rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
+            //    }
+            //}
+
+
 
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Water"))
+        if(other.CompareTag("WaterSurface"))
         {
+            initDisplacement = transform.eulerAngles.z;
+            Debug.Log(initDisplacement);
             rb.mass = 10; //Para mejorar comportamiento cuando la bola se pone encima de una caja en el agua.
-            waterYPos = other.transform.position.y;
+            waterYPos = other.bounds.center.y;
             //rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
             rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
             floating = true;
