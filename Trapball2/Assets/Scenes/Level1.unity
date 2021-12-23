@@ -26674,7 +26674,7 @@ Transform:
   - {fileID: 3715128400566881462}
   m_Father: {fileID: 0}
   m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!135 &2021815663
 SphereCollider:
   m_ObjectHideFlags: 0

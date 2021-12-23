@@ -28,14 +28,26 @@ public class MouseBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(transform.eulerAngles.x);
         if(playerDetected)
         {
-            transform.rotation = Quaternion.Euler(xRot, transform.eulerAngles.y, transform.eulerAngles.z);
-            //Quaternion rotFromOriginToPlayer = Quaternion.LookRotation(dirVectorToPlayer, transform.up);
-            //Quaternion finalRotation = Quaternion.Slerp(transform.rotation, rotFromOriginToPlayer, rotationVelocity * Time.deltaTime);
-            //transform.rotation = finalRotation;
-            //float xRot = Mathf.Clamp(transform.eulerAngles.x, -22f, 22f);
-            //transform.rotation = Quaternion.Euler(xRot, -90, 0);
+            if(!(transform.eulerAngles.x >= 22f && transform.eulerAngles.x <= 338f))
+            {
+                Quaternion rotFromOriginToPlayer = Quaternion.LookRotation(dirVectorToPlayer, transform.up);
+                Quaternion finalRotation = Quaternion.Slerp(transform.rotation, rotFromOriginToPlayer, rotationVelocity * Time.deltaTime);
+                transform.rotation = finalRotation;
+
+            }
+            else if(transform.eulerAngles.x >= 22f) //Si se pasa mirando para abajo....
+            {
+                xRot = 21f;
+                transform.eulerAngles = new Vector3(xRot, transform.eulerAngles.y, transform.eulerAngles.z);
+            }
+            else //Si se pasa mirando para arriba...
+            {
+                xRot = 337f;
+                transform.eulerAngles = new Vector3(xRot, transform.eulerAngles.y, transform.eulerAngles.z);
+            }
         }
     }
     private void FixedUpdate()
