@@ -9,6 +9,9 @@ TagManager:
   - TubeEnter
   - TubeExit
   - WaterSurface
+  - Spikes
+  - LaserBeam
+  - Prueba
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - 
   - Agua
   - Platform
-  - Agua2
+  - 
   - 
   - 
   - 
