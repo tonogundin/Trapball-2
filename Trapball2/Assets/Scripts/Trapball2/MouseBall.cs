@@ -29,25 +29,18 @@ public class MouseBall : MonoBehaviour
     void Update()
     {
         Debug.Log(transform.eulerAngles.x);
+        Debug.Log(NormalizeAngle(345f));
         if(playerDetected)
         {
-            if(!(transform.eulerAngles.x >= 22f && transform.eulerAngles.x <= 338f))
-            {
-                Quaternion rotFromOriginToPlayer = Quaternion.LookRotation(dirVectorToPlayer, transform.up);
-                Quaternion finalRotation = Quaternion.Slerp(transform.rotation, rotFromOriginToPlayer, rotationVelocity * Time.deltaTime);
-                transform.rotation = finalRotation;
+            //Quaternion rotFromOriginToPlayer = Quaternion.LookRotation(dirVectorToPlayer, transform.up);
+            //Quaternion finalRotation = Quaternion.Slerp(transform.rotation, rotFromOriginToPlayer, rotationVelocity * Time.deltaTime);
+            //transform.rotation = finalRotation;
+            float a = DirectionToRotation(dirVectorToPlayer);
+            a -= 90; //Desfase.
+            a = Mathf.Clamp(a, -22, 22);
+            Debug.Log(a);
+            transform.eulerAngles = new Vector3(a, transform.eulerAngles.y, transform.eulerAngles.z);
 
-            }
-            else if(transform.eulerAngles.x >= 22f) //Si se pasa mirando para abajo....
-            {
-                xRot = 21f;
-                transform.eulerAngles = new Vector3(xRot, transform.eulerAngles.y, transform.eulerAngles.z);
-            }
-            else //Si se pasa mirando para arriba...
-            {
-                xRot = 337f;
-                transform.eulerAngles = new Vector3(xRot, transform.eulerAngles.y, transform.eulerAngles.z);
-            }
         }
     }
     private void FixedUpdate()
@@ -98,7 +91,13 @@ public class MouseBall : MonoBehaviour
 
     float DirectionToRotation(Vector3 direction)
     {
-        float angle = Mathf.Atan2(direction.z, direction.y) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(Mathf.Sign(dirXToPlayer) * direction.x, direction.y) * Mathf.Rad2Deg;
         return angle;
+    }
+
+    //return angle in range -180 to 180
+    float NormalizeAngle(float a)
+    {
+        return a - 180f * Mathf.Floor((a + 180f) / 180f);
     }
 }
