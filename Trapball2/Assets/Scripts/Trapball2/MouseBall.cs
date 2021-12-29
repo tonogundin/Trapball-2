@@ -55,7 +55,9 @@ public class MouseBall : MonoBehaviour
         }
         else if(obstacles.Length > 0)
         {
+            //Reinicio de físicas.
             rb.isKinematic = true;
+            rb.isKinematic = false;
         }
     }
     private void OnDrawGizmos()
@@ -70,6 +72,10 @@ public class MouseBall : MonoBehaviour
             playerDetected = true;
             dirVectorToPlayer = (other.transform.position - transform.position).normalized;
             dirXToPlayer = dirVectorToPlayer.x;
+        }
+        else if(other.CompareTag("WaterSurface"))
+        {
+            Destroy(gameObject);
         }
     }
     private void OnCollisionEnter(Collision collision)
