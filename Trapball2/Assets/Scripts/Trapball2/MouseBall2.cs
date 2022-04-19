@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseBall2 : MonoBehaviour
 {
     Rigidbody rb;
+    Animator animator;
     GameObject player;
     bool playerDetected;
     float distToPlayer;
     float OldDirToPlayerX;
-    float actualPositionX;
     Vector3 dirToPlayer;
     bool velocityBreak = false;
     float extraGravityFactor = 10;
@@ -17,13 +15,24 @@ public class MouseBall2 : MonoBehaviour
     [SerializeField] LayerMask enemObstacleLayer;
     [SerializeField] Mesh meshGizmos;
     Vector3 checkerOffset;
+    Timer timeKnockOut;
     public bool isStayonShip = false;
-    public bool isknockedOut = false;
+
+    const string animMouseIdle = "MouseBallIddle";
+    const string animMouseMove = "MouseBallMove";
+    const string animMouseMoveAgressive = "MouseBallMoveAgressive";
+    const string animMouseSmash = "MouseBallSmash";
+
+    private State state;
+    private State antState;
+
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
-        actualPositionX = rb.position.x;
+        state = State.NONE;
+        timeKnockOut = new Timer(3000, new CallBackTimer(this));
     }
 
     // Update is called once per frame
@@ -33,7 +42,7 @@ public class MouseBall2 : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        else if (!isknockedOut)
+        else if (state != State.SMASH)
         {
             OldDirToPlayerX = dirToPlayer.x;
             distToPlayer = player.transform.position.x - transform.position.x;
@@ -49,22 +58,23 @@ public class MouseBall2 : MonoBehaviour
                 {
                     dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
                 }
-                ManageRotation();
+            } else
+            {
+                playerDetected = false;
             }
-            actualPositionX = rb.position.x;
         }
+        ManageRotation();
     }
     private void FixedUpdate()
     {
         AddExtraGravityForce();
-        if (!isknockedOut)
+        if (state != State.SMASH)
         {
             checkerOffset = new Vector3(Mathf.Sign(distToPlayer), -0.1f, 0);
             Collider[] obstacles = Physics.OverlapSphere(transform.position + checkerOffset, 0.25f, enemObstacleLayer.value);
-            Debug.Log(obstacles.Length);
             if (playerDetected && obstacles.Length == 0)
             {
-
+                state = State.MOVE;
                 if (distToPlayer > 1)
                 {
                     distToPlayer = 1;
@@ -92,12 +102,37 @@ public class MouseBall2 : MonoBehaviour
             }
             if (!playerDetected)
             {
+                state = State.NORMAL;
                 rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
                 velocityBreak = false;
             }
         } else
         {
             rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+        }
+        animations();
+    }
+
+    private void animations()
+    {
+        if (antState != state)
+        {
+            antState = state;
+            switch(state)
+            {
+                case State.NORMAL:
+                    animator.SetTrigger(animMouseIdle);
+                    break;
+                case State.MOVE:
+                    animator.SetTrigger(animMouseMoveAgressive);
+                    break;
+                case State.MOVE_AGRESSIVE:
+                    animator.SetTrigger(animMouseMoveAgressive);
+                    break;
+                case State.SMASH:
+                    animator.SetTrigger(animMouseSmash);
+                    break;
+            }
         }
     }
 
@@ -124,6 +159,26 @@ public class MouseBall2 : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject == player)
+        {
+            if (state != State.SMASH)
+            {
+                ContactPoint[] contacts = collision.contacts;
+                if (contacts != null && contacts.Length > 0)
+                {
+                    float normalY = contacts[0].normal.y;
+                    if (normalY < -0.6f)
+                    {
+                        timeKnockOut.startTimer();
+                        state = State.SMASH;
+                    }
+                }
+            }
+        }
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject.layer == 9)
@@ -136,6 +191,39 @@ public class MouseBall2 : MonoBehaviour
         if (collision.gameObject.layer == 9)
         {
             isStayonShip = false;
+        }
+    }
+
+    private void setStateNormal()
+    {
+        state = State.NORMAL;
+    }
+
+    private enum State
+    {
+        NONE,
+        NORMAL,
+        MOVE,
+        MOVE_AGRESSIVE,
+        SMASH
+    }
+
+    class CallBackTimer : Timer.Callback
+    {
+        private MouseBall2 obj;
+        public CallBackTimer(MouseBall2 obj)
+        {
+            this.obj = obj;
+        }
+
+        public void shot()
+        {
+            obj.setStateNormal();
+        }
+
+        public MonoBehaviour getMonoBehaviour()
+        {
+            return obj;
         }
     }
 }

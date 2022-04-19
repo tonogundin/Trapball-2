@@ -106,7 +106,6 @@ public class Balancin : MonoBehaviour
         if (other.CompareTag("WaterSurface"))
         {
             initDisplacement = transform.eulerAngles.z;
-            Debug.Log(initDisplacement);
             rb.mass = 10; //Para mejorar comportamiento cuando la bola se pone encima de una caja en el agua.
             waterYPos = other.bounds.center.y;
             //rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
