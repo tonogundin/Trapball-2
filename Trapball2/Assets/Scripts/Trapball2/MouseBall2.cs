@@ -16,12 +16,15 @@ public class MouseBall2 : MonoBehaviour
     [SerializeField] Mesh meshGizmos;
     Vector3 checkerOffset;
     Timer timeKnockOut;
+    Timer timeRecover;
     public bool isStayonShip = false;
 
     const string animMouseIdle = "MouseBallIddle";
     const string animMouseMove = "MouseBallMove";
     const string animMouseMoveAgressive = "MouseBallMoveAgressive";
     const string animMouseSmash = "MouseBallSmash";
+    const string animMouseRecover = "MouseBallRecover";
+    
 
     private State state;
     private State antState;
@@ -33,6 +36,7 @@ public class MouseBall2 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         state = State.NONE;
         timeKnockOut = new Timer(3000, new CallBackTimer(this));
+        timeRecover = new Timer(2500, new CallBackTimer(this));
     }
 
     // Update is called once per frame
@@ -42,7 +46,7 @@ public class MouseBall2 : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        else if (state != State.SMASH)
+        else if (!isSmashProcess())
         {
             OldDirToPlayerX = dirToPlayer.x;
             distToPlayer = player.transform.position.x - transform.position.x;
@@ -68,7 +72,7 @@ public class MouseBall2 : MonoBehaviour
     private void FixedUpdate()
     {
         AddExtraGravityForce();
-        if (state != State.SMASH)
+        if (!isSmashProcess())
         {
             checkerOffset = new Vector3(Mathf.Sign(distToPlayer), -0.1f, 0);
             Collider[] obstacles = Physics.OverlapSphere(transform.position + checkerOffset, 0.25f, enemObstacleLayer.value);
@@ -132,8 +136,16 @@ public class MouseBall2 : MonoBehaviour
                 case State.SMASH:
                     animator.SetTrigger(animMouseSmash);
                     break;
+                case State.RECOVER:
+                    animator.SetTrigger(animMouseRecover);
+                    break;
             }
         }
+    }
+
+    private bool isSmashProcess()
+    {
+        return state == State.SMASH || state == State.RECOVER;
     }
 
     private void OnDrawGizmos()
@@ -194,9 +206,18 @@ public class MouseBall2 : MonoBehaviour
         }
     }
 
-    private void setStateNormal()
+    private void changeStateTimer()
     {
-        state = State.NORMAL;
+        switch(state)
+        {
+            case State.SMASH:
+                state = State.RECOVER;
+                timeRecover.startTimer();
+                break;
+            case State.RECOVER:
+                state = State.NORMAL;
+                break;
+        }
     }
 
     private enum State
@@ -205,7 +226,8 @@ public class MouseBall2 : MonoBehaviour
         NORMAL,
         MOVE,
         MOVE_AGRESSIVE,
-        SMASH
+        SMASH,
+        RECOVER
     }
 
     class CallBackTimer : Timer.Callback
@@ -218,7 +240,7 @@ public class MouseBall2 : MonoBehaviour
 
         public void shot()
         {
-            obj.setStateNormal();
+            obj.changeStateTimer();
         }
 
         public MonoBehaviour getMonoBehaviour()

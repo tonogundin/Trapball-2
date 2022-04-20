@@ -8,7 +8,7 @@ ModelImporter:
     second: smash
   - first:
       74: 4372067716687300674
-    second: smash (1)
+    second: recover
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -32,7 +32,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
+    importAnimatedCustomProperties: 1
     importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
@@ -47,7 +47,7 @@ ModelImporter:
       takeName: smash
       internalID: 0
       firstFrame: 0
-      lastFrame: 90
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -72,10 +72,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: smash (1)
+      name: recover
       takeName: smash
       internalID: 0
-      firstFrame: 0
+      firstFrame: 30
       lastFrame: 90
       wrapMode: 0
       orientationOffsetY: 0
@@ -110,7 +110,7 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
+    importCameras: 0
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0

@@ -1944,7 +1944,7 @@ Transform:
   m_LocalScale: {x: 117.51, y: 1, z: 84.613}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &127326658
 MonoBehaviour:
@@ -6880,7 +6880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4322558607219710108, guid: ec5fe00383688b6428cac07a2d5d3b15, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4322558607219710108, guid: ec5fe00383688b6428cac07a2d5d3b15, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14228,7 +14228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1075429571002744790, guid: f301a32e623d8444789e53af0253e07c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1075429571002744790, guid: f301a32e623d8444789e53af0253e07c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17551,7 +17551,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248456543
 GameObject:
@@ -22270,7 +22270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1637476076
 MonoBehaviour:
@@ -23394,7 +23394,7 @@ RectTransform:
   - {fileID: 274656109}
   - {fileID: 1098511691}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -28914,7 +28914,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 327766706994539343, guid: 8735370a302930a45b3c5b0cb41496b9, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 327766706994539343, guid: 8735370a302930a45b3c5b0cb41496b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33201,7 +33201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924965625799432777}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0.08547224, z: 0}
+  m_LocalPosition: {x: -1, y: -0.08547224, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7955283150554132293}
@@ -44839,7 +44839,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5921996471229259244}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
-  m_LocalPosition: {x: -21.85, y: 2.16, z: 0.02}
+  m_LocalPosition: {x: -21.85, y: 1.7, z: 0.02}
   m_LocalScale: {x: 11.0060005, y: 1.4270084, z: 3}
   m_Children:
   - {fileID: 5921996472214233864}
@@ -53316,8 +53316,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8614192804100191764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.08, y: 3.03, z: 5.4800053}
-  m_LocalScale: {x: 7.4913197, y: 1, z: 1}
+  m_LocalPosition: {x: 20.97, y: 2.6, z: 5.4800053}
+  m_LocalScale: {x: 5.350952, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -53624,7 +53624,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3707858407556562998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.85, y: 4.13, z: 5.45}
+  m_LocalPosition: {x: 22.69, y: 3.82, z: 5.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8360863576208466682}
@@ -54905,7 +54905,6 @@ MonoBehaviour:
     m_Bits: 1280
   meshGizmos: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   isStayonShip: 0
-  isknockedOut: 0
 --- !u!54 &9080247388845169144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54920,7 +54919,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 74
+  m_Constraints: 72
   m_CollisionDetection: 0
 --- !u!135 &9080247388845169145
 SphereCollider:
