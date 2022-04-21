@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     float currentGravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
     bool jumpEnabled = true;
     bool bombEnabled;
+    bool touchFloor = false;
     bool freeFall;
     CameraShake camShakeScript;
 
@@ -145,10 +146,14 @@ public class Player : MonoBehaviour
                 EndBombJump();
             }
             bombEnabled = false;
+            touchFloor = true;
             return true;
         }
         else
+        {
+            touchFloor = false;
             return false;
+        }
     }
 
     void ManageExtraGravity()
@@ -213,4 +218,8 @@ public class Player : MonoBehaviour
         Handheld.Vibrate();
     }
 
+    public bool isTouchFloor()
+    {
+        return touchFloor;
+    }
 }

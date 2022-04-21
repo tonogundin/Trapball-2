@@ -72,22 +72,35 @@ public class Balancin : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            energyImpactBall = player.GetComponent<Rigidbody>().velocity.y * -1;
-            if (mouse != null && energyImpactBall > 2.5f)
+            float impact = collision.relativeVelocity.y * -1;
+            energyImpactBall = impact;
+            if (energyImpactBall > 8)
+            {
+                energyImpactBall = 8;
+            }
+            if (mouse != null && impact > 12f)
             {
                 Rigidbody mouseRB = mouse.GetComponent<Rigidbody>();
-                mouseRB.AddForce(new Vector3(0, energyImpactBall * 2.5f, 0), ForceMode.Impulse);
-                energyImpactMouse = energyImpactBall;
+                mouseRB.AddForce(new Vector3(0, energyImpactBall, 0), ForceMode.Impulse);
                 energyImpactBall = 0;
             }
         }
         if (collision.gameObject.name == mouseBall)
         {
             mouse = collision.gameObject;
-            if (player != null && energyImpactMouse > 2.5f)
+            float impact = collision.relativeVelocity.y * -1;
+            energyImpactMouse = impact;
+            if (energyImpactMouse > 8)
+            {
+                energyImpactMouse = 8;
+            }
+            if (player != null && impact > 4f)
             {
                 Rigidbody playerRB = player.GetComponent<Rigidbody>();
-                playerRB.AddForce(new Vector3(0, energyImpactMouse * 2.5f, 0), ForceMode.Impulse);
+                if (player.GetComponent<Player>().isTouchFloor())
+                {
+                    playerRB.AddForce(new Vector3(0, energyImpactMouse, 0), ForceMode.Impulse);
+                }
                 energyImpactMouse = 0;
             }
         }

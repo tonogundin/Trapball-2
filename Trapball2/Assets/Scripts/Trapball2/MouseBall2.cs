@@ -17,7 +17,9 @@ public class MouseBall2 : MonoBehaviour
     Vector3 checkerOffset;
     Timer timeKnockOut;
     Timer timeRecover;
-    public bool isStayonShip = false;
+    private bool isStayonShip = false;
+    public GameObject normalCollider;
+    public GameObject smashCollider;
 
     const string animMouseIdle = "MouseBallIddle";
     const string animMouseMove = "MouseBallMove";
@@ -35,8 +37,9 @@ public class MouseBall2 : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         state = State.NONE;
-        timeKnockOut = new Timer(3000, new CallBackTimer(this));
-        timeRecover = new Timer(2500, new CallBackTimer(this));
+        timeKnockOut = new Timer(4000, new CallBackSmashTimer(this));
+        timeRecover = new Timer(2500, new CallBackRecoverTimer(this));
+        changeCollider(false);
     }
 
     // Update is called once per frame
@@ -175,25 +178,35 @@ public class MouseBall2 : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            if (state != State.SMASH)
+            ContactPoint[] contacts = collision.contacts;
+            if (contacts != null && contacts.Length > 0)
             {
-                ContactPoint[] contacts = collision.contacts;
-                if (contacts != null && contacts.Length > 0)
+                float normalY = contacts[0].normal.y;
+                if (normalY < compareTop())
                 {
-                    float normalY = contacts[0].normal.y;
-                    if (normalY < -0.6f)
+                    timeRecover.stopTimer();
+                    timeKnockOut.stopTimer();
+                    timeKnockOut.startTimer();
+                    state = State.SMASH;
+                    changeCollider(true);
+                    float impact = collision.relativeVelocity.y * -1;
+                    if (impact > 0)
                     {
-                        timeKnockOut.startTimer();
-                        state = State.SMASH;
+                        if (impact > 8)
+                        {
+                            impact = 8;
+                        }
+                        player.GetComponent<Rigidbody>().AddForce(new Vector3(0, impact, 0), ForceMode.Impulse);
                     }
                 }
             }
         }
     }
 
+
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 9)
         {
             isStayonShip = true;
         }
@@ -206,18 +219,38 @@ public class MouseBall2 : MonoBehaviour
         }
     }
 
-    private void changeStateTimer()
+    private void setRecovery()
     {
-        switch(state)
+        if(state == State.SMASH)
         {
-            case State.SMASH:
-                state = State.RECOVER;
-                timeRecover.startTimer();
-                break;
-            case State.RECOVER:
-                state = State.NORMAL;
-                break;
+            state = State.RECOVER;
+            timeRecover.startTimer();
         }
+    }
+
+    private void setNormal()
+    {
+        if (state == State.RECOVER)
+        {
+            state = State.NORMAL;
+            changeCollider(false);
+        }
+    }
+
+    private float compareTop()
+    {
+        if (normalCollider.activeSelf)
+        {
+            return -0.6f;
+        } else
+        {
+            return -0.6f;
+        }
+    }
+    private void changeCollider(bool smash)
+    {
+        normalCollider.SetActive(!smash);
+        smashCollider.SetActive(smash);
     }
 
     private enum State
@@ -230,17 +263,36 @@ public class MouseBall2 : MonoBehaviour
         RECOVER
     }
 
-    class CallBackTimer : Timer.Callback
+    class CallBackSmashTimer : Timer.Callback
     {
         private MouseBall2 obj;
-        public CallBackTimer(MouseBall2 obj)
+        public CallBackSmashTimer(MouseBall2 obj)
         {
             this.obj = obj;
         }
 
         public void shot()
         {
-            obj.changeStateTimer();
+            obj.setRecovery();
+        }
+
+        public MonoBehaviour getMonoBehaviour()
+        {
+            return obj;
+        }
+    }
+
+    class CallBackRecoverTimer : Timer.Callback
+    {
+        private MouseBall2 obj;
+        public CallBackRecoverTimer(MouseBall2 obj)
+        {
+            this.obj = obj;
+        }
+
+        public void shot()
+        {
+            obj.setNormal();
         }
 
         public MonoBehaviour getMonoBehaviour()
