@@ -192,9 +192,13 @@ public class MouseBall2 : MonoBehaviour
                     float impact = collision.relativeVelocity.y * -1;
                     if (impact > 0)
                     {
-                        if (impact > 8)
+                        if (impact > 9)
                         {
-                            impact = 8;
+                            impact = 9;
+                        }
+                        if (impact < 5)
+                        {
+                            impact = 5;
                         }
                         player.GetComponent<Rigidbody>().AddForce(new Vector3(0, impact, 0), ForceMode.Impulse);
                     }
