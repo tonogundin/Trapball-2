@@ -8,12 +8,15 @@ public class Balancin : MonoBehaviour
     Rigidbody rb;
     float waterYPos;
     [SerializeField] float torque;
+    public float forceX = 0f;
     float offset = 0.4f;
     float initDisplacement;
     GameObject player;
     float energyImpactMouse = 0f;
     float energyImpactBall = 0f;
     string mouseBall = "MouseBall";
+    bool isImpactBall = false;
+    float forceXBalancin = 0f;
     GameObject mouse;
     // Start is called before the first frame update
     void Start()
@@ -40,8 +43,11 @@ public class Balancin : MonoBehaviour
             float displacementMultiplier = Mathf.Clamp01((waterYPos + offset - transform.position.y) / depthBeforeSumerged) * displacementAmount;
             //Así, se va aplicando una fuerza en ambas direcciones (arriba y abajo) en función de la posición de la caja respecto al agua.
             //Finalmente, se acabará cancelando la fuerza aplicada ya que las posiciones se igualarán.
-            rb.AddForce(new Vector3(0, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0), ForceMode.Acceleration);
-
+            rb.AddForce(new Vector3(forceXBalancin, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0), ForceMode.Acceleration);
+            if (forceXBalancin > 0)
+            {
+                forceXBalancin -= 0.5f;
+            }
             //1er cuadrante. Caja entra recta.
             //if(initDisplacement <= 45 || initDisplacement > 315)
             //{
@@ -80,8 +86,12 @@ public class Balancin : MonoBehaviour
             }
             if (mouse != null && impact > 12f)
             {
+                isImpactBall = true;
                 Rigidbody mouseRB = mouse.GetComponent<Rigidbody>();
-                mouseRB.AddForce(new Vector3(0, energyImpactBall, 0), ForceMode.Impulse);
+                if (mouse.GetComponent<MouseBall2>().isStayonShip())
+                {
+                    mouseRB.AddForce(new Vector3(0, energyImpactBall, 0), ForceMode.Impulse);
+                }
                 energyImpactBall = 0;
             }
         }
@@ -96,6 +106,11 @@ public class Balancin : MonoBehaviour
             }
             if (player != null && impact > 4f)
             {
+                if (isImpactBall)
+                {
+                    moveBalancin(forceX);
+                    isImpactBall = false;
+                }
                 Rigidbody playerRB = player.GetComponent<Rigidbody>();
                 if (player.GetComponent<Player>().isTouchFloor())
                 {
@@ -125,6 +140,11 @@ public class Balancin : MonoBehaviour
             rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
             floating = true;
         }
+    }
+
+    private void moveBalancin(float velocityX)
+    {
+        forceXBalancin = velocityX;
     }
 }
 

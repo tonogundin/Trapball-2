@@ -17,7 +17,7 @@ public class MouseBall2 : MonoBehaviour
     Vector3 checkerOffset;
     Timer timeKnockOut;
     Timer timeRecover;
-    private bool isStayonShip = false;
+    private bool stayonShip = false;
     public GameObject normalCollider;
     public GameObject smashCollider;
 
@@ -166,7 +166,7 @@ public class MouseBall2 : MonoBehaviour
     }
     void AddExtraGravityForce()
     {
-        if (!isStayonShip)
+        if (!stayonShip)
         {
             Vector3 vel = rb.velocity;
             vel.y -= extraGravityFactor * Time.fixedDeltaTime;
@@ -212,17 +212,21 @@ public class MouseBall2 : MonoBehaviour
     {
         if (collision.gameObject.layer == 9)
         {
-            isStayonShip = true;
+            stayonShip = true;
         }
     }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.layer == 9)
         {
-            isStayonShip = false;
+            stayonShip = false;
         }
     }
 
+    public bool isStayonShip()
+    {
+        return stayonShip;
+    }
     private void setRecovery()
     {
         if(state == State.SMASH)
