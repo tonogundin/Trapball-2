@@ -7,6 +7,7 @@ public class MouseBall2 : MonoBehaviour
     GameObject player;
     bool playerDetected;
     float distToPlayer;
+    float distToPlayerY;
     float OldDirToPlayerX;
     Vector3 dirToPlayer;
     bool velocityBreak = false;
@@ -20,6 +21,7 @@ public class MouseBall2 : MonoBehaviour
     private bool stayonShip = false;
     public GameObject normalCollider;
     public GameObject smashCollider;
+    private bool mouseAsociateShip = false;
 
     const string animMouseIdle = "MouseBallIddle";
     const string animMouseMove = "MouseBallMove";
@@ -54,6 +56,7 @@ public class MouseBall2 : MonoBehaviour
             OldDirToPlayerX = dirToPlayer.x;
             distToPlayer = player.transform.position.x - transform.position.x;
             dirToPlayer = (player.transform.position - transform.position).normalized;
+            distToPlayerY = player.transform.position.y - transform.position.y;
             if ((OldDirToPlayerX > 0 && dirToPlayer.x <0) || ( OldDirToPlayerX < 0 && dirToPlayer.x >0))
             {
                 velocityBreak = true;
@@ -81,7 +84,10 @@ public class MouseBall2 : MonoBehaviour
             Collider[] obstacles = Physics.OverlapSphere(transform.position + checkerOffset, 0.25f, enemObstacleLayer.value);
             if (playerDetected && obstacles.Length == 0)
             {
-                state = State.MOVE;
+                if (state != State.SWIMMING)
+                {
+                    state = State.MOVE;
+                }
                 if (distToPlayer > 1)
                 {
                     distToPlayer = 1;
@@ -97,7 +103,12 @@ public class MouseBall2 : MonoBehaviour
                 }
                 else
                 {
-                    rb.AddForce(new Vector3(Mathf.Sign(distToPlayer), 0, 0) * movementForce, ForceMode.Acceleration);
+                    float forceY = 0;
+                    if (state == State.SWIMMING)
+                    {
+                        forceY = Mathf.Sign(distToPlayerY);
+                    }
+                    rb.AddForce(new Vector3(Mathf.Sign(distToPlayer), forceY, 0) * movementForce, ForceMode.Acceleration);
                 }
             }
             else if (obstacles.Length > 0)
@@ -106,6 +117,10 @@ public class MouseBall2 : MonoBehaviour
                 rb.isKinematic = true;
                 rb.isKinematic = false;
                 velocityBreak = false;
+                if (state == State.SWIMMING)
+                {
+                    rb.AddForce(new Vector3(Mathf.Sign(distToPlayer), Mathf.Sign(distToPlayerY), 0) * movementForce, ForceMode.Impulse);
+                }
             }
             if (!playerDetected)
             {
@@ -117,16 +132,17 @@ public class MouseBall2 : MonoBehaviour
         {
             rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
         }
-        animations();
+        checkState();
     }
 
-    private void animations()
+    private void checkState()
     {
         if (antState != state)
         {
             antState = state;
             switch(state)
             {
+                case State.SWIMMING:
                 case State.NORMAL:
                     animator.SetTrigger(animMouseIdle);
                     break;
@@ -210,11 +226,21 @@ public class MouseBall2 : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 9) // Platform.
         {
             stayonShip = true;
+            mouseAsociateShip = true;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 8) // Agua
+        {
+            state = State.SWIMMING;
+        }
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.layer == 9)
@@ -268,7 +294,8 @@ public class MouseBall2 : MonoBehaviour
         MOVE,
         MOVE_AGRESSIVE,
         SMASH,
-        RECOVER
+        RECOVER,
+        SWIMMING
     }
 
     class CallBackSmashTimer : Timer.Callback

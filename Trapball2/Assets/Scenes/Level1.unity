@@ -10273,11 +10273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4582402066495723241, guid: 89d35378e56e244479b8b69dbe1b8d02, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.15
+      value: -28.71
       objectReference: {fileID: 0}
     - target: {fileID: 4582402066495723241, guid: 89d35378e56e244479b8b69dbe1b8d02, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 4.23
       objectReference: {fileID: 0}
     - target: {fileID: 4582402066495723241, guid: 89d35378e56e244479b8b69dbe1b8d02, type: 3}
       propertyPath: m_LocalPosition.z
@@ -45055,6 +45055,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1672519778349477825, guid: d91fd32b89911b8468004a005251de31, type: 3}
+      propertyPath: forceX
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3068376305347966720, guid: d91fd32b89911b8468004a005251de31, type: 3}
       propertyPath: m_Name
       value: Balancin
@@ -45065,7 +45069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6269888646108548036, guid: d91fd32b89911b8468004a005251de31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65.67
+      value: 65.83
       objectReference: {fileID: 0}
     - target: {fileID: 6269888646108548036, guid: d91fd32b89911b8468004a005251de31, type: 3}
       propertyPath: m_LocalPosition.y

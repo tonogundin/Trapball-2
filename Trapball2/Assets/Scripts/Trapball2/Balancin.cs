@@ -17,11 +17,13 @@ public class Balancin : MonoBehaviour
     string mouseBall = "MouseBall";
     bool isImpactBall = false;
     float forceXBalancin = 0f;
+    private Vector3 oldPosition;
     GameObject mouse;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        setOldPosition(rb.position);
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class Balancin : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+        
     }
     private void FixedUpdate()
     {
@@ -48,13 +51,22 @@ public class Balancin : MonoBehaviour
             {
                 forceXBalancin -= 0.5f;
             }
+            repositionMouse(rb.position.x - oldPosition.x);
             //1er cuadrante. Caja entra recta.
             //if(initDisplacement <= 45 || initDisplacement > 315)
             //{
-            if (zRotation > 0.1f || zRotation < 359.9f)
+            if (zRotation > 0.5f || zRotation < 359.5f)
             {
                 turnDirection = zRotation > 0.5f && zRotation < 180 ? -1 : 1;
                 rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
+            }
+            if (zRotation > 5)
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 1f);
+            }
+            if (zRotation < -5)
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -1f);
             }
 
             //}
@@ -87,15 +99,14 @@ public class Balancin : MonoBehaviour
             if (mouse != null && impact > 12f)
             {
                 isImpactBall = true;
-                Rigidbody mouseRB = mouse.GetComponent<Rigidbody>();
                 if (mouse.GetComponent<MouseBall2>().isStayonShip())
                 {
-                    mouseRB.AddForce(new Vector3(0, energyImpactBall, 0), ForceMode.Impulse);
+                    moveMouse(new Vector3(forceXBalancin, energyImpactBall, 0), ForceMode.Impulse);
                 }
                 energyImpactBall = 0;
             }
         }
-        if (collision.gameObject.name == mouseBall)
+        if (collision.gameObject.name.Contains(mouseBall))
         {
             mouse = collision.gameObject;
             float impact = collision.relativeVelocity.y * -1;
@@ -111,11 +122,7 @@ public class Balancin : MonoBehaviour
                     moveBalancin(forceX);
                     isImpactBall = false;
                 }
-                Rigidbody playerRB = player.GetComponent<Rigidbody>();
-                if (player.GetComponent<Player>().isTouchFloor())
-                {
-                    playerRB.AddForce(new Vector3(0, energyImpactMouse, 0), ForceMode.Impulse);
-                }
+                moveBall(new Vector3(0, energyImpactMouse, 0), ForceMode.Impulse);
                 energyImpactMouse = 0;
             }
         }
@@ -145,6 +152,41 @@ public class Balancin : MonoBehaviour
     private void moveBalancin(float velocityX)
     {
         forceXBalancin = velocityX;
+    }
+    private void moveMouse(Vector3 force, ForceMode forceMode)
+    {
+        if (mouse != null)
+        {
+            Rigidbody mouseRB = mouse.GetComponent<Rigidbody>();
+            mouseRB.AddForce(force, forceMode);
+        }
+    }
+
+    private void moveBall(Vector3 force, ForceMode forceMode)
+    {
+        if (player != null)
+        {
+            Rigidbody playerRB = player.GetComponent<Rigidbody>();
+            if (player.GetComponent<Player>().isTouchFloor())
+            {
+                playerRB.AddForce(force, forceMode);
+            }
+        }
+    }
+
+    private void repositionMouse(float positionX)
+    {
+        if (mouse != null)
+        {
+            Rigidbody mouseRB = mouse.GetComponent<Rigidbody>();
+            mouseRB.position = new Vector3(mouseRB.position.x + positionX, mouseRB.position.y, mouseRB.position.z);
+            setOldPosition(rb.position);
+        }
+    }
+
+    private void setOldPosition(Vector3 position)
+    {
+        oldPosition = new Vector3(position.x, position.y, position.z);
     }
 }
 
