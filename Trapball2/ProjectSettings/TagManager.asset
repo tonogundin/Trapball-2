@@ -12,6 +12,8 @@ TagManager:
   - Spikes
   - LaserBeam
   - Prueba
+  - AudioLevelTrigger
+  - AudioTrigger
   layers:
   - Default
   - TransparentFX
