@@ -32,6 +32,8 @@ public class MouseBall2 : MonoBehaviour
 
     private State state;
     private State antState;
+    private bool contactBall = false;
+    private int secondsKnocked = 1500;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +41,10 @@ public class MouseBall2 : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         state = State.NONE;
-        timeKnockOut = new Timer(4000, new CallBackSmashTimer(this));
-        timeRecover = new Timer(2500, new CallBackRecoverTimer(this));
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        timeKnockOut = new Timer((int)(clips[(int)Animations.SMASH].length * 1000) + secondsKnocked, new CallBackSmashTimer(this));
+        timeRecover = new Timer((int)(clips[(int)Animations.RECOVER].length * 1000), new CallBackRecoverTimer(this));
+
         changeCollider(false);
     }
 
@@ -103,11 +107,7 @@ public class MouseBall2 : MonoBehaviour
                 }
                 else
                 {
-                    float forceY = 0;
-                    if (state == State.SWIMMING)
-                    {
-                        forceY = Mathf.Sign(distToPlayerY);
-                    }
+                    float forceY = Mathf.Sign(distToPlayerY);
                     rb.AddForce(new Vector3(Mathf.Sign(distToPlayer), forceY, 0) * movementForce, ForceMode.Acceleration);
                 }
             }
@@ -130,19 +130,25 @@ public class MouseBall2 : MonoBehaviour
             }
         } else
         {
-            rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+            if (!contactBall)
+            {
+                rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+            }
         }
         checkState();
     }
 
     private void checkState()
     {
+        // AQUI EL SONIDO CHIMO.
         if (antState != state)
         {
             antState = state;
             switch(state)
             {
                 case State.SWIMMING:
+                    animator.SetTrigger(animMouseIdle);
+                    break;
                 case State.NORMAL:
                     animator.SetTrigger(animMouseIdle);
                     break;
@@ -153,9 +159,15 @@ public class MouseBall2 : MonoBehaviour
                     animator.SetTrigger(animMouseMoveAgressive);
                     break;
                 case State.SMASH:
+                    timeRecover.stopTimer();
+                    timeKnockOut.stopTimer();
+                    timeKnockOut.startTimer();
                     animator.SetTrigger(animMouseSmash);
                     break;
                 case State.RECOVER:
+                    timeKnockOut.stopTimer();
+                    timeRecover.stopTimer();
+                    timeRecover.startTimer();
                     animator.SetTrigger(animMouseRecover);
                     break;
             }
@@ -192,7 +204,7 @@ public class MouseBall2 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject == player)
+        if (isObjetEqualsPlayer(collision.gameObject))
         {
             ContactPoint[] contacts = collision.contacts;
             if (contacts != null && contacts.Length > 0)
@@ -200,9 +212,6 @@ public class MouseBall2 : MonoBehaviour
                 float normalY = contacts[0].normal.y;
                 if (normalY < compareTop())
                 {
-                    timeRecover.stopTimer();
-                    timeKnockOut.stopTimer();
-                    timeKnockOut.startTimer();
                     state = State.SMASH;
                     changeCollider(true);
                     float impact = collision.relativeVelocity.y * -1;
@@ -226,26 +235,42 @@ public class MouseBall2 : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.layer == 9) // Platform.
+        if (isObjetEqualsPlayer(collision.gameObject))
         {
-            stayonShip = true;
-            mouseAsociateShip = true;
+            contactBall = true;
+        }
+        switch (collision.gameObject.layer)
+        {
+            case Layers.PLATFORM:
+                stayonShip = true;
+                mouseAsociateShip = true;
+                break;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8) // Agua
+        switch (other.gameObject.layer)
         {
-            state = State.SWIMMING;
+            case Layers.AGUA:
+                state = State.SWIMMING;
+                timeKnockOut.stopTimer();
+                timeRecover.stopTimer();
+                break;
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.layer == 9)
+        switch(collision.gameObject.layer)
         {
-            stayonShip = false;
+            case Layers.PLATFORM:
+                stayonShip = false;
+                break;
+        }
+        if (isObjetEqualsPlayer(collision.gameObject))
+        {
+            contactBall = false;
         }
     }
 
@@ -253,12 +278,16 @@ public class MouseBall2 : MonoBehaviour
     {
         return stayonShip;
     }
+
+    private bool isObjetEqualsPlayer(GameObject gameObject)
+    {
+        return gameObject == player;
+    }
     private void setRecovery()
     {
         if(state == State.SMASH)
         {
             state = State.RECOVER;
-            timeRecover.startTimer();
         }
     }
 
@@ -298,6 +327,14 @@ public class MouseBall2 : MonoBehaviour
         SWIMMING
     }
 
+    private enum Animations
+    {
+        MOUSE_IDLE,
+        MOVE,
+        MOVE_AGRESIVE,
+        RECOVER,
+        SMASH
+    }
     class CallBackSmashTimer : Timer.Callback
     {
         private MouseBall2 obj;

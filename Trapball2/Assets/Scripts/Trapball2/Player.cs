@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
         coll.material = bouncy; //Le ponemos un material rebotante.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
-        rb.AddForce(Vector3.down * 2, ForceMode.Impulse);
+        rb.AddForce(Vector3.down * 1.5f, ForceMode.Impulse);
     }
     void EndBombJump()
     {

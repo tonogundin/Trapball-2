@@ -60,11 +60,11 @@ public class Balancin : MonoBehaviour
                 turnDirection = zRotation > 0.5f && zRotation < 180 ? -1 : 1;
                 rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
             }
-            if (zRotation > 5)
+            if (zRotation > 15)
             {
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 1f);
             }
-            if (zRotation < -5)
+            if (zRotation < -15)
             {
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -1f);
             }
