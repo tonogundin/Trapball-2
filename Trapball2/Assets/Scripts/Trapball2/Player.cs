@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     float currentGravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
     bool jumpEnabled = true;
     bool bombEnabled;
+    bool touchFloor = false;
     bool freeFall;
     CameraShake camShakeScript;
     FMOD.Studio.EventInstance playerSoundroll;
@@ -153,7 +154,7 @@ public class Player : MonoBehaviour
         jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
         coll.material = bouncy; //Le ponemos un material rebotante.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
-        rb.AddForce(Vector3.down * 2, ForceMode.Impulse);
+        rb.AddForce(Vector3.down * 1.5f, ForceMode.Impulse);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", GetComponent<Transform>().position);
         playerSoundroll.setVolume(0);
     }
@@ -181,17 +182,15 @@ public class Player : MonoBehaviour
                 
             }
             bombEnabled = false;
+            touchFloor = true;
             return true;
            
         }
         else
-        
+        {
+            touchFloor = false;
             return false;
-            
-        
-
-            
-        
+        }
     }
 
     void ManageExtraGravity()
@@ -267,5 +266,8 @@ public class Player : MonoBehaviour
         Handheld.Vibrate();
     }
 
-
+    public bool isTouchFloor()
+    {
+        return touchFloor;
+    }
 }
