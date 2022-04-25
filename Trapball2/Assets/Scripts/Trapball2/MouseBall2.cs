@@ -248,7 +248,7 @@ public class MouseBall2 : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         switch (other.gameObject.layer)
         {
