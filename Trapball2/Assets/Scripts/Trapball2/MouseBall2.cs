@@ -96,8 +96,9 @@ public class MouseBall2 : MonoBehaviour
             }
             if (state == State.SWIMMING)
             {
-                move(0, 0.5f, ForceMode.Impulse);
-                move(velocityX, 0, ForceMode.Acceleration);
+                move(0, 0.25f, ForceMode.Impulse);
+
+                move(limitVelocity(velocityX, 0.25f), 0, ForceMode.Acceleration);
                 if (rb.velocity.y > 5)
                 {
                     rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
