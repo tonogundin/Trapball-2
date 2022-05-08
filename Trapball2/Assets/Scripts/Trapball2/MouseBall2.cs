@@ -7,10 +7,7 @@ public class MouseBall2 : MonoBehaviour
     GameObject player;
     bool playerDetected;
     float distToPlayer;
-    float distToPlayerY;
-    float OldDirToPlayerX;
     Vector3 dirToPlayer;
-    bool velocityBreak = false;
     float extraGravityFactor = 10;
     float movementForce = 5;
     [SerializeField] LayerMask enemObstacleLayer;
@@ -18,6 +15,7 @@ public class MouseBall2 : MonoBehaviour
     Vector3 checkerOffset;
     Timer timeKnockOut;
     Timer timeRecover;
+    Timer timeSwimming;
     private bool stayonShip = false;
     public GameObject normalCollider;
     public GameObject smashCollider;
@@ -44,7 +42,7 @@ public class MouseBall2 : MonoBehaviour
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
         timeKnockOut = new Timer((int)(clips[(int)Animations.SMASH].length * 1000) + secondsKnocked, new CallBackSmashTimer(this));
         timeRecover = new Timer((int)(clips[(int)Animations.RECOVER].length * 1000), new CallBackRecoverTimer(this));
-
+        timeSwimming = new Timer(150, new CallBackSwimmingTimer(this));
         changeCollider(false);
     }
 
@@ -57,14 +55,8 @@ public class MouseBall2 : MonoBehaviour
         }
         else if (!isSmashProcess())
         {
-            OldDirToPlayerX = dirToPlayer.x;
             distToPlayer = player.transform.position.x - transform.position.x;
             dirToPlayer = (player.transform.position - transform.position).normalized;
-            distToPlayerY = player.transform.position.y - transform.position.y;
-            if ((OldDirToPlayerX > 0 && dirToPlayer.x <0) || ( OldDirToPlayerX < 0 && dirToPlayer.x >0))
-            {
-                velocityBreak = true;
-            }
             if (Mathf.Abs(distToPlayer) <= 5f)
             {
                 playerDetected = true;
@@ -84,50 +76,43 @@ public class MouseBall2 : MonoBehaviour
         AddExtraGravityForce();
         if (!isSmashProcess())
         {
-            checkerOffset = new Vector3(Mathf.Sign(distToPlayer), -0.1f, 0);
-            Collider[] obstacles = Physics.OverlapSphere(transform.position + checkerOffset, 0.25f, enemObstacleLayer.value);
-            if (playerDetected && obstacles.Length == 0)
+            float velocityX = Mathf.Sign(distToPlayer);
+            if (playerDetected)
             {
-                if (state != State.SWIMMING)
+                if (state == State.NORMAL)
                 {
                     state = State.MOVE;
                 }
-                if (distToPlayer > 1)
+                if (state != State.SWIMMING)
                 {
-                    distToPlayer = 1;
+                    move(velocityX, 0, ForceMode.Acceleration);
                 }
-                else if (distToPlayer < -1)
-                {
-                    distToPlayer = -1;
-                }
-                if (velocityBreak)
-                {
+            } else
+            {
+                if (state != State.SWIMMING) {
+                    state = State.NORMAL;
                     rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-                    velocityBreak = false;
-                }
-                else
-                {
-                    float forceY = Mathf.Sign(distToPlayerY);
-                    rb.AddForce(new Vector3(Mathf.Sign(distToPlayer), forceY, 0) * movementForce, ForceMode.Acceleration);
-                }
+                }  
             }
-            else if (obstacles.Length > 0)
+            if (state == State.SWIMMING)
             {
-                //Reinicio de físicas.
-                rb.isKinematic = true;
-                rb.isKinematic = false;
-                velocityBreak = false;
-                if (state == State.SWIMMING)
+                move(0, 0.25f, ForceMode.Impulse);
+
+                move(limitVelocity(velocityX, 0.25f), 0, ForceMode.Acceleration);
+                if (rb.velocity.y > 5)
                 {
-                    rb.AddForce(new Vector3(Mathf.Sign(distToPlayer), Mathf.Sign(distToPlayerY), 0) * movementForce, ForceMode.Impulse);
+                    rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
+                }
+                if (rb.velocity.x > 2)
+                {
+                    rb.velocity = new Vector3(2, rb.velocity.y, rb.velocity.z);
+                }
+                if (rb.velocity.x < -2)
+                {
+                    rb.velocity = new Vector3(-2, rb.velocity.y, rb.velocity.z);
                 }
             }
-            if (!playerDetected)
-            {
-                state = State.NORMAL;
-                rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-                velocityBreak = false;
-            }
+            
         } else
         {
             if (!contactBall)
@@ -136,6 +121,25 @@ public class MouseBall2 : MonoBehaviour
             }
         }
         checkState();
+    }
+
+    private void move(float velocityX, float velocityY, ForceMode mode)
+    {
+        velocityX = limitVelocity(velocityX, 1);
+        rb.AddForce(new Vector3(velocityX , velocityY, 0) * movementForce, mode);
+    }
+
+    private float limitVelocity(float velocity, float limit)
+    {
+        if (velocity > limit)
+        {
+            velocity = limit;
+        }
+        else if (velocity < -limit)
+        {
+            velocity = -limit;
+        }
+        return velocity;
     }
 
     private void checkState()
@@ -253,9 +257,16 @@ public class MouseBall2 : MonoBehaviour
         switch (other.gameObject.layer)
         {
             case Layers.AGUA:
-                state = State.SWIMMING;
-                timeKnockOut.stopTimer();
-                timeRecover.stopTimer();
+                if (state != State.SWIMMING)
+                {
+                    timeKnockOut.stopTimer();
+                    timeRecover.stopTimer();
+                    state = State.SWIMMING;
+                    if (!timeSwimming.activated)
+                    {
+                        timeSwimming.startTimer();
+                    }
+                }
                 break;
         }
     }
@@ -300,6 +311,10 @@ public class MouseBall2 : MonoBehaviour
         }
     }
 
+    private void playSwimming()
+    {
+        state = State.NORMAL;
+    }
     private float compareTop()
     {
         if (normalCollider.activeSelf)
@@ -365,6 +380,26 @@ public class MouseBall2 : MonoBehaviour
         public void shot()
         {
             obj.setNormal();
+        }
+
+        public MonoBehaviour getMonoBehaviour()
+        {
+            return obj;
+        }
+    }
+
+
+    class CallBackSwimmingTimer : Timer.Callback
+    {
+        private MouseBall2 obj;
+        public CallBackSwimmingTimer(MouseBall2 obj)
+        {
+            this.obj = obj;
+        }
+
+        public void shot()
+        {
+            obj.playSwimming();
         }
 
         public MonoBehaviour getMonoBehaviour()
