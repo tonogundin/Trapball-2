@@ -24,13 +24,10 @@ public class Player : MonoBehaviour
     bool jumpEnabled = true;
     bool bombEnabled;
     bool touchFloor = false;
+    bool oldStateTouchfloor = false;
     bool freeFall;
     CameraShake camShakeScript;
     FMOD.Studio.EventInstance playerSoundroll;
-    
-
-
-
 
     void Awake()
     {
@@ -46,25 +43,34 @@ public class Player : MonoBehaviour
         camShakeScript = GameManager.gM.cam.GetComponent<CameraShake>();
         playerSoundroll = FMODUnity.RuntimeManager.CreateInstance("event:/Desplazamiento/SFXPlayerRollMud");
         playerSoundroll.start();
-        
     }
 
     void Update()
     {
         MovementInput();
         JumpInput();
-       
-
-
-
-
+        checkSoundRoll();
+        
     }
-
-    private float GetComponent(float x)
-    {
+    private float GetComponent(float x) 
+    { 
         throw new NotImplementedException();
     }
+    private void checkSoundRoll()
+    {
+        if (oldStateTouchfloor != touchFloor)
+        {
+            if(touchFloor)
+            {
+                // TODO pon aquí lo que necesites para activar sonido de estar en el suelo.
+            } else
+            {
+                // TODO pon aquí lo que necesites para desactivar sonido de estar en el suelo.
+            }
+            oldStateTouchfloor = touchFloor;
+        }
 
+    }
     void FixedUpdate()
     {
         rb.AddForce(new Vector3(h, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
@@ -78,12 +84,11 @@ public class Player : MonoBehaviour
     {
 #if UNITY_STANDALONE
         h = Input.GetAxisRaw("Horizontal");
-        playerSoundroll.setParameterByName("speed", rb.velocity.x);
-
 #endif
 #if UNITY_ANDROID
                     h = Input.acceleration.x * 2;
 #endif
+        playerSoundroll.setParameterByName("speed", rb.velocity.x);
     }
     void JumpInput()
     {
@@ -127,15 +132,15 @@ public class Player : MonoBehaviour
         {
             //Si al levantar el ratón no se alcanza ni siquiera el 30%...
             if (jumpForce > 0 && jumpForce <= jumpLimit * 0.30f)
-               
             {
                 //Se aplicará el 70% del límite.
                 jumpForce = jumpLimit * 0.70f;
                 SimpleJump();
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", GetComponent<Transform>().position);
-            }
-            else
+            } else
+            {
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoHigh", GetComponent<Transform>().position);
+            }
             jumpEnabled = true;
             bombEnabled = true;
         }
@@ -147,8 +152,6 @@ public class Player : MonoBehaviour
         jumpForce = 0;
         playerSoundroll.setVolume(0);
     }
-
-    
     void BombJump()
     {
         jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
@@ -170,21 +173,17 @@ public class Player : MonoBehaviour
     {
         Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
         if (colls.Length > 0)
-            
         {
             playerSoundroll.setVolume(1);
             //Significa que he caido tras un golpe bomba.
             if (bombForce > 2.5f)  //currentGravityFactor != initGravityFactor
             {
-
                 EndBombJump();
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
-                
             }
             bombEnabled = false;
             touchFloor = true;
             return true;
-           
         }
         else
         {
@@ -200,37 +199,31 @@ public class Player : MonoBehaviour
             Vector3 vel = rb.velocity;
             vel.y -= currentGravityFactor * Time.fixedDeltaTime;
             rb.velocity = vel;
-            
         }
     }
     void ManageBallSpeed()
     {
-        
         //Límite de velocidad
         if (Mathf.Abs(rb.velocity.x) > speedLimit)
         {
             rb.velocity = new Vector3(speedLimit * Mathf.Sign(rb.velocity.x), rb.velocity.y, rb.velocity.z);
-            
-            
-
         }
         //Ayuda para que no cueste tanto dejar la bola quieta
         //Si la bola a penas se mueve, no hay input de usuario y no está en una rampa (y == 0 + TouchingFloor) se parará por completo.
         else if (Mathf.Abs(rb.velocity.x) < 0.3f && h == 0 && rb.velocity.y == 0)
         {
             rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-           
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Water"))
-
         {
             rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
         }
+            
 
         else if (other.CompareTag("TubeEnter"))
             freeFall = true;
