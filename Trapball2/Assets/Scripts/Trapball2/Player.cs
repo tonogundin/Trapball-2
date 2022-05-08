@@ -52,7 +52,8 @@ public class Player : MonoBehaviour
     {
         MovementInput();
         JumpInput();
-       
+        playerSoundroll.start();
+
 
 
 
@@ -68,10 +69,13 @@ public class Player : MonoBehaviour
     {
         rb.AddForce(new Vector3(h, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
         ManageExtraGravity();
-        
-        if(!freeFall)
+
+
+        if (!freeFall)
+
             ManageBallSpeed();
-    }
+        }
+
 
     void MovementInput()
     {
@@ -87,6 +91,7 @@ public class Player : MonoBehaviour
     void JumpInput()
     {
         if (Input.GetMouseButton(0))
+            
         {
             //Dos mecánicas diferenciadas al mantener el ratón: Desde el suelo carga de salto. Desde el aire, golpe bomba.
             if (TouchingFloor())
@@ -104,6 +109,7 @@ public class Player : MonoBehaviour
                         //Y además se salta la lectura de levantar el ratón en este mismo frame.
                         jumpEnabled = false;
                         SimpleJump();
+                        
                     }
                 }
             }
@@ -144,7 +150,8 @@ public class Player : MonoBehaviour
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
         jumpForce = 0;
-        playerSoundroll.setVolume(0);
+        playerSoundroll.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
     }
 
     
@@ -155,7 +162,8 @@ public class Player : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
         rb.AddForce(Vector3.down * 2, ForceMode.Impulse);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", GetComponent<Transform>().position);
-        playerSoundroll.setVolume(0);
+        playerSoundroll.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
     }
     void EndBombJump()
     {
@@ -163,29 +171,34 @@ public class Player : MonoBehaviour
         StartCoroutine(camShakeScript.Shake(0.10f, 0.15f));
         coll.material = null;
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
-        playerSoundroll.setVolume(1);
+        
+
     }
     bool TouchingFloor()
+
     {
         Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
         if (colls.Length > 0)
-            
         {
-            playerSoundroll.setVolume(1);
-            //Significa que he caido tras un golpe bomba.
-            if (bombForce > 2.5f)  //currentGravityFactor != initGravityFactor
-            {
+            
+            
 
-                EndBombJump();
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
-                
-            }
-            bombEnabled = false;
-            return true;
-           
+                //Significa que he caido tras un golpe bomba.
+                if (bombForce > 2.5f)  //currentGravityFactor != initGravityFactor
+                {
+
+                    EndBombJump();
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
+                    playerSoundroll.start();
+
+                }
+                bombEnabled = false;
+                return true;
+
+            
         }
         else
-        
+
             return false;
             
         
