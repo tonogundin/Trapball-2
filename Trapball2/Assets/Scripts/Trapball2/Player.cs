@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     bool jumpEnabled = true;
     bool bombEnabled;
     bool touchFloor = false;
+    bool oldStateTouchfloor = false;
     bool freeFall;
     CameraShake camShakeScript;
 
@@ -44,7 +45,24 @@ public class Player : MonoBehaviour
     {
         MovementInput();
         JumpInput();
+        checkSoundRoll();
         
+    }
+
+    private void checkSoundRoll()
+    {
+        if (oldStateTouchfloor != touchFloor)
+        {
+            if(touchFloor)
+            {
+                // TODO pon aquí lo que necesites para activar sonido de estar en el suelo.
+            } else
+            {
+                // TODO pon aquí lo que necesites para desactivar sonido de estar en el suelo.
+            }
+            oldStateTouchfloor = touchFloor;
+        }
+
     }
     void FixedUpdate()
     {
