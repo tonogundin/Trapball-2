@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     bool freeFall;
     CameraShake camShakeScript;
     FMOD.Studio.EventInstance playerSoundroll;
+    public Vector2 velocityBall;
 
     void Awake()
     {
@@ -77,7 +78,26 @@ public class Player : MonoBehaviour
         ManageExtraGravity();
         
         if(!freeFall)
+        {
             ManageBallSpeed();
+        }
+            
+
+        velocityBall = new Vector2(rb.velocity.x, rb.velocity.y);
+    }
+
+    void OnGUI()
+    {
+        int w = Screen.width, h = Screen.height;
+
+        GUIStyle style = new GUIStyle();
+
+        Rect rect = new Rect(50, 50, w, h * 2 / 100);
+        style.alignment = TextAnchor.UpperCenter;
+        style.fontSize = h * 4 / 100;
+        style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
+        string text = string.Format("X: {0:0.000} Y:{0:0.000}", velocityBall.x, velocityBall.y);
+        GUI.Label(rect, text, style);
     }
 
     void MovementInput()
