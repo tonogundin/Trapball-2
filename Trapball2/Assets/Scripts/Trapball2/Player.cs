@@ -62,10 +62,10 @@ public class Player : MonoBehaviour
         {
             if(touchFloor)
             {
-                // TODO pon aquí lo que necesites para activar sonido de estar en el suelo.
+                playerSoundroll.setParameterByName("onTheFloor", 1);
             } else
             {
-                // TODO pon aquí lo que necesites para desactivar sonido de estar en el suelo.
+                playerSoundroll.setParameterByName("onTheFloor", 0); 
             }
             oldStateTouchfloor = touchFloor;
         }

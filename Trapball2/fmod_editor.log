@@ -2,14 +2,13 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
 [LOG] SystemI::init                            : Initialize version=20204 (121702), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
-[LOG] OutputCoreAudio::init                    : Output running 4 channels at 88200Hz sample rate.
+[LOG] OutputCoreAudio::init                    : Output running 4 channels at 48000Hz sample rate.
 [LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
-[LOG] SystemI::init                            : Output requires a sample rate of 88200Hz, resampling will occur.
 [LOG] DownMix::init                            : dspbuffersize: 512  rate: 48000. output speaker mode: 4, input speaker mode 3
 [LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7fc179349e08 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x7fe85b32d208 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,156 +19,75 @@
 [LOG] Manager::readBank                        : fileversion = 123, compatVersion = 119 (oldest = 44, newest = 141)
 [LOG] Manager::readBank                        : fileversion = 123, compatVersion = 119 (oldest = 44, newest = 141)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::createSound                     : filename = ../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERRÍA/COMPOSICIONES FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0x7fc11d759c88 : node = 0x7fc11f3a6c30
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7fc1186901f8.  list count = 0
-[LOG] SystemI::createSound                     : filename = ../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERRÍA/COMPOSICIONES FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0x7fc11f258668 : node = 0x7fc11d7f82b0
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7fc1186901f8.  list count = 1
-[LOG] SystemI::createSound                     : filename = ../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERRÍA/COMPOSICIONES FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0x7fc11d3b09f8 : node = 0x7fc11f30f2b0
-[LOG] SystemI::createSound                     : add node to async list : head = 0x7fc1186901f8.  list count = 1
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fc11d759c88
-[LOG] SystemI::createSoundInternal             :     Create name='../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERRÍA/COMPOSICIONES FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 17010976
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 195072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fc11f3a6d40
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SFXRollMudLoopFast', format=5, channels=1, frequency=48000, lengthbytes=143200, lengthpcm=672000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.140808.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fc11d759c88
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fc11f258668
-[LOG] SystemI::createSoundInternal             :     Create name='../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERRÍA/COMPOSICIONES FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 17010976
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 195072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fc11d7f83c0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SFXRollMudLoop04', format=5, channels=1, frequency=48000, lengthbytes=141472, lengthpcm=816000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057068.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fc11f258668
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x7fc11d3b09f8
-[LOG] SystemI::createSoundInternal             :     Create name='../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERRÍA/COMPOSICIONES FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 17010976
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 195072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x7fc11f30f3c0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SFXRollMudLoopMedium', format=5, channels=1, frequency=48000, lengthbytes=134400, lengthpcm=672000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.120148.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x7fc11d3b09f8
-[LOG] SoundI::release                          : SFXRollMudLoopMedium (0x7fc119165408)
-[LOG] SoundI::release                          :     SFXRollMudLoopMedium (0x7fc119626c08)
-[LOG] SoundI::release                          :     SFXRollMudLoopMedium (0x7fc11d568438)
-[LOG] SoundI::release                          : SFXRollMudLoopFast (0x7fc11d7f4368)
-[LOG] SoundI::release                          :     SFXRollMudLoopFast (0x7fc11d0820b8)
-[LOG] SoundI::release                          :     SFXRollMudLoopFast (0x7fc11d589f68)
-[LOG] SoundI::release                          : SFXRollMudLoop04 (0x7fc128b15af8)
-[LOG] SoundI::release                          :     SFXRollMudLoop04 (0x7fc11d013db8)
-[LOG] SoundI::release                          :     SFXRollMudLoop04 (0x7fc11d2bd208)
-[LOG] SoundI::release                          :  (0x7fc11d731e78)
-[LOG] SoundI::release                          :     boing_01 (0x7fc11d78e558)
-[LOG] SoundI::release                          :  (0x7fc11d72f178)
-[LOG] SoundI::release                          :     salto_largo_tail_inv (0x7fc11d77f308)
-[LOG] SoundI::release                          :  (0x7fc11d7587a8)
-[LOG] SoundI::release                          :     pop_02 (0x7fc11d73bfb8)
-[LOG] SoundI::release                          :  (0x7fc11d757358)
-[LOG] SoundI::release                          :     pop_01 (0x7fc11d7c8f08)
-[LOG] SoundI::release                          :  (0x7fc128b2a968)
-[LOG] SoundI::release                          :     SFXPlayerMudRollStart11 (0x7fc128b2aad8)
-[LOG] SoundI::release                          :  (0x7fc128b39048)
-[LOG] SoundI::release                          :     SFXPlayerMudRollStart03 (0x7fc128b39258)
-[LOG] SoundI::release                          :  (0x7fc11e682c78)
-[LOG] SoundI::release                          :     SFXPlayerMudRollStart01 (0x7fc128b46938)
-[LOG] SoundI::release                          :  (0x7fc128b2f918)
-[LOG] SoundI::release                          :     SFXPlayerMudRollStart06 (0x7fc128b2e9c8)
-[LOG] SoundI::release                          :  (0x7fc128b37fa8)
-[LOG] SoundI::release                          :     SFXPlayerMudRollStart07 (0x7fc128b38118)
-[LOG] SoundI::release                          :  (0x7fc128b388c8)
-[LOG] SoundI::release                          :     SFXPlayerMudRollStart04 (0x7fc128b2f5f8)
-[LOG] SoundI::release                          :  (0x7fc128b38438)
-[LOG] SoundI::release                          :     SFXPlayerMudRollStart02 (0x7fc128b385a8)
-[LOG] SoundI::release                          :  (0x7fc1191f37e8)
-[LOG] SoundI::release                          :     swords - hit 2 (0x7fc11f289358)
-[LOG] SoundI::release                          :  (0x7fc11f20d1a8)
-[LOG] SoundI::release                          :     IMPACT - METAL- SMALL X2 (0x7fc11d771f58)
-[LOG] SoundI::release                          :  (0x7fc11d31d248)
-[LOG] SoundI::release                          :     SWOOSH_01 (0x7fc11d77c108)
-[LOG] SoundI::release                          :  (0x7fc11916c288)
-[LOG] SoundI::release                          :     SWOOSH_02 (0x7fc1191f1a78)
-[LOG] SoundI::release                          :  (0x7fc11d766ba8)
-[LOG] SoundI::release                          :     IMPACT METAL ON METAL HIT 01 (0x7fc11d766d18)
-[LOG] SoundI::release                          :  (0x7fc1191e5f28)
-[LOG] SoundI::release                          :     IMPACT METAL HIT RING 01 (0x7fc11f280db8)
-[LOG] SoundI::release                          :  (0x7fc1186dded8)
-[LOG] SoundI::release                          :     TPST01PercHeavy02 (0x7fc1186de048)
-[LOG] SoundI::release                          :  (0x7fc1186dc8e8)
-[LOG] SoundI::release                          :     TPST01PercHeavy01 (0x7fc1186dca58)
-[LOG] SoundI::release                          :  (0x7fc1186dbc08)
-[LOG] SoundI::release                          :     TPST01PercMedium (0x7fc1186dbd78)
-[LOG] SoundI::release                          :  (0x7fc1186db778)
-[LOG] SoundI::release                          :     TPST01PercLight (0x7fc1186db8e8)
-[LOG] SoundI::release                          :  (0x7fc1186db2e8)
-[LOG] SoundI::release                          :     TPST01PercMilitaryDrum (0x7fc1186db458)
-[LOG] SoundI::release                          : TP2L01IntroShort (0x7fc11e18e2f8)
-[LOG] SoundI::release                          :     TP2L01IntroShort (0x7fc11d7a4628)
-[LOG] SoundI::release                          :     TP2L01IntroShort (0x7fc11f36d8b8)
-[LOG] SoundI::release                          : TP2L01IntroLong (0x7fc11b691668)
-[LOG] SoundI::release                          :     TP2L01IntroLong (0x7fc11f3a8518)
-[LOG] SoundI::release                          :     TP2L01IntroLong (0x7fc11f36f548)
-[LOG] SoundI::release                          : SFXRollMudLoopMedium (0x7fc11d3b09f8)
-[LOG] SoundI::release                          :     SFXRollMudLoopMedium (0x7fc12897f618)
-[LOG] SoundI::release                          :     SFXRollMudLoopMedium (0x7fc12897f7a8)
-[LOG] SoundI::release                          : SFXRollMudLoop04 (0x7fc11f258668)
-[LOG] SoundI::release                          :     SFXRollMudLoop04 (0x7fc12897ed68)
-[LOG] SoundI::release                          :     SFXRollMudLoop04 (0x7fc12897eef8)
-[LOG] SoundI::release                          : SFXRollMudLoopFast (0x7fc11d759c88)
-[LOG] SoundI::release                          :     SFXRollMudLoopFast (0x7fc1289778f8)
-[LOG] SoundI::release                          :     SFXRollMudLoopFast (0x7fc128977a88)
-[LOG] SoundI::release                          :  (0x7fc1186c0598)
-[LOG] SoundI::release                          :     TP2L01PercusionMedium (0x7fc1186ddbb8)
-[LOG] SoundI::release                          :  (0x7fc11f2bf908)
-[LOG] SoundI::release                          :     Footsteps_Casual_Water_08 (0x7fc11d7e3a18)
-[LOG] SoundI::release                          :  (0x7fc11d791fd8)
-[LOG] SoundI::release                          :     Footsteps_Casual_Water_09 (0x7fc11d778668)
-[LOG] SoundI::release                          :  (0x7fc11d70f148)
-[LOG] SoundI::release                          :     Footsteps_Casual_LowMetal_07 (0x7fc11d7ad3b8)
-[LOG] SoundI::release                          :  (0x7fc11d7f5df8)
-[LOG] SoundI::release                          :     Footsteps_Casual_LowMetal_08 (0x7fc11d796018)
-[LOG] SoundI::release                          :  (0x7fc11d79bf58)
-[LOG] SoundI::release                          :     Hit crunch impact reverb  _BLASTWAVEFX_24232 (0x7fc1191c93c8)
-[LOG] SoundI::release                          :  (0x7fc11d7f8968)
-[LOG] SoundI::release                          :     FOLEY SAND BAG DROP ON ROCKS 01 (0x7fc1191598c8)
-[LOG] SoundI::release                          :  (0x7fc11d7c70a8)
-[LOG] SoundI::release                          :     Footsteps_Casual_Stone_07 (0x7fc11d7d5d08)
-[LOG] SoundI::release                          :  (0x7fc11d7569f8)
-[LOG] SoundI::release                          :     Footsteps_Casual_Stone_08 (0x7fc11f248578)
-[LOG] SoundI::release                          :  (0x7fc11d7680e8)
-[LOG] SoundI::release                          :     Footsteps_Casual_Sand_05 (0x7fc11d73df38)
-[LOG] SoundI::release                          :  (0x7fc11d73d308)
-[LOG] SoundI::release                          :     Footsteps_Casual_Sand_06 (0x7fc1191409a8)
-[LOG] SoundI::release                          :  (0x7fc11d3fbdf8)
-[LOG] SoundI::release                          :     Footsteps_Casual_Grass_04 (0x7fc119182748)
-[LOG] SoundI::release                          :  (0x7fc11d701fd8)
-[LOG] SoundI::release                          :     Footsteps_Casual_Grass_05 (0x7fc11d7bbe48)
-[LOG] SoundI::release                          :  (0x7fc11d76c268)
-[LOG] SoundI::release                          :     Footsteps_Casual_Metal_10 (0x7fc11d7c3c08)
-[LOG] SoundI::release                          :  (0x7fc11d7f6278)
-[LOG] SoundI::release                          :     Footsteps_Casual_Metal_11 (0x7fc11d7ce1b8)
-[LOG] SoundI::release                          :  (0x7fc128b58888)
-[LOG] SoundI::release                          :     FOLEY EARTH DIRT CLUMP IMPACT SCATTER 01 (0x7fc119168a98)
-[LOG] SoundI::release                          :  (0x7fc11d7c9868)
-[LOG] SoundI::release                          :     water splash (0x7fc11f28bdd8)
+[LOG] SoundI::release                          : SFXRollMudLoop04 (0x7fe81ee21368)
+[LOG] SoundI::release                          :     SFXRollMudLoop04 (0x7fe81a388678)
+[LOG] SoundI::release                          :     SFXRollMudLoop04 (0x7fe81a3747a8)
+[LOG] SoundI::release                          :  (0x7fe8196512a8)
+[LOG] SoundI::release                          :     pop_02 (0x7fe81964ad98)
+[LOG] SoundI::release                          :  (0x7fe81a1d6378)
+[LOG] SoundI::release                          :     pop_01 (0x7fe81a1d64e8)
+[LOG] SoundI::release                          :  (0x7fe81a1d5ee8)
+[LOG] SoundI::release                          :     boing_01 (0x7fe81a1d6058)
+[LOG] SoundI::release                          :  (0x7fe81a1d8698)
+[LOG] SoundI::release                          :     salto_largo_tail_inv (0x7fe81a1d0d98)
+[LOG] SoundI::release                          :  (0x7fe81b209f18)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart11 (0x7fe81b20a088)
+[LOG] SoundI::release                          :  (0x7fe81b208848)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart03 (0x7fe81b2089b8)
+[LOG] SoundI::release                          :  (0x7fe81b2083b8)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart01 (0x7fe81b208528)
+[LOG] SoundI::release                          :  (0x7fe81b209a88)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart06 (0x7fe81b209bf8)
+[LOG] SoundI::release                          :  (0x7fe81b208cd8)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart07 (0x7fe81b208e48)
+[LOG] SoundI::release                          :  (0x7fe81b2095f8)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart04 (0x7fe81b209768)
+[LOG] SoundI::release                          :  (0x7fe81b209168)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart02 (0x7fe81b2092d8)
+[LOG] SoundI::release                          :  (0x7fe81a38fea8)
+[LOG] SoundI::release                          :     swords - hit 2 (0x7fe81a3ebac8)
+[LOG] SoundI::release                          :  (0x7fe8197555a8)
+[LOG] SoundI::release                          :     IMPACT - METAL- SMALL X2 (0x7fe819752a28)
+[LOG] SoundI::release                          :  (0x7fe81a39cb38)
+[LOG] SoundI::release                          :     SWOOSH_01 (0x7fe81a3cdf98)
+[LOG] SoundI::release                          :  (0x7fe81a39bcd8)
+[LOG] SoundI::release                          :     SWOOSH_02 (0x7fe81a3eb808)
+[LOG] SoundI::release                          :  (0x7fe81a3d92a8)
+[LOG] SoundI::release                          :     IMPACT METAL ON METAL HIT 01 (0x7fe81a3cba98)
+[LOG] SoundI::release                          :  (0x7fe81a388f78)
+[LOG] SoundI::release                          :     IMPACT METAL HIT RING 01 (0x7fe81a3f7b98)
+[LOG] SoundI::release                          :  (0x7fe81a1a6f58)
+[LOG] SoundI::release                          :     Footsteps_Casual_Water_08 (0x7fe81a19b6f8)
+[LOG] SoundI::release                          :  (0x7fe81a19c7c8)
+[LOG] SoundI::release                          :     Footsteps_Casual_Water_09 (0x7fe81a19c938)
+[LOG] SoundI::release                          :  (0x7fe81a19cc58)
+[LOG] SoundI::release                          :     Footsteps_Casual_LowMetal_07 (0x7fe81a19cdc8)
+[LOG] SoundI::release                          :  (0x7fe81a1cb548)
+[LOG] SoundI::release                          :     Footsteps_Casual_LowMetal_08 (0x7fe81a1a4948)
+[LOG] SoundI::release                          :  (0x7fe81a19ba18)
+[LOG] SoundI::release                          :     Hit crunch impact reverb  _BLASTWAVEFX_24232 (0x7fe81a19bb88)
+[LOG] SoundI::release                          :  (0x7fe81a19c338)
+[LOG] SoundI::release                          :     FOLEY SAND BAG DROP ON ROCKS 01 (0x7fe81a19c4a8)
+[LOG] SoundI::release                          :  (0x7fe81a19bea8)
+[LOG] SoundI::release                          :     Footsteps_Casual_Stone_07 (0x7fe81a19c018)
+[LOG] SoundI::release                          :  (0x7fe81a1a1b68)
+[LOG] SoundI::release                          :     Footsteps_Casual_Stone_08 (0x7fe81a1a4628)
+[LOG] SoundI::release                          :  (0x7fe81a1a4c68)
+[LOG] SoundI::release                          :     Footsteps_Casual_Sand_05 (0x7fe81a1a4dd8)
+[LOG] SoundI::release                          :  (0x7fe81a1a61a8)
+[LOG] SoundI::release                          :     Footsteps_Casual_Sand_06 (0x7fe81a1a6318)
+[LOG] SoundI::release                          :  (0x7fe81a1a6638)
+[LOG] SoundI::release                          :     Footsteps_Casual_Grass_04 (0x7fe81a1a67a8)
+[LOG] SoundI::release                          :  (0x7fe81a1a5d18)
+[LOG] SoundI::release                          :     Footsteps_Casual_Grass_05 (0x7fe81a1a5e88)
+[LOG] SoundI::release                          :  (0x7fe81a1a5888)
+[LOG] SoundI::release                          :     Footsteps_Casual_Metal_10 (0x7fe81a1a59f8)
+[LOG] SoundI::release                          :  (0x7fe81a1a6ac8)
+[LOG] SoundI::release                          :     Footsteps_Casual_Metal_11 (0x7fe81a1a6c38)
+[LOG] SoundI::release                          :  (0x7fe81a1a53f8)
+[LOG] SoundI::release                          :     FOLEY EARTH DIRT CLUMP IMPACT SCATTER 01 (0x7fe81a1a5568)
+[LOG] SoundI::release                          :  (0x7fe81a1a4f68)
+[LOG] SoundI::release                          :     water splash (0x7fe81a1a50d8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

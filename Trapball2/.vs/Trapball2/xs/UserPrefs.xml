@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{534B610C-3CE7-953D-8CBA-AB3F067E5D1E}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Trapball2/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/Trapball2/Player.cs" Line="47" Column="9" />
+      <File FileName="Assets/Scripts/Trapball2/Player.cs" Line="68" Column="70" />
       <File FileName="Assets/Scripts/MainCamera.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b8b9d73f-68fd-4a8e-89b4-2720b5123030" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dde3c587-fb79-4708-9681-6e7980c774b3" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
