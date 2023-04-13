@@ -12,10 +12,12 @@ public class FloatingBehaviour : MonoBehaviour
     [SerializeField] float torque;
     float offset = 0.4f;
     float initDisplacement;
+    FMOD.Studio.EventInstance BoxSplash;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        BoxSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/ObjectWaterDrop");
     }
 
     // Update is called once per frame
@@ -57,14 +59,16 @@ public class FloatingBehaviour : MonoBehaviour
             //    }
             //}
 
-
+            
 
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("WaterSurface"))
+        
+        if (other.CompareTag("WaterSurface"))
         {
+            BoxSplash.start();
             initDisplacement = transform.eulerAngles.z;
             Debug.Log(initDisplacement);
             rb.mass = 10; //Para mejorar comportamiento cuando la bola se pone encima de una caja en el agua.
@@ -72,6 +76,18 @@ public class FloatingBehaviour : MonoBehaviour
             //rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
             rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
             floating = true;
+        }
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        {
+            if (other.CompareTag("WaterSurface"))
+
+            {
+                BoxSplash.release();
+            }
         }
     }
 }

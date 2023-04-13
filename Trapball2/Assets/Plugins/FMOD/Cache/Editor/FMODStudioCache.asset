@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8887791631636645011
+--- !u!114 &-9151682622891011311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,25 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseInflatingPop
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresUltraSimple/Accent
   m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseInflatingPop
-  Guid:
-    Data1: -810505411
-    Data2: 1277908185
-    Data3: -1611574607
-    Data4: -1330225890
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1647
---- !u!114 &-8807887807066622609
+  Name: Accent
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2719760334
+    data2: 4231456998
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-8631469344628110780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36,25 +33,70 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoHigh
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXRollRatonBola/speed
   m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoHigh
-  Guid:
-    Data1: -204335522
-    Data2: 1151716644
-    Data3: -2053209424
-    Data4: -1904556526
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 2343
---- !u!114 &-7709782237552471243
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-8198517079294958500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicaColectoresLineal/Accent
+  m_EditorClassIdentifier: 
+  Name: Accent
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2719760334
+    data2: 4231456998
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7570359834006839967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectores/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7424115533129321526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,13 +120,37 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4650251328289351677}
-  - {fileID: -4549802433801727499}
-  - {fileID: -1283558431321016935}
+  - {fileID: -6265470791799605884}
+  - {fileID: -1934735568904454539}
+  - {fileID: -7570359834006839967}
   MinDistance: 0
   MaxDistance: 0
   Length: 214000
---- !u!114 &-6119970853365404320
+--- !u!114 &-7379543250706311918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicaColectoresLineal/Volumen
+  m_EditorClassIdentifier: 
+  Name: Volumen
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 2652362727
+    data2: 208570854
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7331657012622577827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,42 +160,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/ImpactoTerreno
+  m_Name: event:/Objetos/PlatformBreaking
   m_EditorClassIdentifier: 
-  Path: event:/Saltos/ImpactoTerreno
+  Path: event:/Objetos/PlatformBreaking
   Guid:
-    Data1: -870319442
-    Data2: 1241911657
-    Data3: -929057633
-    Data4: -973880825
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -3774985869698012910}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 343
---- !u!114 &-5788503755152105239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseJump
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseJump
-  Guid:
-    Data1: 251434153
-    Data2: 1186103840
-    Data3: -1019449463
-    Data4: -496899729
+    Data1: -2092716892
+    Data2: 1218649500
+    Data3: -781381974
+    Data4: -532051344
   Banks:
   - {fileID: -832136745289537008}
   IsStream: 0
@@ -138,8 +176,477 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 321
---- !u!114 &-5542550277836097222
+  Length: 7644
+--- !u!114 &-7296514624421568917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresUltraSimple/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7013779438252883233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/SaltoLow
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/SaltoLow
+  Guid:
+    Data1: 1941033933
+    Data2: 1209141892
+    Data3: -1560797530
+    Data4: 945605478
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6293761210624089209}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000000
+--- !u!114 &-6930900712834810257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/PlatformHit
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/PlatformHit
+  Guid:
+    Data1: 971690262
+    Data2: 1297519623
+    Data3: -1772429184
+    Data4: 155299684
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3292562534051206391}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1717
+--- !u!114 &-6889087964470567756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/MusicaColectoresLineal
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/MusicaColectoresLineal
+  Guid:
+    Data1: -1799393416
+    Data2: 1303541699
+    Data3: 677316767
+    Data4: -740571880
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7379543250706311918}
+  - {fileID: -8198517079294958500}
+  - {fileID: -6471850544291211415}
+  - {fileID: -1268093625477878156}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 222437
+--- !u!114 &-6728714726658830622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Desplazamiento/SFXPlayerRollMud
+  m_EditorClassIdentifier: 
+  Path: event:/Desplazamiento/SFXPlayerRollMud
+  Guid:
+    Data1: 127226507
+    Data2: 1144597073
+    Data3: -1413558892
+    Data4: -77105335
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 535870869547750242}
+  - {fileID: 7163288926583058449}
+  - {fileID: 3719775019765378529}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 14000
+--- !u!114 &-6471850544291211415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicaColectoresLineal/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6465841242474183780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresSimpl 2/Accent
+  m_EditorClassIdentifier: 
+  Name: Accent
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2719760334
+    data2: 4231456998
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6386246467618463517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/SaltoBomba
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/SaltoBomba
+  Guid:
+    Data1: 49277412
+    Data2: 1111525130
+    Data3: -57636446
+    Data4: 2079947479
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4374179464051467917}
+  - {fileID: -6295454282105439122}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9184
+--- !u!114 &-6295454282105439122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SaltoBomba/Terrain_Intensity
+  m_EditorClassIdentifier: 
+  Name: Terrain_Intensity
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 2535753236
+    data2: 1108947548
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6293761210624089209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SaltoLow/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6265470791799605884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectores/Accent
+  m_EditorClassIdentifier: 
+  Name: Accent
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2719760334
+    data2: 4231456998
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6212277165362399114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/PlatformCrack
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/PlatformCrack
+  Guid:
+    Data1: -1448624575
+    Data2: 1107979108
+    Data3: -1204491628
+    Data4: 1442871186
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4257282425499643050}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2560
+--- !u!114 &-6105751697103742059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DeathVoice/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5938661698602770671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/ObjectWaterDrop
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/ObjectWaterDrop
+  Guid:
+    Data1: -1174548756
+    Data2: 1262033682
+    Data3: 1559816125
+    Data4: 741189368
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4500
+--- !u!114 &-5890548292392421200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresv1/Accent
+  m_EditorClassIdentifier: 
+  Name: Accent
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2719760334
+    data2: 4231456998
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5846556178732112593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresAmbiental/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5820290598024969531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/SaltoHigh
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/SaltoHigh
+  Guid:
+    Data1: -204335522
+    Data2: 1151716644
+    Data3: -2053209424
+    Data4: -1904556526
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 225112327624964801}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2343
+--- !u!114 &-5410784555596472505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/mrodar/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5111729054966150506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,541 +670,11 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2777986966857547164}
+  - {fileID: -3959376666821227663}
   MinDistance: 0
   MaxDistance: 0
   Length: 390
---- !u!114 &-4549802433801727499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectores/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-3944472028762693626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresUltraSimple/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-3774985869698012910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactoTerreno/Terrain_Intensity
-  m_EditorClassIdentifier: 
-  Name: Terrain_Intensity
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 0
-  ID:
-    data1: 2535753236
-    data2: 1108947548
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-3559974746618284130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresUltraSimple/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-3509978631582685999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteColector
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteColector
-  Guid:
-    Data1: 1291420947
-    Data2: 1299921463
-    Data3: -288872779
-    Data4: -948149343
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 30000
---- !u!114 &-3406620264956086307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresUltraSimple
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresUltraSimple
-  Guid:
-    Data1: -1447841010
-    Data2: 1079477052
-    Data3: 865027249
-    Data4: -994891404
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -3559974746618284130}
-  - {fileID: -3944472028762693626}
-  - {fileID: 1563281731783940286}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 462000
---- !u!114 &-3356056380332566203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteAire
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteAire
-  Guid:
-    Data1: -648866708
-    Data2: 1146160489
-    Data3: -960846710
-    Data4: 807945690
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 30000
---- !u!114 &-2995498786614052295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresSimpl 2
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresSimpl 2
-  Guid:
-    Data1: -837453784
-    Data2: 1206651891
-    Data3: -1461940578
-    Data4: 2124020197
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -71950161180498860}
-  - {fileID: 2536801688746058001}
-  - {fileID: 3024121115059297374}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 308000
---- !u!114 &-2818467365680611589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusAlcantarillas/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-2777986966857547164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactoTerrenoBomba/Terrain_Intensity
-  m_EditorClassIdentifier: 
-  Name: Terrain_Intensity
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 0
-  ID:
-    data1: 2535753236
-    data2: 1108947548
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-2719454875861894661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl-esta/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-2395776224699869997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteGota1
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteGota1
-  Guid:
-    Data1: -1581689572
-    Data2: 1155700680
-    Data3: 145889453
-    Data4: 531827123
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 30000
---- !u!114 &-2377157213117990311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusAlcantarillas
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusAlcantarillas
-  Guid:
-    Data1: 1347097085
-    Data2: 1102873141
-    Data3: 1291166358
-    Data4: -141913531
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -2818467365680611589}
-  - {fileID: 3782786516753419993}
-  - {fileID: 7862823597464299340}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 91200
---- !u!114 &-1450067717729573871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/mrodar/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -3
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-1406693316901786825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl-esta/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-1283558431321016935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectores/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-832136745289537008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: "../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERR\xCDA/COMPOSICIONES
-    FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank"
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637880413200000000
-  FileSizes:
-  - Name: Desktop
-    Value: 17176544
-  Exists: 1
---- !u!114 &-694974635012633230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Desplazamiento/SFXPlayerRollMud
-  m_EditorClassIdentifier: 
-  Path: event:/Desplazamiento/SFXPlayerRollMud
-  Guid:
-    Data1: 2077817359
-    Data2: 1245335833
-    Data3: 1420710287
-    Data4: 1293108482
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 7398143160417654767}
-  - {fileID: 276658342554371525}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 14000
---- !u!114 &-71950161180498860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl 2/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 8898275594574325811}
-  - {fileID: -832136745289537008}
-  EditorEvents:
-  - {fileID: 3031950720683534786}
-  - {fileID: 7016977776117814902}
-  - {fileID: -3406620264956086307}
-  - {fileID: -694974635012633230}
-  - {fileID: 5333414941271959120}
-  - {fileID: -7709782237552471243}
-  - {fileID: -8887791631636645011}
-  - {fileID: 8597556177722489067}
-  - {fileID: -5542550277836097222}
-  - {fileID: -5788503755152105239}
-  - {fileID: -6119970853365404320}
-  - {fileID: 5245674470974610162}
-  - {fileID: 3673903198265791590}
-  - {fileID: 8674400391392716832}
-  - {fileID: -2377157213117990311}
-  - {fileID: -2395776224699869997}
-  - {fileID: 87264997122729157}
-  - {fileID: -3356056380332566203}
-  - {fileID: -3509978631582685999}
-  - {fileID: -8807887807066622609}
-  - {fileID: 4132353070782747322}
-  - {fileID: -2995498786614052295}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -832136745289537008}
-  StringsBanks:
-  - {fileID: 8898275594574325811}
-  cacheTime: 637880413200000000
-  cacheVersion: 10
---- !u!114 &87264997122729157
+--- !u!114 &-5056635689571097198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -724,127 +701,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 30000
---- !u!114 &276658342554371525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFXPlayerRollMud/onTheFloor
-  m_EditorClassIdentifier: 
-  Name: onTheFloor
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2751212688
-    data2: 766424047
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1563281731783940286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresUltraSimple/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2536801688746058001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl 2/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2807754491423606018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BallMouseRun/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -3
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &3024121115059297374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl 2/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &3031950720683534786
+--- !u!114 &-4689977637024142857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -854,14 +711,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseHurt
+  m_Name: event:/Enemigos/BallMouseWaterSplash
   m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseHurt
+  Path: event:/Enemigos/BallMouseWaterSplash
   Guid:
-    Data1: -1481568254
-    Data2: 1110999864
-    Data3: 732003717
-    Data4: 1853070876
+    Data1: -1554870232
+    Data2: 1265973219
+    Data3: -2112382050
+    Data4: 1440496762
   Banks:
   - {fileID: -832136745289537008}
   IsStream: 0
@@ -870,8 +727,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 267
---- !u!114 &3673903198265791590
+  Length: 2950
+--- !u!114 &-4660100303740869174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -881,25 +738,99 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoBomba
+  m_Name: event:/Musica/MusAlcantarillas
   m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoBomba
+  Path: event:/Musica/MusAlcantarillas
   Guid:
-    Data1: 49277412
-    Data2: 1111525130
-    Data3: -57636446
-    Data4: 2079947479
+    Data1: 1347097085
+    Data2: 1102873141
+    Data3: 1291166358
+    Data4: -141913531
   Banks:
   - {fileID: -832136745289537008}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8565804513218433780}
+  - {fileID: 5522903932237158528}
+  - {fileID: -3837101220341382727}
+  - {fileID: 1116030838347787911}
   MinDistance: 0
   MaxDistance: 0
-  Length: 9184
---- !u!114 &3782786516753419993
+  Length: 91200
+--- !u!114 &-4374179464051467917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SaltoBomba/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4257282425499643050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlatformCrack/Ontrigger
+  m_EditorClassIdentifier: 
+  Name: Ontrigger
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2608070743
+    data2: 4064022051
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3959376666821227663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactoTerrenoBomba/Terrain_Intensity
+  m_EditorClassIdentifier: 
+  Name: Terrain_Intensity
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 2535753236
+    data2: 1108947548
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3837101220341382727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -914,8 +845,8 @@ MonoBehaviour:
   Name: Tension
   StudioPath: 
   Min: 0
-  Max: 3
-  Default: 0
+  Max: 5
+  Default: 4
   ID:
     data1: 2094276959
     data2: 3666953542
@@ -923,7 +854,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &4132353070782747322
+--- !u!114 &-3460369241683054363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -933,14 +864,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoLow
+  m_Name: event:/Saltos/HarpImpact2
   m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoLow
+  Path: event:/Saltos/HarpImpact2
   Guid:
-    Data1: 1941033933
-    Data2: 1209141892
-    Data3: -1560797530
-    Data4: 945605478
+    Data1: -1479402286
+    Data2: 1170493942
+    Data3: 1389479845
+    Data4: -769226023
   Banks:
   - {fileID: -832136745289537008}
   IsStream: 0
@@ -950,7 +881,62 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2343
---- !u!114 &4650251328289351677
+--- !u!114 &-3342383403181642489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseSqueakIdle
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseSqueakIdle
+  Guid:
+    Data1: -1019705747
+    Data2: 1266682143
+    Data3: 702696345
+    Data4: -1987259590
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 4.4
+  Length: 2420
+--- !u!114 &-3265919215707244256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/ImpactWater
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/ImpactWater
+  Guid:
+    Data1: -1169364362
+    Data2: 1192672050
+    Data3: 1685737346
+    Data4: 973510672
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7539557985678690404}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 390
+--- !u!114 &-3031054034986177027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -960,12 +946,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectores/Accent
+  m_Name: parameter:/MusColectoresAmbiental/Accent
   m_EditorClassIdentifier: 
   Name: Accent
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 3
   Default: 0
   ID:
     data1: 2719760334
@@ -974,7 +960,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &5245674470974610162
+--- !u!114 &-2969834035270614969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -984,54 +970,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseScream
+  m_Name: event:/Musica/MusColectoresUltraSimple
   m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseScream
+  Path: event:/Musica/MusColectoresUltraSimple
   Guid:
-    Data1: 436195543
-    Data2: 1264267429
-    Data3: -1183417462
-    Data4: 783710001
-  Banks:
-  - {fileID: -832136745289537008}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 287
---- !u!114 &5333414941271959120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresSimpl-esta
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresSimpl-esta
-  Guid:
-    Data1: 1744807465
-    Data2: 1228695061
-    Data3: -1022215522
-    Data4: -1252659519
+    Data1: -1447841010
+    Data2: 1079477052
+    Data3: 865027249
+    Data4: -994891404
   Banks:
   - {fileID: -832136745289537008}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 7321700915624640343}
-  - {fileID: -2719454875861894661}
-  - {fileID: -1406693316901786825}
+  - {fileID: -9151682622891011311}
+  - {fileID: -152037412187681236}
+  - {fileID: -7296514624421568917}
   MinDistance: 0
   MaxDistance: 0
-  Length: 152000
---- !u!114 &7016977776117814902
+  Length: 462000
+--- !u!114 &-2939294946524030438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1058,103 +1017,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 156
---- !u!114 &7321700915624640343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl-esta/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &7398143160417654767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFXPlayerRollMud/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -3
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &7862823597464299340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusAlcantarillas/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &8565804513218433780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SaltoBomba/Terrain_Intensity
-  m_EditorClassIdentifier: 
-  Name: Terrain_Intensity
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 0
-  ID:
-    data1: 2535753236
-    data2: 1108947548
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &8597556177722489067
+--- !u!114 &-2789686880633311677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1164,25 +1027,196 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Desplazamiento/mrodar
+  m_Name: "event:/Musica/Percusi\xF3nTension"
   m_EditorClassIdentifier: 
-  Path: event:/Desplazamiento/mrodar
+  Path: "event:/Musica/Percusi\xF3nTension"
   Guid:
-    Data1: -850458764
-    Data2: 1340809540
-    Data3: -1126241886
-    Data4: 1222052278
+    Data1: 1383197741
+    Data2: 1133133460
+    Data3: -963091792
+    Data4: -588864064
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1023769001314005481}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 22000
+--- !u!114 &-2067010505191070552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactoTerreno/Terrain
+  m_EditorClassIdentifier: 
+  Name: Terrain
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 0
+  ID:
+    data1: 2640767625
+    data2: 2735643528
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1934735568904454539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectores/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1273812991590928451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresv1/Volumen
+  m_EditorClassIdentifier: 
+  Name: Volumen
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 2652362727
+    data2: 208570854
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1268093625477878156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicaColectoresLineal/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-882170594770835541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/rumor_cisterna
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/rumor_cisterna
+  Guid:
+    Data1: 65071756
+    Data2: 1145989509
+    Data3: 342627245
+    Data4: 87945050
   Banks:
   - {fileID: -832136745289537008}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters:
-  - {fileID: -1450067717729573871}
+  Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 18500
---- !u!114 &8674400391392716832
+  Length: 4500
+--- !u!114 &-832136745289537008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: "../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERR\xCDA/COMPOSICIONES
+    FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank"
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638157218660000000
+  FileSizes:
+  - Name: Desktop
+    Value: 25103904
+  Exists: 1
+--- !u!114 &-589835744414229994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/SaltoLowOriginal
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/SaltoLowOriginal
+  Guid:
+    Data1: 767874289
+    Data2: 1158513542
+    Data3: -1300862070
+    Data4: -605678499
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2343
+--- !u!114 &-571004866327603423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1206,10 +1240,1424 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 2807754491423606018}
+  - {fileID: 4053887676121411436}
   MinDistance: 0
   MaxDistance: 0
   Length: 18500
+--- !u!114 &-440129789351441668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactoPinchos/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-326017994834768650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactoTerreno/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-180768923383680316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BallMouseRun 3/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-152037412187681236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresUltraSimple/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8898275594574325811}
+  - {fileID: -832136745289537008}
+  EditorEvents:
+  - {fileID: 4093968812578420207}
+  - {fileID: -2939294946524030438}
+  - {fileID: -2969834035270614969}
+  - {fileID: 6366434103305771212}
+  - {fileID: 4521258726545807628}
+  - {fileID: 5077701838806175572}
+  - {fileID: -3342383403181642489}
+  - {fileID: 2960487653603615345}
+  - {fileID: -4689977637024142857}
+  - {fileID: 3911531951298852302}
+  - {fileID: -2789686880633311677}
+  - {fileID: 1385500783499381536}
+  - {fileID: -7424115533129321526}
+  - {fileID: -5056635689571097198}
+  - {fileID: 5877350073118385842}
+  - {fileID: 620716105925664944}
+  - {fileID: 5494866195940997335}
+  - {fileID: 256905344075664769}
+  - {fileID: -5820290598024969531}
+  - {fileID: 957175388827454111}
+  - {fileID: 4131738100127178117}
+  - {fileID: -6728714726658830622}
+  - {fileID: -5111729054966150506}
+  - {fileID: 7391390053330668785}
+  - {fileID: 3937116129632050600}
+  - {fileID: 2903277287549650847}
+  - {fileID: 4182998118500647623}
+  - {fileID: 1774286504069234791}
+  - {fileID: 9055294554912019947}
+  - {fileID: -7013779438252883233}
+  - {fileID: -3460369241683054363}
+  - {fileID: 3107557010937519961}
+  - {fileID: -6386246467618463517}
+  - {fileID: -5938661698602770671}
+  - {fileID: -589835744414229994}
+  - {fileID: -571004866327603423}
+  - {fileID: -4660100303740869174}
+  - {fileID: 2851948610239957886}
+  - {fileID: -3265919215707244256}
+  - {fileID: -6212277165362399114}
+  - {fileID: -7331657012622577827}
+  - {fileID: -6930900712834810257}
+  - {fileID: 7228800650332275628}
+  - {fileID: -882170594770835541}
+  - {fileID: 8513603973894696153}
+  - {fileID: 7963241051891509862}
+  - {fileID: -6889087964470567756}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -832136745289537008}
+  StringsBanks:
+  - {fileID: 8898275594574325811}
+  cacheTime: 638157218660000000
+  cacheVersion: 10
+--- !u!114 &225112327624964801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SaltoHigh/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &256905344075664769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseRun 2
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseRun 2
+  Guid:
+    Data1: -992547237
+    Data2: 1199619648
+    Data3: 1359388800
+    Data4: 897182370
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6478985731465821921}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3163
+--- !u!114 &535870869547750242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXPlayerRollMud/onTheFloor
+  m_EditorClassIdentifier: 
+  Name: onTheFloor
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2751212688
+    data2: 766424047
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &620716105925664944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseInflatingPop
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseInflatingPop
+  Guid:
+    Data1: -810505411
+    Data2: 1277908185
+    Data3: -1611574607
+    Data4: -1330225890
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1647
+--- !u!114 &957175388827454111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/AmbienteAire
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/AmbienteAire
+  Guid:
+    Data1: -648866708
+    Data2: 1146160489
+    Data3: -960846710
+    Data4: 807945690
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 30000
+--- !u!114 &1023769001314005481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Percusi\xF3nTension/Tension"
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1116030838347787911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusAlcantarillas/Accent
+  m_EditorClassIdentifier: 
+  Name: Accent
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2719760334
+    data2: 4231456998
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1153837822612348485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresAmbiental/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1385500783499381536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/AmbienteUnderwater
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/AmbienteUnderwater
+  Guid:
+    Data1: -1412345042
+    Data2: 1204714703
+    Data3: 1904919692
+    Data4: 446484951
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 30000
+--- !u!114 &1417155328018285164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresSimpl 2/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1774286504069234791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/MusColectoresAmbiental
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/MusColectoresAmbiental
+  Guid:
+    Data1: -166706768
+    Data2: 1127105310
+    Data3: -544370559
+    Data4: -790990717
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1153837822612348485}
+  - {fileID: -5846556178732112593}
+  - {fileID: -3031054034986177027}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 194713
+--- !u!114 &2546356155647384203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresSimpl-esta/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2851948610239957886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseSqueak
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseSqueak
+  Guid:
+    Data1: 1868371394
+    Data2: 1171883839
+    Data3: -1298488174
+    Data4: -1158338220
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 7.4
+  MaxDistance: 300
+  Length: 2420
+--- !u!114 &2903277287549650847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseJump
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseJump
+  Guid:
+    Data1: 251434153
+    Data2: 1186103840
+    Data3: -1019449463
+    Data4: -496899729
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 321
+--- !u!114 &2960487653603615345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/MusColectoresSimpl 2
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/MusColectoresSimpl 2
+  Guid:
+    Data1: -837453784
+    Data2: 1206651891
+    Data3: -1461940578
+    Data4: 2124020197
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6465841242474183780}
+  - {fileID: 1417155328018285164}
+  - {fileID: 6965251227554911680}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 308000
+--- !u!114 &3107557010937519961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseScream
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseScream
+  Guid:
+    Data1: 436195543
+    Data2: 1264267429
+    Data3: -1183417462
+    Data4: 783710001
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 287
+--- !u!114 &3163969209562212295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresS-Secuencial/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3292562534051206391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlatformHit/VolPlat
+  m_EditorClassIdentifier: 
+  Name: VolPlat
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2594257035
+    data2: 933023951
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3676106341832734083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactObject/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3719775019765378529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXPlayerRollMud/Terrain
+  m_EditorClassIdentifier: 
+  Name: Terrain
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 0
+  ID:
+    data1: 2640767625
+    data2: 2735643528
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3911531951298852302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/MusColectoresSimpl-esta
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/MusColectoresSimpl-esta
+  Guid:
+    Data1: 1744807465
+    Data2: 1228695061
+    Data3: -1022215522
+    Data4: -1252659519
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4923516260456136598}
+  - {fileID: 2546356155647384203}
+  - {fileID: 7713207294317176849}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 152000
+--- !u!114 &3937116129632050600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/ImpactObject
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/ImpactObject
+  Guid:
+    Data1: -651545442
+    Data2: 1321478265
+    Data3: 2050484878
+    Data4: 174142389
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3676106341832734083}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1062
+--- !u!114 &4053887676121411436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BallMouseRun/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4093968812578420207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseHurt
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseHurt
+  Guid:
+    Data1: -1481568254
+    Data2: 1110999864
+    Data3: 732003717
+    Data4: 1853070876
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 267
+--- !u!114 &4131738100127178117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Desplazamiento/mrodar
+  m_EditorClassIdentifier: 
+  Path: event:/Desplazamiento/mrodar
+  Guid:
+    Data1: -850458764
+    Data2: 1340809540
+    Data3: -1126241886
+    Data4: 1222052278
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5410784555596472505}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 18500
+--- !u!114 &4182998118500647623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/ImpactoTerreno
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/ImpactoTerreno
+  Guid:
+    Data1: -870319442
+    Data2: 1241911657
+    Data3: -929057633
+    Data4: -973880825
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -326017994834768650}
+  - {fileID: -2067010505191070552}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 541
+--- !u!114 &4521258726545807628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/AmbienteColector
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/AmbienteColector
+  Guid:
+    Data1: 1291420947
+    Data2: 1299921463
+    Data3: -288872779
+    Data4: -948149343
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30000
+--- !u!114 &4923516260456136598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresSimpl-esta/Accent
+  m_EditorClassIdentifier: 
+  Name: Accent
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2719760334
+    data2: 4231456998
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5077701838806175572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/AmbienteGota1
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/AmbienteGota1
+  Guid:
+    Data1: -1581689572
+    Data2: 1155700680
+    Data3: 145889453
+    Data4: 531827123
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 30000
+--- !u!114 &5494866195940997335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseRun 3
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseRun 3
+  Guid:
+    Data1: -327265195
+    Data2: 1185405664
+    Data3: 990353588
+    Data4: 981400755
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -180768923383680316}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 12038
+--- !u!114 &5522903932237158528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusAlcantarillas/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5742462011498146951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresS-Secuencial/Accent
+  m_EditorClassIdentifier: 
+  Name: Accent
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2719760334
+    data2: 4231456998
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5877350073118385842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Da\xF1o/ImpactoPinchos"
+  m_EditorClassIdentifier: 
+  Path: "event:/Da\xF1o/ImpactoPinchos"
+  Guid:
+    Data1: -125016520
+    Data2: 1310966496
+    Data3: 66098590
+    Data4: -384476356
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -440129789351441668}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000000
+--- !u!114 &6366434103305771212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/SFXRollRatonBola
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/SFXRollRatonBola
+  Guid:
+    Data1: 2077817359
+    Data2: 1245335833
+    Data3: 1420710287
+    Data4: 1293108482
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7856515831434340303}
+  - {fileID: -8631469344628110780}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 14000
+--- !u!114 &6451392648970353401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresv1/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6478985731465821921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BallMouseRun 2/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6965251227554911680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresSimpl 2/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7163288926583058449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXPlayerRollMud/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7228800650332275628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/PlatformSplash
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/PlatformSplash
+  Guid:
+    Data1: 434537533
+    Data2: 1270595276
+    Data3: -789344862
+    Data4: 2096164127
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8117011097764313381}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 14000
+--- !u!114 &7391390053330668785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Da\xF1o/DeathVoice"
+  m_EditorClassIdentifier: 
+  Path: "event:/Da\xF1o/DeathVoice"
+  Guid:
+    Data1: -304690277
+    Data2: 1170564516
+    Data3: 1052293797
+    Data4: -778065853
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6105751697103742059}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 60000
+--- !u!114 &7539557985678690404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactWater/Terrain_Intensity
+  m_EditorClassIdentifier: 
+  Name: Terrain_Intensity
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 2535753236
+    data2: 1108947548
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7549309269483136446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresS-Secuencial/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7713207294317176849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresSimpl-esta/Zone
+  m_EditorClassIdentifier: 
+  Name: Zone
+  StudioPath: 
+  Min: 0
+  Max: 6
+  Default: 1
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7856515831434340303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXRollRatonBola/onTheFloor
+  m_EditorClassIdentifier: 
+  Name: onTheFloor
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2751212688
+    data2: 766424047
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7963241051891509862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/MusColectoresv1
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/MusColectoresv1
+  Guid:
+    Data1: -1005262213
+    Data2: 1145120588
+    Data3: -1264832608
+    Data4: 841092502
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5890548292392421200}
+  - {fileID: 6451392648970353401}
+  - {fileID: 8137768309719298005}
+  - {fileID: -1273812991590928451}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 276437
+--- !u!114 &8117011097764313381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlatformSplash/Ontrigger
+  m_EditorClassIdentifier: 
+  Name: Ontrigger
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2608070743
+    data2: 4064022051
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8137768309719298005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusColectoresv1/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 4
+  ID:
+    data1: 2094276959
+    data2: 3666953542
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8513603973894696153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/MusColectoresS-Secuencial
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/MusColectoresS-Secuencial
+  Guid:
+    Data1: -1618139614
+    Data2: 1276050160
+    Data3: -1533536621
+    Data4: 1459987844
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5742462011498146951}
+  - {fileID: 3163969209562212295}
+  - {fileID: 7549309269483136446}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 192000
 --- !u!114 &8898275594574325811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,8 +2674,35 @@ MonoBehaviour:
     FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.strings.bank"
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637880413200000000
+  lastModified: 638157218660000000
   FileSizes:
   - Name: Desktop
-    Value: 2148
+    Value: 3514
   Exists: 1
+--- !u!114 &9055294554912019947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/HarpImpact
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/HarpImpact
+  Guid:
+    Data1: -522120264
+    Data2: 1151012356
+    Data3: 875383948
+    Data4: 955253903
+  Banks:
+  - {fileID: -832136745289537008}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1500

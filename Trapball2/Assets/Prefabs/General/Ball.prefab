@@ -53,11 +53,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   bouncy: {fileID: 13400000, guid: 7b995d646de38154aa15473b6408da46, type: 2}
-  friction: {fileID: 13400000, guid: 0b8785fbd1eede348a92147848e09665, type: 2}
   bombDelta: 20
   jumpDelta: 20
   jumpLimit: 10
   initGravityFactor: 10
+  velocityBall: {x: 0, y: 0}
 --- !u!33 &8355018171138524629
 MeshFilter:
   m_ObjectHideFlags: 0

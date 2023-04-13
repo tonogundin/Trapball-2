@@ -26,12 +26,23 @@ public class MouseBall2 : MonoBehaviour
     const string animMouseMoveAgressive = "MouseBallMoveAgressive";
     const string animMouseSmash = "MouseBallSmash";
     const string animMouseRecover = "MouseBallRecover";
-    
+
 
     private State state;
     private State antState;
     private bool contactBall = false;
     private int secondsKnocked = 1500;
+
+    //Instancias de FMOD
+
+    FMOD.Studio.EventInstance BallMouseRun;
+    FMOD.Studio.EventInstance BallMouseHurt;
+    FMOD.Studio.EventInstance BallMouseInflatingPop;
+    FMOD.Studio.EventInstance BallMouseJump;
+    FMOD.Studio.EventInstance BallMouseSqueakIdle;
+    FMOD.Studio.EventInstance BallMouseScream;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,12 +55,23 @@ public class MouseBall2 : MonoBehaviour
         timeRecover = new Timer((int)(clips[(int)Animations.RECOVER].length * 1000), new CallBackRecoverTimer(this));
         timeSwimming = new Timer(150, new CallBackSwimmingTimer(this));
         changeCollider(false);
+        BallMouseRun = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseRun");
+        BallMouseHurt = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseHurt");
+        BallMouseInflatingPop = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseInflatingPop");
+        BallMouseJump = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseJump");
+        BallMouseSqueakIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseSqueak");
+        BallMouseSqueakIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseScream");
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player == null)
+        
+        
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
@@ -62,17 +84,24 @@ public class MouseBall2 : MonoBehaviour
                 playerDetected = true;
                 if (Mathf.Abs(distToPlayer) <= 0.75f)
                 {
-                    dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
+                    dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotaci?n rara.
                 }
-            } else
+            }
+            else
             {
                 playerDetected = false;
             }
         }
         ManageRotation();
+
+
     }
     private void FixedUpdate()
     {
+        BallMouseRun.setParameterByName("speed", rb.velocity.x);
+       
+        
+
         AddExtraGravityForce();
         if (!isSmashProcess())
         {
@@ -87,12 +116,14 @@ public class MouseBall2 : MonoBehaviour
                 {
                     move(velocityX, 0, ForceMode.Acceleration);
                 }
-            } else
+            }
+            else
             {
-                if (state != State.SWIMMING) {
+                if (state != State.SWIMMING)
+                {
                     state = State.NORMAL;
                     rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-                }  
+                }
             }
             if (state == State.SWIMMING)
             {
@@ -112,8 +143,9 @@ public class MouseBall2 : MonoBehaviour
                     rb.velocity = new Vector3(-2, rb.velocity.y, rb.velocity.z);
                 }
             }
-            
-        } else
+
+        }
+        else
         {
             if (!contactBall)
             {
@@ -126,7 +158,7 @@ public class MouseBall2 : MonoBehaviour
     private void move(float velocityX, float velocityY, ForceMode mode)
     {
         velocityX = limitVelocity(velocityX, 1);
-        rb.AddForce(new Vector3(velocityX , velocityY, 0) * movementForce, mode);
+        rb.AddForce(new Vector3(velocityX, velocityY, 0) * movementForce, mode);
     }
 
     private float limitVelocity(float velocity, float limit)
@@ -148,31 +180,49 @@ public class MouseBall2 : MonoBehaviour
         if (antState != state)
         {
             antState = state;
-            switch(state)
+            switch (state)
             {
                 case State.SWIMMING:
                     animator.SetTrigger(animMouseIdle);
+                    //BallMouseWaterSplash.start();
                     break;
                 case State.NORMAL:
                     animator.SetTrigger(animMouseIdle);
+                    
+
+
                     break;
                 case State.MOVE:
                     animator.SetTrigger(animMouseMoveAgressive);
+                    BallMouseRun.start();
+                    BallMouseRun.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+                    BallMouseSqueakIdle.start();
+                    BallMouseSqueakIdle.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+                    BallMouseScream.start();
+                    BallMouseScream.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+
+                    
                     break;
                 case State.MOVE_AGRESSIVE:
                     animator.SetTrigger(animMouseMoveAgressive);
+                    
                     break;
                 case State.SMASH:
                     timeRecover.stopTimer();
                     timeKnockOut.stopTimer();
                     timeKnockOut.startTimer();
                     animator.SetTrigger(animMouseSmash);
+                    BallMouseSqueakIdle.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    BallMouseRun.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    BallMouseHurt.start();
                     break;
                 case State.RECOVER:
                     timeKnockOut.stopTimer();
                     timeRecover.stopTimer();
                     timeRecover.startTimer();
                     animator.SetTrigger(animMouseRecover);
+                    BallMouseInflatingPop.start();
+                    BallMouseInflatingPop.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
                     break;
             }
         }
@@ -273,7 +323,7 @@ public class MouseBall2 : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        switch(collision.gameObject.layer)
+        switch (collision.gameObject.layer)
         {
             case Layers.PLATFORM:
                 stayonShip = false;
@@ -296,7 +346,7 @@ public class MouseBall2 : MonoBehaviour
     }
     private void setRecovery()
     {
-        if(state == State.SMASH)
+        if (state == State.SMASH)
         {
             state = State.RECOVER;
         }
@@ -320,7 +370,8 @@ public class MouseBall2 : MonoBehaviour
         if (normalCollider.activeSelf)
         {
             return -0.6f;
-        } else
+        }
+        else
         {
             return -0.6f;
         }

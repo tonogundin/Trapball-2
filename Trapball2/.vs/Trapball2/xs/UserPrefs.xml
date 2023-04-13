@@ -1,13 +1,18 @@
 ﻿<Properties StartupConfiguration="{534B610C-3CE7-953D-8CBA-AB3F067E5D1E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Trapball2/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Level1/BreakablePlatform.cs">
     <Files>
-      <File FileName="Assets/Scripts/Trapball2/Player.cs" Line="68" Column="70" />
-      <File FileName="Assets/Scripts/MainCamera.cs" />
+      <File FileName="Assets/Scripts/Trapball2/Player.cs" Line="267" Column="62" />
+      <File FileName="Assets/Scripts/Trapball2/MouseBall2.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Level1/BreakablePlatform.cs" Line="49" Column="15" />
+      <File FileName="Assets/Scripts/AudiotriggerAmbienceUnderwater.cs" />
+      <File FileName="Assets/Scripts/Trapball2/FloatingBehaviour.cs" />
+      <File FileName="Assets/Scripts/AudiotriggerCrack.cs" />
+      <File FileName="Assets/Scripts/Trapball2/DestroyAudioTrigger.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="dde3c587-fb79-4708-9681-6e7980c774b3" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e45401a0-ace5-4b70-b051-80f27e3ae6ad" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

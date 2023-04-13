@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
     bool freeFall;
     CameraShake camShakeScript;
     FMOD.Studio.EventInstance playerSoundroll;
+    FMOD.Studio.EventInstance impactFloor;
+    FMOD.Studio.EventInstance impactObjetc;
+    FMOD.Studio.EventInstance underWater;
+    FMOD.Studio.EventInstance impactWater;
+
     public Vector2 velocityBall;
 
     void Awake()
@@ -43,6 +48,10 @@ public class Player : MonoBehaviour
     {
         camShakeScript = GameManager.gM.cam.GetComponent<CameraShake>();
         playerSoundroll = FMODUnity.RuntimeManager.CreateInstance("event:/Desplazamiento/SFXPlayerRollMud");
+        impactFloor = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactoTerreno");
+        impactObjetc = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/ImpactObject");
+        underWater = FMODUnity.RuntimeManager.CreateInstance("event:/Ambientes/AmbienteUnderwater");
+        impactWater = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactWater");
         playerSoundroll.start();
     }
 
@@ -96,7 +105,7 @@ public class Player : MonoBehaviour
         style.alignment = TextAnchor.UpperCenter;
         style.fontSize = h * 4 / 100;
         style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
-        string text = string.Format("X: {0:0.000} Y:{0:0.000}", velocityBall.x, velocityBall.y);
+        string text = string.Format("X: {0:0.000} Y:{1:0.000}", velocityBall.x, velocityBall.y);
         GUI.Label(rect, text, style);
     }
 
@@ -108,12 +117,16 @@ public class Player : MonoBehaviour
 #if UNITY_ANDROID
                     h = Input.acceleration.x * 2;
 #endif
-        playerSoundroll.setParameterByName("speed", rb.velocity.x);
+        playerSoundroll.setParameterByName("speed", velocityBall.x);
+        impactFloor.setParameterByName("speed", velocityBall.y);
+        impactObjetc.setParameterByName("speed", velocityBall.y+velocityBall.x);
+
     }
     void JumpInput()
     {
         if (Input.GetMouseButton(0))
         {
+            
             //Dos mecánicas diferenciadas al mantener el ratón: Desde el suelo carga de salto. Desde el aire, golpe bomba.
             if (TouchingFloor())
             {
@@ -130,6 +143,7 @@ public class Player : MonoBehaviour
                         //Y además se salta la lectura de levantar el ratón en este mismo frame.
                         jumpEnabled = false;
                         SimpleJump();
+
                     }
                 }
             }
@@ -156,10 +170,10 @@ public class Player : MonoBehaviour
                 //Se aplicará el 70% del límite.
                 jumpForce = jumpLimit * 0.70f;
                 SimpleJump();
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", GetComponent<Transform>().position);
+                
             } else
             {
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoHigh", GetComponent<Transform>().position);
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoHigh", GetComponent<Transform>().position);
             }
             jumpEnabled = true;
             bombEnabled = true;
@@ -171,6 +185,7 @@ public class Player : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
         jumpForce = 0;
         playerSoundroll.setVolume(0);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", GetComponent<Transform>().position);
     }
     void BombJump()
     {
@@ -201,6 +216,15 @@ public class Player : MonoBehaviour
                 EndBombJump();
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
             }
+
+            else if (touchFloor == false)
+            {
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
+                
+
+
+            }
+
             bombEnabled = false;
             touchFloor = true;
             return true;
@@ -236,12 +260,57 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("SueloPantanoso"))
+        {
+            playerSoundroll.setParameterByName("Terrain", 0);
+            impactFloor.setParameterByName("Terrain", 0);
+            impactFloor.start();
+        }
+
+        else if (collision.gameObject.CompareTag("SueloMadera"))
+        {
+            playerSoundroll.setParameterByName("Terrain", 1);
+            impactFloor.setParameterByName("Terrain", 1);
+            impactFloor.start();
+        }
+
+        else if (collision.gameObject.CompareTag("Box"))
+        {
+            playerSoundroll.setParameterByName("Terrain", 1);
+            impactFloor.setParameterByName("Terrain", 1);
+            impactFloor.start();
+        }
+       else if (collision.gameObject.CompareTag("SueloPiedra"))
+        {
+            playerSoundroll.setParameterByName("Terrain", 2);
+            impactFloor.setParameterByName("Terrain", 2);
+            impactFloor.start();
+        }
+
+     
+
+
+
+            if (collision.gameObject.CompareTag("Box"))
+
+            {
+                impactObjetc.start();
+                impactObjetc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+
+
+        }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Water"))
         {
             rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
+            impactWater.start();
+            underWater.start();
         }
             
 
@@ -268,8 +337,12 @@ public class Player : MonoBehaviour
             rb.angularDrag = 0.05f;
             rb.drag = 0;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
-        }
+            underWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
+
+    
+
+}
     public void Die()
     {
         GameManager.gM.ChangeGravityScale(-9.81f); //También cambio la gravedad aquí porque si no se nota más gravedad en las partículas.

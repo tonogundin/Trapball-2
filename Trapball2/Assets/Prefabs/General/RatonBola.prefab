@@ -1101,6 +1101,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   meshGizmos: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  BORRAR: {fileID: 0}
 --- !u!135 &933289926398978441
 SphereCollider:
   m_ObjectHideFlags: 0
