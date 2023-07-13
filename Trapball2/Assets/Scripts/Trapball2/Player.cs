@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
 
     public Vector2 velocityBall;
 
+    public State state = State.NORMAL;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        state = State.NORMAL;
         camShakeScript = GameManager.gM.cam.GetComponent<CameraShake>();
         playerSoundroll = FMODUnity.RuntimeManager.CreateInstance("event:/Desplazamiento/SFXPlayerRollMud");
         impactFloor = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactoTerreno");
@@ -150,7 +153,7 @@ public class Player : MonoBehaviour
             //Implementación golpe bomba.
             else //Si mantengo y no estoy tocando el suelo....
             {
-                if (bombEnabled)
+                if (state == State.JUMP)
                 {
                     bombForce += (bombDelta * Time.deltaTime);
 
@@ -182,6 +185,7 @@ public class Player : MonoBehaviour
 
     void SimpleJump()
     {
+        state = State.JUMP;
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
         jumpForce = 0;
         playerSoundroll.setVolume(0);
@@ -189,6 +193,7 @@ public class Player : MonoBehaviour
     }
     void BombJump()
     {
+        state = State.BOMBJUMP;
         jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
         coll.material = bouncy; //Le ponemos un material rebotante.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
@@ -196,8 +201,16 @@ public class Player : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", GetComponent<Transform>().position);
         playerSoundroll.setVolume(0);
     }
+
+    IEnumerator StatusNormal()
+    {
+        yield return new WaitForSeconds(1f);
+        state = State.NORMAL;
+    }
     void EndBombJump()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
+        StartCoroutine(StatusNormal());
         bombForce = 0; //Si no, bombForce empieza a contar desde el último intento de carga.
         StartCoroutine(camShakeScript.Shake(0.10f, 0.15f));
         coll.material = null;
@@ -214,17 +227,16 @@ public class Player : MonoBehaviour
             if (bombForce > 2.5f)  //currentGravityFactor != initGravityFactor
             {
                 EndBombJump();
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
             }
 
             else if (touchFloor == false)
             {
                 //FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
-                
-
-
             }
-
+            if (state != State.NORMAL &&  rb.velocity.y >= 0)
+            {
+                //state = State.NORMAL;
+            }
             bombEnabled = false;
             touchFloor = true;
             return true;
@@ -355,5 +367,13 @@ public class Player : MonoBehaviour
     public bool isTouchFloor()
     {
         return touchFloor;
+    }
+
+    public enum State
+    {
+        NORMAL,
+        JUMP,
+        BOMBJUMP,
+        DEAD
     }
 }

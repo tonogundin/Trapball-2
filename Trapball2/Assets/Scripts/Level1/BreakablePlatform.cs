@@ -21,14 +21,7 @@ public class BreakablePlatform : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            rb.isKinematic = false;
-            StartCoroutine(Disappear());
-            PlatformHit.setParameterByName("VolPlat", 0);
-            PlatformCrack.start();
-          
-
-
-
+            StartCoroutine(StarDisappear());
 
         }
 
@@ -71,7 +64,14 @@ public class BreakablePlatform : MonoBehaviour
     }
 
 
-
+    IEnumerator StarDisappear()
+    {
+        yield return new WaitForSeconds(1f);
+        rb.isKinematic = false;
+        StartCoroutine(Disappear());
+        PlatformHit.setParameterByName("VolPlat", 0);
+        PlatformCrack.start();
+    }
 
 
 
@@ -80,7 +80,7 @@ public class BreakablePlatform : MonoBehaviour
 
     IEnumerator Disappear()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         while(transform.localScale.magnitude > 0.1f)
         {
             transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
