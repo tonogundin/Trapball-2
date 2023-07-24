@@ -22,7 +22,7 @@ public class BreakableWood : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Player") &&
-            collision.gameObject.GetComponent<Player>().state == Player.State.BOMBJUMP  &&
+            collision.gameObject.GetComponent<Player>().state == StatePlayer.END_BOMB_JUMP  &&
             state == State.NORMAL) {
             state = State.BREAK;
             rb.isKinematic = false;

@@ -213,10 +213,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialSprite: {fileID: 21300000, guid: 3315941590b1d9a45a0be5cccd71cf92, type: 3}
   damageSprite: {fileID: 21300000, guid: f299cf86035e2c74da7bbc5f12112861, type: 3}
+  deadSprite: {fileID: 21300000, guid: 2a9c75b48165b614487c5b6526a7eec6, type: 3}
   flashColor: {r: 1, g: 0, b: 0, a: 0.80784315}
   flashDuration: 0.5
   flashCount: 4
   changeInterval: 5
+  live: {fileID: 922034054}
 --- !u!1 &4432753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,8 +1523,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127326653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.8, y: -20.4, z: 2.1}
-  m_LocalScale: {x: 117.51, y: 1, z: 84.613}
+  m_LocalPosition: {x: -3.3034, y: -3.4227, z: 2.1}
+  m_LocalScale: {x: 22.885042, y: 2.4975197, z: 84.613}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9

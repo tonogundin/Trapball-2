@@ -20,7 +20,7 @@ public class Explosion : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Player plScript = other.gameObject.GetComponent<Player>();
-            plScript.Die();
+            plScript.die();
         }
     }
 

@@ -20,10 +20,8 @@ public class Death : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/DeathVoice", GetComponent<Transform>().position);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/ImpactoPinchos", GetComponent<Transform>().position);
-            other.transform.position = GameManager.gM.initPosForPlayer;
-         
+            Player player = other.GetComponent<Player>();
+            player.die();
         }
     }
 

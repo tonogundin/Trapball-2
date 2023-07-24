@@ -115,7 +115,7 @@ MonoBehaviour:
     Data3: -891760228
     Data4: -793208170
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
     Data3: -781381974
     Data4: -532051344
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
     Data3: -1560797530
     Data4: 945605478
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
     Data3: -1772429184
     Data4: 155299684
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
     Data3: 677316767
     Data4: -740571880
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -307,7 +307,7 @@ MonoBehaviour:
     Data3: -1413558892
     Data4: -77105335
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
     Data3: -57636446
     Data4: 2079947479
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
     Data3: -1204491628
     Data4: 1442871186
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -538,7 +538,7 @@ MonoBehaviour:
     Data3: 1559816125
     Data4: 741189368
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -613,7 +613,7 @@ MonoBehaviour:
     Data3: -2053209424
     Data4: -1904556526
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -665,7 +665,7 @@ MonoBehaviour:
     Data3: -1146396246
     Data4: 1241200842
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
     Data3: -1510758466
     Data4: 265422733
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -720,7 +720,7 @@ MonoBehaviour:
     Data3: -2112382050
     Data4: 1440496762
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -747,7 +747,7 @@ MonoBehaviour:
     Data3: 1291166358
     Data4: -141913531
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
     Data3: 1389479845
     Data4: -769226023
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -900,7 +900,7 @@ MonoBehaviour:
     Data3: 702696345
     Data4: -1987259590
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
     Data3: 1685737346
     Data4: 973510672
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -979,7 +979,7 @@ MonoBehaviour:
     Data3: 865027249
     Data4: -994891404
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
     Data3: 400373408
     Data4: -1771182572
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1036,7 +1036,7 @@ MonoBehaviour:
     Data3: -963091792
     Data4: -588864064
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1160,7 +1160,7 @@ MonoBehaviour:
     Data3: 342627245
     Data4: 87945050
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1168,27 +1168,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4500
---- !u!114 &-832136745289537008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: "../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERR\xCDA/COMPOSICIONES
-    FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.bank"
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638157218660000000
-  FileSizes:
-  - Name: Desktop
-    Value: 25103904
-  Exists: 1
 --- !u!114 &-589835744414229994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,7 +1187,7 @@ MonoBehaviour:
     Data3: -1300862070
     Data4: -605678499
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1235,7 +1214,7 @@ MonoBehaviour:
     Data3: 1551542444
     Data4: 1686802647
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1267,6 +1246,26 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &-342339231498060510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../trapball2fmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638157221930000000
+  FileSizes:
+  - Name: Desktop
+    Value: 3514
   Exists: 1
 --- !u!114 &-326017994834768650
 MonoBehaviour:
@@ -1353,8 +1352,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 8898275594574325811}
-  - {fileID: -832136745289537008}
+  - {fileID: -342339231498060510}
+  - {fileID: 10826267396790207}
   EditorEvents:
   - {fileID: 4093968812578420207}
   - {fileID: -2939294946524030438}
@@ -1405,11 +1404,31 @@ MonoBehaviour:
   - {fileID: -6889087964470567756}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   StringsBanks:
-  - {fileID: 8898275594574325811}
-  cacheTime: 638157218660000000
+  - {fileID: -342339231498060510}
+  cacheTime: 638157221930000000
   cacheVersion: 10
+--- !u!114 &10826267396790207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../trapball2fmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638157221930000000
+  FileSizes:
+  - Name: Desktop
+    Value: 25103904
+  Exists: 1
 --- !u!114 &225112327624964801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1472,7 @@ MonoBehaviour:
     Data3: 1359388800
     Data4: 897182370
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1505,7 +1524,7 @@ MonoBehaviour:
     Data3: -1611574607
     Data4: -1330225890
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1532,7 +1551,7 @@ MonoBehaviour:
     Data3: -960846710
     Data4: 807945690
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1631,7 +1650,7 @@ MonoBehaviour:
     Data3: 1904919692
     Data4: 446484951
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1682,7 +1701,7 @@ MonoBehaviour:
     Data3: -544370559
     Data4: -790990717
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1736,7 +1755,7 @@ MonoBehaviour:
     Data3: -1298488174
     Data4: -1158338220
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1763,7 +1782,7 @@ MonoBehaviour:
     Data3: -1019449463
     Data4: -496899729
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1790,7 +1809,7 @@ MonoBehaviour:
     Data3: -1461940578
     Data4: 2124020197
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1820,7 +1839,7 @@ MonoBehaviour:
     Data3: -1183417462
     Data4: 783710001
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1943,7 +1962,7 @@ MonoBehaviour:
     Data3: -1022215522
     Data4: -1252659519
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1973,7 +1992,7 @@ MonoBehaviour:
     Data3: 2050484878
     Data4: 174142389
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2025,7 +2044,7 @@ MonoBehaviour:
     Data3: 732003717
     Data4: 1853070876
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2052,7 +2071,7 @@ MonoBehaviour:
     Data3: -1126241886
     Data4: 1222052278
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -2080,7 +2099,7 @@ MonoBehaviour:
     Data3: -929057633
     Data4: -973880825
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2109,7 +2128,7 @@ MonoBehaviour:
     Data3: -288872779
     Data4: -948149343
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -2160,7 +2179,7 @@ MonoBehaviour:
     Data3: 145889453
     Data4: 531827123
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -2187,7 +2206,7 @@ MonoBehaviour:
     Data3: 990353588
     Data4: 981400755
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -2263,7 +2282,7 @@ MonoBehaviour:
     Data3: 66098590
     Data4: -384476356
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2291,7 +2310,7 @@ MonoBehaviour:
     Data3: 1420710287
     Data4: 1293108482
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -2416,7 +2435,7 @@ MonoBehaviour:
     Data3: -789344862
     Data4: 2096164127
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2444,7 +2463,7 @@ MonoBehaviour:
     Data3: 1052293797
     Data4: -778065853
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2568,7 +2587,7 @@ MonoBehaviour:
     Data3: -1264832608
     Data4: 841092502
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -2647,7 +2666,7 @@ MonoBehaviour:
     Data3: -1533536621
     Data4: 1459987844
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -2658,27 +2677,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 192000
---- !u!114 &8898275594574325811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: "../../../../ALMACENAMIENTO/CHIMO/- PROYECTOS/CHIMO ECHEVERR\xCDA/COMPOSICIONES
-    FREELANCE/AXOUXERE/TRAPBALL 2/fmodTrapball2/trapball2fmod/Build/Desktop/Master.strings.bank"
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638157218660000000
-  FileSizes:
-  - Name: Desktop
-    Value: 3514
-  Exists: 1
 --- !u!114 &9055294554912019947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2698,7 +2696,7 @@ MonoBehaviour:
     Data3: 875383948
     Data4: 955253903
   Banks:
-  - {fileID: -832136745289537008}
+  - {fileID: 10826267396790207}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0

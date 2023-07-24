@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Player : MonoBehaviour
 {
     [HideInInspector] public Rigidbody rb;
+    Transform transform;
     float h;
     float speedLimit = 5f;
     float movementForce = 10f;
@@ -14,17 +13,11 @@ public class Player : MonoBehaviour
     SphereCollider coll;
     Vector3 offset;
     float jumpForce;
-    float bombForce;
     [SerializeField] PhysicMaterial bouncy;
-    [SerializeField] float bombDelta; //Define cuánto de rápido se realizará el golpe bomba.
     [SerializeField] float jumpDelta; //Define cuánto de rápido se alcanza el límite de fuerza de salto.
     [SerializeField] float jumpLimit; //Define la mayor fuerza de salto posible a aplicar.
     [SerializeField] float initGravityFactor;
     float currentGravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
-    bool jumpEnabled = true;
-    bool bombEnabled;
-    bool touchFloor = false;
-    bool oldStateTouchfloor = false;
     bool freeFall;
     CameraShake camShakeScript;
     FMOD.Studio.EventInstance playerSoundroll;
@@ -35,20 +28,25 @@ public class Player : MonoBehaviour
 
     public Vector2 velocityBall;
 
-    public State state = State.NORMAL;
+    public StatePlayer state = StatePlayer.NORMAL;
+
+    private float jumpLowLimit;
+    private float jumpLowPercent = 0.70f;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        transform = GetComponent<Transform>();
         coll = GetComponent<SphereCollider>();
         particles = transform.GetChild(0).GetComponent<ParticlesExplosion>();
         offset = new Vector3(0, -0.35f, 0);
         currentGravityFactor = initGravityFactor;
+        jumpLowLimit = jumpLimit * jumpLowPercent;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        state = State.NORMAL;
+        state = StatePlayer.JUMP;
         camShakeScript = GameManager.gM.cam.GetComponent<CameraShake>();
         playerSoundroll = FMODUnity.RuntimeManager.CreateInstance("event:/Desplazamiento/SFXPlayerRollMud");
         impactFloor = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactoTerreno");
@@ -58,45 +56,264 @@ public class Player : MonoBehaviour
         playerSoundroll.start();
     }
 
-    void Update()
-    {
-        MovementInput();
-        JumpInput();
-        checkSoundRoll();
-        
-    }
-    private float GetComponent(float x) 
-    { 
-        throw new NotImplementedException();
-    }
-    private void checkSoundRoll()
-    {
-        if (oldStateTouchfloor != touchFloor)
-        {
-            if(touchFloor)
-            {
-                playerSoundroll.setParameterByName("onTheFloor", 1);
-            } else
-            {
-                playerSoundroll.setParameterByName("onTheFloor", 0); 
-            }
-            oldStateTouchfloor = touchFloor;
-        }
-
-    }
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         rb.AddForce(new Vector3(h, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
-        ManageExtraGravity();
-        
-        if(!freeFall)
-        {
+        manageExtraGravity();
+        if (!freeFall) {
             ManageBallSpeed();
         }
-            
-
         velocityBall = new Vector2(rb.velocity.x, rb.velocity.y);
     }
+
+    void Update() {
+        if (state != StatePlayer.DEAD)
+        {
+            movementInput();
+            touchingFloor();
+            inputPlayer();
+            checkSoundRoll();
+        }
+    }
+
+    void movementInput()
+    {
+#if UNITY_STANDALONE
+        h = Input.GetAxisRaw("Horizontal");
+#endif
+#if UNITY_ANDROID
+                    h = Input.acceleration.x * 2;
+#endif
+        playerSoundroll.setParameterByName("speed", velocityBall.x);
+        impactFloor.setParameterByName("speed", velocityBall.y);
+        impactObjetc.setParameterByName("speed", velocityBall.y + velocityBall.x);
+    }
+
+    void touchingFloor()
+    {
+        if (rb.velocity.y <= 0 && state != StatePlayer.INIT_JUMP)
+        {
+            Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
+            if (colls.Length > 0)
+            {
+                playerSoundroll.setVolume(1);
+                //Significa que he caido tras un golpe bomba.
+                if (state == StatePlayer.BOMBJUMP)
+                {
+                    endBombJump();
+                }
+                else if (state != StatePlayer.NORMAL)
+                {
+                    jumpForce = 0;
+                    state = StatePlayer.NORMAL;
+                    //FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
+                }
+            }
+            else if (state != StatePlayer.BOMBJUMP)
+            {
+                state = StatePlayer.JUMP;
+            }
+        }
+    }
+
+    void inputPlayer() {
+        if (Input.GetMouseButton(0)) {
+            handleMouseButtonDown();
+        }
+
+        if (Input.GetMouseButtonUp(0)){
+            handleMouseButtonUp();
+        }
+    }
+
+    void handleMouseButtonDown() {
+        if (state == StatePlayer.NORMAL) {
+            jumpForce += jumpDelta * Time.deltaTime;
+        }
+    }
+
+    void handleMouseButtonUp() {
+        switch (state) {
+            case StatePlayer.NORMAL:
+                adjustJumpForce();
+                simpleJump();
+                break;
+            case StatePlayer.JUMP:
+                if (jumpForce > jumpLowLimit) {
+                    bombJump();
+                }
+                break;
+        }
+    }
+
+    void adjustJumpForce() {
+        if (jumpForce > 0) {
+            jumpForce = Mathf.Clamp(jumpForce, jumpLowLimit, jumpLimit);
+        }
+    }
+
+    void simpleJump() {
+        state = StatePlayer.INIT_JUMP;
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
+        playerSoundroll.setVolume(0);
+        if (jumpForce > jumpLowLimit) {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoHigh", transform.position);
+        } else {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", transform.position);
+        }
+        StartCoroutine(stateJump());
+    }
+
+    void bombJump() {
+        state = StatePlayer.BOMBJUMP;
+        coll.material = bouncy; //Le ponemos un material rebotante.
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
+        rb.AddForce(Vector3.down * 8.5f, ForceMode.Impulse);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", transform.position);
+        playerSoundroll.setVolume(0);
+    }
+
+    IEnumerator stateJump() {
+        yield return new WaitForSeconds(0.15f);
+        state = StatePlayer.JUMP;
+    }
+    IEnumerator stateNormal()
+    {
+        yield return new WaitForSeconds(0.35f);
+        state = StatePlayer.NORMAL;
+    }
+    void endBombJump() {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", transform.position);
+        StartCoroutine(camShakeScript.Shake(0.10f, 0.15f));
+        coll.material = null;
+        rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
+        playerSoundroll.setVolume(1);
+        state = StatePlayer.END_BOMB_JUMP;
+        StartCoroutine(stateNormal());
+    }
+
+    private void checkSoundRoll()
+    {
+        float valueSoundRoll;
+        playerSoundroll.getParameterByName("onTheFloor", out valueSoundRoll);
+        if (state == StatePlayer.NORMAL && valueSoundRoll == 0)
+        {
+            playerSoundroll.setParameterByName("onTheFloor", 1);
+        }
+        else if (state != StatePlayer.NORMAL && valueSoundRoll == 1)
+        {
+            playerSoundroll.setParameterByName("onTheFloor", 0);
+        }
+    }
+
+    void manageExtraGravity() {
+        if (state != StatePlayer.NORMAL) {
+            Vector3 vel = rb.velocity;
+            vel.y -= currentGravityFactor * Time.fixedDeltaTime;
+            rb.velocity = vel;
+        }
+    }
+    void ManageBallSpeed() {
+        //Límite de velocidad
+        if (Mathf.Abs(rb.velocity.x) > speedLimit) {
+            rb.velocity = new Vector3(speedLimit * Mathf.Sign(rb.velocity.x), rb.velocity.y, rb.velocity.z);
+        }
+        //Ayuda para que no cueste tanto dejar la bola quieta
+        //Si la bola a penas se mueve, no hay input de usuario y no está en una rampa (y == 0 + TouchingFloor) se parará por completo.
+        else if (Mathf.Abs(rb.velocity.x) < 0.3f && h == 0 && rb.velocity.y == 0) {
+            rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        string tag = collision.gameObject.tag;
+
+        switch (tag) {
+            case "SueloPantanoso":
+                setTerrainParametersAndStart(0);
+                break;
+            case "SueloMadera":
+            case "Box":
+                setTerrainParametersAndStart(1);
+                impactObjetc.start();
+                impactObjetc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                break;
+            case "SueloPiedra":
+                setTerrainParametersAndStart(2);
+                break;
+            default:
+                // Handle other cases or do nothing
+                break;
+        }
+    }
+
+    private void setTerrainParametersAndStart(int terrainValue) {
+        playerSoundroll.setParameterByName("Terrain", terrainValue);
+        impactFloor.setParameterByName("Terrain", terrainValue);
+        impactFloor.start();
+    }
+
+
+    private void OnTriggerEnter(Collider other) {
+        string tag = other.tag;
+        switch (tag) {
+            case "Water":
+                rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+                impactWater.start();
+                underWater.start();
+                break;
+            case "TubeEnter":
+                freeFall = true;
+                break;
+            case "TubeExit":
+                freeFall = false;
+                break;
+            default:
+                // Handle other cases or do nothing
+                break;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Water")) 
+        {
+            currentGravityFactor = -5f;
+            rb.angularDrag = 4;
+            rb.drag = 2.2f;
+        }
+    }
+    private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Water")) {
+            currentGravityFactor = initGravityFactor;
+            rb.angularDrag = 0.05f;
+            rb.drag = 0;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
+            underWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+    public void die(){
+        GameManager.gM.ChangeGravityScale(-9.81f); //También cambio la gravedad aquí porque si no se nota más gravedad en las partículas.
+        particles.Explode();
+        StartCoroutine(delayDead());
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/DeathVoice", GetComponent<Transform>().position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/ImpactoPinchos", GetComponent<Transform>().position);
+        rb.isKinematic = true;
+        GetComponent<Renderer>().enabled = false;
+        state = StatePlayer.DEAD;
+        Handheld.Vibrate();
+    }
+
+    IEnumerator delayDead()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameManager.gM.InstantiateNewBall(2, GameManager.gM.initPosForPlayer);
+        Destroy(gameObject);
+    }
+
+    public bool isTouchFloor() {
+        return state == StatePlayer.NORMAL;
+    }
+
 
     void OnGUI()
     {
@@ -110,270 +327,23 @@ public class Player : MonoBehaviour
         style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
         string text = string.Format("X: {0:0.000} Y:{1:0.000}", velocityBall.x, velocityBall.y);
         GUI.Label(rect, text, style);
+
+        Rect rect2 = new Rect(50, 250, w, h * 2 / 100);
+        style.alignment = TextAnchor.UpperCenter;
+        style.fontSize = h * 4 / 100;
+        style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
+        string text2 = string.Format("State =" + state);
+        GUI.Label(rect2, text2, style);
     }
-
-    void MovementInput()
-    {
-#if UNITY_STANDALONE
-        h = Input.GetAxisRaw("Horizontal");
-#endif
-#if UNITY_ANDROID
-                    h = Input.acceleration.x * 2;
-#endif
-        playerSoundroll.setParameterByName("speed", velocityBall.x);
-        impactFloor.setParameterByName("speed", velocityBall.y);
-        impactObjetc.setParameterByName("speed", velocityBall.y+velocityBall.x);
-
-    }
-    void JumpInput()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            
-            //Dos mecánicas diferenciadas al mantener el ratón: Desde el suelo carga de salto. Desde el aire, golpe bomba.
-            if (TouchingFloor())
-            {
-                //Primero hay que comprobar si tenemos salto disponible: 
-                //Si se ha ejecutado uno anterior, no podemos hacer otro hasta que no se levante el ratón.
-                if (jumpEnabled)
-                {
-                    //Vamos cargando fuerza ...
-                    jumpForce += (jumpDelta * Time.deltaTime);
-                    // Y si se alcanza el 30 % del límite, se saltará el máximo (100%) de forma automática. HABRÍA QUE INCREMENTAR EL LÍMITE.
-                    if (jumpForce > jumpLimit * 0.30f)
-                    {
-                        jumpForce = jumpLimit;
-                        //Y además se salta la lectura de levantar el ratón en este mismo frame.
-                        jumpEnabled = false;
-                        SimpleJump();
-
-                    }
-                }
-            }
-            //Implementación golpe bomba.
-            else //Si mantengo y no estoy tocando el suelo....
-            {
-                if (state == State.JUMP)
-                {
-                    bombForce += (bombDelta * Time.deltaTime);
-
-                    //Creo que con un límite pequeño debería ser más que suficiente....
-                    if (bombForce > 2.5f)
-                    {
-                        BombJump();
-                    }
-                }
-            }
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            //Si al levantar el ratón no se alcanza ni siquiera el 30%...
-            if (jumpForce > 0 && jumpForce <= jumpLimit * 0.30f)
-            {
-                //Se aplicará el 70% del límite.
-                jumpForce = jumpLimit * 0.70f;
-                SimpleJump();
-                
-            } else
-            {
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoHigh", GetComponent<Transform>().position);
-            }
-            jumpEnabled = true;
-            bombEnabled = true;
-        }
-    }
-
-    void SimpleJump()
-    {
-        state = State.JUMP;
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
-        jumpForce = 0;
-        playerSoundroll.setVolume(0);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", GetComponent<Transform>().position);
-    }
-    void BombJump()
-    {
-        state = State.BOMBJUMP;
-        jumpEnabled = false; //Una vez ejecutado el golpe bomba, deshabilitamos el salto --> Sólo se habilita si se suelta el ratón durante el rebote.
-        coll.material = bouncy; //Le ponemos un material rebotante.
-        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
-        rb.AddForce(Vector3.down * 1.5f, ForceMode.Impulse);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", GetComponent<Transform>().position);
-        playerSoundroll.setVolume(0);
-    }
-
-    IEnumerator StatusNormal()
-    {
-        yield return new WaitForSeconds(1f);
-        state = State.NORMAL;
-    }
-    void EndBombJump()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
-        StartCoroutine(StatusNormal());
-        bombForce = 0; //Si no, bombForce empieza a contar desde el último intento de carga.
-        StartCoroutine(camShakeScript.Shake(0.10f, 0.15f));
-        coll.material = null;
-        rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
-        playerSoundroll.setVolume(1);
-    }
-    bool TouchingFloor()
-    {
-        Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
-        if (colls.Length > 0)
-        {
-            playerSoundroll.setVolume(1);
-            //Significa que he caido tras un golpe bomba.
-            if (bombForce > 2.5f)  //currentGravityFactor != initGravityFactor
-            {
-                EndBombJump();
-            }
-
-            else if (touchFloor == false)
-            {
-                //FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
-            }
-            if (state != State.NORMAL &&  rb.velocity.y >= 0)
-            {
-                //state = State.NORMAL;
-            }
-            bombEnabled = false;
-            touchFloor = true;
-            return true;
-        }
-        else
-        {
-            touchFloor = false;
-            return false;
-        }
-    }
-
-    void ManageExtraGravity()
-    {
-        if (!TouchingFloor())
-        {
-            Vector3 vel = rb.velocity;
-            vel.y -= currentGravityFactor * Time.fixedDeltaTime;
-            rb.velocity = vel;
-        }
-    }
-    void ManageBallSpeed()
-    {
-        //Límite de velocidad
-        if (Mathf.Abs(rb.velocity.x) > speedLimit)
-        {
-            rb.velocity = new Vector3(speedLimit * Mathf.Sign(rb.velocity.x), rb.velocity.y, rb.velocity.z);
-        }
-        //Ayuda para que no cueste tanto dejar la bola quieta
-        //Si la bola a penas se mueve, no hay input de usuario y no está en una rampa (y == 0 + TouchingFloor) se parará por completo.
-        else if (Mathf.Abs(rb.velocity.x) < 0.3f && h == 0 && rb.velocity.y == 0)
-        {
-            rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("SueloPantanoso"))
-        {
-            playerSoundroll.setParameterByName("Terrain", 0);
-            impactFloor.setParameterByName("Terrain", 0);
-            impactFloor.start();
-        }
-
-        else if (collision.gameObject.CompareTag("SueloMadera"))
-        {
-            playerSoundroll.setParameterByName("Terrain", 1);
-            impactFloor.setParameterByName("Terrain", 1);
-            impactFloor.start();
-        }
-
-        else if (collision.gameObject.CompareTag("Box"))
-        {
-            playerSoundroll.setParameterByName("Terrain", 1);
-            impactFloor.setParameterByName("Terrain", 1);
-            impactFloor.start();
-        }
-       else if (collision.gameObject.CompareTag("SueloPiedra"))
-        {
-            playerSoundroll.setParameterByName("Terrain", 2);
-            impactFloor.setParameterByName("Terrain", 2);
-            impactFloor.start();
-        }
-
-     
-
-
-
-            if (collision.gameObject.CompareTag("Box"))
-
-            {
-                impactObjetc.start();
-                impactObjetc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }
-
-
-        }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Water"))
-        {
-            rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
-            impactWater.start();
-            underWater.start();
-        }
-            
-
-        else if (other.CompareTag("TubeEnter"))
-            freeFall = true;
-
-        else if (other.CompareTag("TubeExit"))
-            freeFall = false;
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Water")) 
-        {
-            currentGravityFactor = -5f;
-            rb.angularDrag = 4;
-            rb.drag = 2.2f;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Water"))
-        {
-            currentGravityFactor = initGravityFactor;
-            rb.angularDrag = 0.05f;
-            rb.drag = 0;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
-            underWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-    }
-
-    
 
 }
-    public void Die()
-    {
-        GameManager.gM.ChangeGravityScale(-9.81f); //También cambio la gravedad aquí porque si no se nota más gravedad en las partículas.
-        particles.Explode();
-        GameManager.gM.InstantiateNewBall(2, GameManager.gM.initPosForPlayer);
-        Destroy(gameObject);
-        Handheld.Vibrate();
-    }
 
-    public bool isTouchFloor()
-    {
-        return touchFloor;
-    }
-
-    public enum State
-    {
-        NORMAL,
-        JUMP,
-        BOMBJUMP,
-        DEAD
-    }
+public enum StatePlayer
+{
+    NORMAL,
+    INIT_JUMP,
+    JUMP,
+    BOMBJUMP,
+    END_BOMB_JUMP,
+    DEAD
 }
