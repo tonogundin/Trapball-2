@@ -14,19 +14,31 @@ public class BallHud : MonoBehaviour
     public float changeInterval = 5f;
     private Color originalColor;
     public GameObject live;
+    public GameObject energy;
 
 
     private Player player;
     private StatePlayer statePlayer;
     private Vector3 initialPosition;
     private Transform transform;
+    private Image imageLive;
+    private Image imageEnergy;
+
+    public Sprite[] spritesLive;
+    public Sprite[] spritesEnergy;
+
+    private float limitEnergy = 0;
+
     void Start()
     {
         transform = GetComponent<Transform>();
         initialPosition = transform.position;
         targetImage = GetComponent<Image>();
         originalColor = targetImage.color;
-//        StartCoroutine(ChangeImageAndColorRoutine());
+        imageLive = live.GetComponent<Image>();
+        imageEnergy = energy.GetComponent<Image>();
+
+        //        StartCoroutine(ChangeImageAndColorRoutine());
     }
 
     private void Update()
@@ -40,33 +52,70 @@ public class BallHud : MonoBehaviour
                 statePlayer = player.state;
             }
         }
-        if (player != null && statePlayer != player.state)
+        if (player != null)
         {
-            switch (player.state)
+            setPlayerStateImage(player.state);
+            if (limitEnergy == 0)
+            {
+                limitEnergy = player.getJumpLimit();
+            }
+            setPlayerEnergy(player.getJumpForce());
+
+        }
+
+    }
+
+    private void setPlayerEnergy(float jumpForce)
+    {
+        // Primero, normalizamos el valor de energía entre 0 y 1
+        float normalizedEnergy = jumpForce / limitEnergy;
+
+        // Luego, lo escalamos al rango de índices de nuestros gráficos (0 a 8)
+        int spriteIndex = Mathf.RoundToInt(normalizedEnergy * (spritesEnergy.Length - 1));
+
+        // Nos aseguramos de que el índice esté en el rango correcto
+        spriteIndex = Mathf.Clamp(spriteIndex, 0, spritesEnergy.Length - 1);
+
+        // Finalmente, establecemos el sprite de la barra de energía
+        imageEnergy.sprite = spritesEnergy[spriteIndex];
+    }
+
+    private void setPlayerStateImage(StatePlayer state)
+    {
+        if (statePlayer != state)
+        {
+            switch (state)
             {
                 case StatePlayer.NORMAL:
-                    live.SetActive(true);
+                    setHiddenLiveEnergy(true);
                     targetImage.color = originalColor;
                     targetImage.sprite = initialSprite;
                     transform.position = initialPosition;
                     break;
 
                 case StatePlayer.JUMP:
-                    live.SetActive(true);
+                    setHiddenLiveEnergy(true);
                     break;
                 case StatePlayer.BOMBJUMP:
 
                     break;
                 case StatePlayer.DEAD:
-                    live.SetActive(false);
+                    setHiddenLiveEnergy(false);
                     targetImage.sprite = deadSprite;
                     transform.position = new Vector3(initialPosition.x, initialPosition.y - 20);
                     StartCoroutine(MoveDiagonally());
                     break;
 
             }
-            statePlayer = player.state;
+            statePlayer = state;
         }
+    }
+
+
+    private void setHiddenLiveEnergy(bool value)
+    {
+        live.SetActive(value);
+        energy.SetActive(value);
     }
 
 

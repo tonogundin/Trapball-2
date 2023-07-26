@@ -127,7 +127,14 @@ public class Player : MonoBehaviour
 
     void handleMouseButtonDown() {
         if (state == StatePlayer.NORMAL) {
-            jumpForce += jumpDelta * Time.deltaTime;
+            if (jumpForce < jumpLimit)
+            {
+                jumpForce += jumpDelta * Time.deltaTime;
+                if (jumpForce > jumpLimit)
+                {
+                    jumpForce = jumpLimit;
+                }
+            }
         }
     }
 
@@ -312,6 +319,16 @@ public class Player : MonoBehaviour
 
     public bool isTouchFloor() {
         return state == StatePlayer.NORMAL;
+    }
+
+    public float getJumpForce()
+    {
+        return jumpForce;
+    }
+
+    public float getJumpLimit()
+    {
+        return jumpLimit;
     }
 
 
