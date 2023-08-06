@@ -27,11 +27,15 @@ public class Player : MonoBehaviour
     FMOD.Studio.EventInstance impactWater;
 
     public Vector2 velocityBall;
+    public int live = 9;
+    public int valor = 0;
 
     public StatePlayer state = StatePlayer.NORMAL;
 
     private float jumpLowLimit;
-    private float jumpLowPercent = 0.70f;
+    private float jumpLowPercent = 0.60f;
+    private float jumpLowLimitBomb;
+    private float jumpLowBombPercent = 0.80f;
 
     void Awake()
     {
@@ -42,6 +46,7 @@ public class Player : MonoBehaviour
         offset = new Vector3(0, -0.35f, 0);
         currentGravityFactor = initGravityFactor;
         jumpLowLimit = jumpLimit * jumpLowPercent;
+        jumpLowLimitBomb = jumpLimit * jumpLowBombPercent;
     }
 
     void Start()
@@ -85,7 +90,7 @@ public class Player : MonoBehaviour
 #endif
         playerSoundroll.setParameterByName("speed", velocityBall.x);
         impactFloor.setParameterByName("speed", velocityBall.y);
-        impactObjetc.setParameterByName("speed", velocityBall.y + velocityBall.x);
+        impactObjetc.setParameterByName("speed", (velocityBall.y + velocityBall.x)*150);
     }
 
     void touchingFloor()
@@ -105,13 +110,16 @@ public class Player : MonoBehaviour
                 {
                     jumpForce = 0;
                     state = StatePlayer.NORMAL;
-                    //FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
                 }
             }
             else if (state != StatePlayer.BOMBJUMP)
             {
                 state = StatePlayer.JUMP;
             }
+        } else if (rb.velocity.y >= 1)
+        {
+            state = StatePlayer.JUMP;
         }
     }
 
@@ -145,7 +153,7 @@ public class Player : MonoBehaviour
                 simpleJump();
                 break;
             case StatePlayer.JUMP:
-                if (jumpForce > jumpLowLimit) {
+                if (jumpForce > jumpLowLimitBomb) {
                     bombJump();
                 }
                 break;
@@ -158,12 +166,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void resetJumpForce()
+    {
+        jumpForce = 0;
+    }
+
     void simpleJump() {
         state = StatePlayer.INIT_JUMP;
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
         playerSoundroll.setVolume(0);
-        if (jumpForce > jumpLowLimit) {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoHigh", transform.position);
+        if (jumpForce > jumpLowLimitBomb) {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", transform.position);
         } else {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", transform.position);
         }
@@ -185,7 +198,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator stateNormal()
     {
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(0.5f);
         state = StatePlayer.NORMAL;
     }
     void endBombJump() {
@@ -299,21 +312,30 @@ public class Player : MonoBehaviour
         }
     }
     public void die(){
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/ImpactoPinchos", GetComponent<Transform>().position);
+        genericDie();
+    }
+
+    public void dieLive()
+    {
+        genericDie();
+    }
+
+    private void genericDie()
+    {
         GameManager.gM.ChangeGravityScale(-9.81f); //También cambio la gravedad aquí porque si no se nota más gravedad en las partículas.
         particles.Explode();
         StartCoroutine(delayDead());
         FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/DeathVoice", GetComponent<Transform>().position);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/ImpactoPinchos", GetComponent<Transform>().position);
         rb.isKinematic = true;
         GetComponent<Renderer>().enabled = false;
         state = StatePlayer.DEAD;
-        Handheld.Vibrate();
     }
 
     IEnumerator delayDead()
     {
         yield return new WaitForSeconds(0.5f);
-        GameManager.gM.InstantiateNewBall(2, GameManager.gM.initPosForPlayer);
+        GameManager.gM.InstantiateNewBall(2);
         Destroy(gameObject);
     }
 
@@ -329,6 +351,24 @@ public class Player : MonoBehaviour
     public float getJumpLimit()
     {
         return jumpLimit;
+    }
+    public float getJumpLowLimit()
+    {
+        return jumpLowLimit;
+    }
+
+    public float getJumpBombLimit()
+    {
+        return jumpLowLimitBomb;
+    }
+
+    public void addDamage()
+    {
+        live--;
+        if (live<=0)
+        {
+            dieLive();
+        }
     }
 
 

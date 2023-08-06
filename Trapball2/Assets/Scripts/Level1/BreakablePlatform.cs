@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BreakablePlatform : MonoBehaviour
@@ -11,7 +10,6 @@ public class BreakablePlatform : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
         PlatformHit = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformHit");
         PlatformCrack = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformCrack");
         PlatformSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformSplash");

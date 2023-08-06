@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BreakableWood : MonoBehaviour
@@ -22,7 +21,9 @@ public class BreakableWood : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Player") &&
-            collision.gameObject.GetComponent<Player>().state == StatePlayer.END_BOMB_JUMP  &&
+            (collision.gameObject.GetComponent<Player>().state == StatePlayer.END_BOMB_JUMP ||
+            collision.gameObject.GetComponent<Player>().state == StatePlayer.BOMBJUMP)
+            &&
             state == State.NORMAL) {
             state = State.BREAK;
             rb.isKinematic = false;
@@ -79,7 +80,7 @@ public class BreakableWood : MonoBehaviour
 
     IEnumerator Disappear()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         while(transform.localScale.y > 0.1f)
         {
             transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);

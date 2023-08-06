@@ -1,17 +1,20 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+
 
 public class BallHud : MonoBehaviour
 {
     private Image targetImage;
     public Sprite initialSprite;
     public Sprite damageSprite;
+    public Sprite limitLiveSprite;
     public Sprite deadSprite;
+    public Sprite attackSprite;
     public Color flashColor = Color.red;
     public float flashDuration = 0.5f;
-    public int flashCount = 3;
-    public float changeInterval = 5f;
+    public int flashCount = 2;
     private Color originalColor;
     public GameObject live;
     public GameObject energy;
@@ -28,6 +31,17 @@ public class BallHud : MonoBehaviour
     public Sprite[] spritesEnergy;
 
     private float limitEnergy = 0;
+    private float lowLimitEnergy = 0;
+    private float limitBombJump = 0;
+
+
+    private int limitLive = 0;
+    private int limitMaxLive = 0;
+    private int bufferLive = 9;
+
+    private bool damage = false;
+    Coroutine myCoroutineDamage;
+
 
     void Start()
     {
@@ -36,9 +50,7 @@ public class BallHud : MonoBehaviour
         targetImage = GetComponent<Image>();
         originalColor = targetImage.color;
         imageLive = live.GetComponent<Image>();
-        imageEnergy = energy.GetComponent<Image>();
-
-        //        StartCoroutine(ChangeImageAndColorRoutine());
+        imageEnergy = energy.GetComponent<Image>();    
     }
 
     private void Update()
@@ -50,16 +62,21 @@ public class BallHud : MonoBehaviour
             {
                 player = playerObject.GetComponent<Player>();
                 statePlayer = player.state;
+                limitMaxLive = player.live;
+                bufferLive = limitMaxLive;
             }
         }
         if (player != null)
         {
-            setPlayerStateImage(player.state);
+            setPlayerStateImage(player.state, player.getJumpForce());
             if (limitEnergy == 0)
             {
                 limitEnergy = player.getJumpLimit();
+                lowLimitEnergy = player.getJumpLowLimit() - (limitEnergy * 0.05f);
+                limitBombJump = player.getJumpBombLimit();
             }
             setPlayerEnergy(player.getJumpForce());
+            setPlayerLive(player.live);
 
         }
 
@@ -68,7 +85,7 @@ public class BallHud : MonoBehaviour
     private void setPlayerEnergy(float jumpForce)
     {
         // Primero, normalizamos el valor de energía entre 0 y 1
-        float normalizedEnergy = jumpForce / limitEnergy;
+        float normalizedEnergy = (jumpForce - lowLimitEnergy) / (limitEnergy - lowLimitEnergy);
 
         // Luego, lo escalamos al rango de índices de nuestros gráficos (0 a 8)
         int spriteIndex = Mathf.RoundToInt(normalizedEnergy * (spritesEnergy.Length - 1));
@@ -79,28 +96,56 @@ public class BallHud : MonoBehaviour
         // Finalmente, establecemos el sprite de la barra de energía
         imageEnergy.sprite = spritesEnergy[spriteIndex];
     }
-
-    private void setPlayerStateImage(StatePlayer state)
+    private void setPlayerLive(float live)
     {
-        if (statePlayer != state)
+        // Primero, normalizamos el valor de energía entre 0 y 1
+        float normalizedLive = 1 - ((live - limitLive) / (limitMaxLive - limitLive));
+
+        // Luego, lo escalamos al rango de índices de nuestros gráficos (0 a 8)
+        int spriteIndex = Mathf.RoundToInt(normalizedLive * (spritesLive.Length - 1));
+
+        // Nos aseguramos de que el índice esté en el rango correcto
+        spriteIndex = Mathf.Clamp(spriteIndex, 0, spritesLive.Length - 1);
+
+        // Finalmente, establecemos el sprite de la barra de energía
+        imageLive.sprite = spritesLive[spriteIndex];
+    }
+
+    private void setPlayerStateImage(StatePlayer state, float jumpForce)
+    {
+        bool damagePlayer = bufferLive != player.live && player.live > 0;
+        if (state == StatePlayer.DEAD)
+        {
+            StopCoroutine(myCoroutineDamage);
+            damage = false;
+        }
+        if (damagePlayer) {
+            bufferLive = player.live;
+            damage = true;
+            setImageDamage();
+        } else if (statePlayer != state && !damage)
         {
             switch (state)
             {
                 case StatePlayer.NORMAL:
-                    setHiddenLiveEnergy(true);
-                    targetImage.color = originalColor;
-                    targetImage.sprite = initialSprite;
-                    transform.position = initialPosition;
+                    setStateNormal();
                     break;
-
                 case StatePlayer.JUMP:
                     setHiddenLiveEnergy(true);
+                    if (jumpForce > limitBombJump)
+                    {
+                        targetImage.color = originalColor;
+                        targetImage.sprite = attackSprite;
+                    }
                     break;
+                case StatePlayer.END_BOMB_JUMP:
                 case StatePlayer.BOMBJUMP:
-
+                    targetImage.color = originalColor;
+                    targetImage.sprite = attackSprite;
                     break;
                 case StatePlayer.DEAD:
                     setHiddenLiveEnergy(false);
+                    targetImage.color = originalColor;
                     targetImage.sprite = deadSprite;
                     transform.position = new Vector3(initialPosition.x, initialPosition.y - 20);
                     StartCoroutine(MoveDiagonally());
@@ -111,6 +156,24 @@ public class BallHud : MonoBehaviour
         }
     }
 
+    private Sprite imageDependLive()
+    {
+        if (player != null && player.live < 3)
+        {
+            return limitLiveSprite;
+        } else
+        {
+            return initialSprite;
+        }   
+    }
+
+    private void setStateNormal()
+    {
+        setHiddenLiveEnergy(true);
+        targetImage.color = originalColor;
+        targetImage.sprite = imageDependLive();
+        transform.position = initialPosition;
+    }
 
     private void setHiddenLiveEnergy(bool value)
     {
@@ -161,33 +224,17 @@ public class BallHud : MonoBehaviour
 
 
 
-    IEnumerator ChangeImageAndColorRoutine()
+    private void setImageDamage()
     {
-        while (true)
-        {
-            yield return StartCoroutine(FlashColor());
-
-            targetImage.sprite = initialSprite;
-
-            yield return new WaitForSeconds(changeInterval);
-        }
+        targetImage.sprite = damageSprite;
+        myCoroutineDamage = StartCoroutine(FlashColor());
     }
 
     IEnumerator FlashColor()
     {
-        targetImage.sprite = damageSprite;
         float timer = 0;
-
-        for (int i = 0; i < flashCount; i++)
+        foreach (int i in Enumerable.Range(0, flashCount))
         {
-            while (timer < flashDuration)
-            {
-                // Cambia el color suavemente al flashColor
-                targetImage.color = Color.Lerp(originalColor, flashColor, timer / flashDuration);
-                timer += Time.deltaTime;
-                yield return null;
-            }
-
             timer = 0;
 
             while (timer < flashDuration)
@@ -199,7 +246,16 @@ public class BallHud : MonoBehaviour
             }
 
             timer = 0;
+            while (timer < flashDuration)
+            {
+                // Cambia el color suavemente al flashColor
+                targetImage.color = Color.Lerp(originalColor, flashColor, timer / flashDuration);
+                timer += Time.deltaTime;
+                yield return null;
+            }
         }
+        damage = false;
+        setStateNormal();
     }
 }
 

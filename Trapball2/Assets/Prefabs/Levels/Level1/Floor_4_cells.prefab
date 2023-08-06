@@ -24,13 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6239129745940974855}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 3.09, y: 2.92, z: -3.0828972}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4761529437692179576}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &8721819243140590070
 BoxCollider:
@@ -40,16 +41,25 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6239129745940974855}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.356382, y: 0.9579067, z: 3.1911387}
-  m_Center: {x: 0.016299248, y: 2.5150971, z: 0.10063732}
+  serializedVersion: 3
+  m_Size: {x: 4.356382, y: 0.9002242, z: 3.1911387}
+  m_Center: {x: 0.016299248, y: 2.486256, z: 0.10063732}
 --- !u!1001 &5016694110439363475
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 8217719861126258880}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9c5b5a54ec70fb14ab42cccfdcbba1f4, type: 3}
@@ -100,7 +110,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo_1_lp_4celdas
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c5b5a54ec70fb14ab42cccfdcbba1f4, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c5b5a54ec70fb14ab42cccfdcbba1f4, type: 3}
 --- !u!4 &4761529437692179576 stripped
 Transform:

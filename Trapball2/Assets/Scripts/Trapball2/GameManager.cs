@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerPrefab;
     LevelMenuManager lvlMenu;
     public bool bombExploding;
-    public Vector3 initPosForPlayer;
+    public float initPosForPlayerZ;
     public float zCamOffset;
     public float[] xLimits = new float[2];
     public float[] yLimits = new float[2];
@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     //Singleton pattern.
     public static GameManager gM;
     public Camera cam;
+    public CheckPointActive checkPoints;
+
     private void Awake()
     {
         if (gM == null)
@@ -104,14 +106,23 @@ public class GameManager : MonoBehaviour
         {
             SetupCamera();
             //StopAllCoroutines(); //Prevenir fallos cuando Waiting se queda corriendo, se hace pausa y se carga una nueva escena retomando Waiting.
-            initPosForPlayer = new Vector3(-8f, 1.40f, 5.45f);
-            InstantiateNewBall(0, initPosForPlayer);
+            initPosForPlayerZ = 5.45f;// new Vector3(-8f, 1.40f, 5.45f);
+            InstantiateNewBall(0, true);
         
         }
     }
-    public void InstantiateNewBall(float secToWait, Vector3 initPos)
+    public void InstantiateNewBall(float secToWait)
     {
-        StartCoroutine(Waiting(secToWait, initPos));
+        InstantiateNewBall(secToWait, false);
+    }
+    public void InstantiateNewBall(float secToWait, bool firstTime)
+    {
+        Vector2 position = checkPoints.getPositionLastCheckPoint();
+        if (firstTime)
+        {
+            checkPoints.setActiveCheckpointsObjects(false);
+        }
+        StartCoroutine(Waiting(secToWait, new Vector3(position.x, position.y, initPosForPlayerZ)));
     }
     IEnumerator Waiting(float secToWait, Vector3 initPos)
     {
@@ -120,11 +131,16 @@ public class GameManager : MonoBehaviour
         player = Instantiate(playerPrefab, initPos, Quaternion.Euler(0, -30, 0));
         plScript = player.GetComponent<Player>();
         NewPlayer();
+        checkPoints.setActiveCheckpointsObjects(true);
+        checkPoints.setResetCheckpointsObjects();
     }
 
+    IEnumerator WaitingActiveCheckpointObjects(float secToWait)
+    {
+        yield return new WaitForSeconds(secToWait);
+    }
 
-
-    public void ChangeGravityScale(float factor)
+        public void ChangeGravityScale(float factor)
     {
         Physics.gravity = new Vector3(Physics.gravity.x, factor, Physics.gravity.z);
     }

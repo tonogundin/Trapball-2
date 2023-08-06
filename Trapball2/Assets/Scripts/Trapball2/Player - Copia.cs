@@ -359,9 +359,9 @@ public class Player2 : MonoBehaviour
     {
         GameManager.gM.ChangeGravityScale(-9.81f); //También cambio la gravedad aquí porque si no se nota más gravedad en las partículas.
         particles.Explode();
-        GameManager.gM.InstantiateNewBall(2, GameManager.gM.initPosForPlayer);
+        GameManager.gM.InstantiateNewBall(2);
         Destroy(gameObject);
-        Handheld.Vibrate();
+        //Handheld.Vibrate();
     }
 
     public bool isTouchFloor()

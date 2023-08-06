@@ -260,9 +260,12 @@ public class MouseBall2 : MonoBehaviour
     {
         if (isObjetEqualsPlayer(collision.gameObject))
         {
+            float collisionForce = collision.relativeVelocity.magnitude;
+
             ContactPoint[] contacts = collision.contacts;
             if (contacts != null && contacts.Length > 0)
             {
+                Rigidbody rbPlayer = collision.gameObject.GetComponent<Rigidbody>();
                 float normalY = contacts[0].normal.y;
                 if (normalY < compareTop())
                 {
@@ -279,9 +282,27 @@ public class MouseBall2 : MonoBehaviour
                         {
                             impact = 5;
                         }
-                        player.GetComponent<Rigidbody>().AddForce(new Vector3(0, impact, 0), ForceMode.Impulse);
+                        rbPlayer.AddForce(new Vector3(0, impact, 0), ForceMode.Impulse);
                     }
                 }
+                else
+                {
+                    // Obtenemos la dirección en X hacia el otro objeto
+                    float directionToOtherX = Mathf.Sign(collision.transform.position.x - transform.position.x);
+
+                    // Obtenemos la dirección en X de la velocidad de nuestro objeto
+                    float velocityDirectionX = Mathf.Sign(rb.velocity.x);
+
+                    // Comparamos las dos direcciones
+                    if (directionToOtherX == velocityDirectionX && collisionForce > 2 && rb.velocity.magnitude > 1) { 
+                        rbPlayer.AddForce(new Vector3(rb.velocity.x * 7, 0, 0), ForceMode.Impulse);
+                        collision.gameObject.GetComponent<Player>().addDamage();
+                        state = State.SMASH;
+                        changeCollider(true);
+                    }
+
+                }
+
             }
         }
     }

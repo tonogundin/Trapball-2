@@ -2,12 +2,14 @@ trackSelection = true
 fetchPreview = true
 wantsMore = false
 keepOpen = false
-itemIconSize = 1
 queryFolder = "Assets"
 onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+	"last_search.785D90A9" = ""
+	"InspectorPreview.785D90A9" = "0"
+	"currentGroup.785D90A9" = "all"
 }
 providers = {
 	asset = {
@@ -48,4 +50,7 @@ providers = {
 }
 recentSearches = [
 ]
+searchItemFavorites = [
+]
 savedSearchesSortOrder = 0
+showSavedSearchPanel = false

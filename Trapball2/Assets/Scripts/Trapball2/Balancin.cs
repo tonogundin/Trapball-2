@@ -167,8 +167,9 @@ public class Balancin : MonoBehaviour
         if (player != null)
         {
             Rigidbody playerRB = player.GetComponent<Rigidbody>();
-            if (player.GetComponent<Player>().isTouchFloor())
+            if (player.GetComponent<Player>().isTouchFloor() && player.GetComponent<Rigidbody>().velocity.y <= 1 && player.GetComponent<Rigidbody>().velocity.y >= -1)
             {
+                player.GetComponent<Player>().resetJumpForce();
                 playerRB.AddForce(force, forceMode);
             }
         }
