@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
 
     private bool debugger = false;
 
+    private bool isBalancin = false;
+
 
     void Awake()
     {
@@ -234,6 +236,7 @@ public class Player : MonoBehaviour
             case "SueloPantanoso":
                 setTerrainParametersAndStart(0);
                 break;
+            case "Balancin":
             case "SueloMadera":
             case "Box":
                 float collisionForce = collision.relativeVelocity.magnitude *150;
@@ -244,6 +247,33 @@ public class Player : MonoBehaviour
                 break;
             case "SueloPiedra":
                 setTerrainParametersAndStart(2);
+                break;
+            default:
+                // Handle other cases or do nothing
+                break;
+        }
+
+        switch (tag)
+        {
+            case "Balancin":
+                isBalancin = true;
+                break;
+            default:
+                // Handle other cases or do nothing
+                break;
+        }
+
+    }
+
+
+    private void OnCollisionExit(Collision collision)
+    {
+        string tag = collision.gameObject.tag;
+
+        switch (tag)
+        {
+            case "Balancin":
+                isBalancin = false;
                 break;
             default:
                 // Handle other cases or do nothing
@@ -335,6 +365,11 @@ public class Player : MonoBehaviour
 
     public bool isTouchFloor() {
         return state == StatePlayer.NORMAL;
+    }
+
+    public bool isOnBalancin()
+    {
+        return state == StatePlayer.NORMAL && isBalancin;
     }
 
     public float getJumpForce()

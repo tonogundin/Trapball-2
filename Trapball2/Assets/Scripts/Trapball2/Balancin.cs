@@ -164,7 +164,7 @@ public class Balancin : MonoBehaviour
 
     private void moveBall(Vector3 force, ForceMode forceMode)
     {
-        if (player != null)
+        if (player != null && player.GetComponent<Player>().isOnBalancin())
         {
             Rigidbody playerRB = player.GetComponent<Rigidbody>();
             if (player.GetComponent<Player>().isTouchFloor() && player.GetComponent<Rigidbody>().velocity.y <= 1 && player.GetComponent<Rigidbody>().velocity.y >= -1)
