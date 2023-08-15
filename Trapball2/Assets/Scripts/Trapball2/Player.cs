@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [HideInInspector] public Rigidbody rb;
     Transform transform;
-    float h;
+    float movementPlayer;
     float speedLimit = 5f;
     float movementForce = 10f;
     [SerializeField] LayerMask jumpable;
@@ -37,6 +38,11 @@ public class Player : MonoBehaviour
     private float jumpLowLimitBomb;
     private float jumpLowBombPercent = 0.80f;
 
+    private bool jumpCharge = false;
+
+    private bool debugger = false;
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -62,35 +68,23 @@ public class Player : MonoBehaviour
     }
 
     void FixedUpdate() {
-        rb.AddForce(new Vector3(h, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
+        rb.AddForce(new Vector3(movementPlayer, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
         manageExtraGravity();
         if (!freeFall) {
             ManageBallSpeed();
         }
         velocityBall = new Vector2(rb.velocity.x, rb.velocity.y);
+        playerSoundroll.setParameterByName("speed", velocityBall.x);
+        impactFloor.setParameterByName("speed", velocityBall.y);
     }
 
     void Update() {
-        if (state != StatePlayer.DEAD)
+        if (state != StatePlayer.DEAD && state != StatePlayer.FINISH)
         {
-            movementInput();
+            handleMouseButtonDown();
             touchingFloor();
-            inputPlayer();
             checkSoundRoll();
         }
-    }
-
-    void movementInput()
-    {
-#if UNITY_STANDALONE
-        h = Input.GetAxisRaw("Horizontal");
-#endif
-#if UNITY_ANDROID
-                    h = Input.acceleration.x * 2;
-#endif
-        playerSoundroll.setParameterByName("speed", velocityBall.x);
-        impactFloor.setParameterByName("speed", velocityBall.y);
-        impactObjetc.setParameterByName("speed", (velocityBall.y + velocityBall.x)*150);
     }
 
     void touchingFloor()
@@ -108,33 +102,21 @@ public class Player : MonoBehaviour
                 }
                 else if (state != StatePlayer.NORMAL)
                 {
-                    jumpForce = 0;
+                    resetJumpForce();
                     state = StatePlayer.NORMAL;
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
                 }
             }
-            else if (state != StatePlayer.BOMBJUMP)
+            else if (state == StatePlayer.NORMAL)
             {
+                resetJumpForce();
                 state = StatePlayer.JUMP;
             }
-        } else if (rb.velocity.y >= 1)
-        {
-            state = StatePlayer.JUMP;
-        }
-    }
-
-    void inputPlayer() {
-        if (Input.GetMouseButton(0)) {
-            handleMouseButtonDown();
-        }
-
-        if (Input.GetMouseButtonUp(0)){
-            handleMouseButtonUp();
         }
     }
 
     void handleMouseButtonDown() {
-        if (state == StatePlayer.NORMAL) {
+        if (jumpCharge && state == StatePlayer.NORMAL) {
             if (jumpForce < jumpLimit)
             {
                 jumpForce += jumpDelta * Time.deltaTime;
@@ -147,6 +129,7 @@ public class Player : MonoBehaviour
     }
 
     void handleMouseButtonUp() {
+        jumpCharge = false;
         switch (state) {
             case StatePlayer.NORMAL:
                 adjustJumpForce();
@@ -239,7 +222,7 @@ public class Player : MonoBehaviour
         }
         //Ayuda para que no cueste tanto dejar la bola quieta
         //Si la bola a penas se mueve, no hay input de usuario y no está en una rampa (y == 0 + TouchingFloor) se parará por completo.
-        else if (Mathf.Abs(rb.velocity.x) < 0.3f && h == 0 && rb.velocity.y == 0) {
+        else if (Mathf.Abs(rb.velocity.x) < 0.3f && movementPlayer == 0 && rb.velocity.y == 0) {
             rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
         }
     }
@@ -253,6 +236,8 @@ public class Player : MonoBehaviour
                 break;
             case "SueloMadera":
             case "Box":
+                float collisionForce = collision.relativeVelocity.magnitude *150;
+                impactObjetc.setParameterByName("speed", collisionForce);
                 setTerrainParametersAndStart(1);
                 impactObjetc.start();
                 impactObjetc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -286,6 +271,15 @@ public class Player : MonoBehaviour
                 break;
             case "TubeExit":
                 freeFall = false;
+                break;
+            case "Courage":
+                valor++;
+                break;
+            case "Exit":
+                state = StatePlayer.FINISH;
+                rb.velocity = new Vector3(0, 0, 0);
+                playerSoundroll.setParameterByName("speed", 0);
+                playerSoundroll.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 break;
             default:
                 // Handle other cases or do nothing
@@ -371,26 +365,54 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void OnJump(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            jumpCharge = true;
+        } else
+        {
+            handleMouseButtonUp();
+        }
+    }
+
+    public void OnMove(InputValue value)
+    {
+        if (state != StatePlayer.DEAD && state != StatePlayer.FINISH)
+        {
+            #if UNITY_STANDALONE
+                    movementPlayer = value.Get<Vector2>().x;
+            #endif
+            #if UNITY_ANDROID
+                                movementPlayer = Input.acceleration.x * 2;
+            #endif
+        }
+    }
+
+
 
     void OnGUI()
     {
-        int w = Screen.width, h = Screen.height;
+        if (debugger)
+        {
+            int w = Screen.width, h = Screen.height;
 
-        GUIStyle style = new GUIStyle();
+            GUIStyle style = new GUIStyle();
 
-        Rect rect = new Rect(50, 50, w, h * 2 / 100);
-        style.alignment = TextAnchor.UpperCenter;
-        style.fontSize = h * 4 / 100;
-        style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
-        string text = string.Format("X: {0:0.000} Y:{1:0.000}", velocityBall.x, velocityBall.y);
-        GUI.Label(rect, text, style);
+            Rect rect = new Rect(50, 50, w, h * 2 / 100);
+            style.alignment = TextAnchor.UpperCenter;
+            style.fontSize = h * 4 / 100;
+            style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
+            string text = string.Format("X: {0:0.000} Y:{1:0.000}", velocityBall.x, velocityBall.y);
+            GUI.Label(rect, text, style);
 
-        Rect rect2 = new Rect(50, 250, w, h * 2 / 100);
-        style.alignment = TextAnchor.UpperCenter;
-        style.fontSize = h * 4 / 100;
-        style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
-        string text2 = string.Format("State =" + state);
-        GUI.Label(rect2, text2, style);
+            Rect rect2 = new Rect(50, 250, w, h * 2 / 100);
+            style.alignment = TextAnchor.UpperCenter;
+            style.fontSize = h * 4 / 100;
+            style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
+            string text2 = string.Format("State =" + state);
+            GUI.Label(rect2, text2, style);
+        }
     }
 
 }
@@ -402,5 +424,6 @@ public enum StatePlayer
     JUMP,
     BOMBJUMP,
     END_BOMB_JUMP,
-    DEAD
+    DEAD,
+    FINISH
 }

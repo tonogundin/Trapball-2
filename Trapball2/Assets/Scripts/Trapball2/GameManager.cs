@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         else if (gM != this)
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += NewSceneLoaded;
         Setup();
 

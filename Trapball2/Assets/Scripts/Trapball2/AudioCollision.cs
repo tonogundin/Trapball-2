@@ -13,7 +13,6 @@ public class AudioCollision : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/DeathVoice", GetComponent<Transform>().position);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Daño/ImpactoPinchos", GetComponent<Transform>().position);
-            other.transform.position = GameManager.gM.initPosForPlayer;
 
         }
     }

@@ -20,26 +20,28 @@ public class BreakableWood : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player") &&
-            (collision.gameObject.GetComponent<Player>().state == StatePlayer.END_BOMB_JUMP ||
-            collision.gameObject.GetComponent<Player>().state == StatePlayer.BOMBJUMP)
-            &&
-            state == State.NORMAL) {
-            state = State.BREAK;
-            rb.isKinematic = false;
-            StartCoroutine(Disappear());
-            PlatformHit.setParameterByName("VolPlat", 0);
-            PlatformCrack.start();      
+        if(collision.gameObject.CompareTag("Player") && state == State.NORMAL) {
+            // Obtiene la magnitud de la velocidad relativa (fuerza del impacto)
+            float collisionForce = collision.relativeVelocity.magnitude;
+
+            // Obtiene la velocidad relativa en el eje y
+            float yVelocity = collision.relativeVelocity.y;
+
+            // Si la fuerza del impacto es suficientemente fuerte y la velocidad en y es negativa
+            if (collisionForce > 10 && yVelocity < -10)
+            {
+                state = State.BREAK;
+                rb.isKinematic = false;
+                StartCoroutine(Disappear());
+                PlatformHit.setParameterByName("VolPlat", 0);
+                PlatformCrack.start(); 
+            }
         }
 
         if (collision.gameObject.CompareTag("LugarDeCaida"))
         {
-
             PlatformHit.start();
             //PlatformHit.setParameterByName("VolPlat", 1);
-
-
-
         }
 
         if (collision.gameObject.CompareTag("SueloPiedra"))

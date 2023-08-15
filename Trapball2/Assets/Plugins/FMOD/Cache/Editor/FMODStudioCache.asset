@@ -1,29 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9151682622891011311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresUltraSimple/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-8631469344628110780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,60 +48,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7570359834006839967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectores/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 6
-  Default: 1
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-7424115533129321526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectores
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectores
-  Guid:
-    Data1: -363477199
-    Data2: 1203050070
-    Data3: -891760228
-    Data4: -793208170
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -6265470791799605884}
-  - {fileID: -1934735568904454539}
-  - {fileID: -7570359834006839967}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 214000
 --- !u!114 &-7379543250706311918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +91,7 @@ MonoBehaviour:
     Data3: -781381974
     Data4: -532051344
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -177,30 +99,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 7644
---- !u!114 &-7296514624421568917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresUltraSimple/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 6
-  Default: 1
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-7013779438252883233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +118,7 @@ MonoBehaviour:
     Data3: -1560797530
     Data4: 945605478
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -248,7 +146,7 @@ MonoBehaviour:
     Data3: -1772429184
     Data4: 155299684
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -276,7 +174,7 @@ MonoBehaviour:
     Data3: 677316767
     Data4: -740571880
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -307,7 +205,7 @@ MonoBehaviour:
     Data3: -1413558892
     Data4: -77105335
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -342,30 +240,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-6465841242474183780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl 2/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-6386246467618463517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +259,7 @@ MonoBehaviour:
     Data3: -57636446
     Data4: 2079947479
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -443,30 +317,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-6265470791799605884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectores/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-6212277165362399114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,7 +336,7 @@ MonoBehaviour:
     Data3: -1204491628
     Data4: 1442871186
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -538,7 +388,7 @@ MonoBehaviour:
     Data3: 1559816125
     Data4: 741189368
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -546,54 +396,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4500
---- !u!114 &-5890548292392421200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresv1/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-5846556178732112593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresAmbiental/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 6
-  Default: 1
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-5820290598024969531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,12 +410,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Saltos/SaltoHigh
   Guid:
-    Data1: -204335522
-    Data2: 1151716644
-    Data3: -2053209424
-    Data4: -1904556526
+    Data1: -1489469402
+    Data2: 1178725830
+    Data3: -429088337
+    Data4: -606805632
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -622,30 +424,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2343
---- !u!114 &-5410784555596472505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/mrodar/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-5111729054966150506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +443,7 @@ MonoBehaviour:
     Data3: -1146396246
     Data4: 1241200842
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -693,7 +471,7 @@ MonoBehaviour:
     Data3: -1510758466
     Data4: 265422733
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -720,7 +498,7 @@ MonoBehaviour:
     Data3: -2112382050
     Data4: 1440496762
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -728,36 +506,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2950
---- !u!114 &-4660100303740869174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusAlcantarillas
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusAlcantarillas
-  Guid:
-    Data1: 1347097085
-    Data2: 1102873141
-    Data3: 1291166358
-    Data4: -141913531
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 5522903932237158528}
-  - {fileID: -3837101220341382727}
-  - {fileID: 1116030838347787911}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 91200
 --- !u!114 &-4374179464051467917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,57 +578,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-3837101220341382727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusAlcantarillas/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-3460369241683054363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/HarpImpact2
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/HarpImpact2
-  Guid:
-    Data1: -1479402286
-    Data2: 1170493942
-    Data3: 1389479845
-    Data4: -769226023
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 2343
 --- !u!114 &-3342383403181642489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,7 +597,7 @@ MonoBehaviour:
     Data3: 702696345
     Data4: -1987259590
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -927,7 +624,7 @@ MonoBehaviour:
     Data3: 1685737346
     Data4: 973510672
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -936,60 +633,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 390
---- !u!114 &-3031054034986177027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresAmbiental/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-2969834035270614969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresUltraSimple
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresUltraSimple
-  Guid:
-    Data1: -1447841010
-    Data2: 1079477052
-    Data3: 865027249
-    Data4: -994891404
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -9151682622891011311}
-  - {fileID: -152037412187681236}
-  - {fileID: -7296514624421568917}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 462000
 --- !u!114 &-2939294946524030438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,7 +652,7 @@ MonoBehaviour:
     Data3: 400373408
     Data4: -1771182572
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1017,34 +660,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 156
---- !u!114 &-2789686880633311677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Musica/Percusi\xF3nTension"
-  m_EditorClassIdentifier: 
-  Path: "event:/Musica/Percusi\xF3nTension"
-  Guid:
-    Data1: 1383197741
-    Data2: 1133133460
-    Data3: -963091792
-    Data4: -588864064
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 1023769001314005481}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 22000
 --- !u!114 &-2067010505191070552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,7 +684,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-1934735568904454539
+--- !u!114 &-1749845317200577882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1079,40 +694,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectores/Tension
+  m_Name: parameter:/SaltoShort/speed
   m_EditorClassIdentifier: 
-  Name: Tension
+  Name: speed
   StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
+  Min: -8
+  Max: 8
+  Default: 0
   ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-1273812991590928451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresv1/Volumen
-  m_EditorClassIdentifier: 
-  Name: Volumen
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 1
-  ID:
-    data1: 2652362727
-    data2: 208570854
+    data1: 2946692642
+    data2: 3281837607
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -1141,60 +732,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-882170594770835541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/rumor_cisterna
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/rumor_cisterna
-  Guid:
-    Data1: 65071756
-    Data2: 1145989509
-    Data3: 342627245
-    Data4: 87945050
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 4500
---- !u!114 &-589835744414229994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoLowOriginal
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoLowOriginal
-  Guid:
-    Data1: 767874289
-    Data2: 1158513542
-    Data3: -1300862070
-    Data4: -605678499
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 2343
 --- !u!114 &-571004866327603423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,7 +751,7 @@ MonoBehaviour:
     Data3: 1551542444
     Data4: 1686802647
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1246,26 +783,6 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
-  Exists: 1
---- !u!114 &-342339231498060510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../../trapball2fmod/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638157221930000000
-  FileSizes:
-  - Name: Desktop
-    Value: 3514
   Exists: 1
 --- !u!114 &-326017994834768650
 MonoBehaviour:
@@ -1315,30 +832,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-152037412187681236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresUltraSimple/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,22 +845,16 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -342339231498060510}
-  - {fileID: 10826267396790207}
+  - {fileID: 75547902533494189}
+  - {fileID: 833525026851425528}
   EditorEvents:
   - {fileID: 4093968812578420207}
   - {fileID: -2939294946524030438}
-  - {fileID: -2969834035270614969}
   - {fileID: 6366434103305771212}
   - {fileID: 4521258726545807628}
-  - {fileID: 5077701838806175572}
   - {fileID: -3342383403181642489}
-  - {fileID: 2960487653603615345}
   - {fileID: -4689977637024142857}
-  - {fileID: 3911531951298852302}
-  - {fileID: -2789686880633311677}
   - {fileID: 1385500783499381536}
-  - {fileID: -7424115533129321526}
   - {fileID: -5056635689571097198}
   - {fileID: 5877350073118385842}
   - {fileID: 620716105925664944}
@@ -1375,41 +862,33 @@ MonoBehaviour:
   - {fileID: 256905344075664769}
   - {fileID: -5820290598024969531}
   - {fileID: 957175388827454111}
-  - {fileID: 4131738100127178117}
   - {fileID: -6728714726658830622}
   - {fileID: -5111729054966150506}
   - {fileID: 7391390053330668785}
   - {fileID: 3937116129632050600}
   - {fileID: 2903277287549650847}
   - {fileID: 4182998118500647623}
-  - {fileID: 1774286504069234791}
-  - {fileID: 9055294554912019947}
   - {fileID: -7013779438252883233}
-  - {fileID: -3460369241683054363}
   - {fileID: 3107557010937519961}
   - {fileID: -6386246467618463517}
   - {fileID: -5938661698602770671}
-  - {fileID: -589835744414229994}
   - {fileID: -571004866327603423}
-  - {fileID: -4660100303740869174}
   - {fileID: 2851948610239957886}
   - {fileID: -3265919215707244256}
   - {fileID: -6212277165362399114}
   - {fileID: -7331657012622577827}
   - {fileID: -6930900712834810257}
   - {fileID: 7228800650332275628}
-  - {fileID: -882170594770835541}
-  - {fileID: 8513603973894696153}
-  - {fileID: 7963241051891509862}
   - {fileID: -6889087964470567756}
+  - {fileID: 1086381194672751924}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   StringsBanks:
-  - {fileID: -342339231498060510}
-  cacheTime: 638157221930000000
+  - {fileID: 75547902533494189}
+  cacheTime: 638266007910000000
   cacheVersion: 10
---- !u!114 &10826267396790207
+--- !u!114 &75547902533494189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1419,15 +898,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../trapball2fmod/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638157221930000000
+  Path: ../../FMOD/trapball2fmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638266007910000000
   FileSizes:
   - Name: Desktop
-    Value: 25103904
+    Value: 2852
   Exists: 1
 --- !u!114 &225112327624964801
 MonoBehaviour:
@@ -1472,7 +951,7 @@ MonoBehaviour:
     Data3: 1359388800
     Data4: 897182370
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1524,7 +1003,7 @@ MonoBehaviour:
     Data3: -1611574607
     Data4: -1330225890
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1532,6 +1011,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1647
+--- !u!114 &833525026851425528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/trapball2fmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638266007910000000
+  FileSizes:
+  - Name: Desktop
+    Value: 4941408
+  Exists: 1
 --- !u!114 &957175388827454111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1551,15 +1050,15 @@ MonoBehaviour:
     Data3: -960846710
     Data4: 807945690
   Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
+  - {fileID: 833525026851425528}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
   Length: 30000
---- !u!114 &1023769001314005481
+--- !u!114 &1086381194672751924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1568,69 +1067,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: "parameter:/Percusi\xF3nTension/Tension"
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/SaltoShort
   m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1116030838347787911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusAlcantarillas/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1153837822612348485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresAmbiental/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  Path: event:/Saltos/SaltoShort
+  Guid:
+    Data1: -846088768
+    Data2: 1109139290
+    Data3: -1591944802
+    Data4: -1047444788
+  Banks:
+  - {fileID: 833525026851425528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1749845317200577882}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 791
 --- !u!114 &1385500783499381536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1650,7 +1105,7 @@ MonoBehaviour:
     Data3: 1904919692
     Data4: 446484951
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1658,84 +1113,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 30000
---- !u!114 &1417155328018285164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl 2/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1774286504069234791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresAmbiental
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresAmbiental
-  Guid:
-    Data1: -166706768
-    Data2: 1127105310
-    Data3: -544370559
-    Data4: -790990717
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 1153837822612348485}
-  - {fileID: -5846556178732112593}
-  - {fileID: -3031054034986177027}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 194713
---- !u!114 &2546356155647384203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl-esta/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &2851948610239957886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1755,7 +1132,7 @@ MonoBehaviour:
     Data3: -1298488174
     Data4: -1158338220
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1782,7 +1159,7 @@ MonoBehaviour:
     Data3: -1019449463
     Data4: -496899729
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1790,36 +1167,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 321
---- !u!114 &2960487653603615345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresSimpl 2
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresSimpl 2
-  Guid:
-    Data1: -837453784
-    Data2: 1206651891
-    Data3: -1461940578
-    Data4: 2124020197
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -6465841242474183780}
-  - {fileID: 1417155328018285164}
-  - {fileID: 6965251227554911680}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 308000
 --- !u!114 &3107557010937519961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1839,7 +1186,7 @@ MonoBehaviour:
     Data3: -1183417462
     Data4: 783710001
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1847,30 +1194,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 287
---- !u!114 &3163969209562212295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresS-Secuencial/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &3292562534051206391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1943,36 +1266,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &3911531951298852302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresSimpl-esta
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresSimpl-esta
-  Guid:
-    Data1: 1744807465
-    Data2: 1228695061
-    Data3: -1022215522
-    Data4: -1252659519
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 4923516260456136598}
-  - {fileID: 2546356155647384203}
-  - {fileID: 7713207294317176849}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 152000
 --- !u!114 &3937116129632050600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1992,7 +1285,7 @@ MonoBehaviour:
     Data3: 2050484878
     Data4: 174142389
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2044,7 +1337,7 @@ MonoBehaviour:
     Data3: 732003717
     Data4: 1853070876
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2052,34 +1345,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 267
---- !u!114 &4131738100127178117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Desplazamiento/mrodar
-  m_EditorClassIdentifier: 
-  Path: event:/Desplazamiento/mrodar
-  Guid:
-    Data1: -850458764
-    Data2: 1340809540
-    Data3: -1126241886
-    Data4: 1222052278
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -5410784555596472505}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 18500
 --- !u!114 &4182998118500647623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,7 +1364,7 @@ MonoBehaviour:
     Data3: -929057633
     Data4: -973880825
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2128,58 +1393,7 @@ MonoBehaviour:
     Data3: -288872779
     Data4: -948149343
   Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 30000
---- !u!114 &4923516260456136598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl-esta/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &5077701838806175572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteGota1
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteGota1
-  Guid:
-    Data1: -1581689572
-    Data2: 1155700680
-    Data3: 145889453
-    Data4: 531827123
-  Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -2206,7 +1420,7 @@ MonoBehaviour:
     Data3: 990353588
     Data4: 981400755
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -2215,54 +1429,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 12038
---- !u!114 &5522903932237158528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusAlcantarillas/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 6
-  Default: 1
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &5742462011498146951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresS-Secuencial/Accent
-  m_EditorClassIdentifier: 
-  Name: Accent
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 2719760334
-    data2: 4231456998
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &5877350073118385842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2282,7 +1448,7 @@ MonoBehaviour:
     Data3: 66098590
     Data4: -384476356
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2310,7 +1476,7 @@ MonoBehaviour:
     Data3: 1420710287
     Data4: 1293108482
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -2320,30 +1486,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 14000
---- !u!114 &6451392648970353401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresv1/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 6
-  Default: 1
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &6478985731465821921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,30 +1506,6 @@ MonoBehaviour:
   ID:
     data1: 2946692642
     data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &6965251227554911680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl 2/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 6
-  Default: 1
-  ID:
-    data1: 419306491
-    data2: 395642479
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -2435,7 +1553,7 @@ MonoBehaviour:
     Data3: -789344862
     Data4: 2096164127
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2463,7 +1581,7 @@ MonoBehaviour:
     Data3: 1052293797
     Data4: -778065853
   Banks:
-  - {fileID: 10826267396790207}
+  - {fileID: 833525026851425528}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2496,54 +1614,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &7549309269483136446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresS-Secuencial/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 6
-  Default: 1
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &7713207294317176849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresSimpl-esta/Zone
-  m_EditorClassIdentifier: 
-  Name: Zone
-  StudioPath: 
-  Min: 0
-  Max: 6
-  Default: 1
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &7856515831434340303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,37 +1638,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &7963241051891509862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresv1
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresv1
-  Guid:
-    Data1: -1005262213
-    Data2: 1145120588
-    Data3: -1264832608
-    Data4: 841092502
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -5890548292392421200}
-  - {fileID: 6451392648970353401}
-  - {fileID: 8137768309719298005}
-  - {fileID: -1273812991590928451}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 276437
 --- !u!114 &8117011097764313381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2623,84 +1662,3 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &8137768309719298005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusColectoresv1/Tension
-  m_EditorClassIdentifier: 
-  Name: Tension
-  StudioPath: 
-  Min: 0
-  Max: 5
-  Default: 4
-  ID:
-    data1: 2094276959
-    data2: 3666953542
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &8513603973894696153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MusColectoresS-Secuencial
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MusColectoresS-Secuencial
-  Guid:
-    Data1: -1618139614
-    Data2: 1276050160
-    Data3: -1533536621
-    Data4: 1459987844
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 5742462011498146951}
-  - {fileID: 3163969209562212295}
-  - {fileID: 7549309269483136446}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 192000
---- !u!114 &9055294554912019947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/HarpImpact
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/HarpImpact
-  Guid:
-    Data1: -522120264
-    Data2: 1151012356
-    Data3: 875383948
-    Data4: 955253903
-  Banks:
-  - {fileID: 10826267396790207}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1500
