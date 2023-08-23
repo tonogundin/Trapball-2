@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class FloatingBehaviour : MonoBehaviour
+public class FloatingBehaviour : MonoBehaviour, IResettable
 {
     [SerializeField] float depthBeforeSumerged;
     [SerializeField] float displacementAmount;
-    bool floating;
+    bool floating = false;
     Rigidbody rb;
     float waterYPos;
     [SerializeField] float torque;
@@ -14,9 +12,15 @@ public class FloatingBehaviour : MonoBehaviour
     float initDisplacement;
     FMOD.Studio.EventInstance BoxSplash;
     // Start is called before the first frame update
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private float initialMass;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
+        initialRotation = transform.rotation;
+        initialMass = rb.mass;
         BoxSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/ObjectWaterDrop");
     }
 
@@ -63,6 +67,18 @@ public class FloatingBehaviour : MonoBehaviour
 
         }
     }
+
+    public void resetObject()
+    {
+        rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.rotation = initialRotation;
+        rb.rotation = initialRotation;
+        rb.mass = initialMass;
+        floating = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         

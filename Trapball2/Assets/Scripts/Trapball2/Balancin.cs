@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Balancin : MonoBehaviour
+public class Balancin : MonoBehaviour, IResettable
 {
     [SerializeField] float depthBeforeSumerged;
     [SerializeField] float displacementAmount;
@@ -10,19 +10,20 @@ public class Balancin : MonoBehaviour
     [SerializeField] float torque;
     public float forceX = 0f;
     float offset = 0.4f;
-    float initDisplacement;
     GameObject player;
     float energyImpactMouse = 0f;
     float energyImpactBall = 0f;
     string mouseBall = "MouseBall";
-    bool isImpactBall = false;
     float forceXBalancin = 0f;
     private Vector3 oldPosition;
     GameObject mouse;
-    // Start is called before the first frame update
+    private Vector3 initialPosition;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
         setOldPosition(rb.position);
     }
 
@@ -52,9 +53,6 @@ public class Balancin : MonoBehaviour
                 forceXBalancin -= 0.5f;
             }
             repositionMouse(rb.position.x - oldPosition.x);
-            //1er cuadrante. Caja entra recta.
-            //if(initDisplacement <= 45 || initDisplacement > 315)
-            //{
             if (zRotation > 0.5f || zRotation < 359.5f)
             {
                 turnDirection = zRotation > 0.5f && zRotation < 180 ? -1 : 1;
@@ -68,60 +66,45 @@ public class Balancin : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -1f);
             }
-
-            //}
-            ////2o cuadrante
-            //else if(initDisplacement > 45 && initDisplacement < 135)
-            //{
-            //    if (zRotation > 90.5f || zRotation < 89.5f)
-            //    {
-            //        Debug.Log("eee");
-            //        turnDirection = zRotation > 90.5f ? 1 : -1;
-            //        rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
-            //    }
-            //}
-
-
-
         }
+    }
+
+    public void resetObject()
+    {
+        rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
+        rb.velocity = new Vector3(0, 0, 0);
+        setOldPosition(rb.position);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        float impact = collision.relativeVelocity.y * -1;
         if (collision.gameObject == player)
         {
-            float impact = collision.relativeVelocity.y * -1;
-            energyImpactBall = impact;
-            if (energyImpactBall > 8)
+            if (mouse != null && impact > 3f && mouse.GetComponent<MouseBall2>().isStayonShip())
             {
-                energyImpactBall = 8;
-            }
-            if (mouse != null && impact > 12f)
-            {
-                isImpactBall = true;
-                if (mouse.GetComponent<MouseBall2>().isStayonShip())
+                energyImpactBall = impact;
+                if (energyImpactBall > 8)
                 {
-                    moveMouse(new Vector3(forceXBalancin, energyImpactBall, 0), ForceMode.Impulse);
+                    energyImpactBall = 8;
                 }
+                moveBalancin(forceX);
+                moveMouse(new Vector3(forceX, 0, 0), ForceMode.Acceleration);
+                moveMouse(new Vector3(0, energyImpactBall, 0), ForceMode.Impulse);
                 energyImpactBall = 0;
             }
         }
         if (collision.gameObject.name.Contains(mouseBall))
         {
             mouse = collision.gameObject;
-            float impact = collision.relativeVelocity.y * -1;
             energyImpactMouse = impact;
             if (energyImpactMouse > 8)
             {
                 energyImpactMouse = 8;
             }
-            if (player != null && impact > 4f)
+            if (player != null && impact > 3f)
             {
-                if (isImpactBall)
-                {
-                    moveBalancin(forceX);
-                    isImpactBall = false;
-                }
+                moveBalancin(forceX);
                 moveBall(new Vector3(0, energyImpactMouse, 0), ForceMode.Impulse);
                 energyImpactMouse = 0;
             }
@@ -140,10 +123,8 @@ public class Balancin : MonoBehaviour
     {
         if (other.CompareTag("WaterSurface"))
         {
-            initDisplacement = transform.eulerAngles.z;
             rb.mass = 10; //Para mejorar comportamiento cuando la bola se pone encima de una caja en el agua.
             waterYPos = other.bounds.center.y;
-            //rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
             rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
             floating = true;
         }
@@ -177,12 +158,13 @@ public class Balancin : MonoBehaviour
 
     private void repositionMouse(float positionX)
     {
-        if (mouse != null)
+        if (mouse != null && mouse.GetComponent<MouseBall2>().isStayonShip() && mouse.GetComponent<MouseBall2>().isSmashProcess())
         {
             Rigidbody mouseRB = mouse.GetComponent<Rigidbody>();
             mouseRB.position = new Vector3(mouseRB.position.x + positionX, mouseRB.position.y, mouseRB.position.z);
-            setOldPosition(rb.position);
+            
         }
+        setOldPosition(rb.position);
     }
 
     private void setOldPosition(Vector3 position)

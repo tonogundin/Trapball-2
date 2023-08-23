@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -239,7 +240,7 @@ public class Player : MonoBehaviour
             case "Balancin":
             case "SueloMadera":
             case "Box":
-                float collisionForce = collision.relativeVelocity.magnitude *150;
+                float collisionForce = collision.relativeVelocity.magnitude * 250;
                 impactObjetc.setParameterByName("speed", collisionForce);
                 setTerrainParametersAndStart(1);
                 impactObjetc.start();
@@ -415,15 +416,26 @@ public class Player : MonoBehaviour
     {
         if (state != StatePlayer.DEAD && state != StatePlayer.FINISH)
         {
-            #if UNITY_STANDALONE
-                    movementPlayer = value.Get<Vector2>().x;
-            #endif
-            #if UNITY_ANDROID
-                                movementPlayer = Input.acceleration.x * 2;
-            #endif
+#if UNITY_STANDALONE
+
+#endif
+#if UNITY_ANDROID
+                                //movementPlayer = Input.acceleration.x * 2;
+#endif
+
+            movementPlayer = value.Get<Vector2>().x;
         }
     }
 
+    public void OnMenu()
+    {
+        StartCoroutine(delayChangeScene());
+    }
+    IEnumerator delayChangeScene()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadSceneAsync("Menu");
+    }
 
 
     void OnGUI()

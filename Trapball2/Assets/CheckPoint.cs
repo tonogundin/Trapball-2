@@ -10,20 +10,11 @@ public class CheckPoint : MonoBehaviour
 
     public List<GameObject> objects;
 
-    private List<Vector2> positionObjects = new List<Vector2>();
 
     // Start is called before the first frame update
     void Start()
     {
-        if (objects != null && objects.Count > 0)
-        {
-            positionObjects.Clear();
-            positionObjects = new List<Vector2>();
-            foreach (GameObject obj in objects)
-            {
-                positionObjects.Add(obj.GetComponent<Rigidbody>().position);
-            }
-        }
+
     }
 
     // Update is called once per frame
@@ -47,11 +38,11 @@ public class CheckPoint : MonoBehaviour
 
     public void setResetObjects()
     {
-        if (positionObjects != null && positionObjects.Count > 0 && objects != null && objects.Count > 0)
+        if (objects != null && objects.Count > 0)
         {
-            foreach (var (gameObject, position) in objects.Zip(positionObjects, (o, p) => (o, p)))
+            foreach (var resettable in objects)
             {
-                gameObject.GetComponent<Rigidbody>().position = new Vector3(position.x, position.y, gameObject.GetComponent<Rigidbody>().position.z);
+                resettable.GetComponent<IResettable>().resetObject();
             }
         }
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MouseBall2 : MonoBehaviour
+public class MouseBall2 : MonoBehaviour, IResettable
 {
     Rigidbody rb;
     Animator animator;
@@ -19,7 +19,7 @@ public class MouseBall2 : MonoBehaviour
     private bool stayonShip = false;
     public GameObject normalCollider;
     public GameObject smashCollider;
-    private bool mouseAsociateShip = false;
+    public float ForceXImpact = 7;
 
     const string animMouseIdle = "MouseBallIddle";
     const string animMouseMove = "MouseBallMove";
@@ -32,6 +32,8 @@ public class MouseBall2 : MonoBehaviour
     private State antState;
     private bool contactBall = false;
     private int secondsKnocked = 1500;
+
+    private Vector3 initialPosition;
 
     //Instancias de FMOD
 
@@ -49,6 +51,7 @@ public class MouseBall2 : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
+        initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
         state = State.NONE;
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
         timeKnockOut = new Timer((int)(clips[(int)Animations.SMASH].length * 1000) + secondsKnocked, new CallBackSmashTimer(this));
@@ -228,7 +231,7 @@ public class MouseBall2 : MonoBehaviour
         }
     }
 
-    private bool isSmashProcess()
+    public bool isSmashProcess()
     {
         return state == State.SMASH || state == State.RECOVER;
     }
@@ -294,8 +297,13 @@ public class MouseBall2 : MonoBehaviour
                     float velocityDirectionX = Mathf.Sign(rb.velocity.x);
 
                     // Comparamos las dos direcciones
-                    if (directionToOtherX == velocityDirectionX && collisionForce > 2 && rb.velocity.magnitude > 1) { 
-                        rbPlayer.AddForce(new Vector3(rb.velocity.x * 7, 0, 0), ForceMode.Impulse);
+                    if (directionToOtherX == velocityDirectionX && collisionForce > 2 && rb.velocity.magnitude > 1) {
+                        float forceX = rb.velocity.x;
+                        if (forceX > ForceXImpact)
+                        {
+                            forceX = ForceXImpact;
+                        }
+                        rbPlayer.AddForce(new Vector3(forceX, 0, 0), ForceMode.Impulse);
                         collision.gameObject.GetComponent<Player>().addDamage();
                         state = State.SMASH;
                         changeCollider(true);
@@ -305,6 +313,7 @@ public class MouseBall2 : MonoBehaviour
 
             }
         }
+
     }
 
 
@@ -314,11 +323,10 @@ public class MouseBall2 : MonoBehaviour
         {
             contactBall = true;
         }
-        switch (collision.gameObject.layer)
+        switch (collision.gameObject.tag)
         {
-            case Layers.PLATFORM:
+            case "Balancin":
                 stayonShip = true;
-                mouseAsociateShip = true;
                 break;
         }
     }
@@ -342,11 +350,11 @@ public class MouseBall2 : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+private void OnCollisionExit(Collision collision)
     {
-        switch (collision.gameObject.layer)
+        switch (collision.gameObject.tag)
         {
-            case Layers.PLATFORM:
+            case "Balancin":
                 stayonShip = false;
                 break;
         }
@@ -359,6 +367,14 @@ public class MouseBall2 : MonoBehaviour
     public bool isStayonShip()
     {
         return stayonShip;
+    }
+
+    public void resetObject()
+    {
+        state = State.NONE;
+        changeCollider(false);
+        rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
+        rb.velocity = new Vector3(0, 0, 0);
     }
 
     private bool isObjetEqualsPlayer(GameObject gameObject)
