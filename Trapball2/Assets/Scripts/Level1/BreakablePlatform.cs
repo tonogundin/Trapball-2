@@ -85,10 +85,13 @@ public class BreakablePlatform : MonoBehaviour, IResettable
     IEnumerator StarDisappear()
     {
         yield return new WaitForSeconds(1f);
-        rb.isKinematic = false;
-        StartCoroutine(Disappear());
-        PlatformHit.setParameterByName("VolPlat", 0);
-        PlatformCrack.start();
+        if (this.isActiveAndEnabled)
+        {
+            rb.isKinematic = false;
+            StartCoroutine(Disappear());
+            PlatformHit.setParameterByName("VolPlat", 0);
+            PlatformCrack.start();
+        }
     }
 
 

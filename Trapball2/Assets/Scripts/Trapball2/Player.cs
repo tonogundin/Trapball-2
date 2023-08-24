@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IResettable
 {
     [HideInInspector] public Rigidbody rb;
     Transform transform;
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     FMOD.Studio.EventInstance impactWater;
 
     public Vector2 velocityBall;
-    public int live = 9;
+    public int live = 8;
     public int valor = 0;
 
     public StatePlayer state = StatePlayer.NORMAL;
@@ -94,27 +94,52 @@ public class Player : MonoBehaviour
     {
         if (rb.velocity.y <= 0 && state != StatePlayer.INIT_JUMP)
         {
-            Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
-            if (colls.Length > 0)
+            if (isColliderPlatforms())
             {
-                playerSoundroll.setVolume(1);
-                //Significa que he caido tras un golpe bomba.
-                if (state == StatePlayer.BOMBJUMP)
-                {
-                    endBombJump();
-                }
-                else if (state != StatePlayer.NORMAL)
-                {
-                    resetJumpForce();
-                    state = StatePlayer.NORMAL;
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
-                }
+                collisionFloor();
             }
             else if (state == StatePlayer.NORMAL)
             {
                 resetJumpForce();
                 state = StatePlayer.JUMP;
             }
+        }
+        else if (rb.velocity.y > 0 && state == StatePlayer.NORMAL && !isColliderPlatforms())
+        {
+            resetJumpForce();
+            state = StatePlayer.JUMP;
+        }
+    }
+
+    private bool isColliderPlatforms()
+    {
+        Vector3 centralOffset = new(0, -0.35f, 0);
+        Vector3 leftOffset = new(-0.35f, -0.35f, 0);
+        Vector3 rightOffset = new(0.35f, -0.35f, 0);
+        Collider[] centralColls = Physics.OverlapSphere(transform.position + centralOffset, 0.1f, jumpable.value);
+        bool result = centralColls.Length > 0;
+        if (!result)
+        {
+            // Si no hay colisión en el centro, entonces verificamos los lados
+            Collider[] leftColls = Physics.OverlapSphere(transform.position + leftOffset, 0.1f, jumpable.value);
+            Collider[] rightColls = Physics.OverlapSphere(transform.position + rightOffset, 0.1f, jumpable.value);
+            result = leftColls.Length > 0 && rightColls.Length > 0;
+        }
+        return result;
+    }
+
+    private void collisionFloor()
+    {
+        if (state == StatePlayer.BOMBJUMP)
+        {
+            endBombJump();
+        }
+        else if (state != StatePlayer.NORMAL)
+        {
+            playerSoundroll.setVolume(1);
+            resetJumpForce();
+            state = StatePlayer.NORMAL;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
         }
     }
 
@@ -361,7 +386,17 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         GameManager.gM.InstantiateNewBall(2);
-        Destroy(gameObject);
+    }
+
+    public void resetObject()
+    {
+        rb.isKinematic = false;
+        GetComponent<Renderer>().enabled = true;
+        state = StatePlayer.NORMAL;
+        particles.resetObject();
+        currentGravityFactor = initGravityFactor;
+        rb.angularDrag = 0.05f;
+        rb.drag = 0;
     }
 
     public bool isTouchFloor() {
@@ -471,6 +506,7 @@ public enum StatePlayer
     JUMP,
     BOMBJUMP,
     END_BOMB_JUMP,
+    FALL,
     DEAD,
     FINISH
 }

@@ -37,7 +37,7 @@ public class BallHud : MonoBehaviour
 
     private int limitLive = 0;
     private int limitMaxLive = 0;
-    private int bufferLive = 9;
+    private int bufferLive = 8;
 
     private bool damage = false;
     Coroutine myCoroutineDamage;
@@ -116,7 +116,10 @@ public class BallHud : MonoBehaviour
         bool damagePlayer = bufferLive != player.live && player.live > 0;
         if (state == StatePlayer.DEAD)
         {
-            StopCoroutine(myCoroutineDamage);
+            if (myCoroutineDamage != null)
+            {
+                StopCoroutine(myCoroutineDamage);
+            }
             damage = false;
         }
         if (damagePlayer) {

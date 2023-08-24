@@ -8,10 +8,11 @@ public class MouseBall2 : MonoBehaviour, IResettable
     bool playerDetected;
     float distToPlayer;
     Vector3 dirToPlayer;
+    float distToObjectReference;
+    Vector3 dirToObjectReference;
+    bool outofObjectReference;
     float extraGravityFactor = 10;
     float movementForce = 5;
-    [SerializeField] LayerMask enemObstacleLayer;
-    [SerializeField] Mesh meshGizmos;
     Vector3 checkerOffset;
     Timer timeKnockOut;
     Timer timeRecover;
@@ -20,6 +21,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
     public GameObject normalCollider;
     public GameObject smashCollider;
     public float ForceXImpact = 7;
+    public GameObject objectReference;
 
     const string animMouseIdle = "MouseBallIddle";
     const string animMouseMove = "MouseBallMove";
@@ -82,12 +84,18 @@ public class MouseBall2 : MonoBehaviour, IResettable
         {
             distToPlayer = player.transform.position.x - transform.position.x;
             dirToPlayer = (player.transform.position - transform.position).normalized;
+            if (objectReference != null)
+            {
+                distToObjectReference = player.transform.position.x - transform.position.x;
+                dirToObjectReference = (player.transform.position - transform.position).normalized;
+                outofObjectReference = isOutofObjectReference();
+            }
             if (Mathf.Abs(distToPlayer) <= 5f)
             {
                 playerDetected = true;
                 if (Mathf.Abs(distToPlayer) <= 0.75f)
                 {
-                    dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotaci?n rara.
+                    dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
                 }
             }
             else
@@ -102,14 +110,15 @@ public class MouseBall2 : MonoBehaviour, IResettable
     private void FixedUpdate()
     {
         BallMouseRun.setParameterByName("speed", rb.velocity.x);
-       
-        
-
         AddExtraGravityForce();
         if (!isSmashProcess())
         {
             float velocityX = Mathf.Sign(distToPlayer);
-            if (playerDetected)
+            if (!playerDetected && objectReference != null && outofObjectReference)
+            {
+                velocityX = Mathf.Sign(distToObjectReference);
+            }
+            if (playerDetected || objectReference != null && outofObjectReference)
             {
                 if (state == State.NORMAL)
                 {
@@ -177,9 +186,29 @@ public class MouseBall2 : MonoBehaviour, IResettable
         return velocity;
     }
 
+    private bool isOutofObjectReference()
+    {
+        if (objectReference != null)
+        {
+            // Asegúrate de que el objeto detectado tiene un Collider
+            Collider[] detectedColliders = objectReference.GetComponentsInChildren<Collider>();
+            if (detectedColliders == null && detectedColliders.Length == 0) return false;
+
+            // Calcula los extremos en el eje x del objeto detectado
+            float detectedHalfWidth = detectedColliders[0].bounds.extents.x; // la mitad del ancho en el eje x
+            float detectedLeftX = objectReference.transform.position.x - detectedHalfWidth;
+            float detectedRightX = objectReference.transform.position.x + detectedHalfWidth;
+
+            // Obtén la posición x del GameObject actual (el que tiene este script)
+            float currentX = transform.position.x;
+
+            // Compara las posiciones
+            return currentX <= detectedLeftX || currentX >= detectedRightX;
+        }
+        return false;
+    }
     private void checkState()
     {
-        // AQUI EL SONIDO CHIMO.
         if (antState != state)
         {
             antState = state;
@@ -246,6 +275,10 @@ public class MouseBall2 : MonoBehaviour, IResettable
         float rotVelocity = 5f;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0); //Para que no rote en "Z" y se vuelque.
         rotToPlayer = Quaternion.LookRotation(dirToPlayer, transform.up);
+        if (!playerDetected && objectReference!= null && outofObjectReference)
+        {
+            rotToPlayer = Quaternion.LookRotation(dirToObjectReference, transform.up);
+        }
         Quaternion rotationAnt = new Quaternion(transform.rotation.w, transform.rotation.x, transform.rotation.y, transform.rotation.z);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotToPlayer, rotVelocity * Time.deltaTime);
     }

@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         SetupCamera();
-        
+        player = player = GameObject.FindGameObjectWithTag("Player");
     }
 
     /* Método que ajusta el campo de visión de la cámara y las diferentes distancias
@@ -127,20 +127,15 @@ public class GameManager : MonoBehaviour
     IEnumerator Waiting(float secToWait, Vector3 initPos)
     {
         yield return new WaitForSeconds(secToWait);
-        //A new player is instantiated and player variable is overwritten.
-        player = Instantiate(playerPrefab, initPos, Quaternion.Euler(0, -30, 0));
+        player.GetComponent<Player>().resetObject();
+        player.transform.position = initPos;
         plScript = player.GetComponent<Player>();
         NewPlayer();
         checkPoints.setActiveCheckpointsObjects(true);
         checkPoints.setResetCheckpointsObjects();
     }
 
-    IEnumerator WaitingActiveCheckpointObjects(float secToWait)
-    {
-        yield return new WaitForSeconds(secToWait);
-    }
-
-        public void ChangeGravityScale(float factor)
+    public void ChangeGravityScale(float factor)
     {
         Physics.gravity = new Vector3(Physics.gravity.x, factor, Physics.gravity.z);
     }
