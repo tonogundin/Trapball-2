@@ -31,6 +31,7 @@ public class Player : MonoBehaviour, IResettable
     public Vector2 velocityBall;
     public int live = 8;
     public int valor = 0;
+    private int liveInit;
 
     public StatePlayer state = StatePlayer.NORMAL;
 
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour, IResettable
 
     void Awake()
     {
+        liveInit = live;
         rb = GetComponent<Rigidbody>();
         transform = GetComponent<Transform>();
         coll = GetComponent<SphereCollider>();
@@ -397,6 +399,8 @@ public class Player : MonoBehaviour, IResettable
         currentGravityFactor = initGravityFactor;
         rb.angularDrag = 0.05f;
         rb.drag = 0;
+        valor = 0;
+        live = liveInit;
     }
 
     public bool isTouchFloor() {

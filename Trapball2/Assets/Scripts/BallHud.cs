@@ -14,7 +14,7 @@ public class BallHud : MonoBehaviour
     public Sprite attackSprite;
     public Color flashColor = Color.red;
     public float flashDuration = 0.5f;
-    public int flashCount = 2;
+    public int flashCount = 1;
     private Color originalColor;
     public GameObject live;
     public GameObject energy;
@@ -41,6 +41,7 @@ public class BallHud : MonoBehaviour
 
     private bool damage = false;
     Coroutine myCoroutineDamage;
+    private bool deadAnimation = false;
 
 
     void Start()
@@ -113,7 +114,12 @@ public class BallHud : MonoBehaviour
 
     private void setPlayerStateImage(StatePlayer state, float jumpForce)
     {
-        bool damagePlayer = bufferLive != player.live && player.live > 0;
+        bool damagePlayer = state != StatePlayer.DEAD && bufferLive > player.live && player.live > 0;
+        if (player.live == limitMaxLive)
+        {
+
+            bufferLive = limitMaxLive;
+        }
         if (state == StatePlayer.DEAD)
         {
             if (myCoroutineDamage != null)
@@ -126,7 +132,7 @@ public class BallHud : MonoBehaviour
             bufferLive = player.live;
             damage = true;
             setImageDamage();
-        } else if (statePlayer != state && !damage)
+        } else if (statePlayer != state && !damage && !deadAnimation)
         {
             switch (state)
             {
@@ -184,9 +190,9 @@ public class BallHud : MonoBehaviour
         energy.SetActive(value);
     }
 
-
     IEnumerator MoveDiagonally()
     {
+        deadAnimation = true;
         // Definimos la dirección de movimiento y la distancia
         Vector3 moveDirection = new Vector3(1, 1, 0);
         float moveDistance = 100f;
@@ -223,6 +229,7 @@ public class BallHud : MonoBehaviour
         // Nos aseguramos de que la posición final es la correcta y que el color es el final
         transform.position = finalPosition;
         targetImage.color = finalColor;
+        deadAnimation = false;
     }
 
 

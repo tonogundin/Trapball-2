@@ -15,6 +15,7 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private float initialMass;
+    private bool firstwater = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -77,14 +78,18 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
         rb.rotation = initialRotation;
         rb.mass = initialMass;
         floating = false;
+        if (firstwater)
+        {
+            BoxSplash.start();
+            firstwater = false;
+        }
+        BoxSplash.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.CompareTag("WaterSurface"))
         {
-            BoxSplash.start();
             initDisplacement = transform.eulerAngles.z;
             Debug.Log(initDisplacement);
             rb.mass = 10; //Para mejorar comportamiento cuando la bola se pone encima de una caja en el agua.
@@ -92,18 +97,16 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
             //rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
             rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
             floating = true;
-        }
-    }
+            firstwater = true;
+            // Obtén los planos del frustum de la cámara principal
+            Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
 
-
-    private void OnTriggerStay(Collider other)
-    {
-        {
-            if (other.CompareTag("WaterSurface"))
-
+            // Verifica si el collider del objeto está dentro del frustum de la cámara
+            if (GeometryUtility.TestPlanesAABB(planes, GetComponent<Collider>().bounds))
             {
-                BoxSplash.release();
+                BoxSplash.start();
             }
         }
     }
+
 }

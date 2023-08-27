@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
     public Camera cam;
     public CheckPointActive checkPoints;
 
+    // Estos valores dependerán de tu configuración inicial y del resultado deseado.
+    public float defaultWidth = 1920f;  // Ancho por defecto
+    public float defaultHeight = 1080f; // Altura por defecto
+    public float defaultFOV = 30f;      // FOV por defecto
+
+
     private void Awake()
     {
         if (gM == null)
@@ -47,42 +53,31 @@ public class GameManager : MonoBehaviour
     void SetupCamera()
     {
         cam = Camera.main;
-        cam.fieldOfView = 30f;
+        cam.fieldOfView = defaultFOV;
         #if UNITY_STANDALONE
             CalculateFoV(cam.aspect);
         #endif
 
         #if UNITY_ANDROID
-            float ratio = (float) Screen.width / (float) Screen.height;
-            CalculateFoV(ratio);
+                    float ratio = (float) Screen.width / (float) Screen.height;
+                    CalculateFoV(ratio);
         #endif
     }
+
 
     void CalculateFoV(float ratio)
     {
         //pruebaText.text = ratio.ToString();
         if (Mathf.Abs(ratio - 1.33f) < 0.1f) //4:3
         {
-            //cam.fieldOfView = 75.8f;
             zCamOffset = -15.82f;
             xLimits[0] = 0.69f;
             xLimits[1] = 10.1f;
             yLimits[0] = -18.7f;
             yLimits[1] = 7.16f;
         }
-
-        else if (Mathf.Abs(ratio - 1.77f) < 0.1f) //16:9
-        {
-            //cam.fieldOfView = 69;
-            zCamOffset = -13.88f;
-            xLimits[0] = 1.78f;
-            xLimits[1] = 9.05f;
-            yLimits[0] = -19.27f;
-            yLimits[1] = 7.75f;
-        }
         else if (Mathf.Abs(ratio - 2) < 0.1f) //18:9
         {
-            //cam.fieldOfView = 66f;
             zCamOffset = -12.97f;
             xLimits[0] = 2.22f;
             xLimits[1] = 8.57f;
@@ -91,12 +86,28 @@ public class GameManager : MonoBehaviour
         }
         else if (Mathf.Abs(ratio - 2.16f) < 0.1f) //2340 x 1080
         {
-            //cam.fieldOfView = 59f;
             zCamOffset = -11.13f;
             xLimits[0] = 1.78f;
             xLimits[1] = 9.0f;
             yLimits[0] = -20f;
             yLimits[1] = 8.52f;
+        }
+        else if (Mathf.Abs(ratio - 1.6f) < 0.1f) //16:10
+        {
+            float lerpFactor = (1.6f - 1.33f) / (1.77f - 1.33f); // Calcula la posición relativa de 16:10 entre 4:3 y 16:9
+            zCamOffset = Mathf.Lerp(-15.82f, -13.88f, lerpFactor);
+            xLimits[0] = Mathf.Lerp(0.69f, 1.78f, lerpFactor);
+            xLimits[1] = Mathf.Lerp(10.1f, 9.05f, lerpFactor);
+            yLimits[0] = Mathf.Lerp(-18.7f, -19.27f, lerpFactor);
+            yLimits[1] = Mathf.Lerp(7.16f, 7.75f, lerpFactor);
+        }
+        else // 16:9
+        {
+            zCamOffset = -13.88f;
+            xLimits[0] = 1.78f;
+            xLimits[1] = 9.05f;
+            yLimits[0] = -19.27f;
+            yLimits[1] = 7.75f;
         }
     }
 
