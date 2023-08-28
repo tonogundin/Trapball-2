@@ -6,18 +6,17 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour, IResettable
 {
     [HideInInspector] public Rigidbody rb;
-    Transform transform;
+    private Transform transform;
     float movementPlayer;
     float speedLimit = 5f;
     float movementForce = 10f;
     [SerializeField] LayerMask jumpable;
     ParticlesExplosion particles;
     SphereCollider coll;
-    Vector3 offset;
-    float jumpForce;
+    public float jumpForce;
     [SerializeField] PhysicMaterial bouncy;
     [SerializeField] float jumpDelta; //Define cuánto de rápido se alcanza el límite de fuerza de salto.
-    [SerializeField] float jumpLimit; //Define la mayor fuerza de salto posible a aplicar.
+    [SerializeField] float jumpLimit = 10; //Define la mayor fuerza de salto posible a aplicar.
     [SerializeField] float initGravityFactor;
     float currentGravityFactor; //Añade un extra de gravedad para saltos más fluidos y rápidos. Tener en cuenta: A mayor factor, más nos costará saltar --> Incrementar jumpLimit
     bool freeFall;
@@ -35,17 +34,17 @@ public class Player : MonoBehaviour, IResettable
 
     public StatePlayer state = StatePlayer.NORMAL;
 
-    private float jumpLowLimit;
-    private float jumpLowPercent = 0.60f;
+    public  float jumpLowLimit = 3;
+    private float jumpLowPercent = 0.70f;
     private float jumpLowLimitBomb;
-    private float jumpLowBombPercent = 0.80f;
+    private float jumpLowBombPercent = 0.85f;
 
     private bool jumpCharge = false;
 
     private bool debugger = false;
 
     private bool isBalancin = false;
-
+    private bool jumpBombEnabled = false;
 
     void Awake()
     {
@@ -54,7 +53,6 @@ public class Player : MonoBehaviour, IResettable
         transform = GetComponent<Transform>();
         coll = GetComponent<SphereCollider>();
         particles = transform.GetChild(0).GetComponent<ParticlesExplosion>();
-        offset = new Vector3(0, -0.35f, 0);
         currentGravityFactor = initGravityFactor;
         jumpLowLimit = jumpLimit * jumpLowPercent;
         jumpLowLimitBomb = jumpLimit * jumpLowBombPercent;
@@ -86,12 +84,20 @@ public class Player : MonoBehaviour, IResettable
     void Update() {
         if (state != StatePlayer.DEAD && state != StatePlayer.FINISH)
         {
-            handleMouseButtonDown();
+            processJumpForce();
             touchingFloor();
             checkSoundRoll();
+            checkRotations();
         }
     }
 
+    private void checkRotations()
+    {
+        if (rb.rotation.x != 0.000f || rb.rotation.y != 0.000f)
+        {
+            rb.rotation = new Quaternion(0.0f, 0.0f, rb.rotation.z, rb.rotation.w);
+        }
+    }
     void touchingFloor()
     {
         if (rb.velocity.y <= 0 && state != StatePlayer.INIT_JUMP)
@@ -102,7 +108,6 @@ public class Player : MonoBehaviour, IResettable
             }
             else if (state == StatePlayer.NORMAL)
             {
-                resetJumpForce();
                 state = StatePlayer.JUMP;
             }
         }
@@ -139,26 +144,48 @@ public class Player : MonoBehaviour, IResettable
         else if (state != StatePlayer.NORMAL)
         {
             playerSoundroll.setVolume(1);
-            resetJumpForce();
             state = StatePlayer.NORMAL;
+            rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
+            jumpBombEnabled = false;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerreno", GetComponent<Transform>().position);
         }
     }
 
-    void handleMouseButtonDown() {
-        if (jumpCharge && state == StatePlayer.NORMAL) {
-            if (jumpForce < jumpLimit)
-            {
-                jumpForce += jumpDelta * Time.deltaTime;
-                if (jumpForce > jumpLimit)
+    void processJumpForce() {
+        switch (state)
+        {
+            case StatePlayer.NORMAL:
+                if (jumpCharge && jumpForce < jumpLimit)
                 {
-                    jumpForce = jumpLimit;
+                    jumpForce += jumpDelta * Time.deltaTime;
+                    if (jumpForce > jumpLimit)
+                    {
+                        jumpForce = jumpLimit;
+                    }
                 }
-            }
+                break;
         }
+
+        
     }
 
-    void handleMouseButtonUp() {
+    void handleButtonDown()
+    {
+        jumpCharge = true;
+        switch (state)
+        {
+            case StatePlayer.NORMAL:
+                
+                break;
+            case StatePlayer.JUMP:
+                if (jumpBombEnabled)
+                {
+                    bombJump();
+                }
+                break;
+        }
+    }
+    void handleButtonUp() {
         jumpCharge = false;
         switch (state) {
             case StatePlayer.NORMAL:
@@ -166,9 +193,7 @@ public class Player : MonoBehaviour, IResettable
                 simpleJump();
                 break;
             case StatePlayer.JUMP:
-                if (jumpForce > jumpLowLimitBomb) {
-                    bombJump();
-                }
+                resetJumpForce();
                 break;
         }
     }
@@ -186,6 +211,10 @@ public class Player : MonoBehaviour, IResettable
 
     void simpleJump() {
         state = StatePlayer.INIT_JUMP;
+        if (jumpForce < jumpLowLimit)
+        {
+            jumpForce = jumpLowLimit;
+        }
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
         playerSoundroll.setVolume(0);
         if (jumpForce > jumpLowLimitBomb) {
@@ -198,9 +227,10 @@ public class Player : MonoBehaviour, IResettable
 
     void bombJump() {
         state = StatePlayer.BOMBJUMP;
+        jumpBombEnabled = false;
         coll.material = bouncy; //Le ponemos un material rebotante.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
-        rb.AddForce(Vector3.down * 8.5f, ForceMode.Impulse);
+        rb.AddForce(Vector3.down * 10f, ForceMode.Impulse);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", transform.position);
         playerSoundroll.setVolume(0);
     }
@@ -208,17 +238,23 @@ public class Player : MonoBehaviour, IResettable
     IEnumerator stateJump() {
         yield return new WaitForSeconds(0.15f);
         state = StatePlayer.JUMP;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
+        if (jumpForce > jumpLowLimitBomb)
+        {
+            jumpBombEnabled = true;
+        }
+        resetJumpForce();
     }
     IEnumerator stateNormal()
     {
         yield return new WaitForSeconds(0.5f);
         state = StatePlayer.NORMAL;
+        rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
     }
     void endBombJump() {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", transform.position);
         StartCoroutine(camShakeScript.Shake(0.10f, 0.15f));
         coll.material = null;
-        rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
         playerSoundroll.setVolume(1);
         state = StatePlayer.END_BOMB_JUMP;
         StartCoroutine(stateNormal());
@@ -292,7 +328,6 @@ public class Player : MonoBehaviour, IResettable
         }
 
     }
-
 
     private void OnCollisionExit(Collision collision)
     {
@@ -395,6 +430,7 @@ public class Player : MonoBehaviour, IResettable
         rb.isKinematic = false;
         GetComponent<Renderer>().enabled = true;
         state = StatePlayer.NORMAL;
+        jumpBombEnabled = false;
         particles.resetObject();
         currentGravityFactor = initGravityFactor;
         rb.angularDrag = 0.05f;
@@ -417,6 +453,11 @@ public class Player : MonoBehaviour, IResettable
         return jumpForce;
     }
 
+    public bool isJumpBombEnabled()
+    {
+        return jumpBombEnabled;
+    }
+
     public float getJumpLimit()
     {
         return jumpLimit;
@@ -424,11 +465,6 @@ public class Player : MonoBehaviour, IResettable
     public float getJumpLowLimit()
     {
         return jumpLowLimit;
-    }
-
-    public float getJumpBombLimit()
-    {
-        return jumpLowLimitBomb;
     }
 
     public void addDamage()
@@ -444,10 +480,10 @@ public class Player : MonoBehaviour, IResettable
     {
         if (value.isPressed)
         {
-            jumpCharge = true;
+            handleButtonDown();
         } else
         {
-            handleMouseButtonUp();
+            handleButtonUp();
         }
     }
 

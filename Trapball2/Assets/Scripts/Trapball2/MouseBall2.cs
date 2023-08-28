@@ -104,7 +104,13 @@ public class MouseBall2 : MonoBehaviour, IResettable
             }
         }
         ManageRotation();
-
+        if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
+        {
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
+        } else if (rb.collisionDetectionMode != CollisionDetectionMode.Discrete)
+        {
+            rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
+        }
 
     }
     private void FixedUpdate()

@@ -32,7 +32,6 @@ public class BallHud : MonoBehaviour
 
     private float limitEnergy = 0;
     private float lowLimitEnergy = 0;
-    private float limitBombJump = 0;
 
 
     private int limitLive = 0;
@@ -69,12 +68,11 @@ public class BallHud : MonoBehaviour
         }
         if (player != null)
         {
-            setPlayerStateImage(player.state, player.getJumpForce());
+            setPlayerStateImage(player.state, player.isJumpBombEnabled());
             if (limitEnergy == 0)
             {
                 limitEnergy = player.getJumpLimit();
                 lowLimitEnergy = player.getJumpLowLimit() - (limitEnergy * 0.05f);
-                limitBombJump = player.getJumpBombLimit();
             }
             setPlayerEnergy(player.getJumpForce());
             setPlayerLive(player.live);
@@ -112,7 +110,7 @@ public class BallHud : MonoBehaviour
         imageLive.sprite = spritesLive[spriteIndex];
     }
 
-    private void setPlayerStateImage(StatePlayer state, float jumpForce)
+    private void setPlayerStateImage(StatePlayer state, bool jumpBombEnabled)
     {
         bool damagePlayer = state != StatePlayer.DEAD && bufferLive > player.live && player.live > 0;
         if (player.live == limitMaxLive)
@@ -141,7 +139,7 @@ public class BallHud : MonoBehaviour
                     break;
                 case StatePlayer.JUMP:
                     setHiddenLiveEnergy(true);
-                    if (jumpForce > limitBombJump)
+                    if (jumpBombEnabled)
                     {
                         targetImage.color = originalColor;
                         targetImage.sprite = attackSprite;
