@@ -86,7 +86,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
             dirToPlayer = (player.transform.position - transform.position).normalized;
             if (objectReference != null)
             {
-                distToObjectReference = player.transform.position.x - transform.position.x;
+                distToObjectReference = objectReference.transform.position.x  - transform.position.x;
                 dirToObjectReference = (player.transform.position - transform.position).normalized;
                 outofObjectReference = isOutofObjectReference();
             }
@@ -410,6 +410,8 @@ private void OnCollisionExit(Collision collision)
 
     public void resetObject()
     {
+        outofObjectReference = false;
+        playerDetected = false;
         state = State.NONE;
         changeCollider(false);
         rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);

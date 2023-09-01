@@ -25,17 +25,23 @@ public class CheckPointActive : MonoBehaviour
 
     public void setResetCheckpointsObjects()
     {
-        foreach (CheckPoint checkpoint in checkPoints)
+        if (checkPoints != null)
         {
-            checkpoint.setResetObjects();
+            foreach (CheckPoint checkpoint in checkPoints)
+            {
+                checkpoint.setResetObjects();
+            }
         }
     }
 
     public void setActiveCheckpointsObjects(bool active)
     {
-        foreach (CheckPoint checkpoint in checkPoints)
+        if (checkPoints != null)
         {
-            checkpoint.setActiveObjects(active);
+            foreach (CheckPoint checkpoint in checkPoints)
+            {
+                checkpoint.setActiveObjects(active);
+            }
         }
     }
 }

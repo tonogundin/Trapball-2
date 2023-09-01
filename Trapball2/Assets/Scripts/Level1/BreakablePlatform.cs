@@ -8,6 +8,7 @@ public class BreakablePlatform : MonoBehaviour, IResettable
     FMOD.Studio.EventInstance PlatformHit;
     FMOD.Studio.EventInstance PlatformSplash;
 
+    public Collider collider;
     private Vector3 initialPosition;
     private Vector3 initialScale;
     private Quaternion initialRotation;
@@ -33,6 +34,7 @@ public class BreakablePlatform : MonoBehaviour, IResettable
         transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
         transform.rotation = initialRotation;
         rb.rotation = initialRotation;
+        collider.enabled = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -88,25 +90,22 @@ public class BreakablePlatform : MonoBehaviour, IResettable
         if (this.isActiveAndEnabled)
         {
             rb.isKinematic = false;
-            StartCoroutine(Disappear());
             PlatformHit.setParameterByName("VolPlat", 0);
             PlatformCrack.start();
+            yield return new WaitForSeconds(1f);
+            int cicles = 15;
+            while (transform.localScale.magnitude > 0.1f && cicles > 0)
+            {
+                transform.localScale -= new Vector3(0.15f, 0.15f, 0.15f);
+                cicles--;
+                if (cicles < 10)
+                {
+                    collider.enabled = false;
+                }
+                yield return new WaitForSeconds(0.05f);
+            }
+            gameObject.SetActive(false);
         }
     }
 
-
-
-
-
-
-    IEnumerator Disappear()
-    {
-        yield return new WaitForSeconds(1f);
-        while(transform.localScale.magnitude > 0.1f)
-        {
-            transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
-            yield return new WaitForSeconds(0.05f);
-        }
-        gameObject.SetActive(false);
-    }
 }

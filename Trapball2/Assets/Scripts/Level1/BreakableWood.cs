@@ -1,18 +1,22 @@
 using System.Collections;
 using UnityEngine;
 
-public class BreakableWood : MonoBehaviour
+public class BreakableWood : MonoBehaviour, IResettable
 {
     Rigidbody rb;
     FMOD.Studio.EventInstance PlatformCrack;
     FMOD.Studio.EventInstance PlatformHit;
     FMOD.Studio.EventInstance PlatformSplash;
-
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private Vector3 initialScale;
     State state = State.NORMAL;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+        initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
+        initialScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        initialRotation = transform.rotation;
         PlatformHit = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformHit");
         PlatformCrack = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformCrack");
         PlatformSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformSplash");
@@ -88,9 +92,18 @@ public class BreakableWood : MonoBehaviour
             transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
             yield return new WaitForSeconds(0.05f);
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
-
+    public void resetObject()
+    {
+        gameObject.SetActive(true);
+        rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.rotation = initialRotation;
+        rb.rotation = initialRotation;
+        transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
+    }
     public enum State
     {
         NORMAL,

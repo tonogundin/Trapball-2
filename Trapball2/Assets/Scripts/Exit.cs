@@ -30,6 +30,9 @@ public class Exit : MonoBehaviour
     IEnumerator delayChangeScene()
     {
         yield return new WaitForSeconds(0.5f);
+        FMOD.Studio.Bus masterBus;
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/");
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         SceneManager.LoadSceneAsync("Menu");
     }
 }

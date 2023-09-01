@@ -104,8 +104,8 @@ public class GameManager : MonoBehaviour
         else // 16:9
         {
             zCamOffset = -13.88f;
-            xLimits[0] = 1.78f;
-            xLimits[1] = 9.05f;
+            xLimits[0] = -162.78f;
+            xLimits[1] = 60.05f;
             yLimits[0] = -19.27f;
             yLimits[1] = 7.75f;
         }

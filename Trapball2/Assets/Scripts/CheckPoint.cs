@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 
 public class CheckPoint : MonoBehaviour
 {
 
     public bool active = false;
-
     public List<GameObject> objects;
+    public bool resetInActive = false;
+
 
 
     // Start is called before the first frame update
@@ -27,6 +27,10 @@ public class CheckPoint : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             active = true;
+            if (resetInActive)
+            {
+                setResetObjects();
+            }
         }
 
     }
@@ -42,7 +46,10 @@ public class CheckPoint : MonoBehaviour
         {
             foreach (var resettable in objects)
             {
-                resettable.GetComponent<IResettable>().resetObject();
+                if (resettable != null)
+                {
+                    resettable.GetComponent<IResettable>().resetObject();
+                }
             }
         }
     }

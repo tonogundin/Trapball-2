@@ -41,7 +41,10 @@ public class BallHud : MonoBehaviour
     private bool damage = false;
     Coroutine myCoroutineDamage;
     private bool deadAnimation = false;
+    private int bufferEnergyIndex = -1;
+    private int bufferLiveIndex = -1;
 
+    public GameController gameController;
 
     void Start()
     {
@@ -72,7 +75,7 @@ public class BallHud : MonoBehaviour
             if (limitEnergy == 0)
             {
                 limitEnergy = player.getJumpLimit();
-                lowLimitEnergy = player.getJumpLowLimit() - (limitEnergy * 0.05f);
+                lowLimitEnergy = player.getJumpLowLimit() - (limitEnergy * 0.025f);
             }
             setPlayerEnergy(player.getJumpForce());
             setPlayerLive(player.live);
@@ -92,8 +95,15 @@ public class BallHud : MonoBehaviour
         // Nos aseguramos de que el índice esté en el rango correcto
         spriteIndex = Mathf.Clamp(spriteIndex, 0, spritesEnergy.Length - 1);
 
-        // Finalmente, establecemos el sprite de la barra de energía
-        imageEnergy.sprite = spritesEnergy[spriteIndex];
+        if (bufferEnergyIndex != spriteIndex)
+        {
+            bufferEnergyIndex = spriteIndex;
+            imageEnergy.sprite = spritesEnergy[spriteIndex];
+            if (player.isRumbleActive)
+            {
+                gameController.ApplyRumble(gameController.NormalizeValue(jumpForce, lowLimitEnergy, limitEnergy), 0.05f);
+            }
+        }
     }
     private void setPlayerLive(float live)
     {
@@ -105,9 +115,11 @@ public class BallHud : MonoBehaviour
 
         // Nos aseguramos de que el índice esté en el rango correcto
         spriteIndex = Mathf.Clamp(spriteIndex, 0, spritesLive.Length - 1);
-
-        // Finalmente, establecemos el sprite de la barra de energía
-        imageLive.sprite = spritesLive[spriteIndex];
+        if (bufferLiveIndex != spriteIndex)
+        {
+            bufferLiveIndex = spriteIndex;
+            imageLive.sprite = spritesLive[spriteIndex];
+        }
     }
 
     private void setPlayerStateImage(StatePlayer state, bool jumpBombEnabled)

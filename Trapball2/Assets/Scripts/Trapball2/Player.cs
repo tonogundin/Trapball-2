@@ -26,6 +26,7 @@ public class Player : MonoBehaviour, IResettable
     FMOD.Studio.EventInstance impactObjetc;
     FMOD.Studio.EventInstance underWater;
     FMOD.Studio.EventInstance impactWater;
+    FMOD.Studio.EventInstance soundCourage;
 
     public Vector2 velocityBall;
     public int live = 8;
@@ -45,6 +46,8 @@ public class Player : MonoBehaviour, IResettable
 
     private bool isBalancin = false;
     private bool jumpBombEnabled = false;
+    public bool isRumbleActive = false;
+    public GameController gameController;
 
     void Awake()
     {
@@ -56,6 +59,7 @@ public class Player : MonoBehaviour, IResettable
         currentGravityFactor = initGravityFactor;
         jumpLowLimit = jumpLimit * jumpLowPercent;
         jumpLowLimitBomb = jumpLimit * jumpLowBombPercent;
+        resetJumpForce();
     }
 
     void Start()
@@ -67,6 +71,7 @@ public class Player : MonoBehaviour, IResettable
         impactObjetc = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/ImpactObject");
         underWater = FMODUnity.RuntimeManager.CreateInstance("event:/Ambientes/AmbienteUnderwater");
         impactWater = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactWater");
+        soundCourage = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseHurt");
         playerSoundroll.start();
     }
 
@@ -108,10 +113,17 @@ public class Player : MonoBehaviour, IResettable
             }
             else if (state == StatePlayer.NORMAL)
             {
+                state = StatePlayer.INIT_FALL;
+            } else if (state == StatePlayer.INIT_FALL)
+            {
+                StartCoroutine(stateFall());
+            }
+            else if (state == StatePlayer.FALL)
+            {
                 state = StatePlayer.JUMP;
             }
         }
-        else if (rb.velocity.y > 0 && state == StatePlayer.NORMAL && !isColliderPlatforms())
+        else if (rb.velocity.y > 3 && state == StatePlayer.NORMAL && !isColliderPlatforms())
         {
             resetJumpForce();
             state = StatePlayer.JUMP;
@@ -188,6 +200,8 @@ public class Player : MonoBehaviour, IResettable
     void handleButtonUp() {
         jumpCharge = false;
         switch (state) {
+            case StatePlayer.INIT_FALL:
+            case StatePlayer.FALL:
             case StatePlayer.NORMAL:
                 adjustJumpForce();
                 simpleJump();
@@ -206,7 +220,7 @@ public class Player : MonoBehaviour, IResettable
 
     public void resetJumpForce()
     {
-        jumpForce = 0;
+        jumpForce = jumpLowLimit - 1;
     }
 
     void simpleJump() {
@@ -217,10 +231,18 @@ public class Player : MonoBehaviour, IResettable
         }
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
         playerSoundroll.setVolume(0);
-        if (jumpForce > jumpLowLimitBomb) {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", transform.position);
-        } else {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", transform.position);
+        float playSoundProbability = 0.65f;  // 80%
+
+        if (Random.Range(0f, 1f) < playSoundProbability)
+        {
+            if (jumpForce > jumpLowLimitBomb)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoHigh", transform.position);
+            }
+            else
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", transform.position);
+            }
         }
         StartCoroutine(stateJump());
     }
@@ -230,7 +252,7 @@ public class Player : MonoBehaviour, IResettable
         jumpBombEnabled = false;
         coll.material = bouncy; //Le ponemos un material rebotante.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
-        rb.AddForce(Vector3.down * 10f, ForceMode.Impulse);
+        rb.AddForce(Vector3.down * 15f, ForceMode.Impulse);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", transform.position);
         playerSoundroll.setVolume(0);
     }
@@ -245,6 +267,11 @@ public class Player : MonoBehaviour, IResettable
         }
         resetJumpForce();
     }
+    IEnumerator stateFall()
+    {
+        yield return new WaitForSeconds(0.1f);
+        state = StatePlayer.FALL;
+    }
     IEnumerator stateNormal()
     {
         yield return new WaitForSeconds(0.5f);
@@ -253,7 +280,11 @@ public class Player : MonoBehaviour, IResettable
     }
     void endBombJump() {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", transform.position);
-        StartCoroutine(camShakeScript.Shake(0.10f, 0.15f));
+        if (isRumbleActive)
+        {
+            gameController.ApplyRumble(1f, 0.15f);
+        }
+        StartCoroutine(camShakeScript.Shake(0.15f, 0.15f));
         coll.material = null;
         playerSoundroll.setVolume(1);
         state = StatePlayer.END_BOMB_JUMP;
@@ -367,6 +398,7 @@ public class Player : MonoBehaviour, IResettable
                 break;
             case "Courage":
                 valor++;
+                soundCourage.start();
                 break;
             case "Exit":
                 state = StatePlayer.FINISH;
@@ -429,7 +461,7 @@ public class Player : MonoBehaviour, IResettable
     {
         rb.isKinematic = false;
         GetComponent<Renderer>().enabled = true;
-        state = StatePlayer.NORMAL;
+        state = StatePlayer.JUMP;
         jumpBombEnabled = false;
         particles.resetObject();
         currentGravityFactor = initGravityFactor;
@@ -511,7 +543,30 @@ public class Player : MonoBehaviour, IResettable
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadSceneAsync("Menu");
     }
-
+    public void OnDetectController(InputValue value)
+    {
+        if (Cursor.visible)
+        {
+            Cursor.visible = false;
+        }
+        isRumbleActive = true;
+    }
+    public void OnDetectKeyboard(InputValue value)
+    {
+        if (Cursor.visible)
+        {
+            Cursor.visible = false;
+        }
+        isRumbleActive = false;
+    }
+    public void OnDetectMouse(InputValue value)
+    {
+        if (!Cursor.visible)
+        {
+            Cursor.visible = true;
+        }
+        isRumbleActive = false;
+    }
 
     void OnGUI()
     {
@@ -546,6 +601,7 @@ public enum StatePlayer
     JUMP,
     BOMBJUMP,
     END_BOMB_JUMP,
+    INIT_FALL,
     FALL,
     DEAD,
     FINISH
