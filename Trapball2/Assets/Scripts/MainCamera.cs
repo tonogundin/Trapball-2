@@ -4,9 +4,6 @@ using UnityEngine.UI;
 public class MainCamera : MonoBehaviour
 {
     Transform player;
-    [SerializeField] Text pruebaText;
-    [SerializeField] float xMin, xMax;
-    [SerializeField] float yMin, yMax;
 
     private void Awake()
     {
@@ -18,7 +15,9 @@ public class MainCamera : MonoBehaviour
         if (player != null)
         {
             transform.position = player.position;
-            transform.position = new Vector3(transform.position.x, transform.position.y + 3, GameManager.gM.zCamOffset);
+            float minusX = player.gameObject.GetComponent<Player>().especialStage ? 15 : 0;
+            float minusY = player.gameObject.GetComponent<Player>().especialStage ? 1 : 0;
+            transform.position = new Vector3(transform.position.x - minusX, transform.position.y + 3 + minusY, GameManager.gM.zCamOffset);
         }
     }
     void FollowNewPlayer()

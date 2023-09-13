@@ -8,6 +8,7 @@ public class Player : MonoBehaviour, IResettable
     [HideInInspector] public Rigidbody rb;
     private Transform transform;
     float movementPlayer;
+    float movementPlayerExpecialZ;
     float speedLimit = 5f;
     float movementForce = 10f;
     [SerializeField] LayerMask jumpable;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour, IResettable
     private bool jumpBombEnabled = false;
     public bool isRumbleActive = false;
     public GameController gameController;
+    public bool especialStage = false;
 
     void Awake()
     {
@@ -76,7 +78,8 @@ public class Player : MonoBehaviour, IResettable
     }
 
     void FixedUpdate() {
-        rb.AddForce(new Vector3(movementPlayer, 0, 0) * movementForce, ForceMode.Force); //Para movimiento.
+        movementPlayer = especialStage ? 60 : movementPlayer;
+        rb.AddForce(new Vector3(movementPlayer, 0, movementPlayerExpecialZ) * movementForce, ForceMode.Force); //Para movimiento.
         manageExtraGravity();
         if (!freeFall) {
             ManageBallSpeed();
@@ -98,7 +101,7 @@ public class Player : MonoBehaviour, IResettable
 
     private void checkRotations()
     {
-        if (rb.rotation.x != 0.000f || rb.rotation.y != 0.000f)
+        if (!especialStage && (rb.rotation.x != 0.000f || rb.rotation.y != 0.000f))
         {
             rb.rotation = new Quaternion(0.0f, 0.0f, rb.rotation.z, rb.rotation.w);
         }
@@ -467,7 +470,8 @@ public class Player : MonoBehaviour, IResettable
         currentGravityFactor = initGravityFactor;
         rb.angularDrag = 0.05f;
         rb.drag = 0;
-        valor = 0;
+        int valorResult = valor - 10;
+        valor = (valorResult > 0) ? valorResult : 0;
         live = liveInit;
     }
 
@@ -530,7 +534,8 @@ public class Player : MonoBehaviour, IResettable
                                 //movementPlayer = Input.acceleration.x * 2;
 #endif
 
-            movementPlayer = value.Get<Vector2>().x;
+            movementPlayer = especialStage ? 0 : value.Get<Vector2>().x;
+            movementPlayerExpecialZ = especialStage ? value.Get<Vector2>().x * -2 : 0;
         }
     }
 
@@ -589,6 +594,13 @@ public class Player : MonoBehaviour, IResettable
             style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
             string text2 = string.Format("State =" + state);
             GUI.Label(rect2, text2, style);
+
+            Rect rect3 = new Rect(50, 350, w, h * 2 / 100);
+            style.alignment = TextAnchor.UpperCenter;
+            style.fontSize = h * 4 / 100;
+            style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
+            string text3 = string.Format("EjeX = " + movementPlayerExpecialZ);
+            GUI.Label(rect3, text3, style);
         }
     }
 

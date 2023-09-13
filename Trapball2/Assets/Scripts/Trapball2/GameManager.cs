@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
     public bool bombExploding;
     public float initPosForPlayerZ;
     public float zCamOffset;
-    public float[] xLimits = new float[2];
-    public float[] yLimits = new float[2];
     public bool[] levelsPassed = new bool[20];
     public delegate void Event();
     public static event Event NewPlayer;
@@ -27,6 +25,8 @@ public class GameManager : MonoBehaviour
     public float defaultWidth = 1920f;  // Ancho por defecto
     public float defaultHeight = 1080f; // Altura por defecto
     public float defaultFOV = 30f;      // FOV por defecto
+
+    public bool especialStage = false;
 
 
     private void Awake()
@@ -71,43 +71,27 @@ public class GameManager : MonoBehaviour
         if (Mathf.Abs(ratio - 1.33f) < 0.1f) //4:3
         {
             zCamOffset = -15.82f;
-            xLimits[0] = 0.69f;
-            xLimits[1] = 10.1f;
-            yLimits[0] = -18.7f;
-            yLimits[1] = 7.16f;
         }
         else if (Mathf.Abs(ratio - 2) < 0.1f) //18:9
         {
             zCamOffset = -12.97f;
-            xLimits[0] = 2.22f;
-            xLimits[1] = 8.57f;
-            yLimits[0] = -19.5f;
-            yLimits[1] = 7.95f;
         }
         else if (Mathf.Abs(ratio - 2.16f) < 0.1f) //2340 x 1080
         {
             zCamOffset = -11.13f;
-            xLimits[0] = 1.78f;
-            xLimits[1] = 9.0f;
-            yLimits[0] = -20f;
-            yLimits[1] = 8.52f;
         }
         else if (Mathf.Abs(ratio - 1.6f) < 0.1f) //16:10
         {
             float lerpFactor = (1.6f - 1.33f) / (1.77f - 1.33f); // Calcula la posición relativa de 16:10 entre 4:3 y 16:9
             zCamOffset = Mathf.Lerp(-15.82f, -13.88f, lerpFactor);
-            xLimits[0] = Mathf.Lerp(0.69f, 1.78f, lerpFactor);
-            xLimits[1] = Mathf.Lerp(10.1f, 9.05f, lerpFactor);
-            yLimits[0] = Mathf.Lerp(-18.7f, -19.27f, lerpFactor);
-            yLimits[1] = Mathf.Lerp(7.16f, 7.75f, lerpFactor);
         }
         else // 16:9
         {
             zCamOffset = -13.88f;
-            xLimits[0] = -162.78f;
-            xLimits[1] = 60.05f;
-            yLimits[0] = -19.27f;
-            yLimits[1] = 7.75f;
+        }
+        if (especialStage)
+        {
+            zCamOffset = 4.46f;
         }
     }
 
@@ -117,7 +101,7 @@ public class GameManager : MonoBehaviour
         {
             SetupCamera();
             //StopAllCoroutines(); //Prevenir fallos cuando Waiting se queda corriendo, se hace pausa y se carga una nueva escena retomando Waiting.
-            initPosForPlayerZ = 5.45f;// new Vector3(-8f, 1.40f, 5.45f);
+            initPosForPlayerZ = especialStage ? 3.83f : 5.45f;// new Vector3(-8f, 1.40f, 5.45f);
             InstantiateNewBall(0, true);
         
         }
@@ -138,9 +122,10 @@ public class GameManager : MonoBehaviour
     IEnumerator Waiting(float secToWait, Vector3 initPos)
     {
         yield return new WaitForSeconds(secToWait);
-        player.GetComponent<Player>().resetObject();
         player.transform.position = initPos;
         plScript = player.GetComponent<Player>();
+        plScript.resetObject();
+        plScript.especialStage = especialStage;
         NewPlayer();
         checkPoints.setActiveCheckpointsObjects(true);
         checkPoints.setResetCheckpointsObjects();
