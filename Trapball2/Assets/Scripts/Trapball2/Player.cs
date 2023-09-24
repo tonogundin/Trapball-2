@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IResettable
 {
+    public const string TAG = "Player";
     [HideInInspector] public Rigidbody rb;
     private Transform transform;
     float movementPlayer;

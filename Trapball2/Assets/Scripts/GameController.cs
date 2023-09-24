@@ -13,8 +13,11 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        gamepad = Gamepad.all[0];
-        OnEnable();
+        if (Gamepad.all.Count > 0)
+        {
+            gamepad = Gamepad.all[0];
+            OnEnable();
+        }
     }
 
     private void OnEnable()

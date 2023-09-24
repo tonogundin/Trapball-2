@@ -1,0 +1,1508 @@
+fileFormatVersion: 2
+guid: ff6510387488a39429865b9b6b94bb0b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 2
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MouseIdleTest_0
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1888
+        width: 164
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce582083a282b8f42becde8770eaf26c
+      internalID: -1777091461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_1
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1888
+        width: 165
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e42be6bae4364e4bb14fd98f186b7f2
+      internalID: 1683484671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_2
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 1888
+        width: 164
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4d09568bab9ea498f63b34299db659
+      internalID: -1308202012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_3
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1888
+        width: 164
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bc494ce6973cd4ca85028fe0d066a6
+      internalID: 1502580921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_4
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1888
+        width: 165
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38eddc5c987bad44acb7e77deda2348
+      internalID: 1983801703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_5
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 1888
+        width: 165
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70fe14baa02df56448b9f391975707e2
+      internalID: 287366204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_6
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1702
+        width: 165
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8032beee7bfaa47ab116b08ffa3245
+      internalID: 252042237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_7
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1702
+        width: 165
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30925d368dac281499601daf4f5ef4c6
+      internalID: -746874730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_8
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 1702
+        width: 166
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431659bcdde5a8f4eb80457aa6d3f6ae
+      internalID: 2021480117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_9
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1702
+        width: 166
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48f59956063e3c46b6d687e10241d00
+      internalID: 867712550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_10
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1702
+        width: 167
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785f8959abd0ce449b0b242375d7aa5b
+      internalID: 1579243539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_11
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 1702
+        width: 166
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e025ec48504867247bd2a4aad0b993b1
+      internalID: 476122541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1515
+        width: 167
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966d52dbf3fe1c044a82f0339c152fc2
+      internalID: 1528568903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_13
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1515
+        width: 167
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b4c2ca4495cb9459a32ae884ddfa72
+      internalID: 1033628871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_14
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 1515
+        width: 167
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709a2b8e5ae2a714a8bbd9d8bb7f542e
+      internalID: -1433216185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_15
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1515
+        width: 167
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440e7677472037648aeac9966bd7831d
+      internalID: -578155458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_16
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1515
+        width: 167
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd378adcb46329c44b1d2e1e857b7a4e
+      internalID: 1759672808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_17
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1515
+        width: 168
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befbc6e2735c1b448a4b833c480eed74
+      internalID: 1749678100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_18
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1329
+        width: 168
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d38f80f35869ae489e79551fd186add
+      internalID: -328759869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_19
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1329
+        width: 168
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de18baa11ef01e148947c51b147a0ec2
+      internalID: 1198127569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_20
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 1329
+        width: 168
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bca4733179297f4a84cf943b36be9e5
+      internalID: 590145832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_21
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 1329
+        width: 170
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec09cc42082fae4aad921257e6bf056
+      internalID: 1975504238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_22
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 1329
+        width: 169
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc10147672a6d24ab702357a5f8547d
+      internalID: -2101338395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_23
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1329
+        width: 169
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e78bfdd02f1b0245ad40e9c47837c38
+      internalID: -1200540240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_24
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1143
+        width: 169
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff72478c9d5ebd84aa59f4e2756b90eb
+      internalID: 1940708671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_25
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1143
+        width: 170
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29d58f13d76ec9408878b7f8222dbfe
+      internalID: -436791166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_26
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1143
+        width: 170
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3625cd85d8c0f4391102bc811ce002
+      internalID: 607922548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_27
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 1143
+        width: 170
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de05bffed94e0a142b0080409738a7a7
+      internalID: 1047659335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_28
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 1143
+        width: 170
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590e6e34cbb0f564184cf9f64798df9c
+      internalID: -759104676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_29
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1143
+        width: 170
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bf6d3f2eb85a94ba938228673963ab
+      internalID: 495247451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_30
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 956
+        width: 169
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c3059cc1a554340bd083eb0b1ccde1
+      internalID: -1187726622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_31
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 956
+        width: 170
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c34aca2f2d243a41a0ebe2695116aac
+      internalID: -404858807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_32
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 956
+        width: 170
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20764ec264b1a914ca7d347f22b0ba1d
+      internalID: -1630514398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_33
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 956
+        width: 170
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e7895bdab46f74089ed16702aec057
+      internalID: 429772389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_34
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 956
+        width: 170
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1cfbe5807cec1541a06e003a684b2c5
+      internalID: 734648195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_35
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 956
+        width: 170
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71d97d5dd24c4f45823e3e3b8a7af2c
+      internalID: -180082244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_36
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 770
+        width: 168
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc35365e65201442885ad59c43efe9f
+      internalID: 160513298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_37
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 770
+        width: 170
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf781132c2a56cd489aad415a91e933a
+      internalID: 480203010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_38
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 770
+        width: 169
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0e5cc24932e0c4dbb0c7c2be3f7101
+      internalID: -414162156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_39
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 770
+        width: 170
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d4f4015d0fd5e43b56a413a8fa676d
+      internalID: -1863040443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_40
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 770
+        width: 169
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805479992176b9d46a7fca9b612ff277
+      internalID: 323837842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_41
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 770
+        width: 169
+        height: 122
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641c3fb0f1d222741b7526000be788df
+      internalID: 342606028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_42
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 584
+        width: 168
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7f967b5388fab4f8b2a21d13f60245
+      internalID: 54494286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_43
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 584
+        width: 168
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ef956843bfef1458f0a87c417bab74
+      internalID: 385686344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_44
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 584
+        width: 168
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d427073be78740c4088813b9fd580f92
+      internalID: -1848064144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_45
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 584
+        width: 167
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deca2a02e64703b419193175ded14e5f
+      internalID: -861400497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_46
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 584
+        width: 167
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a36da7b5abaf04c81282f318caf8a1
+      internalID: -107729123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_47
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 584
+        width: 165
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0861ed553b7d4a34d86320e4f3c67b8d
+      internalID: 1311150829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_48
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 397
+        width: 167
+        height: 125
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f42f28a2e9a7f941949962bde508559
+      internalID: -1119886793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_49
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 397
+        width: 167
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a090b62c5856e44b4aca8a8e71d835
+      internalID: 1300190862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_50
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 397
+        width: 165
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c0f1e80ec197c4a8dfcb4cef64ed79
+      internalID: 707205399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_51
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 397
+        width: 165
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d3c0f6c3286b949af7cab4f4c42d3b
+      internalID: 1693799888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_52
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 397
+        width: 165
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e003a6d43b6db4ca34edcf16d1eafc
+      internalID: -1777782672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_53
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 397
+        width: 166
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177669dfc0074b54994ac1bed4b61767
+      internalID: -1872336039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_54
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 211
+        width: 164
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0575694200eb16c46aabdb4d83d6102f
+      internalID: 1625513158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_55
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 211
+        width: 164
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1eab7534b79b0479d91a511f640c23
+      internalID: 80319734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_56
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 211
+        width: 164
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96585e535d240ee4390084768d6c6fe9
+      internalID: -2096633297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_57
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 211
+        width: 164
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4fc5c2e64a5b341b37485c39c70dd2
+      internalID: 142163323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_58
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 211
+        width: 164
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e72c9b9ee298c4b8055851807496f7
+      internalID: 759162054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_59
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 211
+        width: 165
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991d93259f6e90a42ba3b9b9ea4e2898
+      internalID: -1660934776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MouseIdleTest_60
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 25
+        width: 163
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d447d420ade0446875ab2c45f7a646
+      internalID: 1317442435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MouseIdleTest_0: -1777091461
+      MouseIdleTest_1: 1683484671
+      MouseIdleTest_10: 1579243539
+      MouseIdleTest_11: 476122541
+      MouseIdleTest_12: 1528568903
+      MouseIdleTest_13: 1033628871
+      MouseIdleTest_14: -1433216185
+      MouseIdleTest_15: -578155458
+      MouseIdleTest_16: 1759672808
+      MouseIdleTest_17: 1749678100
+      MouseIdleTest_18: -328759869
+      MouseIdleTest_19: 1198127569
+      MouseIdleTest_2: -1308202012
+      MouseIdleTest_20: 590145832
+      MouseIdleTest_21: 1975504238
+      MouseIdleTest_22: -2101338395
+      MouseIdleTest_23: -1200540240
+      MouseIdleTest_24: 1940708671
+      MouseIdleTest_25: -436791166
+      MouseIdleTest_26: 607922548
+      MouseIdleTest_27: 1047659335
+      MouseIdleTest_28: -759104676
+      MouseIdleTest_29: 495247451
+      MouseIdleTest_3: 1502580921
+      MouseIdleTest_30: -1187726622
+      MouseIdleTest_31: -404858807
+      MouseIdleTest_32: -1630514398
+      MouseIdleTest_33: 429772389
+      MouseIdleTest_34: 734648195
+      MouseIdleTest_35: -180082244
+      MouseIdleTest_36: 160513298
+      MouseIdleTest_37: 480203010
+      MouseIdleTest_38: -414162156
+      MouseIdleTest_39: -1863040443
+      MouseIdleTest_4: 1983801703
+      MouseIdleTest_40: 323837842
+      MouseIdleTest_41: 342606028
+      MouseIdleTest_42: 54494286
+      MouseIdleTest_43: 385686344
+      MouseIdleTest_44: -1848064144
+      MouseIdleTest_45: -861400497
+      MouseIdleTest_46: -107729123
+      MouseIdleTest_47: 1311150829
+      MouseIdleTest_48: -1119886793
+      MouseIdleTest_49: 1300190862
+      MouseIdleTest_5: 287366204
+      MouseIdleTest_50: 707205399
+      MouseIdleTest_51: 1693799888
+      MouseIdleTest_52: -1777782672
+      MouseIdleTest_53: -1872336039
+      MouseIdleTest_54: 1625513158
+      MouseIdleTest_55: 80319734
+      MouseIdleTest_56: -2096633297
+      MouseIdleTest_57: 142163323
+      MouseIdleTest_58: 759162054
+      MouseIdleTest_59: -1660934776
+      MouseIdleTest_6: 252042237
+      MouseIdleTest_60: 1317442435
+      MouseIdleTest_7: -746874730
+      MouseIdleTest_8: 2021480117
+      MouseIdleTest_9: 867712550
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

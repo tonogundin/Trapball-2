@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MouseBall2 : MonoBehaviour, IResettable
 {
+    public const string TAG = "RataBola";
     Rigidbody rb;
     Animator animator;
     GameObject player;
@@ -113,6 +114,18 @@ public class MouseBall2 : MonoBehaviour, IResettable
         }
 
     }
+    private void checkVelocity()
+    {
+        float velocityX = rb.velocity.x;
+        if (velocityX > 6)
+        {
+            velocityX = 6;
+        } else if (velocityX < -6)
+        {
+            velocityX = -6;
+        }
+        rb.velocity = new Vector3(velocityX, rb.velocity.y);
+    }
     private void FixedUpdate()
     {
         BallMouseRun.setParameterByName("speed", rb.velocity.x);
@@ -133,6 +146,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
                 if (state != State.SWIMMING)
                 {
                     move(velocityX, 0, ForceMode.Acceleration);
+                    checkVelocity();
                 }
             }
             else
@@ -408,6 +422,10 @@ private void OnCollisionExit(Collision collision)
         return stayonShip;
     }
 
+    public bool isSmash()
+    {
+        return state == State.SMASH;
+    }
     public void resetObject()
     {
         outofObjectReference = false;
