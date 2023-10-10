@@ -23,6 +23,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
     public GameObject smashCollider;
     public float ForceXImpact = 7;
     public GameObject objectReference;
+    public float maxPositionZ;
 
     const string animMouseIdle = "MouseBallIddle";
     const string animMouseMove = "MouseBallMove";
@@ -37,6 +38,8 @@ public class MouseBall2 : MonoBehaviour, IResettable
     private int secondsKnocked = 1500;
 
     private Vector3 initialPosition;
+
+    private float velocityZ = 0;
 
     //Instancias de FMOD
 
@@ -54,7 +57,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
-        initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
+        initialPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
         state = State.NONE;
         AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
         timeKnockOut = new Timer((int)(clips[(int)Animations.SMASH].length * 1000) + secondsKnocked, new CallBackSmashTimer(this));
@@ -75,44 +78,50 @@ public class MouseBall2 : MonoBehaviour, IResettable
     // Update is called once per frame
     void Update()
     {
-        
-        
-        if (player == null)
+        if (isActiveAndEnabled)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
-        else if (!isSmashProcess())
-        {
-            distToPlayer = player.transform.position.x - transform.position.x;
-            dirToPlayer = (player.transform.position - transform.position).normalized;
-            if (objectReference != null)
+            if (player == null)
             {
-                distToObjectReference = objectReference.transform.position.x  - transform.position.x;
-                dirToObjectReference = (player.transform.position - transform.position).normalized;
-                outofObjectReference = isOutofObjectReference();
+                player = GameObject.FindGameObjectWithTag("Player");
             }
-            if (Mathf.Abs(distToPlayer) <= 5f)
+            else if (!isSmashProcess())
             {
-                playerDetected = true;
-                if (Mathf.Abs(distToPlayer) <= 0.75f)
+                distToPlayer = player.transform.position.x - transform.position.x;
+                dirToPlayer = (player.transform.position - transform.position).normalized;
+                if (velocityZ != 0)
                 {
-                    dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
+                    dirToPlayer = new Vector3(dirToPlayer.x, dirToPlayer.y, velocityZ > 0 ? 180 : -180);
+
+                } else if (objectReference != null)
+                {
+                    distToObjectReference = objectReference.transform.position.x - transform.position.x;
+                    dirToObjectReference = (player.transform.position - transform.position).normalized;
+                    outofObjectReference = isOutofObjectReference();
+                }
+                
+                if (Mathf.Abs(distToPlayer) <= 5f)
+                {
+                    playerDetected = true;
+                    if (Mathf.Abs(distToPlayer) <= 0.75f)
+                    {
+                        dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
+                    }
+                }
+                else
+                {
+                    playerDetected = false;
                 }
             }
-            else
+            ManageRotation();
+            if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
             {
-                playerDetected = false;
+                rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
+            }
+            else if (rb.collisionDetectionMode != CollisionDetectionMode.Discrete)
+            {
+                rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
             }
         }
-        ManageRotation();
-        if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
-        {
-            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
-        } else if (rb.collisionDetectionMode != CollisionDetectionMode.Discrete)
-        {
-            rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
-        }
-
     }
     private void checkVelocity()
     {
@@ -124,73 +133,108 @@ public class MouseBall2 : MonoBehaviour, IResettable
         {
             velocityX = -6;
         }
-        rb.velocity = new Vector3(velocityX, rb.velocity.y);
+        float velocity_Z = rb.velocity.z;
+        if (velocity_Z > 0.25f)
+        {
+            velocityX = 0.25f;
+        }
+        else if (velocity_Z < -0.25f)
+        {
+            velocityX = -0.25f;
+        }
+        if (!rb.isKinematic)
+        {
+            rb.velocity = new Vector3(velocityX, rb.velocity.y, velocity_Z);
+        }
     }
     private void FixedUpdate()
     {
-        BallMouseRun.setParameterByName("speed", rb.velocity.x);
-        AddExtraGravityForce();
-        if (!isSmashProcess())
+        if (isActiveAndEnabled)
         {
-            float velocityX = Mathf.Sign(distToPlayer);
-            if (!playerDetected && objectReference != null && outofObjectReference)
+            BallMouseRun.setParameterByName("speed", rb.velocity.x);
+            AddExtraGravityForce();
+            if (!isSmashProcess())
             {
-                velocityX = Mathf.Sign(distToObjectReference);
-            }
-            if (playerDetected || objectReference != null && outofObjectReference)
-            {
-                if (state == State.NORMAL)
+                float velocityX = Mathf.Sign(distToPlayer);
+                if (transform.localPosition.z < maxPositionZ - 0.05f)
                 {
-                    state = State.MOVE;
-                }
-                if (state != State.SWIMMING)
+                    velocityZ = -0.25f;
+                } else
                 {
-                    move(velocityX, 0, ForceMode.Acceleration);
-                    checkVelocity();
+                    velocityZ = 0;
+                    transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, maxPositionZ);
                 }
+                if (!playerDetected && objectReference != null && outofObjectReference)
+                {
+                    velocityX = Mathf.Sign(distToObjectReference);
+                }
+                if (velocityZ != 0)
+                {
+                    rb.constraints = RigidbodyConstraints.None;
+                    velocityX = 0;
+                }
+                else
+                {
+                    rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
+                }
+                if (velocityZ != 0 || playerDetected || objectReference != null && outofObjectReference)
+                {
+                    if (state == State.NORMAL)
+                    {
+                        state = State.MOVE;
+                    }
+                    if (state != State.SWIMMING)
+                    {
+                        move(velocityX, 0, velocityZ, ForceMode.Acceleration);
+                        checkVelocity();
+                    }
+                }
+                else
+                {
+                    if (state != State.SWIMMING)
+                    {
+                        state = State.NORMAL;
+                        if (!rb.isKinematic)
+                        {
+                            rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+                        }
+                    }
+                }
+                if (state == State.SWIMMING)
+                {
+                    move(0, 0.25f, 0, ForceMode.Impulse);
+
+                    move(limitVelocity(velocityX, 0.25f), 0, velocityZ, ForceMode.Acceleration);
+                    if (rb.velocity.y > 5)
+                    {
+                        rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
+                    }
+                    if (rb.velocity.x > 2)
+                    {
+                        rb.velocity = new Vector3(2, rb.velocity.y, rb.velocity.z);
+                    }
+                    if (rb.velocity.x < -2)
+                    {
+                        rb.velocity = new Vector3(-2, rb.velocity.y, rb.velocity.z);
+                    }
+                }
+
             }
             else
             {
-                if (state != State.SWIMMING)
+                if (!contactBall)
                 {
-                    state = State.NORMAL;
                     rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
                 }
             }
-            if (state == State.SWIMMING)
-            {
-                move(0, 0.25f, ForceMode.Impulse);
-
-                move(limitVelocity(velocityX, 0.25f), 0, ForceMode.Acceleration);
-                if (rb.velocity.y > 5)
-                {
-                    rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
-                }
-                if (rb.velocity.x > 2)
-                {
-                    rb.velocity = new Vector3(2, rb.velocity.y, rb.velocity.z);
-                }
-                if (rb.velocity.x < -2)
-                {
-                    rb.velocity = new Vector3(-2, rb.velocity.y, rb.velocity.z);
-                }
-            }
-
+            checkState();
         }
-        else
-        {
-            if (!contactBall)
-            {
-                rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-            }
-        }
-        checkState();
     }
 
-    private void move(float velocityX, float velocityY, ForceMode mode)
+    private void move(float velocityX, float velocityY, float velocityZ, ForceMode mode)
     {
         velocityX = limitVelocity(velocityX, 1);
-        rb.AddForce(new Vector3(velocityX, velocityY, 0) * movementForce, mode);
+        rb.AddForce(new Vector3(velocityX, velocityY, velocityZ) * movementForce, mode);
     }
 
     private float limitVelocity(float velocity, float limit)
@@ -212,21 +256,24 @@ public class MouseBall2 : MonoBehaviour, IResettable
         {
             // Asegúrate de que el objeto detectado tiene un Collider
             Collider[] detectedColliders = objectReference.GetComponentsInChildren<Collider>();
-            if (detectedColliders == null && detectedColliders.Length == 0) return false;
+            if (detectedColliders == null || detectedColliders.Length == 0) return false;
 
             // Calcula los extremos en el eje x del objeto detectado
             float detectedHalfWidth = detectedColliders[0].bounds.extents.x; // la mitad del ancho en el eje x
             float detectedLeftX = objectReference.transform.position.x - detectedHalfWidth;
             float detectedRightX = objectReference.transform.position.x + detectedHalfWidth;
 
-            // Obtén la posición x del GameObject actual (el que tiene este script)
+            // Obtén la posición x y z del GameObject actual (el que tiene este script)
             float currentX = transform.position.x;
 
-            // Compara las posiciones
-            return currentX <= detectedLeftX || currentX >= detectedRightX;
+            // Compara las posiciones en ambos ejes
+            bool isOutOfXBounds = currentX <= detectedLeftX || currentX >= detectedRightX;
+
+            return isOutOfXBounds; // Si está fuera de los límites en cualquiera de los ejes, retorna true
         }
         return false;
     }
+
     private void checkState()
     {
         if (antState != state)
@@ -295,16 +342,15 @@ public class MouseBall2 : MonoBehaviour, IResettable
         float rotVelocity = 5f;
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0); //Para que no rote en "Z" y se vuelque.
         rotToPlayer = Quaternion.LookRotation(dirToPlayer, transform.up);
-        if (!playerDetected && objectReference!= null && outofObjectReference)
+        if (velocityZ == 0 && !playerDetected && objectReference!= null && outofObjectReference)
         {
             rotToPlayer = Quaternion.LookRotation(dirToObjectReference, transform.up);
         }
-        Quaternion rotationAnt = new Quaternion(transform.rotation.w, transform.rotation.x, transform.rotation.y, transform.rotation.z);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotToPlayer, rotVelocity * Time.deltaTime);
     }
     void AddExtraGravityForce()
     {
-        if (!stayonShip)
+        if (!rb.isKinematic && !stayonShip)
         {
             Vector3 vel = rb.velocity;
             vel.y -= extraGravityFactor * Time.fixedDeltaTime;
@@ -432,8 +478,11 @@ private void OnCollisionExit(Collision collision)
         playerDetected = false;
         state = State.NONE;
         changeCollider(false);
-        rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
-        rb.velocity = new Vector3(0, 0, 0);
+        transform.localPosition = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
+        if (!rb.isKinematic)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
     }
 
     private bool isObjetEqualsPlayer(GameObject gameObject)

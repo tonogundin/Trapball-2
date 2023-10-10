@@ -3369,12 +3369,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b452956343393b4d8260e6096cd692e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemObstacleLayer:
-    serializedVersion: 2
-    m_Bits: 1280
-  meshGizmos: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   normalCollider: {fileID: 8043261476779103577}
   smashCollider: {fileID: 8043261476643090849}
+  ForceXImpact: 7
+  objectReference: {fileID: 0}
 --- !u!1 &5817802079947583300
 GameObject:
   m_ObjectHideFlags: 0

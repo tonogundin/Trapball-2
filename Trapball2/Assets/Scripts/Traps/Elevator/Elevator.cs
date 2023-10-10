@@ -77,7 +77,7 @@ public class Elevator : MonoBehaviour
         {
             setHydraulic(false);
         }
-        if ((objectsInElevator.Count == 0 || objectsInElevator[0].tag == Player.TAG) && hydraulic.isDown)
+        if ((objectsInElevator.Count == 0 || objectsInElevator.Count == 1 && objectsInElevator[0].tag == Player.TAG) && hydraulic.isDown)
         {
             setHydraulic(true);
         }

@@ -11,6 +11,8 @@ public class BreakableWood : MonoBehaviour, IResettable
     private Quaternion initialRotation;
     private Vector3 initialScale;
     State state = State.NORMAL;
+    public float collisionForceActive = 10;
+    public float velocityImpactActive = -10;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,7 +34,7 @@ public class BreakableWood : MonoBehaviour, IResettable
             float yVelocity = collision.relativeVelocity.y;
 
             // Si la fuerza del impacto es suficientemente fuerte y la velocidad en y es negativa
-            if (collisionForce > 10 && yVelocity < -10)
+            if (collisionForce > collisionForceActive && yVelocity < velocityImpactActive)
             {
                 state = State.BREAK;
                 rb.isKinematic = false;
