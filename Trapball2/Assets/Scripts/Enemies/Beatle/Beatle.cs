@@ -16,10 +16,6 @@ public class Beatle : MonoBehaviour
     bool outofObjectReference;
     float extraGravityFactor = 10;
     float movementForce = 5;
-    Vector3 checkerOffset;
-    Timer timeKnockOut;
-    Timer timeRecover;
-    Timer timeSwimming;
     private bool stayonShip = false;
     public GameObject normalCollider;
     public GameObject smashCollider;
@@ -28,10 +24,8 @@ public class Beatle : MonoBehaviour
     public float maxPositionZ;
 
     public State state;
-    private State antState;
+    public State antState;
     private State initialState;
-    private bool contactBall = false;
-    private int secondsKnocked = 1500;
 
     private Vector3 initialPosition;
 
@@ -40,11 +34,14 @@ public class Beatle : MonoBehaviour
     const string animBeatleIdle = "BeatleIdle";
     const string animBeatleMove = "BeatleMove";
     const string animBeatleMoveAgressive = "BeatleMoveAgressive";
-    const string animBeatleSmash = "BeatleSmash";
-    const string animBeatleRecover = "BeatleRecover";
     const string animBeatleFall = "BeatleFall";
 
     private const int layerPlatform = 9;
+    
+    public float waitTimePreAttack = 0.75f; // Tiempo de espera en segundos
+    public float waitTimeAttack = 0.25f; // Tiempo de espera en segundos
+
+    public bool rotateDown = true;
 
 
 
@@ -55,11 +52,6 @@ public class Beatle : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         initialPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
-        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
-        timeKnockOut = new Timer((int)(clips[(int)Animations.SMASH].length * 1000) + secondsKnocked, new CallBackSmashTimer(this));
-        timeKnockOut = new Timer((int)(clips[(int)Animations.SMASH].length * 1000) + secondsKnocked, new CallBackSmashTimer(this));
-        timeRecover = new Timer((int)(clips[(int)Animations.RECOVER].length * 1000), new CallBackRecoverTimer(this));
-
     }
     void Update()
     {
@@ -69,7 +61,7 @@ public class Beatle : MonoBehaviour
             {
                 player = GameObject.FindGameObjectWithTag("Player");
             }
-            else if (!isSmashProcess())
+            else
             {
                 dirToPlayer = (player.transform.position - transform.position).normalized;
                 if (velocityZ != 0)
@@ -101,8 +93,18 @@ public class Beatle : MonoBehaviour
                 {
                     playerDetected = false;
                 }
+                if (!isDetectedPlayerNear() && state == State.NORMAL)
+                {
+                    
+                }
             }
-            ManageRotation();
+            if (state != State.PREPARE_ATTACK && state != State.ATTACK)
+            {
+                ManageRotation();
+            } else
+            {
+                AnimateRotation(rotateDown);
+            }
             if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
             {
                 rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
@@ -165,61 +167,50 @@ public class Beatle : MonoBehaviour
         if (isActiveAndEnabled)
         {
             AddExtraGravityForce();
-            if (!isSmashProcess())
+            float velocityX = Mathf.Sign(distToPlayer.x);
+            if (transform.localPosition.z < maxPositionZ - 0.05f)
             {
-                float velocityX = Mathf.Sign(distToPlayer.x);
-                if (transform.localPosition.z < maxPositionZ - 0.05f)
+                velocityZ = -0.25f;
+            }
+            else
+            {
+                velocityZ = 0;
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, maxPositionZ);
+            }
+            if (!playerDetected && objectReference != null && outofObjectReference)
+            {
+                velocityX = Mathf.Sign(distToObjectReference);
+            }
+            if (velocityZ != 0)
+            {
+                rb.constraints = RigidbodyConstraints.None;
+                velocityX = 0;
+            }
+            else
+            {
+                rb.constraints = RigidbodyConstraints.FreezePositionZ;
+            }
+            if (velocityZ != 0 || playerDetected || objectReference != null && outofObjectReference)
+            {
+                if (state == State.NORMAL)
                 {
-                    velocityZ = -0.25f;
+                    state = State.MOVE;
                 }
-                else
+                if (state == State.MOVE)
                 {
-                    velocityZ = 0;
-                    transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, maxPositionZ);
-                }
-                if (!playerDetected && objectReference != null && outofObjectReference)
-                {
-                    velocityX = Mathf.Sign(distToObjectReference);
-                }
-                if (velocityZ != 0)
-                {
-                    rb.constraints = RigidbodyConstraints.None;
-                    velocityX = 0;
-                }
-                else
-                {
-                    //rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
-                    rb.constraints = RigidbodyConstraints.FreezePositionZ;
-                }
-                if (velocityZ != 0 || playerDetected || objectReference != null && outofObjectReference)
-                {
-                    if (state == State.NORMAL)
-                    {
-                        state = State.MOVE;
-                    }
-                    if (state == State.MOVE)
-                    {
-                        move(velocityX, 0, velocityZ, ForceMode.Acceleration);
-                        checkVelocity();
-                    }
-                }
-                else
-                {
-                    if (state != State.HANG && state != State.FALL && state != State.NAIL)
-                    {
-                        state = State.NORMAL;
-                        if (!rb.isKinematic)
-                        {
-                            rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
-                        }
-                    }
+                    move(velocityX, 0, velocityZ, ForceMode.Acceleration);
+                    checkVelocity();
                 }
             }
             else
             {
-                if (!contactBall)
+                if (state != State.HANG && state != State.FALL && state != State.NAIL && state != State.PREPARE_ATTACK && state != State.ATTACK)
                 {
-                    rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+                    state = State.NORMAL;
+                    if (!rb.isKinematic)
+                    {
+                        rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+                    }
                 }
             }
             checkState();
@@ -278,7 +269,7 @@ public class Beatle : MonoBehaviour
             {
                 case State.NORMAL:
                     animator.SetTrigger(animBeatleIdle);
-
+                    StartCoroutine(changeStateAttackAndNormal());
                     break;
                 case State.HANG:
 
@@ -292,27 +283,14 @@ public class Beatle : MonoBehaviour
                     break;
                 case State.MOVE_AGRESSIVE:
                     animator.SetTrigger(animBeatleMoveAgressive);
-
                     break;
-                case State.SMASH:
-                    timeRecover.stopTimer();
-                    timeKnockOut.stopTimer();
-                    timeKnockOut.startTimer();
-                    animator.SetTrigger(animBeatleSmash);
+                case State.PREPARE_ATTACK:
+                    
                     break;
-                case State.RECOVER:
-                    timeKnockOut.stopTimer();
-                    timeRecover.stopTimer();
-                    timeRecover.startTimer();
-                    animator.SetTrigger(animBeatleRecover);
+                case State.ATTACK:
                     break;
             }
         }
-    }
-
-    public bool isSmashProcess()
-    {
-        return state == State.SMASH || state == State.RECOVER;
     }
 
     void ManageRotation()
@@ -326,6 +304,37 @@ public class Beatle : MonoBehaviour
             Quaternion rotToPlayer = Quaternion.LookRotation(directionToTarget, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotToPlayer, rotVelocity * Time.deltaTime);
         }
+    }
+
+    void AnimateRotation(bool rotateDown)
+    {
+        // Configura los valores para la rotación hacia abajo y hacia arriba
+        float downRotation = -10f; // Ángulo al que rota hacia abajo
+        float upRotation = 15f; // Ángulo al que rota hacia arriba
+        float rotationSpeed = rotateDown ? 0.5f : 3; // Velocidad de la rotación
+
+        // Calcula la rotación deseada basada en el estado
+        float targetRotationY = rotateDown ? downRotation : upRotation;
+
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0); // Restricción en Z
+
+        Vector3 directionToTarget = dirToPlayer;
+        directionToTarget.y = directionToTarget.y + targetRotationY;
+        Quaternion rotToPlayer = Quaternion.LookRotation(directionToTarget, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotToPlayer, rotationSpeed * Time.deltaTime);
+    }
+
+    IEnumerator changeStateAttackAndNormal()
+    {
+        yield return new WaitForSeconds(2);
+        state = State.PREPARE_ATTACK;
+        rotateDown = true;
+        yield return new WaitForSeconds(waitTimePreAttack);
+        rotateDown = false;
+        state = State.ATTACK;
+        yield return new WaitForSeconds(waitTimeAttack);
+        rotateDown = true;
+        state = State.NORMAL;
     }
 
     void AddExtraGravityForce()
@@ -351,8 +360,6 @@ public class Beatle : MonoBehaviour
                 float normalY = contacts[0].normal.y;
                 if (normalY < compareTop())
                 {
-                    state = State.SMASH;
-                    changeCollider(true);
                     float impact = collision.relativeVelocity.y * -1;
                     if (impact > 0)
                     {
@@ -385,8 +392,6 @@ public class Beatle : MonoBehaviour
                         }
                         rbPlayer.AddForce(new Vector3(forceX, 0, 0), ForceMode.Impulse);
                         collision.gameObject.GetComponent<Player>().addDamage();
-                        state = State.SMASH;
-                        changeCollider(true);
                     }
 
                 }
@@ -399,10 +404,6 @@ public class Beatle : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (isObjetEqualsPlayer(collision.gameObject))
-        {
-            contactBall = true;
-        }
         switch (collision.gameObject.tag)
         {
             case "Balancin":
@@ -418,10 +419,6 @@ public class Beatle : MonoBehaviour
             case "Balancin":
                 stayonShip = false;
                 break;
-        }
-        if (isObjetEqualsPlayer(collision.gameObject))
-        {
-            contactBall = false;
         }
     }
 
@@ -445,16 +442,11 @@ public class Beatle : MonoBehaviour
         return stayonShip;
     }
 
-    public bool isSmash()
-    {
-        return state == State.SMASH;
-    }
     public void resetObject()
     {
         outofObjectReference = false;
         playerDetected = false;
         state = initialState;
-        changeCollider(false);
         transform.localPosition = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
         if (!rb.isKinematic)
         {
@@ -466,27 +458,7 @@ public class Beatle : MonoBehaviour
     {
         return gameObject == player;
     }
-    private void setRecovery()
-    {
-        if (state == State.SMASH)
-        {
-            state = State.RECOVER;
-        }
-    }
 
-    private void setNormal()
-    {
-        if (state == State.RECOVER)
-        {
-            state = State.NORMAL;
-            changeCollider(false);
-        }
-    }
-
-    private void playSwimming()
-    {
-        state = State.NORMAL;
-    }
     private float compareTop()
     {
         if (normalCollider.activeSelf)
@@ -498,11 +470,6 @@ public class Beatle : MonoBehaviour
             return -0.6f;
         }
     }
-    private void changeCollider(bool smash)
-    {
-        //normalCollider.SetActive(!smash);
-        //smashCollider.SetActive(smash);
-    }
 
     public enum State
     {
@@ -510,11 +477,11 @@ public class Beatle : MonoBehaviour
         NORMAL,
         MOVE,
         MOVE_AGRESSIVE,
-        SMASH,
-        RECOVER,
         HANG,
         FALL,
-        NAIL
+        NAIL,
+        PREPARE_ATTACK,
+        ATTACK
      }
 
     private enum Animations
@@ -522,64 +489,6 @@ public class Beatle : MonoBehaviour
         IDLE,
         MOVE,
         FALL,
-        RECOVER,
-        SMASH
     }
 
-    class CallBackSmashTimer : Timer.Callback
-    {
-        private Beatle obj;
-        public CallBackSmashTimer(Beatle obj)
-        {
-            this.obj = obj;
-        }
-
-        public void shot()
-        {
-            obj.setRecovery();
-        }
-
-        public MonoBehaviour getMonoBehaviour()
-        {
-            return obj;
-        }
-    }
-
-    class CallBackRecoverTimer : Timer.Callback
-    {
-        private Beatle obj;
-        public CallBackRecoverTimer(Beatle obj)
-        {
-            this.obj = obj;
-        }
-
-        public void shot()
-        {
-            obj.setNormal();
-        }
-
-        public MonoBehaviour getMonoBehaviour()
-        {
-            return obj;
-        }
-    }
-
-    class CallBackSwimmingTimer : Timer.Callback
-    {
-        private Beatle obj;
-        public CallBackSwimmingTimer(Beatle obj)
-        {
-            this.obj = obj;
-        }
-
-        public void shot()
-        {
-            obj.playSwimming();
-        }
-
-        public MonoBehaviour getMonoBehaviour()
-        {
-            return obj;
-        }
-    }
 }

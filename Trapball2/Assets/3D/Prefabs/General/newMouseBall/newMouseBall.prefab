@@ -771,6 +771,7 @@ MonoBehaviour:
   smashCollider: {fileID: 6773870800639684168}
   ForceXImpact: 7
   objectReference: {fileID: 0}
+  maxPositionZ: 0
 --- !u!54 &4267569616064013508
 Rigidbody:
   m_ObjectHideFlags: 0
