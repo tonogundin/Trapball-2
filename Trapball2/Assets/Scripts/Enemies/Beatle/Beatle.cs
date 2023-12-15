@@ -45,6 +45,8 @@ public class Beatle : MonoBehaviour
 
     public bool rotateDown = true;
 
+    private Vector3 positionAttack;
+
 
 
     // Start is called before the first frame update
@@ -89,20 +91,25 @@ public class Beatle : MonoBehaviour
                     if (isDetectedPlayerNear())
                     {
                         dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
+                         if (state == State.NORMAL || state == State.MOVE)
+                         {
+                            state = State.PREPARE_ATTACK;
+                            positionAttack = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                         }
                     }
                 }
                 else
                 {
                     playerDetected = false;
                 }
-                if (!isDetectedPlayerNear() && state == State.NORMAL)
-                {
-                    
-                }
             }
             if (state != State.PREPARE_ATTACK && state != State.ATTACK)
             {
                 ManageRotation();
+            }
+            else
+            {
+                transform.position = positionAttack;
             }
             if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
             {
@@ -268,7 +275,6 @@ public class Beatle : MonoBehaviour
             {
                 case State.NORMAL:
                     animator.SetTrigger(animBeatleIdle);
-                    StartCoroutine(changeStateAttackAndNormal());
                     break;
                 case State.HANG:
 
@@ -284,6 +290,7 @@ public class Beatle : MonoBehaviour
                     animator.SetTrigger(animBeatleMoveAgressive);
                     break;
                 case State.PREPARE_ATTACK:
+                    StartCoroutine(changeStateAttackAndNormal());
                     animator.SetTrigger(animBeatlePreAttack);
                     break;
                 case State.ATTACK:
@@ -306,29 +313,8 @@ public class Beatle : MonoBehaviour
         }
     }
 
-    void AnimateRotation(bool rotateDown)
-    {
-        // Configura los valores para la rotación hacia abajo y hacia arriba
-        float downRotation = -10f; // Ángulo al que rota hacia abajo
-        float upRotation = 15f; // Ángulo al que rota hacia arriba
-        float rotationSpeed = rotateDown ? 0.5f : 3; // Velocidad de la rotación
-
-        // Calcula la rotación deseada basada en el estado
-        float targetRotationY = rotateDown ? downRotation : upRotation;
-
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0); // Restricción en Z
-
-        Vector3 directionToTarget = dirToPlayer;
-        directionToTarget.y = directionToTarget.y + targetRotationY;
-        Quaternion rotToPlayer = Quaternion.LookRotation(directionToTarget, Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotToPlayer, rotationSpeed * Time.deltaTime);
-    }
-
     IEnumerator changeStateAttackAndNormal()
     {
-        yield return new WaitForSeconds(2);
-        state = State.PREPARE_ATTACK;
-        rotateDown = true;
         yield return new WaitForSeconds(waitTimePreAttack);
         rotateDown = false;
         state = State.ATTACK;

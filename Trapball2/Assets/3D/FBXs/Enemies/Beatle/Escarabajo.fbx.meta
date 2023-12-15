@@ -38,7 +38,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|0.Static
+      name: Beatle - Static
       takeName: Armature|0.Static
       internalID: -8242473357336325
       firstFrame: 0
@@ -49,7 +49,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -67,7 +67,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|1.Idle30
+      name: Beatle - Idle30
       takeName: Armature|1.Idle30
       internalID: -1333507057297150861
       firstFrame: 0
@@ -78,8 +78,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -96,7 +96,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|1.Idle45
+      name: Beatle - Idle45
       takeName: Armature|1.Idle45
       internalID: 8356413762294967020
       firstFrame: 0
@@ -107,8 +107,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -125,7 +125,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|1.Idle60
+      name: Beatle - Idle60
       takeName: Armature|1.Idle60
       internalID: 8645582308474045615
       firstFrame: 0
@@ -136,8 +136,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -154,7 +154,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|1.PreparationIdle
+      name: Beatle - PreIdle
       takeName: Armature|1.PreparationIdle
       internalID: -53926654065662423
       firstFrame: 0
@@ -165,8 +165,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -183,19 +183,19 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|2.FloorFall
-      takeName: Armature|2.FloorFall
+      name: Beatle - Move
+      takeName: Armature|2.Movementv2
       internalID: 7000816346155040183
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -212,7 +212,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|2.Freefall
+      name: Beatle - FreeFall
       takeName: Armature|2.Freefall
       internalID: -4748465521125655043
       firstFrame: 0
@@ -241,7 +241,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|2.IdleFloorFall
+      name: Beatle - IdleFloorFall
       takeName: Armature|2.IdleFloorFall
       internalID: -8437688530082227191
       firstFrame: 0
@@ -252,8 +252,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -270,7 +270,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|2.Movementv2
+      name: Beatle - Move2
       takeName: Armature|2.Movementv2
       internalID: 3865003833299882469
       firstFrame: 0
@@ -281,8 +281,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -299,7 +299,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|2.Movementv3
+      name: Beatle - Move3
       takeName: Armature|2.Movementv3
       internalID: -7165355448189997095
       firstFrame: 0
@@ -310,8 +310,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -328,7 +328,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|3.Launch
+      name: Beatle - Attack
       takeName: Armature|3.Launch
       internalID: 1865829057690112005
       firstFrame: 0
@@ -357,7 +357,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|3.Preparation
+      name: Beatle - PreAttack
       takeName: Armature|3.Preparation
       internalID: 8459013386330118264
       firstFrame: 0
