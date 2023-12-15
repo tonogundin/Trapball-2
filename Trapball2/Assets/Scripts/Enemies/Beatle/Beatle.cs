@@ -35,6 +35,8 @@ public class Beatle : MonoBehaviour
     const string animBeatleMove = "BeatleMove";
     const string animBeatleMoveAgressive = "BeatleMoveAgressive";
     const string animBeatleFall = "BeatleFall";
+    const string animBeatlePreAttack = "BeatlePreAttack";
+    const string animBeatleAttack = "BeatleAttack";
 
     private const int layerPlatform = 9;
     
@@ -101,9 +103,6 @@ public class Beatle : MonoBehaviour
             if (state != State.PREPARE_ATTACK && state != State.ATTACK)
             {
                 ManageRotation();
-            } else
-            {
-                AnimateRotation(rotateDown);
             }
             if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
             {
@@ -285,9 +284,10 @@ public class Beatle : MonoBehaviour
                     animator.SetTrigger(animBeatleMoveAgressive);
                     break;
                 case State.PREPARE_ATTACK:
-                    
+                    animator.SetTrigger(animBeatlePreAttack);
                     break;
                 case State.ATTACK:
+                    animator.SetTrigger(animBeatleAttack);
                     break;
             }
         }
@@ -461,14 +461,7 @@ public class Beatle : MonoBehaviour
 
     private float compareTop()
     {
-        if (normalCollider.activeSelf)
-        {
-            return -0.6f;
-        }
-        else
-        {
-            return -0.6f;
-        }
+        return -0.6f;
     }
 
     public enum State
