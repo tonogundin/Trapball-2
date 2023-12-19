@@ -35,6 +35,7 @@ public class Beatle : MonoBehaviour
     const string animBeatleMove = "BeatleMove";
     const string animBeatleMoveAgressive = "BeatleMoveAgressive";
     const string animBeatleFall = "BeatleFall";
+    const string animBeatleNail = "BeatleNail";
     const string animBeatlePreAttack = "BeatlePreAttack";
     const string animBeatleAttack = "BeatleAttack";
 
@@ -43,11 +44,12 @@ public class Beatle : MonoBehaviour
     public float waitTimePreAttack = 0.75f; // Tiempo de espera en segundos
     public float waitTimeAttack = 0.25f; // Tiempo de espera en segundos
 
-    public bool rotateDown = true;
-
     private Vector3 positionAttack;
 
-
+    public float forceAttackX = 20;
+    public float forceAttackY = 20;
+    public bool launchReverse = false;
+    private bool launch = false;
 
     // Start is called before the first frame update
     void Start()
@@ -91,11 +93,14 @@ public class Beatle : MonoBehaviour
                     if (isDetectedPlayerNear())
                     {
                         dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
-                         if (state == State.NORMAL || state == State.MOVE)
-                         {
-                            state = State.PREPARE_ATTACK;
-                            positionAttack = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                         }
+
+
+                        if (!launch && isBeatleInPositionForAttack() && (state == State.NORMAL || state == State.MOVE))
+                        {
+                           launch = true;
+                           state = State.PREPARE_ATTACK;
+                           positionAttack = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                        }
                     }
                 }
                 else
@@ -103,14 +108,15 @@ public class Beatle : MonoBehaviour
                     playerDetected = false;
                 }
             }
-            if (state != State.PREPARE_ATTACK && state != State.ATTACK)
+            if (state != State.PREPARE_ATTACK && state != State.ATTACK && state != State.IMPACT)
             {
                 ManageRotation();
             }
-            else
+            if (state == State.PREPARE_ATTACK)
             {
                 transform.position = positionAttack;
             }
+
             if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
             {
                 rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
@@ -121,7 +127,28 @@ public class Beatle : MonoBehaviour
             }
         }
     }
+    
+    private bool isBeatleInPositionForAttack()
+    {
+        float rotationY = rb.rotation.eulerAngles.y;
 
+        // Define un rango de tolerancia
+        float tolerance = 5f; // 5 grados de tolerancia a cada lado
+
+        // Verifica si la rotación está dentro del rango de 90 +/- tolerancia o 270 +/- tolerancia
+        return Mathf.Abs(rotationY - 90) <= tolerance || Mathf.Abs(rotationY - 270) <= tolerance;
+    }
+
+    private bool isBeatleInPositionLeft()
+    {
+        float rotationY = rb.rotation.eulerAngles.y;
+
+        // Define un rango de tolerancia
+        float tolerance = 5f; // 5 grados de tolerancia a cada lado
+
+        // Verifica si la rotación está dentro del rango de 90 +/- tolerancia o 270 +/- tolerancia
+        return Mathf.Abs(rotationY - 90) <= tolerance;
+    }
     private bool isDetectPlayer()
     {
         distToPlayer = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
@@ -139,7 +166,7 @@ public class Beatle : MonoBehaviour
 
     private bool isDetectedPlayerNear()
     {
-        return Mathf.Abs(distToPlayer.x) <= 0.75f
+        return Mathf.Abs(distToPlayer.x) <= 1.35f
                && Mathf.Abs(distToPlayer.y) < 1;
     }
 
@@ -210,7 +237,7 @@ public class Beatle : MonoBehaviour
             }
             else
             {
-                if (state != State.HANG && state != State.FALL && state != State.NAIL && state != State.PREPARE_ATTACK && state != State.ATTACK)
+                if (state != State.HANG && state != State.FALL && state != State.NAIL && state != State.PREPARE_ATTACK && state != State.ATTACK && state != State.IMPACT)
                 {
                     state = State.NORMAL;
                     if (!rb.isKinematic)
@@ -296,6 +323,12 @@ public class Beatle : MonoBehaviour
                 case State.ATTACK:
                     animator.SetTrigger(animBeatleAttack);
                     break;
+                case State.IMPACT:
+                    StartCoroutine(impulsePlayer());
+                    break;
+                case State.NAIL:
+                    animator.SetTrigger(animBeatleNail);
+                    break;
             }
         }
     }
@@ -305,7 +338,7 @@ public class Beatle : MonoBehaviour
         if (state != State.HANG && state != State.FALL && state != State.NAIL)
         {
             float rotVelocity = 2.5f;
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0); // Restricción en Z
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); // Restricción en Z
 
             Vector3 directionToTarget = (objectReference != null && outofObjectReference) ? dirToObjectReference : dirToPlayer;
             Quaternion rotToPlayer = Quaternion.LookRotation(directionToTarget, Vector3.up);
@@ -313,15 +346,7 @@ public class Beatle : MonoBehaviour
         }
     }
 
-    IEnumerator changeStateAttackAndNormal()
-    {
-        yield return new WaitForSeconds(waitTimePreAttack);
-        rotateDown = false;
-        state = State.ATTACK;
-        yield return new WaitForSeconds(waitTimeAttack);
-        rotateDown = true;
-        state = State.NORMAL;
-    }
+
 
     void AddExtraGravityForce()
     {
@@ -337,51 +362,25 @@ public class Beatle : MonoBehaviour
     {
         if (isObjetEqualsPlayer(collision.gameObject))
         {
-            float collisionForce = collision.relativeVelocity.magnitude;
-
             ContactPoint[] contacts = collision.contacts;
             if (contacts != null && contacts.Length > 0)
             {
                 Rigidbody rbPlayer = collision.gameObject.GetComponent<Rigidbody>();
-                float normalY = contacts[0].normal.y;
-                if (normalY < compareTop())
+
+                float impactY = collision.relativeVelocity.y * -1;
+                if (impactY > 0)
                 {
-                    float impact = collision.relativeVelocity.y * -1;
-                    if (impact > 0)
+                    if (impactY > 2)
                     {
-                        if (impact > 9)
-                        {
-                            impact = 9;
-                        }
-                        if (impact < 5)
-                        {
-                            impact = 5;
-                        }
-                        rbPlayer.AddForce(new Vector3(0, impact, 0), ForceMode.Impulse);
+                        impactY = 2;
                     }
-                }
-                else
-                {
-                    // Obtenemos la dirección en X hacia el otro objeto
-                    float directionToOtherX = Mathf.Sign(collision.transform.position.x - transform.position.x);
-
-                    // Obtenemos la dirección en X de la velocidad de nuestro objeto
-                    float velocityDirectionX = Mathf.Sign(rb.velocity.x);
-
-                    // Comparamos las dos direcciones
-                    if (directionToOtherX == velocityDirectionX && collisionForce > 2 && rb.velocity.magnitude > 1)
+                    if (impactY < 1)
                     {
-                        float forceX = rb.velocity.x;
-                        if (forceX > ForceXImpact)
-                        {
-                            forceX = ForceXImpact;
-                        }
-                        rbPlayer.AddForce(new Vector3(forceX, 0, 0), ForceMode.Impulse);
-                        collision.gameObject.GetComponent<Player>().addDamage();
+                        impactY = 1;
                     }
-
+                    rbPlayer.AddForce(new Vector3(0, impactY, 0), ForceMode.Impulse);
+                    rbPlayer.velocity = new Vector3(0, rbPlayer.velocity.y, rbPlayer.velocity.z);
                 }
-
             }
         }
 
@@ -412,14 +411,38 @@ public class Beatle : MonoBehaviour
     {
         if (other.gameObject.layer == layerPlatform && state == State.FALL)
         {
+            rb.isKinematic = true;
             state = State.NAIL;
             StartCoroutine(stateNormal());
         }
+        //posibleLaunchPlayer && 
+        if (other.gameObject.tag == Player.TAG && state == State.ATTACK)
+        {
+            state = State.IMPACT;
+        }
     }
 
+    IEnumerator changeStateAttackAndNormal()
+    {
+        yield return new WaitForSeconds(waitTimePreAttack);
+        state = State.ATTACK;
+        rb.AddForce(new Vector3(isBeatleInPositionLeft() ? 10 : -10, 0, 0), ForceMode.Impulse);
+        yield return new WaitForSeconds(waitTimeAttack);
+        state = State.NORMAL;
+        yield return new WaitForSeconds(2f);
+        launch = false;
+    }
+    IEnumerator impulsePlayer()
+    {
+        yield return new WaitForSeconds(0.01f);
+        float forceLeft = launchReverse ? -forceAttackX : forceAttackX;
+        float forceRight = launchReverse ? forceAttackX : -forceAttackX;
+        player.GetComponent<Rigidbody>().AddForce(new Vector3(isBeatleInPositionLeft()? forceLeft : forceRight, forceAttackY), ForceMode.Impulse);
+    }
     IEnumerator stateNormal()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
+        rb.isKinematic = false;
         state = State.NORMAL;
     }
 
@@ -444,12 +467,6 @@ public class Beatle : MonoBehaviour
     {
         return gameObject == player;
     }
-
-    private float compareTop()
-    {
-        return -0.6f;
-    }
-
     public enum State
     {
         NONE,
@@ -460,7 +477,8 @@ public class Beatle : MonoBehaviour
         FALL,
         NAIL,
         PREPARE_ATTACK,
-        ATTACK
+        ATTACK,
+        IMPACT
      }
 
     private enum Animations
