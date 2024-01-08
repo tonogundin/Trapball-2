@@ -10,7 +10,7 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
     [SerializeField] float torque;
     float offset = 0.4f;
     float initDisplacement;
-    FMOD.Studio.EventInstance BoxSplash;
+  //  FMOD.Studio.EventInstance BoxSplash;
     // Start is called before the first frame update
     private Vector3 initialPosition;
     private Quaternion initialRotation;
@@ -22,7 +22,7 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
         initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
         initialRotation = transform.rotation;
         initialMass = rb.mass;
-        BoxSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/ObjectWaterDrop");
+      //  BoxSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/ObjectWaterDrop");
     }
 
     // Update is called once per frame
@@ -80,10 +80,10 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
         floating = false;
         if (firstwater)
         {
-            BoxSplash.start();
+      //      BoxSplash.start();
             firstwater = false;
         }
-        BoxSplash.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+      //  BoxSplash.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -104,7 +104,7 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
             // Verifica si el collider del objeto está dentro del frustum de la cámara
             if (GeometryUtility.TestPlanesAABB(planes, GetComponent<Collider>().bounds))
             {
-                BoxSplash.start();
+        //        BoxSplash.start();
             }
         }
     }

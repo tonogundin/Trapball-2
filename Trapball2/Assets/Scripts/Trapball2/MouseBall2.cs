@@ -43,13 +43,14 @@ public class MouseBall2 : MonoBehaviour, IResettable
 
     //Instancias de FMOD
 
+    /*
     FMOD.Studio.EventInstance BallMouseRun;
     FMOD.Studio.EventInstance BallMouseHurt;
     FMOD.Studio.EventInstance BallMouseInflatingPop;
     FMOD.Studio.EventInstance BallMouseJump;
     FMOD.Studio.EventInstance BallMouseSqueakIdle;
     FMOD.Studio.EventInstance BallMouseScream;
-
+    */
 
 
     // Start is called before the first frame update
@@ -64,13 +65,14 @@ public class MouseBall2 : MonoBehaviour, IResettable
         timeRecover = new Timer((int)(clips[(int)Animations.RECOVER].length * 1000), new CallBackRecoverTimer(this));
         timeSwimming = new Timer(150, new CallBackSwimmingTimer(this));
         changeCollider(false);
+        /*
         BallMouseRun = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseRun");
         BallMouseHurt = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseHurt");
         BallMouseInflatingPop = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseInflatingPop");
         BallMouseJump = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseJump");
         BallMouseSqueakIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseSqueak");
         BallMouseSqueakIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseScream");
-
+        */
 
 
     }
@@ -151,7 +153,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
     {
         if (isActiveAndEnabled)
         {
-            BallMouseRun.setParameterByName("speed", rb.velocity.x);
+           // BallMouseRun.setParameterByName("speed", rb.velocity.x);
             AddExtraGravityForce();
             if (!isSmashProcess())
             {
@@ -293,12 +295,12 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     break;
                 case State.MOVE:
                     animator.SetTrigger(animMouseMoveAgressive);
-                    BallMouseRun.start();
-                    BallMouseRun.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-                    BallMouseSqueakIdle.start();
-                    BallMouseSqueakIdle.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-                    BallMouseScream.start();
-                    BallMouseScream.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+                 //   BallMouseRun.start();
+                 //   BallMouseRun.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+                 //   BallMouseSqueakIdle.start();
+                 //   BallMouseSqueakIdle.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+                 //   BallMouseScream.start();
+                 //   BallMouseScream.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
 
                     
                     break;
@@ -311,17 +313,17 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     timeKnockOut.stopTimer();
                     timeKnockOut.startTimer();
                     animator.SetTrigger(animMouseSmash);
-                    BallMouseSqueakIdle.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    BallMouseRun.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    BallMouseHurt.start();
+               //     BallMouseSqueakIdle.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                //    BallMouseRun.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                //    BallMouseHurt.start();
                     break;
                 case State.RECOVER:
                     timeKnockOut.stopTimer();
                     timeRecover.stopTimer();
                     timeRecover.startTimer();
                     animator.SetTrigger(animMouseRecover);
-                    BallMouseInflatingPop.start();
-                    BallMouseInflatingPop.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            //        BallMouseInflatingPop.start();
+            //        BallMouseInflatingPop.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
                     break;
             }
         }

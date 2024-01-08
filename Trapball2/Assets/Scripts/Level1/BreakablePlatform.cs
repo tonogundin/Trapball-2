@@ -4,9 +4,11 @@ using UnityEngine;
 public class BreakablePlatform : MonoBehaviour, IResettable
 {
     Rigidbody rb;
+    /*
     FMOD.Studio.EventInstance PlatformCrack;
     FMOD.Studio.EventInstance PlatformHit;
     FMOD.Studio.EventInstance PlatformSplash;
+    */
 
     public Collider collider;
     private Vector3 initialPosition;
@@ -15,9 +17,11 @@ public class BreakablePlatform : MonoBehaviour, IResettable
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        /*
         PlatformHit = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformHit");
         PlatformCrack = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformCrack");
         PlatformSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformSplash");
+        */
         initialPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         initialScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
         initialRotation = transform.rotation;
@@ -48,7 +52,7 @@ public class BreakablePlatform : MonoBehaviour, IResettable
         if (collision.gameObject.CompareTag("LugarDeCaida"))
         {
 
-            PlatformHit.start();
+           // PlatformHit.start();
             //PlatformHit.setParameterByName("VolPlat", 1);
 
 
@@ -58,7 +62,7 @@ public class BreakablePlatform : MonoBehaviour, IResettable
         if (collision.gameObject.CompareTag("SueloPiedra"))
         {
 
-            PlatformHit.start();
+            //PlatformHit.start();
             //PlatformHit.setParameterByName("VolPlat", 1);
 
 
@@ -72,12 +76,12 @@ public class BreakablePlatform : MonoBehaviour, IResettable
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlatformCrack.release();
+           // PlatformCrack.release();
         }
 
         if (collision.gameObject.CompareTag("LugarDeCaida"))
         {
-            PlatformHit.release();
+          //  PlatformHit.release();
         }
 
 
@@ -90,8 +94,8 @@ public class BreakablePlatform : MonoBehaviour, IResettable
         if (this.isActiveAndEnabled)
         {
             rb.isKinematic = false;
-            PlatformHit.setParameterByName("VolPlat", 0);
-            PlatformCrack.start();
+         //   PlatformHit.setParameterByName("VolPlat", 0);
+         //   PlatformCrack.start();
             yield return new WaitForSeconds(1f);
             int cicles = 15;
             while (transform.localScale.magnitude > 0.1f && cicles > 0)

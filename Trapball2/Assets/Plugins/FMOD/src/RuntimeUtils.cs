@@ -191,10 +191,14 @@ namespace FMODUnity
         CollisionExit2D,
         ObjectEnable,
         ObjectDisable,
-        MouseEnter,
-        MouseExit,
-        MouseDown,
-        MouseUp,
+        ObjectMouseEnter,
+        ObjectMouseExit,
+        ObjectMouseDown,
+        ObjectMouseUp,
+        UIMouseEnter,
+        UIMouseExit,
+        UIMouseDown,
+        UIMouseUp,
     }
 
     public enum LoaderGameEvent : int
@@ -251,6 +255,16 @@ namespace FMODUnity
         Core15 = 1 << 15,
     }
 
+    // Using a separate enum to avoid serialization issues if FMOD.SOUND_TYPE changes.
+    public enum CodecType : int
+    {
+        FADPCM,
+        Vorbis,
+        AT9,
+        XMA,
+        Opus
+    }
+
     [Serializable]
     public class ThreadAffinityGroup
     {
@@ -274,13 +288,28 @@ namespace FMODUnity
         }
     }
 
+    [Serializable]
+    public class CodecChannelCount
+    {
+        public CodecType format;
+        public int channels;
+
+        public CodecChannelCount() { }
+
+        public CodecChannelCount(CodecChannelCount other)
+        {
+            format = other.format;
+            channels = other.channels;
+        }
+    }
+
     public static class RuntimeUtils
     {
 #if UNITY_EDITOR
         private static string pluginBasePath;
 
         public const string BaseFolderGUID = "06ae579381df01a4a87bb149dec89954";
-        public const string PluginBasePathDefault = "Plugins/FMOD";
+        public const string PluginBasePathDefault = "Assets/Plugins/FMOD";
 
         public static string PluginBasePath
         {
@@ -290,16 +319,7 @@ namespace FMODUnity
                 {
                     pluginBasePath = AssetDatabase.GUIDToAssetPath(BaseFolderGUID);
 
-                    if (!string.IsNullOrEmpty(pluginBasePath))
-                    {
-                        const string AssetsFolder = "Assets/";
-
-                        if (pluginBasePath.StartsWith(AssetsFolder))
-                        {
-                            pluginBasePath = pluginBasePath.Substring(AssetsFolder.Length);
-                        }
-                    }
-                    else
+                    if (string.IsNullOrEmpty(pluginBasePath))
                     {
                         pluginBasePath = PluginBasePathDefault;
 
@@ -349,6 +369,17 @@ namespace FMODUnity
             attributes.forward = transform.forward.ToFMODVector();
             attributes.up = transform.up.ToFMODVector();
             attributes.position = transform.position.ToFMODVector();
+
+            return attributes;
+        }
+
+        public static FMOD.ATTRIBUTES_3D To3DAttributes(this Transform transform, Vector3 velocity)
+        {
+            FMOD.ATTRIBUTES_3D attributes = new FMOD.ATTRIBUTES_3D();
+            attributes.forward = transform.forward.ToFMODVector();
+            attributes.up = transform.up.ToFMODVector();
+            attributes.position = transform.position.ToFMODVector();
+            attributes.velocity = velocity.ToFMODVector();
 
             return attributes;
         }
@@ -565,5 +596,19 @@ namespace FMODUnity
                 Debug.LogException(e);
             }
         }
+
+#if UNITY_EDITOR
+        public static string WritableAssetPath(string subPath)
+        {
+            if (RuntimeUtils.PluginBasePath.StartsWith("Assets/"))
+            {
+                return $"{RuntimeUtils.PluginBasePath}/{subPath}.asset";
+            }
+            else
+            {
+                return $"Assets/Plugins/FMOD/{subPath}.asset";
+            }
+        }
+#endif
     }
 }

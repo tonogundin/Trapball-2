@@ -30,12 +30,12 @@ namespace FMODUnity
         private MultiColumnHeaderState taskHeaderState;
 
         [SerializeField]
-        bool reloadingFromSerializedState = false;
+        private bool reloadingFromSerializedState = false;
 
         [NonSerialized]
         private GUIContent statusContent = GUIContent.none;
 
-        IEnumerator<string> processingState;
+        private IEnumerator<string> processingState;
 
         [MenuItem(ReorganizerMenuItemPath)]
         public static void ShowWindow()
@@ -49,10 +49,10 @@ namespace FMODUnity
         }
 
         [Serializable]
-        class Task
+        private class Task
         {
             public int step = int.MaxValue;
-            
+
             private Task()
             {
             }
@@ -153,7 +153,7 @@ namespace FMODUnity
         {
         }
 
-        void OnEnable()
+        private void OnEnable()
         {
             {
                 MultiColumnHeaderState newHeaderState = TaskView.CreateHeaderState();
@@ -195,7 +195,7 @@ namespace FMODUnity
             StopProcessing();
         }
 
-        void PopulateTasks()
+        private void PopulateTasks()
         {
             tasks.Clear();
 
@@ -218,7 +218,7 @@ namespace FMODUnity
             return !tasks.Any(t => t.type != Task.Type.Missing);
         }
 
-        void SetDefaultStatus()
+        private void SetDefaultStatus()
         {
             int missingCount = tasks.Count(t => t.type == Task.Type.Missing);
 
@@ -244,7 +244,7 @@ namespace FMODUnity
             }
         }
 
-        void SetTaskSequence()
+        private void SetTaskSequence()
         {
             int step = 1;
 
@@ -270,12 +270,12 @@ namespace FMODUnity
             tasks.Sort((a, b) => a.step.CompareTo(b.step));
         }
 
-        void UpdateTaskCount()
+        private void UpdateTaskCount()
         {
             taskCount = tasks.Count(t => t.status == Task.Status.Pending);
         }
 
-        class TaskView : TreeView
+        private class TaskView : TreeView
         {
             private List<Task> tasks;
 
@@ -788,7 +788,7 @@ namespace FMODUnity
             }
         }
 
-        void OnTaskSelected(Task task)
+        private void OnTaskSelected(Task task)
         {
             if (task != null)
             {
@@ -800,7 +800,7 @@ namespace FMODUnity
             }
         }
 
-        void OnGUI()
+        private void OnGUI()
         {
             if (focusedWindow == this
                 && Event.current.type == EventType.KeyDown
@@ -918,8 +918,7 @@ namespace FMODUnity
 
         private struct TaskGenerator
         {
-            const string AssetsFolder = "Assets";
-
+            private const string AssetsFolder = "Assets";
             private const string FMODRoot = "Assets/Plugins/FMOD";
             private const string FMODSource = FMODRoot + "/src";
 
@@ -933,6 +932,7 @@ namespace FMODUnity
             private static readonly MoveRecord[] looseAssets = {
                 // Release 1.10 layout
                 new MoveRecord() { source = FMODRoot + "/fmodplugins.cpp", destination = "obsolete" },
+                new MoveRecord() { source = "Assets/Editor/FMODMigrationUtil.cs", destination = "obsolete" },
                 new MoveRecord() { source = "Assets/GoogleVR", destination = "addons" },
                 new MoveRecord() { source = "Assets/ResonanceAudio", destination = "addons" },
                 new MoveRecord() { source = "Assets/Resources/FMODStudioSettings.asset", destination = "Resources" },
@@ -947,6 +947,7 @@ namespace FMODUnity
                 // Release 2.2 layout
                 new MoveRecord() { source = FMODRoot + "/src/fmodplugins.cpp", destination = "obsolete" },
                 new MoveRecord() { source = FMODRoot + "/src/fmod_static_plugin_support.h", destination = "obsolete" },
+                new MoveRecord() { source = FMODSource + "/CodeGeneration.cs", destination = "src/Editor" },
             };
 
             private static readonly string[] foldersToCleanUp = {
@@ -960,7 +961,7 @@ namespace FMODUnity
             {
                 TaskGenerator generator = new TaskGenerator() { tasks = tasks };
 
-                Settings.Instance.ForEachPlatform(generator.GenerateTasksForPlatform);
+                Settings.Instance.Platforms.ForEach(generator.GenerateTasksForPlatform);
                 generator.GenerateTasksForLooseAssets();
                 generator.GenerateTasksForCodeFolders();
                 generator.GenerateTasksForLegacyCodeFiles();
@@ -978,7 +979,7 @@ namespace FMODUnity
 
                 foreach (Platform.FileInfo info in files)
                 {
-                    string newPath = string.Format("{0}/{1}", AssetsFolder, info.LatestLocation());
+                    string newPath = info.LatestLocation();
 
                     if (!AssetExists(newPath))
                     {
@@ -987,7 +988,7 @@ namespace FMODUnity
 
                         foreach (string path in info.OldLocations())
                         {
-                            oldPath = string.Format("{0}/{1}", AssetsFolder, path);
+                            oldPath = path;
 
                             if (tasks.Any(t => t.source == oldPath))
                             {
@@ -1098,7 +1099,7 @@ namespace FMODUnity
                             string filename = Path.GetFileName(sourcePath);
 
                             AddMoveTask(
-                                sourcePath, $"Assets/{RuntimeUtils.PluginBasePath}/{folder.destination}/{filename}");
+                                sourcePath, $"{RuntimeUtils.PluginBasePath}/{folder.destination}/{filename}");
 
                         }
 
@@ -1112,7 +1113,7 @@ namespace FMODUnity
                 foreach (MoveRecord asset in looseAssets)
                 {
                     string filename = Path.GetFileName(asset.source);
-                    string destinationPath = $"Assets/{RuntimeUtils.PluginBasePath}/{asset.destination}/{filename}";
+                    string destinationPath = $"{RuntimeUtils.PluginBasePath}/{asset.destination}/{filename}";
 
                     if (AssetExists(asset.source) && !AssetExists(destinationPath))
                     {
@@ -1161,7 +1162,7 @@ namespace FMODUnity
             {
                 foreach (string path in FindFileAssets(FMODRoot).Where(p => p.EndsWith(".cs")))
                 {
-                    string destinationPath = $"Assets/{RuntimeUtils.PluginBasePath}/src/{Path.GetFileName(path)}";
+                    string destinationPath = $"{RuntimeUtils.PluginBasePath}/src/{Path.GetFileName(path)}";
 
                     if (!AssetExists(destinationPath))
                     {
@@ -1274,7 +1275,7 @@ namespace FMODUnity
             }
         }
 
-        static bool AssetExists(string path)
+        private static bool AssetExists(string path)
         {
             return EditorUtils.AssetExists(path);
         }
@@ -1298,7 +1299,7 @@ namespace FMODUnity
             }
         }
 
-        static bool IsFolderEmpty(string path)
+        private static bool IsFolderEmpty(string path)
         {
             return AssetDatabase.FindAssets(string.Empty, new string[] { path }).Length == 0;
         }
@@ -1316,7 +1317,7 @@ namespace FMODUnity
             }
         }
 
-        static IEnumerable<string> RemoveFolderIfEmpty(Task task)
+        private static IEnumerable<string> RemoveFolderIfEmpty(Task task)
         {
             if (!Directory.Exists(Application.dataPath + "/../" + task.source))
             {

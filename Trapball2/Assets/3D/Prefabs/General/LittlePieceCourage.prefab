@@ -50,7 +50,7 @@ GameObject:
   m_TagString: Courage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 126
   m_IsActive: 1
 --- !u!4 &2781535983563708692
 Transform:

@@ -5,11 +5,11 @@ using UnityEngine;
 public class AudiotriggerAmbienceUnderwater : MonoBehaviour
 {
 
-    FMOD.Studio.EventInstance enterWater;
+  //  FMOD.Studio.EventInstance enterWater;
     // Start is called before the first frame update
     void Start()
     {
-        enterWater = FMODUnity.RuntimeManager.CreateInstance("event:/Ambientes/AmbienteUnderwater");
+   //     enterWater = FMODUnity.RuntimeManager.CreateInstance("event:/Ambientes/AmbienteUnderwater");
     }
 
     // Update is called once per frame
@@ -20,11 +20,11 @@ public class AudiotriggerAmbienceUnderwater : MonoBehaviour
 
     private void OnTriggeEnter(Collider other)
     {
-        enterWater.start();
+     //   enterWater.start();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        enterWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+     //   enterWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

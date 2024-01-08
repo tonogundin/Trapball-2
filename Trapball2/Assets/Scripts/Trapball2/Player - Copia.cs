@@ -27,11 +27,13 @@ public class Player2 : MonoBehaviour
     bool oldStateTouchfloor = false;
     bool freeFall;
     CameraShake camShakeScript;
+    /*
     FMOD.Studio.EventInstance playerSoundroll;
     FMOD.Studio.EventInstance impactFloor;
     FMOD.Studio.EventInstance impactObjetc;
     FMOD.Studio.EventInstance underWater;
     FMOD.Studio.EventInstance impactWater;
+    */
 
     public Vector2 velocityBall;
 
@@ -50,12 +52,14 @@ public class Player2 : MonoBehaviour
     {
         state = State.NORMAL;
         camShakeScript = GameManager.gM.cam.GetComponent<CameraShake>();
+        /*
         playerSoundroll = FMODUnity.RuntimeManager.CreateInstance("event:/Desplazamiento/SFXPlayerRollMud");
         impactFloor = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactoTerreno");
         impactObjetc = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/ImpactObject");
         underWater = FMODUnity.RuntimeManager.CreateInstance("event:/Ambientes/AmbienteUnderwater");
         impactWater = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactWater");
         playerSoundroll.start();
+        */
     }
 
     void Update()
@@ -75,10 +79,10 @@ public class Player2 : MonoBehaviour
         {
             if(touchFloor)
             {
-                playerSoundroll.setParameterByName("onTheFloor", 1);
+       //         playerSoundroll.setParameterByName("onTheFloor", 1);
             } else
             {
-                playerSoundroll.setParameterByName("onTheFloor", 0); 
+      //          playerSoundroll.setParameterByName("onTheFloor", 0); 
             }
             oldStateTouchfloor = touchFloor;
         }
@@ -120,9 +124,9 @@ public class Player2 : MonoBehaviour
 #if UNITY_ANDROID
                     h = Input.acceleration.x * 2;
 #endif
-        playerSoundroll.setParameterByName("speed", velocityBall.x);
-        impactFloor.setParameterByName("speed", velocityBall.y);
-        impactObjetc.setParameterByName("speed", velocityBall.y+velocityBall.x);
+    //    playerSoundroll.setParameterByName("speed", velocityBall.x);
+      //  impactFloor.setParameterByName("speed", velocityBall.y);
+     //   impactObjetc.setParameterByName("speed", velocityBall.y+velocityBall.x);
 
     }
     void JumpInput()
@@ -188,8 +192,8 @@ public class Player2 : MonoBehaviour
         state = State.JUMP;
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
         jumpForce = 0;
-        playerSoundroll.setVolume(0);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", GetComponent<Transform>().position);
+     //   playerSoundroll.setVolume(0);
+    //    FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoLow", GetComponent<Transform>().position);
     }
     void BombJump()
     {
@@ -198,8 +202,8 @@ public class Player2 : MonoBehaviour
         coll.material = bouncy; //Le ponemos un material rebotante.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
         rb.AddForce(Vector3.down * 1.5f, ForceMode.Impulse);
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", GetComponent<Transform>().position);
-        playerSoundroll.setVolume(0);
+     //   FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/SaltoBomba", GetComponent<Transform>().position);
+     //   playerSoundroll.setVolume(0);
     }
 
     IEnumerator StatusNormal()
@@ -209,20 +213,20 @@ public class Player2 : MonoBehaviour
     }
     void EndBombJump()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
+      //  FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
         StartCoroutine(StatusNormal());
         bombForce = 0; //Si no, bombForce empieza a contar desde el último intento de carga.
         StartCoroutine(camShakeScript.Shake(0.10f, 0.15f));
         coll.material = null;
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
-        playerSoundroll.setVolume(1);
+      //  playerSoundroll.setVolume(1);
     }
     bool TouchingFloor()
     {
         Collider[] colls = Physics.OverlapSphere(transform.position + offset, 0.1f, jumpable.value);
         if (colls.Length > 0)
         {
-            playerSoundroll.setVolume(1);
+         //   playerSoundroll.setVolume(1);
             //Significa que he caido tras un golpe bomba.
             if (bombForce > 2.5f)  //currentGravityFactor != initGravityFactor
             {
@@ -276,29 +280,29 @@ public class Player2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("SueloPantanoso"))
         {
-            playerSoundroll.setParameterByName("Terrain", 0);
-            impactFloor.setParameterByName("Terrain", 0);
-            impactFloor.start();
+        //    playerSoundroll.setParameterByName("Terrain", 0);
+        //    impactFloor.setParameterByName("Terrain", 0);
+        //    impactFloor.start();
         }
 
         else if (collision.gameObject.CompareTag("SueloMadera"))
         {
-            playerSoundroll.setParameterByName("Terrain", 1);
-            impactFloor.setParameterByName("Terrain", 1);
-            impactFloor.start();
+         //   playerSoundroll.setParameterByName("Terrain", 1);
+        //    impactFloor.setParameterByName("Terrain", 1);
+        //    impactFloor.start();
         }
 
         else if (collision.gameObject.CompareTag("Box"))
         {
-            playerSoundroll.setParameterByName("Terrain", 1);
-            impactFloor.setParameterByName("Terrain", 1);
-            impactFloor.start();
+       //     playerSoundroll.setParameterByName("Terrain", 1);
+       //     impactFloor.setParameterByName("Terrain", 1);
+        //    impactFloor.start();
         }
        else if (collision.gameObject.CompareTag("SueloPiedra"))
         {
-            playerSoundroll.setParameterByName("Terrain", 2);
-            impactFloor.setParameterByName("Terrain", 2);
-            impactFloor.start();
+      //      playerSoundroll.setParameterByName("Terrain", 2);
+       //     impactFloor.setParameterByName("Terrain", 2);
+       //     impactFloor.start();
         }
 
      
@@ -308,8 +312,8 @@ public class Player2 : MonoBehaviour
             if (collision.gameObject.CompareTag("Box"))
 
             {
-                impactObjetc.start();
-                impactObjetc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+         //       impactObjetc.start();
+          //      impactObjetc.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             }
 
 
@@ -321,8 +325,8 @@ public class Player2 : MonoBehaviour
         if (other.CompareTag("Water"))
         {
             rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
-            impactWater.start();
-            underWater.start();
+       //     impactWater.start();
+       //     underWater.start();
         }
             
 
@@ -348,8 +352,8 @@ public class Player2 : MonoBehaviour
             currentGravityFactor = initGravityFactor;
             rb.angularDrag = 0.05f;
             rb.drag = 0;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
-            underWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+     //       FMODUnity.RuntimeManager.PlayOneShot("event:/Saltos/ImpactoTerrenoBomba", GetComponent<Transform>().position);
+      //      underWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     
