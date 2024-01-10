@@ -17,8 +17,6 @@ public class Beatle : MonoBehaviour
     float extraGravityFactor = 10;
     float movementForce = 5;
     private bool stayonShip = false;
-    public GameObject normalCollider;
-    public GameObject smashCollider;
     public float ForceXImpact = 7;
     public GameObject objectReference;
     public float maxPositionZ;
@@ -36,6 +34,7 @@ public class Beatle : MonoBehaviour
     const string animBeatleMoveAgressive = "BeatleMoveAgressive";
     const string animBeatleFall = "BeatleFall";
     const string animBeatleNail = "BeatleNail";
+    const string animBeatleFreeNail = "BeatleFreeNail";
     const string animBeatlePreAttack = "BeatlePreAttack";
     const string animBeatleAttack = "BeatleAttack";
 
@@ -108,10 +107,7 @@ public class Beatle : MonoBehaviour
                     playerDetected = false;
                 }
             }
-            if (state != State.PREPARE_ATTACK && state != State.ATTACK && state != State.IMPACT)
-            {
-                ManageRotation();
-            }
+            ManageRotation();
             if (state == State.PREPARE_ATTACK)
             {
                 transform.position = positionAttack;
@@ -237,7 +233,7 @@ public class Beatle : MonoBehaviour
             }
             else
             {
-                if (state != State.HANG && state != State.FALL && state != State.NAIL && state != State.PREPARE_ATTACK && state != State.ATTACK && state != State.IMPACT)
+                if (isNormalsState())
                 {
                     state = State.NORMAL;
                     if (!rb.isKinematic)
@@ -328,6 +324,10 @@ public class Beatle : MonoBehaviour
                     break;
                 case State.NAIL:
                     animator.SetTrigger(animBeatleNail);
+                    StartCoroutine(stateFreeNailToNormal());
+                    break;
+                case State.FREE_NAIL:
+                    animator.SetTrigger(animBeatleFreeNail);
                     break;
             }
         }
@@ -335,7 +335,11 @@ public class Beatle : MonoBehaviour
 
     void ManageRotation()
     {
-        if (state != State.HANG && state != State.FALL && state != State.NAIL)
+        ManageRotation(false);
+    }
+    void ManageRotation(bool force)
+    {
+        if (isNormalsState() || force)
         {
             float rotVelocity = 2.5f;
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); // Restricción en Z
@@ -346,7 +350,10 @@ public class Beatle : MonoBehaviour
         }
     }
 
-
+    bool isNormalsState()
+    {
+        return state == State.NORMAL || state == State.MOVE || state == State.MOVE_AGRESSIVE;
+    }
 
     void AddExtraGravityForce()
     {
@@ -413,7 +420,6 @@ public class Beatle : MonoBehaviour
         {
             rb.isKinematic = true;
             state = State.NAIL;
-            StartCoroutine(stateNormal());
         }
         //posibleLaunchPlayer && 
         if (other.gameObject.tag == Player.TAG && state == State.ATTACK)
@@ -439,10 +445,15 @@ public class Beatle : MonoBehaviour
         float forceRight = launchReverse ? forceAttackX : -forceAttackX;
         player.GetComponent<Rigidbody>().AddForce(new Vector3(isBeatleInPositionLeft()? forceLeft : forceRight, forceAttackY), ForceMode.Impulse);
     }
-    IEnumerator stateNormal()
+    IEnumerator stateFreeNailToNormal()
     {
         yield return new WaitForSeconds(1f);
+        state = State.FREE_NAIL;
+        yield return new WaitForSeconds(0.26f);
         rb.isKinematic = false;
+        rb.AddForce(new Vector3(isBeatleInPositionLeft() ? -80 : 80, 40, 0), ForceMode.Impulse);
+        ManageRotation(true);
+        yield return new WaitForSeconds(0.40f);
         state = State.NORMAL;
     }
 
@@ -476,6 +487,7 @@ public class Beatle : MonoBehaviour
         HANG,
         FALL,
         NAIL,
+        FREE_NAIL,
         PREPARE_ATTACK,
         ATTACK,
         IMPACT
