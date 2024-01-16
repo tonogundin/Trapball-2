@@ -4,11 +4,11 @@ using UnityEngine;
 public class BreakableWood : MonoBehaviour, IResettable
 {
     Rigidbody rb;
-    /*
+    
     FMOD.Studio.EventInstance PlatformCrack;
     FMOD.Studio.EventInstance PlatformHit;
     FMOD.Studio.EventInstance PlatformSplash;
-    */
+    
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private Vector3 initialScale;
@@ -21,11 +21,11 @@ public class BreakableWood : MonoBehaviour, IResettable
         initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
         initialScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
         initialRotation = transform.rotation;
-        /*
+        
         PlatformHit = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformHit");
         PlatformCrack = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformCrack");
         PlatformSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformSplash");
-        */
+        
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -42,26 +42,22 @@ public class BreakableWood : MonoBehaviour, IResettable
                 state = State.BREAK;
                 rb.isKinematic = false;
                 StartCoroutine(Disappear());
-              //  PlatformHit.setParameterByName("VolPlat", 0);
-              //  PlatformCrack.start(); 
+                PlatformHit.setParameterByName("VolPlat", 0);
+                PlatformCrack.start(); 
             }
         }
 
         if (collision.gameObject.CompareTag("LugarDeCaida"))
         {
-            //PlatformHit.start();
-            //PlatformHit.setParameterByName("VolPlat", 1);
+            PlatformHit.start();
+            PlatformHit.setParameterByName("VolPlat", 1);
         }
 
         if (collision.gameObject.CompareTag("SueloPiedra"))
         {
 
-           // PlatformHit.start();
-            //PlatformHit.setParameterByName("VolPlat", 1);
-
-
-
-
+            PlatformHit.start();
+            PlatformHit.setParameterByName("VolPlat", 1);
         }
 
     }
@@ -70,15 +66,13 @@ public class BreakableWood : MonoBehaviour, IResettable
     {
         if (collision.gameObject.CompareTag("Player") && state == State.BREAK)
         {
-       //     PlatformCrack.release();
+            PlatformCrack.release();
         }
 
         if (collision.gameObject.CompareTag("LugarDeCaida"))
         {
-       //     PlatformHit.release();
+            PlatformHit.release();
         }
-
-
     }
 
 

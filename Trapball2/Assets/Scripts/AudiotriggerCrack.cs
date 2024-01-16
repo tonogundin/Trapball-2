@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudiotriggerCrack : MonoBehaviour
@@ -21,7 +19,7 @@ public class AudiotriggerCrack : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
        
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/Objetos/PlatformCrack", GetComponent<Transform>().position);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Objetos/PlatformCrack", GetComponent<Transform>().position);
         }
     }
 }

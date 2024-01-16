@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class MainCamera : MonoBehaviour
 {
@@ -8,6 +7,7 @@ public class MainCamera : MonoBehaviour
     private void Awake()
     {
         GameManager.NewPlayer += FollowNewPlayer;
+
     }
 
     private void LateUpdate()
@@ -29,5 +29,6 @@ public class MainCamera : MonoBehaviour
     {
         GameManager.NewPlayer -= FollowNewPlayer;
     }
-    
+
+
 }

@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ParticlesExplosion : MonoBehaviour, IResettable
 {
-    Light redLight;
-    GameObject lightgO;
     GameObject player;
     private void Awake()
     {

@@ -453,13 +453,13 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../FMOD/Xavi/trapball/trapball.fspro
-  sourceBankPath: ../../FMOD/Xavi/trapball/Build
+  sourceProjectPath: ../../FMOD/Xavi/fmodpruebabancos/Nueva carpeta/trapball2fmod.fspro
+  sourceBankPath: ../../FMOD/Xavi/fmodpruebabancos/Nueva carpeta/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
-  AutomaticEventLoading: 1
-  BankLoadType: 0
+  AutomaticEventLoading: 0
+  BankLoadType: 1
   AutomaticSampleLoading: 0
   EncryptionKey: 
   ImportType: 0
@@ -478,8 +478,10 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - Music
-  BanksToLoad: []
+  - Musica
+  BanksToLoad:
+  - Master
+  - Musica
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
   AndroidUseOBB: 0
