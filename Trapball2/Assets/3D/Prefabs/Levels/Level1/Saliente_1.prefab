@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2411630670665730436}
   m_Layer: 9
   m_Name: Saliente_1
-  m_TagString: Untagged
+  m_TagString: SueloPantanoso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf0c8ba7daa8dc46936aa92e755053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
 --- !u!1001 &5835005133366322629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -154,6 +155,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fcb3d1c1146730445bf235e113f10d8b, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fcb3d1c1146730445bf235e113f10d8b, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9569,10 +9569,6 @@ PrefabInstance:
       value: Saliente_4 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -10131,7 +10127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &112960450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12131,10 +12127,6 @@ PrefabInstance:
       value: Saliente_4 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -13416,10 +13408,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -13482,10 +13470,6 @@ PrefabInstance:
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_Name
       value: Saliente_4 (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13923,7 +13907,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8767936984584397589, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
       propertyPath: m_Name
@@ -13932,10 +13916,6 @@ PrefabInstance:
     - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13997,7 +13977,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8767936984584397589, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15155,10 +15136,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 1675106098301542009, guid: 361df874cdb9b5a49ae018b377f2eb82, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 1675106098301542009, guid: 361df874cdb9b5a49ae018b377f2eb82, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -15217,10 +15194,6 @@ PrefabInstance:
     - target: {fileID: 3514690986604017949, guid: 361df874cdb9b5a49ae018b377f2eb82, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_1_cell
-      objectReference: {fileID: 0}
-    - target: {fileID: 3514690986604017949, guid: 361df874cdb9b5a49ae018b377f2eb82, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 3514690986604017949, guid: 361df874cdb9b5a49ae018b377f2eb82, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15573,10 +15546,6 @@ PrefabInstance:
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_Name
       value: Floor_1_cell (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17494,10 +17463,6 @@ PrefabInstance:
       value: Floor_4_cells (24)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -18184,10 +18149,6 @@ PrefabInstance:
       value: Floor_Colum_3_cell (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -18505,10 +18466,6 @@ PrefabInstance:
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_2_cell (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19531,10 +19488,6 @@ PrefabInstance:
       value: Floor_4_cells (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -20056,7 +20009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0168a5848b9b9e64b9310506d10374a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   objects:
   - {fileID: 861441749}
   - {fileID: 1196728521}
@@ -21036,6 +20989,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -21086,10 +21043,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (14)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -21943,10 +21896,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25450,10 +25399,6 @@ PrefabInstance:
       value: Floor_4_cells (20)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -26111,10 +26056,6 @@ PrefabInstance:
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (17)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26798,10 +26739,6 @@ PrefabInstance:
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_Name
       value: Floor_1_cell (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27828,10 +27765,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
-      propertyPath: m_TagString
-      value: SueloMadera
-      objectReference: {fileID: 0}
     - target: {fileID: 3381050640197630296, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9027666
@@ -28520,10 +28453,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -28590,10 +28519,6 @@ PrefabInstance:
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_Name
       value: Saliente_4 (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -28926,10 +28851,6 @@ PrefabInstance:
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29709,10 +29630,6 @@ PrefabInstance:
     - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
-      propertyPath: m_TagString
-      value: SueloMadera
       objectReference: {fileID: 0}
     - target: {fileID: 3381050640197630296, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_LocalScale.x
@@ -31386,10 +31303,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
-      propertyPath: m_TagString
-      value: SueloMadera
-      objectReference: {fileID: 0}
     - target: {fileID: 3381050640197630296, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_LocalScale.x
       value: -0.815808
@@ -32512,6 +32425,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565678342246153275, guid: 3cdb552fda7f505418d539e24f05355d, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565678342246153275, guid: 3cdb552fda7f505418d539e24f05355d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -32520,14 +32437,11 @@ PrefabInstance:
       value: Saliente_3
       objectReference: {fileID: 0}
     - target: {fileID: 8595190187502466760, guid: 3cdb552fda7f505418d539e24f05355d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 8595190187502466760, guid: 3cdb552fda7f505418d539e24f05355d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2423478316137503797, guid: 3cdb552fda7f505418d539e24f05355d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -32547,10 +32461,6 @@ PrefabInstance:
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -32620,10 +32530,6 @@ PrefabInstance:
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -33253,20 +33159,12 @@ PrefabInstance:
       value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (14)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -33944,10 +33842,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -34014,10 +33908,6 @@ PrefabInstance:
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_Name
       value: Saliente_4 (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -34495,6 +34385,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -34545,10 +34439,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -34816,10 +34706,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -34886,10 +34772,6 @@ PrefabInstance:
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_Name
       value: Saliente_4 (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -36615,10 +36497,6 @@ PrefabInstance:
       value: Saliente_1 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -36926,10 +36804,6 @@ PrefabInstance:
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_Name
       value: Floor_1_cell (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -37281,10 +37155,6 @@ PrefabInstance:
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_Name
       value: Floor_1_cell (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -37870,10 +37740,6 @@ PrefabInstance:
       value: Floor_4_cells (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -37981,10 +37847,6 @@ PrefabInstance:
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_2_cell (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38792,10 +38654,6 @@ PrefabInstance:
       value: Saliente_2
       objectReference: {fileID: 0}
     - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -38855,7 +38713,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8767936984584397589, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
+    - {fileID: 1306271502402109410, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -39247,6 +39107,7 @@ Transform:
   - {fileID: 1631102024}
   - {fileID: 138790898}
   - {fileID: 799546248}
+  - {fileID: 603644635}
   - {fileID: 2119576159}
   - {fileID: 1701957136}
   - {fileID: 1337399120}
@@ -39321,7 +39182,6 @@ Transform:
   - {fileID: 78299697}
   - {fileID: 1137610367}
   - {fileID: 907939333}
-  - {fileID: 603644635}
   - {fileID: 799820948}
   - {fileID: 1445860709}
   - {fileID: 1940706697}
@@ -39532,10 +39392,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -39598,10 +39454,6 @@ PrefabInstance:
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_Name
       value: Saliente_4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -42635,11 +42487,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: event:/Musica/Stage
+      Data1: 1466804578
+      Data2: 1208971138
+      Data3: -116538742
+      Data4: 294334988
+    Path: event:/Musica/Stage2
   Event: 
   PlayEvent: 1
   StopEvent: 12
@@ -42696,6 +42548,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -42746,10 +42602,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -42997,6 +42849,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -43047,10 +42903,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -43625,10 +43477,6 @@ PrefabInstance:
       value: Floor_1_cell (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -43858,10 +43706,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saliente_1
       objectReference: {fileID: 0}
-    - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
     - target: {fileID: 1891394127271794859, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -43978,10 +43822,6 @@ PrefabInstance:
     - target: {fileID: 3514690986604017949, guid: 361df874cdb9b5a49ae018b377f2eb82, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_1_cell (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3514690986604017949, guid: 361df874cdb9b5a49ae018b377f2eb82, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 3514690986604017949, guid: 361df874cdb9b5a49ae018b377f2eb82, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -44212,10 +44052,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -46112,10 +45948,6 @@ PrefabInstance:
       value: Saliente_4 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -47582,6 +47414,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -47632,10 +47468,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -48286,10 +48118,6 @@ PrefabInstance:
       value: Saliente_1 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -48684,10 +48512,6 @@ PrefabInstance:
     - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
-      propertyPath: m_TagString
-      value: SueloMadera
       objectReference: {fileID: 0}
     - target: {fileID: 3381050640197630296, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_LocalScale.x
@@ -49210,10 +49034,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -49276,10 +49096,6 @@ PrefabInstance:
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_Name
       value: Saliente_4 (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -49843,7 +49659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0168a5848b9b9e64b9310506d10374a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   objects:
   - {fileID: 2077633179}
   resetInActive: 0
@@ -51476,10 +51292,6 @@ PrefabInstance:
       value: Floor_4_cells (18)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -52045,10 +51857,6 @@ PrefabInstance:
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_Name
       value: Floor_1_cell (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -53020,20 +52828,12 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -54310,7 +54110,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_TagString
-      value: SueloPiedra
+      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -54363,10 +54163,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -54642,10 +54438,6 @@ PrefabInstance:
     - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
-      propertyPath: m_TagString
-      value: SueloMadera
       objectReference: {fileID: 0}
     - target: {fileID: 3381050640197630296, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_LocalScale.x
@@ -55285,6 +55077,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -55335,10 +55131,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -56047,10 +55839,6 @@ PrefabInstance:
       value: Floor_Colum_2_cell (6)
       objectReference: {fileID: 0}
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -56077,20 +55865,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -56478,10 +56258,6 @@ PrefabInstance:
       value: Floor_4_cells (19)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -56548,10 +56324,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -56614,10 +56386,6 @@ PrefabInstance:
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_Name
       value: Saliente_4 (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -57622,6 +57390,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8355018171138524630, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
+      propertyPath: ejeX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355018171138524630, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
+      propertyPath: stage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355018171138524630, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
       propertyPath: state
       value: 2
       objectReference: {fileID: 0}
@@ -57638,9 +57414,17 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8355018171138524630, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
+      propertyPath: positionFinal
+      value: 156.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355018171138524630, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1811769784}
+    - target: {fileID: 8355018171138524630, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
+      propertyPath: positionInitial
+      value: -54.14
+      objectReference: {fileID: 0}
     - target: {fileID: 8355018171138524631, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
       propertyPath: m_Constraints
       value: 56
@@ -59000,10 +58784,6 @@ PrefabInstance:
     - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
       propertyPath: m_Name
       value: Saliente_1 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -61872,20 +61652,12 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -62937,10 +62709,6 @@ PrefabInstance:
       value: Floor_1_cell (9)
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -63594,7 +63362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1672645477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63609,6 +63377,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: Player
   Emitters:
+  - Target: {fileID: 1019904890}
+    Params:
+    - Name: Stage_Part
+      Value: 0
+    - Name: Volumen
+      Value: 1
+    - Name: Zone
+      Value: 6
+    - Name: Tension
+      Value: 0
   - Target: {fileID: 1019904889}
     Params:
     - Name: Stage_Part
@@ -63723,10 +63501,6 @@ PrefabInstance:
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_Name
       value: Floor_1_cell (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -63904,7 +63678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1676772239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65296,20 +65070,12 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -66059,6 +65825,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -66109,10 +65879,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -68066,10 +67832,6 @@ PrefabInstance:
       value: Floor_1_cell (7)
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -68158,10 +67920,6 @@ PrefabInstance:
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (22)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -68470,10 +68228,6 @@ PrefabInstance:
       value: Floor_4_cells (16)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -68586,10 +68340,6 @@ PrefabInstance:
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_2_cell (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -70580,10 +70330,6 @@ PrefabInstance:
       value: Floor_4_cells (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -71402,10 +71148,6 @@ PrefabInstance:
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -72304,10 +72046,6 @@ PrefabInstance:
       value: Floor_4_cells (6)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -72377,10 +72115,6 @@ PrefabInstance:
       value: Floor_1_cell (6)
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -72447,6 +72181,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -72497,10 +72235,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -72575,10 +72309,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -72676,10 +72406,6 @@ PrefabInstance:
       value: Floor_4_cells (23)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -72757,10 +72483,6 @@ PrefabInstance:
     - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
       propertyPath: m_Name
       value: Saliente_2 (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -73216,10 +72938,6 @@ PrefabInstance:
       value: Saliente_3 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8595190187502466760, guid: 3cdb552fda7f505418d539e24f05355d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 8595190187502466760, guid: 3cdb552fda7f505418d539e24f05355d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -73656,10 +73374,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469822698831191908, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -73722,10 +73436,6 @@ PrefabInstance:
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_Name
       value: Saliente_4 (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5614905281713071389, guid: 637fc9a66fbf0254cae053110e8aa73d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -74614,10 +74324,6 @@ PrefabInstance:
       value: Floor_4_cells (15)
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -74885,20 +74591,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -75397,10 +75095,6 @@ PrefabInstance:
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_2_cell (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 5977943569092480873, guid: f1e3f9325824ccd4882ee07c8fb6e9ce, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -76144,10 +75838,6 @@ PrefabInstance:
       value: Floor_1_cell (11)
       objectReference: {fileID: 0}
     - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
-      propertyPath: m_TagString
-      value: LugarDeCaida
-      objectReference: {fileID: 0}
-    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -76671,7 +76361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_TagString
-      value: SueloPiedra
+      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -76724,10 +76414,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -77497,6 +77183,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 928421026}
     m_Modifications:
     - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
+      propertyPath: m_TagString
+      value: SueloPantanoso
+      objectReference: {fileID: 0}
+    - target: {fileID: 845943946609316310, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -77547,10 +77237,6 @@ PrefabInstance:
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_Name
       value: Floor_Colum_3_cell (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 8027724619402909262, guid: 1f00bd15824f77f4bbd3629b6ed3571c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -78597,10 +78283,6 @@ PrefabInstance:
       value: Saliente_1 (4)
       objectReference: {fileID: 0}
     - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 44222937861180345, guid: c5eab5a22b7d32d4fa395395984df5e7, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -78939,10 +78621,6 @@ PrefabInstance:
       value: Saliente_2 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 520688070534941241, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -79006,7 +78684,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8767936984584397589, guid: c15ef367e4b3e2d4fb2075b52cb4826f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -79611,20 +79290,12 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287095564566359746, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_Name
       value: Floor_4_cells (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
-      propertyPath: m_TagString
-      value: SueloPantanoso
       objectReference: {fileID: 0}
     - target: {fileID: 6239129745940974855, guid: 29bc8bb7e0407484abc319ec57d33507, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -79939,10 +79610,6 @@ PrefabInstance:
     - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2711227484554552290, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
-      propertyPath: m_TagString
-      value: SueloMadera
       objectReference: {fileID: 0}
     - target: {fileID: 3381050640197630296, guid: 04e06e8bef0eecc4a8ded178fe46800d, type: 3}
       propertyPath: m_LocalScale.x

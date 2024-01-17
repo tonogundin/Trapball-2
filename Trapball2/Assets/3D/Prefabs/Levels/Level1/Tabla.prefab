@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tabla
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82f6ed5eaf1f33e418ee0707a431719f, type: 3}
+      propertyPath: m_TagString
+      value: SueloPiedra
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -112,6 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f605bd673a3e14899102a7493f2fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionForceActive: 10
+  velocityImpactActive: -10
 --- !u!54 &4292820450213392057
 Rigidbody:
   m_ObjectHideFlags: 0

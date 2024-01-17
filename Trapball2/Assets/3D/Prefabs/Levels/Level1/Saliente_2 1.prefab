@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8767936984584397589}
   m_Layer: 9
   m_Name: Saliente_2 1
-  m_TagString: Untagged
+  m_TagString: SueloPantanoso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdf0c8ba7daa8dc46936aa92e755053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
 --- !u!114 &-8767936984584397589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +100,7 @@ GameObject:
   - component: {fileID: 5947875853933168529}
   m_Layer: 9
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: SueloPantanoso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

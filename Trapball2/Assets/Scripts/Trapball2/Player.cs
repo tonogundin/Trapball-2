@@ -30,7 +30,8 @@ public class Player : MonoBehaviour, IResettable
     FMOD.Studio.EventInstance underWater;
     FMOD.Studio.EventInstance impactWater;
     FMOD.Studio.EventInstance soundCourage;
-    
+    FMOD.Studio.EventInstance bso;
+
 
     public Vector2 velocityBall;
     public int live = 8;
@@ -53,6 +54,12 @@ public class Player : MonoBehaviour, IResettable
     public bool isRumbleActive = false;
     public GameController gameController;
     public bool especialStage = false;
+
+    public float positionInitial;
+    public float positionFinal;
+    public bool ejeX;
+    public float percentStage;
+    FMODUnity.StudioEventEmitter emitter;
 
     void Awake()
     {
@@ -78,7 +85,7 @@ public class Player : MonoBehaviour, IResettable
         underWater = FMODUnity.RuntimeManager.CreateInstance("event:/Ambientes/AmbienteUnderwater");
         impactWater = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactWater");
         soundCourage = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseHurt");
-        
+        emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         playerSoundroll.start();
     }
 
@@ -101,6 +108,8 @@ public class Player : MonoBehaviour, IResettable
             touchingFloor();
             checkSoundRoll();
             checkRotations();
+            percentStage = getPercentPositionPlayer();
+            emitter.SetParameter("percentStage", percentStage);
         }
     }
 
@@ -331,6 +340,28 @@ public class Player : MonoBehaviour, IResettable
         else if (Mathf.Abs(rb.velocity.x) < 0.3f && movementPlayer == 0 && rb.velocity.y == 0) {
             rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
         }
+    }
+
+    float getPercentPositionPlayer()
+    {
+        // Obtén la posición actual del jugador
+        float playerPosition;
+        if (ejeX)
+        {
+            playerPosition = transform.position.x;
+        }
+        else
+        {
+            playerPosition = transform.position.y;
+        }
+
+        // Calcula el porcentaje
+        float totalDistance = positionFinal - positionInitial;
+        float playerProgress = playerPosition - positionInitial;
+
+        // Asegúrate de que el valor esté entre 0 y 100
+        float percent = (playerProgress / totalDistance) * 100;
+        return Mathf.Clamp(percent, 0f, 100f);
     }
 
     private void OnCollisionEnter(Collision collision) {
