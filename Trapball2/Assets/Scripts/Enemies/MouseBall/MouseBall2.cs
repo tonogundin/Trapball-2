@@ -42,13 +42,10 @@ public class MouseBall2 : MonoBehaviour, IResettable
     private float velocityZ = 0;
 
     //Instancias de FMOD
-
-    
     FMOD.Studio.EventInstance BallMouseRun;
     FMOD.Studio.EventInstance BallMouseHurt;
     FMOD.Studio.EventInstance BallMouseInflatingPop;
     FMOD.Studio.EventInstance BallMouseJump;
-    FMOD.Studio.EventInstance BallMouseSqueakIdle;
     FMOD.Studio.EventInstance BallMouseScream;
     FMOD.Studio.EventInstance BallMouseWaterSplash;
 
@@ -67,14 +64,12 @@ public class MouseBall2 : MonoBehaviour, IResettable
         timeSwimming = new Timer(150, new CallBackSwimmingTimer(this));
         changeCollider(false);
         
-        BallMouseRun = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseRun");
-        BallMouseHurt = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseHurt");
-        BallMouseInflatingPop = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseInflatingPop");
-        BallMouseJump = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseJump");
-        //BallMouseSqueakIdle = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseSqueak");
-        BallMouseScream = FMODUnity.RuntimeManager.CreateInstance("event:/Enemigos/BallMouseScream");
-        BallMouseWaterSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Saltos/ImpactWater");
-        BallMouseWaterSplash.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        BallMouseRun = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_RUN);
+        BallMouseHurt = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_HURT);
+        BallMouseInflatingPop = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_INFLATING_POP);
+        BallMouseJump = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_JUMP);
+        BallMouseScream = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_SCREAM);
+        BallMouseWaterSplash = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_WATER);
     }
 
     // Update is called once per frame
@@ -84,7 +79,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
         {
             if (player == null)
             {
-                player = GameObject.FindGameObjectWithTag("Player");
+                player = GameObject.FindGameObjectWithTag(Player.TAG);
             }
             else if (!isSmashProcess())
             {
@@ -285,21 +280,15 @@ public class MouseBall2 : MonoBehaviour, IResettable
             {
                 case State.SWIMMING:
                     animator.SetTrigger(animMouseIdle);
-                    BallMouseWaterSplash.start();
+                    FMODUtils.play3DSound(BallMouseWaterSplash, transform);
                     break;
                 case State.NORMAL:
                     animator.SetTrigger(animMouseIdle);
                     break;
                 case State.MOVE:
                     animator.SetTrigger(animMouseMoveAgressive);
-                    BallMouseRun.start();
-                    BallMouseRun.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-                 //   BallMouseSqueakIdle.start();
-                 //   BallMouseSqueakIdle.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-                    BallMouseScream.start();
-                    BallMouseScream.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-
-                    
+                    FMODUtils.play3DSound(BallMouseRun, transform);
+                    FMODUtils.play3DSound(BallMouseScream, transform);                    
                     break;
                 case State.MOVE_AGRESSIVE:
                     animator.SetTrigger(animMouseMoveAgressive);
@@ -310,7 +299,6 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     timeKnockOut.stopTimer();
                     timeKnockOut.startTimer();
                     animator.SetTrigger(animMouseSmash);
-               //     BallMouseSqueakIdle.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                     BallMouseRun.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                     BallMouseHurt.start();
                     break;
@@ -319,8 +307,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     timeRecover.stopTimer();
                     timeRecover.startTimer();
                     animator.SetTrigger(animMouseRecover);
-                    BallMouseInflatingPop.start();
-                    BallMouseInflatingPop.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+                    FMODUtils.play3DSound(BallMouseInflatingPop, transform);
                     break;
             }
         }

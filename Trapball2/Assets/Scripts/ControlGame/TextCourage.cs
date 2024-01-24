@@ -11,10 +11,14 @@ public class TextCourage : MonoBehaviour
     public Image image;
     public int totalCourages = 0;
     public Sprite[] moonSprites;
+    FMOD.Studio.EventInstance soundCompleteCourage;
 
+
+    private bool isCompleteCourage = false;
     // Start is called before the first frame update
     void Start()
     {
+        soundCompleteCourage = FMODUtils.createInstance(FMODConstants.OBJECTS.FULL_MOON);
     }
 
     // Update is called once per frame
@@ -35,6 +39,11 @@ public class TextCourage : MonoBehaviour
             percent.text = percentValue + "%";
             quantity.text = "" + courageValue;
             SetMoonImage(percentValue);
+            if (!isCompleteCourage && percentValue >= 100)
+            {
+                isCompleteCourage = true;
+                soundCompleteCourage.start();
+            }
         }
     }
     public void SetMoonImage(float percentage)

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     public bool especialStage = false;
 
+    FMODUnity.StudioEventEmitter emitter;
 
     private void Awake()
     {
@@ -46,6 +47,8 @@ public class GameManager : MonoBehaviour
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         SetupCamera();
         player = player = GameObject.FindGameObjectWithTag("Player");
+        emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
+        emitter.SetParameter(FMODConstants.STATE_MUSIC, (int)FMODConstants.MUSIC_STATE.ON_STAGE);
     }
 
     /* Método que ajusta el campo de visión de la cámara y las diferentes distancias

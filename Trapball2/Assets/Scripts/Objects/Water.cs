@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AudiotriggerAmbienceUnderwater : MonoBehaviour
+public class Water : MonoBehaviour
 {
 
     FMOD.Studio.EventInstance enterWater;

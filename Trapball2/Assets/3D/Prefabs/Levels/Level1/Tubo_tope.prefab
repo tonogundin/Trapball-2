@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7663133587251873083}
   m_Layer: 11
   m_Name: Tubo_tope
-  m_TagString: SueloMadera
+  m_TagString: SueloPiedra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

@@ -4,24 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    FMODUnity.StudioEventEmitter emitter;
     private void OnTriggerEnter(Collider other)
     {
         string tag = other.tag;
         switch (tag)
         {
-            case "Player":
+            case Player.TAG:
                 StartCoroutine(delayChangeScene());
                 break;
         }
@@ -29,7 +19,9 @@ public class Exit : MonoBehaviour
 
     IEnumerator delayChangeScene()
     {
-        yield return new WaitForSeconds(0.5f);
+        emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
+        emitter.SetParameter(FMODConstants.STATE_MUSIC, (int) FMODConstants.MUSIC_STATE.FINAL);
+        yield return new WaitForSeconds(5.5f);
         FMOD.Studio.Bus masterBus;
         masterBus = FMODUnity.RuntimeManager.GetBus("bus:/");
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);

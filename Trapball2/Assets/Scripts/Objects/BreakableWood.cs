@@ -4,10 +4,6 @@ using UnityEngine;
 public class BreakableWood : MonoBehaviour, IResettable
 {
     Rigidbody rb;
-    
-    FMOD.Studio.EventInstance PlatformHit;
-    FMOD.Studio.EventInstance PlatformCrack;
-
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private Vector3 initialScale;
@@ -20,10 +16,6 @@ public class BreakableWood : MonoBehaviour, IResettable
         initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
         initialScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
         initialRotation = transform.rotation;
-        
-        PlatformHit = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformHit");
-        PlatformCrack = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/PlatformCrack");
-
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -40,10 +32,7 @@ public class BreakableWood : MonoBehaviour, IResettable
                 state = State.BREAK;
                 rb.isKinematic = false;
                 StartCoroutine(Disappear());
-                PlatformCrack.start();
-            } else if (collisionForce > collisionForceActive / 2 && yVelocity < velocityImpactActive / 2)
-            {
-                PlatformHit.start();
+                FMODUtils.playOneShot(FMODConstants.OBJECTS.PLATFORM_CRACK, transform.position);
             }
         }
     }
@@ -57,8 +46,6 @@ public class BreakableWood : MonoBehaviour, IResettable
             transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
             yield return new WaitForSeconds(0.05f);
         }
-
-        PlatformCrack.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         gameObject.SetActive(false);
     }
     public void resetObject()
