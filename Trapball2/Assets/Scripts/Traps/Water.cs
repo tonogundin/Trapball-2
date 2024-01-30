@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-
+    public const string TAG = "Water";
     FMOD.Studio.EventInstance enterWater;
     // Start is called before the first frame update
     void Start()

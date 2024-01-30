@@ -20,7 +20,12 @@
       "ProjectGuid": "cffef3eb-9787-9123-381c-4208b21a9f6d",
       "DisplayName": "FMODUnityEditor",
       "ColorIndex": 2
+    },
+    "8da83cd9-98b1-c0c3-bb02-9fef8e843a7c": {
+      "ProjectGuid": "8da83cd9-98b1-c0c3-bb02-9fef8e843a7c",
+      "DisplayName": "Assembly-CSharp-firstpass",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

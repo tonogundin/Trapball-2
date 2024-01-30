@@ -47,16 +47,15 @@ public class MouseBallAgent : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(Player.TAG))
         {
-            Debug.Log("Player!!");
             playerDetected = true;
             player = other.gameObject;
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag(Player.TAG))
         {
             Rigidbody rbPlayer = collision.gameObject.GetComponent<Rigidbody>();
             //La normal es calculada del objeto que colisiona conmigo hacía mi, por eso negativo.

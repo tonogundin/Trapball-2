@@ -44,10 +44,13 @@ public class MouseBall2 : MonoBehaviour, IResettable
     //Instancias de FMOD
     FMOD.Studio.EventInstance BallMouseRun;
     FMOD.Studio.EventInstance BallMouseHurt;
+    FMOD.Studio.EventInstance BallMouseHit;
     FMOD.Studio.EventInstance BallMouseInflatingPop;
     FMOD.Studio.EventInstance BallMouseJump;
     FMOD.Studio.EventInstance BallMouseScream;
-    FMOD.Studio.EventInstance BallMouseWaterSplash;
+    private FMOD.Studio.EventInstance impactObjetc;
+    private FMOD.Studio.EventInstance impactFloor;
+    private FMOD.Studio.EventInstance exitTerrain;
 
 
 
@@ -66,10 +69,13 @@ public class MouseBall2 : MonoBehaviour, IResettable
         
         BallMouseRun = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_RUN);
         BallMouseHurt = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_HURT);
+        BallMouseHit = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_HIT);
         BallMouseInflatingPop = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_INFLATING_POP);
         BallMouseJump = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_JUMP);
         BallMouseScream = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_SCREAM);
-        BallMouseWaterSplash = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_WATER);
+        impactFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_ENEMIES);
+        exitTerrain = FMODUtils.createInstance(FMODConstants.JUMPS.EXIT_TERRAIN_ENEMIES);
+        impactObjetc = FMODUtils.createInstance(FMODConstants.OBJECTS.IMPACT_OBJECT_ENEMIES);
     }
 
     // Update is called once per frame
@@ -225,6 +231,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
                 }
             }
             checkState();
+            impactFloor.setParameterByName(FMODConstants.SPEED, rb.velocity.y);
         }
     }
 
@@ -280,7 +287,6 @@ public class MouseBall2 : MonoBehaviour, IResettable
             {
                 case State.SWIMMING:
                     animator.SetTrigger(animMouseIdle);
-                    FMODUtils.play3DSound(BallMouseWaterSplash, transform);
                     break;
                 case State.NORMAL:
                     animator.SetTrigger(animMouseIdle);
@@ -298,9 +304,9 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     timeRecover.stopTimer();
                     timeKnockOut.stopTimer();
                     timeKnockOut.startTimer();
+                    BallMouseHurt.start();
                     animator.SetTrigger(animMouseSmash);
                     BallMouseRun.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    BallMouseHurt.start();
                     break;
                 case State.RECOVER:
                     timeKnockOut.stopTimer();
@@ -346,6 +352,35 @@ public class MouseBall2 : MonoBehaviour, IResettable
 
     private void OnCollisionEnter(Collision collision)
     {
+        string tag = collision.gameObject.tag;
+        float yVelocity = collision.relativeVelocity.y;
+        impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
+        switch (tag)
+        {
+            case "SueloPantanoso":
+                FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.MUD, transform);
+                break;
+            case "Balancin":
+            case "SueloMadera":
+            case "Box":
+                if (Utils.IsCollisionAbove(collision, transform.position.y))
+                {
+                    FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.WOOD, transform);
+                }
+                else
+                {
+                    float collisionForce = Utils.limitValue(collision.relativeVelocity.magnitude + 3, FMODConstants.LIMIT_SOUND_VALUE);
+                    impactObjetc.setParameterByName(FMODConstants.SPEED, collisionForce);
+                    FMODUtils.play3DSound(impactObjetc, transform);
+                }
+                break;
+            case "SueloPiedra":
+                FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.STONE, transform);
+                break;
+            default:
+                // Handle other cases or do nothing
+                break;
+        }
         if (isObjetEqualsPlayer(collision.gameObject))
         {
             float collisionForce = collision.relativeVelocity.magnitude;
@@ -357,6 +392,12 @@ public class MouseBall2 : MonoBehaviour, IResettable
                 float normalY = contacts[0].normal.y;
                 if (normalY < compareTop())
                 {
+                    if (state == State.SMASH)
+                    {
+                        BallMouseHit.start();
+                        timeKnockOut.stopTimer();
+                        timeKnockOut.startTimer();
+                    }
                     state = State.SMASH;
                     changeCollider(true);
                     float impact = collision.relativeVelocity.y * -1;
@@ -391,6 +432,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
                         rbPlayer.AddForce(new Vector3(forceX, 0, 0), ForceMode.Impulse);
                         collision.gameObject.GetComponent<Player>().addDamage();
                         state = State.SMASH;
+                        BallMouseHit.start();
                         changeCollider(true);
                     }
 
@@ -416,11 +458,20 @@ public class MouseBall2 : MonoBehaviour, IResettable
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(Water.TAG))
+        {
+            FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.WATER, transform);
+        }
+    }
+
+
     private void OnTriggerStay(Collider other)
     {
-        switch (other.gameObject.layer)
+        switch (other.tag)
         {
-            case Layers.AGUA:
+            case Water.TAG:
                 if (state != State.SWIMMING)
                 {
                     timeKnockOut.stopTimer();
@@ -435,7 +486,17 @@ public class MouseBall2 : MonoBehaviour, IResettable
         }
     }
 
-private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(Water.TAG))
+        {
+            FMODUtils.setTerrainParametersAndStart3D(exitTerrain, FMODConstants.MATERIAL.WATER, transform);
+        }
+    }
+
+
+
+    void OnCollisionExit(Collision collision)
     {
         switch (collision.gameObject.tag)
         {

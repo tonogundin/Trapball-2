@@ -64,7 +64,7 @@ public class Beatle : MonoBehaviour
         {
             if (player == null)
             {
-                player = GameObject.FindGameObjectWithTag("Player");
+                player = GameObject.FindGameObjectWithTag(Player.TAG);
             }
             else
             {

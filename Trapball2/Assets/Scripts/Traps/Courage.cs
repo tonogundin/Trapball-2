@@ -22,7 +22,7 @@ public class Courage : MonoBehaviour
         string tag = other.tag;
         switch (tag)
         {
-            case "Player":
+            case Player.TAG:
                 Destroy(gameObject);
                 break;
         }

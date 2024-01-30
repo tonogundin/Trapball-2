@@ -10,25 +10,24 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
     [SerializeField] float torque;
     float offset = 0.4f;
     float initDisplacement;
-    FMOD.Studio.EventInstance BoxSplash;
+    private FMOD.Studio.EventInstance impactFloor;
     // Start is called before the first frame update
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private float initialMass;
-    private bool firstwater = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         initialPosition = new Vector3(rb.position.x, rb.position.y, rb.position.z);
         initialRotation = transform.rotation;
         initialMass = rb.mass;
-        BoxSplash = FMODUnity.RuntimeManager.CreateInstance("event:/Objetos/ObjectWaterDrop");
+        impactFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_ENEMIES);
     }
 
     private void FixedUpdate()
     {
         float zRotation = transform.eulerAngles.z;
-        //Debug.Log(zRotation);
         int turnDirection;
         if (floating)
         {
@@ -38,30 +37,13 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
             //Finalmente, se acabará cancelando la fuerza aplicada ya que las posiciones se igualarán.
             rb.AddForce(new Vector3(0, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0), ForceMode.Acceleration);
 
-            //1er cuadrante. Caja entra recta.
-            //if(initDisplacement <= 45 || initDisplacement > 315)
-            //{
             if (zRotation > 0.5f || zRotation < 359.5f)
             {
                 turnDirection = zRotation > 0.5f && zRotation < 180 ? -1 : 1;
                 rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
             }
-
-            //}
-            ////2o cuadrante
-            //else if(initDisplacement > 45 && initDisplacement < 135)
-            //{
-            //    if (zRotation > 90.5f || zRotation < 89.5f)
-            //    {
-            //        Debug.Log("eee");
-            //        turnDirection = zRotation > 90.5f ? 1 : -1;
-            //        rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
-            //    }
-            //}
-
-            
-
         }
+
     }
 
     public void resetObject()
@@ -73,12 +55,7 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
         rb.rotation = initialRotation;
         rb.mass = initialMass;
         floating = false;
-        if (firstwater)
-        {
-            BoxSplash.start();
-            firstwater = false;
-        }
-        BoxSplash.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        impactFloor.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -92,16 +69,12 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
             //rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
             rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
             floating = true;
-            firstwater = true;
-            // Obtén los planos del frustum de la cámara principal
-            Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
 
-            // Verifica si el collider del objeto está dentro del frustum de la cámara
-            if (GeometryUtility.TestPlanesAABB(planes, GetComponent<Collider>().bounds))
-            {
-                BoxSplash.start();
-            }
+            impactFloor.setParameterByName(FMODConstants.SPEED, 8);
+            FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.WATER, transform);
         }
     }
+
+
 
 }

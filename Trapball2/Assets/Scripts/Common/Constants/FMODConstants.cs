@@ -1,6 +1,5 @@
 public class FMODConstants
 {
-
     public enum MATERIAL
     {
         WATER,
@@ -9,14 +8,8 @@ public class FMODConstants
         METAL,
         METAL2,
         STONE,
-        MUD
-    }
-
-    public enum MATERIAL_ROLL
-    {
         MUD,
         WOOD,
-        STONE,
         NONE
     }
 
@@ -30,23 +23,26 @@ public class FMODConstants
     public const string PERCENT_STAGE = "percentStage";
     public const string TERRAIN = "Terrain";
     public const string SPEED = "speed";
+    public const string ON_TRIGGER = "Ontrigger";
+
+
+    public const float LIMIT_SOUND_VALUE = 8;
 
     public enum OBJECTS
     {
-        [FMODUtils.StringValue("event:/Objetos/ImpactObject")]
-        IMPACT_OBJECT,
+        [FMODUtils.StringValue("event:/Objetos/ImpactObjectPlayer")]
+        IMPACT_OBJECT_PLAYER,
+        [FMODUtils.StringValue("event:/Objetos/ImpactObjectEnemies")]
+        IMPACT_OBJECT_ENEMIES,
         [FMODUtils.StringValue("event:/Objetos/GrabMoon")]
         GRAB_MOON,
         [FMODUtils.StringValue("event:/Objetos/FullMoon")]
         FULL_MOON,
         [FMODUtils.StringValue("event:/Objetos/PlatformCrack")]
         PLATFORM_CRACK,
-        [FMODUtils.StringValue("event:/Objetos/PlatformHit")]
-        PLATFORM_HIT,
-        [FMODUtils.StringValue("event:/Objetos/PlatformSplash")]
-        PLATFORM_SPLASH,
+        [FMODUtils.StringValue("event:/Objetos/PlatformBreaking")]
+        PLATFORM_BREAKING,
     }
-
     public enum MOVE
     {
         [FMODUtils.StringValue("event:/Desplazamiento/SFXPlayerRollMud")]
@@ -59,10 +55,16 @@ public class FMODConstants
     }
     public enum JUMPS
     {
-        [FMODUtils.StringValue("event:/Saltos/ImpactoTerreno")]
-        IMPACT_TERRAIN,
+        [FMODUtils.StringValue("event:/Saltos/ImpactoTerrenoPlayer")]
+        IMPACT_TERRAIN_PLAYER,
+        [FMODUtils.StringValue("event:/Saltos/ImpactoTerrenoEnemies")]
+        IMPACT_TERRAIN_ENEMIES,
         [FMODUtils.StringValue("event:/Saltos/ImpactoTerrenoBomba")]
         IMPACT_TERRAIN_BOMB,
+        [FMODUtils.StringValue("event:/Saltos/ExitMaterialPlayer")]
+        EXIT_TERRAIN_PLAYER,
+        [FMODUtils.StringValue("event:/Saltos/ExitMaterialEnemies")]
+        EXIT_TERRAIN_ENEMIES,
         [FMODUtils.StringValue("event:/Saltos/ImpactWater")]
         IMPACT_WATER,
         [FMODUtils.StringValue("event:/Saltos/SaltoHigh")]
@@ -87,6 +89,8 @@ public class FMODConstants
         MOUSE_BALL_RUN,
         [FMODUtils.StringValue("event:/Enemigos/BallMouseHurt")]
         MOUSE_BALL_HURT,
+        [FMODUtils.StringValue("event:/Enemigos/BallMouseHit2")]
+        MOUSE_BALL_HIT,
         [FMODUtils.StringValue("event:/Enemigos/BallMouseInflatingPop")]
         MOUSE_BALL_INFLATING_POP,
         [FMODUtils.StringValue("event:/Enemigos/BallMouseJump")]

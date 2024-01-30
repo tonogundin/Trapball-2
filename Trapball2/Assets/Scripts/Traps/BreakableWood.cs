@@ -19,7 +19,7 @@ public class BreakableWood : MonoBehaviour, IResettable
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player") && state == State.NORMAL) {
+        if(collision.gameObject.CompareTag(Player.TAG) && state == State.NORMAL) {
             // Obtiene la magnitud de la velocidad relativa (fuerza del impacto)
             float collisionForce = collision.relativeVelocity.magnitude;
 

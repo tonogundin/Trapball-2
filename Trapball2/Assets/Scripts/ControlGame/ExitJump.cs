@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExitJump : MonoBehaviour
@@ -18,7 +16,7 @@ public class ExitJump : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(Player.TAG))
         {
             other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(15,5), ForceMode.Impulse);
         }

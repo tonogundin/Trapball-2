@@ -3,14 +3,10 @@
 public class ParticlesExplosion : MonoBehaviour, IResettable
 {
     GameObject player;
-    private void Awake()
-    {
-
-    }
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag(Player.TAG);
     }
     public void Explode()
     {

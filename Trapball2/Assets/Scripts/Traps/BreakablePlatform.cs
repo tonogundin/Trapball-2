@@ -5,17 +5,20 @@ public class BreakablePlatform : MonoBehaviour, IResettable
 {
     Rigidbody rb;
 
-    public Collider collider;
+    private Collider coll;
     private Vector3 initialPosition;
     private Vector3 initialScale;
     private Quaternion initialRotation;
+    private FMOD.Studio.EventInstance impactFloor;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+        coll = GetComponent<BoxCollider>();
         initialPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         initialScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
         initialRotation = transform.rotation;
+        impactFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_ENEMIES);
     }
 
     public void resetObject()
@@ -29,14 +32,36 @@ public class BreakablePlatform : MonoBehaviour, IResettable
         transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
         transform.rotation = initialRotation;
         rb.rotation = initialRotation;
-        collider.enabled = true;
+        coll.enabled = true;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag(Player.TAG))
+        if (isActiveAndEnabled)
         {
-            StartCoroutine(StarDisappear());
+            if(collision.gameObject.CompareTag(Player.TAG))
+            {
+                FMODUtils.playOneShot(FMODConstants.OBJECTS.PLATFORM_BREAKING, transform.position);
+                StartCoroutine(StarDisappear());
+            }
+        }
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isActiveAndEnabled)
+        {
+            string tag = other.tag;
+            switch (tag)
+            {
+                case "Water":
+                    impactFloor.setParameterByName(FMODConstants.SPEED, 8);
+                    FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.WATER, transform);
+                    break;
+                default:
+                    // Handle other cases or do nothing
+                    break;
+            }
         }
     }
 
@@ -44,10 +69,9 @@ public class BreakablePlatform : MonoBehaviour, IResettable
     IEnumerator StarDisappear()
     {
         yield return new WaitForSeconds(1f);
-        if (this.isActiveAndEnabled)
+        if (isActiveAndEnabled)
         {
             rb.isKinematic = false;
-            FMODUtils.playOneShot(FMODConstants.OBJECTS.PLATFORM_CRACK, transform.position);
             yield return new WaitForSeconds(1f);
             int cicles = 15;
             while (transform.localScale.magnitude > 0.1f && cicles > 0)
@@ -56,7 +80,7 @@ public class BreakablePlatform : MonoBehaviour, IResettable
                 cicles--;
                 if (cicles < 10)
                 {
-                    collider.enabled = false;
+                    coll.enabled = false;
                 }
                 yield return new WaitForSeconds(0.05f);
             }

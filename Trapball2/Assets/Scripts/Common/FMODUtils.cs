@@ -20,6 +20,13 @@ public class FMODUtils
         sound.start();
     }
 
+    public static void setTerrainParametersAndStart3D(FMOD.Studio.EventInstance sound, FMODConstants.MATERIAL material, Transform transform)
+    {
+        sound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform));
+        sound.setParameterByName(FMODConstants.TERRAIN, (int) material);
+        sound.start();
+    }
+
 
     public static string GetStringValue<T>(T value) where T : Enum
     {

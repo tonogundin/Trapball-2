@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         SetupCamera();
-        player = player = GameObject.FindGameObjectWithTag("Player");
+        player = player = GameObject.FindGameObjectWithTag(Player.TAG);
         emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         emitter.SetParameter(FMODConstants.STATE_MUSIC, (int)FMODConstants.MUSIC_STATE.ON_STAGE);
     }
@@ -125,9 +125,9 @@ public class GameManager : MonoBehaviour
     IEnumerator Waiting(float secToWait, Vector3 initPos)
     {
         yield return new WaitForSeconds(secToWait);
-        player.transform.position = initPos;
         plScript = player.GetComponent<Player>();
         plScript.resetObject();
+        player.transform.position = initPos;
         plScript.especialStage = especialStage;
         NewPlayer();
         checkPoints.setActiveCheckpointsObjects(true);

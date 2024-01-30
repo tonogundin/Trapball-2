@@ -36,7 +36,7 @@ public class MainMenuCanvas : MonoBehaviour
             } else if (firstPress && !secondPress)
             {
                 secondPress = true;
-                SceneManager.LoadSceneAsync("Level1_develop");
+                SceneManager.LoadSceneAsync("Level1_develop_newMusic");
             }
 
         }

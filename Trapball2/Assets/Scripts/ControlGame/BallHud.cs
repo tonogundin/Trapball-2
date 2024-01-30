@@ -23,7 +23,6 @@ public class BallHud : MonoBehaviour
     private Player player;
     private StatePlayer statePlayer;
     private Vector3 initialPosition;
-    private Transform transform;
     private Image imageLive;
     private Image imageEnergy;
 
@@ -48,7 +47,6 @@ public class BallHud : MonoBehaviour
 
     void Start()
     {
-        transform = GetComponent<Transform>();
         initialPosition = transform.position;
         targetImage = GetComponent<Image>();
         originalColor = targetImage.color;
@@ -60,7 +58,7 @@ public class BallHud : MonoBehaviour
     {
         if (player == null)
         {
-            GameObject playerObject = GameObject.FindWithTag("Player");
+            GameObject playerObject = GameObject.FindWithTag(Player.TAG);
             if (playerObject != null)
             {
                 player = playerObject.GetComponent<Player>();

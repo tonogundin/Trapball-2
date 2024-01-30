@@ -26,7 +26,7 @@ public class TextCourage : MonoBehaviour
     {
         if (player == null)
         {
-            GameObject playerObject = GameObject.FindWithTag("Player");
+            GameObject playerObject = GameObject.FindWithTag(Player.TAG);
             if (playerObject != null && player == null)
             {
                 player = playerObject.GetComponent<Player>();

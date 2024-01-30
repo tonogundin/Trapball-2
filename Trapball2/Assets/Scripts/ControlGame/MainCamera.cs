@@ -22,7 +22,7 @@ public class MainCamera : MonoBehaviour
     }
     void FollowNewPlayer()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag(Player.TAG).transform;
     }
 
     private void OnDisable()
