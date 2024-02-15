@@ -133,7 +133,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.1
+  bundleVersion: 0.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -841,8 +841,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: TemplateLightweight
-  metroPackageVersion: 1.0.0.0
+  metroPackageName: TrapBallAdventure
+  metroPackageVersion: 0.2.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 

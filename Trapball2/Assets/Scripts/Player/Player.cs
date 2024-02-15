@@ -132,7 +132,7 @@ public class Player : MonoBehaviour, IResettable
         {
             if (isColliderPlatforms())
             {
-                collisionFloor();
+                collisionFloor(false);
             }
             else if (state == StatePlayer.NORMAL)
             {
@@ -170,13 +170,13 @@ public class Player : MonoBehaviour, IResettable
         return result;
     }
 
-    private void collisionFloor()
+    private void collisionFloor(bool isWater)
     {
         if (state == StatePlayer.BOMBJUMP)
         {
-            setStateEndBombJump();
+            setStateEndBombJump(isWater);
         }
-        else if (state != StatePlayer.BOMBJUMP && state != StatePlayer.NORMAL)
+        else if (state != StatePlayer.BOMBJUMP && state != StatePlayer.NORMAL && !isWater)
         {
             setStateNormal();
         }
@@ -281,7 +281,7 @@ public class Player : MonoBehaviour, IResettable
         FMODUtils.playOneShot(FMODConstants.JUMPS.JUMP_BOMB, transform.position);
         playerSoundroll.setVolume(0);
     }
-    private void setStateEndBombJump()
+    private void setStateEndBombJump(bool isWater)
     {
         if (isRumbleActive)
         {
@@ -292,7 +292,10 @@ public class Player : MonoBehaviour, IResettable
         setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_BOMB_TERRAIN);
         playerSoundroll.setVolume(1);
         state = StatePlayer.END_BOMB_JUMP;
-        StartCoroutine(stateNormalThreadDelay());
+        if (!isWater)
+        {
+            StartCoroutine(stateNormalThreadDelay());
+        }
     }
 
     private void setStateNormal()
@@ -379,31 +382,34 @@ public class Player : MonoBehaviour, IResettable
         return Mathf.Clamp(percent, 0f, 100f);
     }
 
-
+    private const float LIMIT_VELOCITY_IMPACT_INTO_WATER = 2.2f;
     private void OnCollisionEnter(Collision collision) {
         string tag = collision.gameObject.tag;
-        float yVelocity = collision.relativeVelocity.y;
+        float yVelocity = Utils.limitValue(collision.relativeVelocity.y, FMODConstants.LIMIT_SOUND_VALUE);
         impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
         switch (tag) {
             case "SueloPantanoso":
-                if (yVelocity > 1)
+                if (yVelocity > LIMIT_VELOCITY_IMPACT_INTO_WATER)
                 {
+                    Debug.Log("Velocidad Caida: " + yVelocity);
                     setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
+                    setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.MUD);
                 }
-                setTerrainParametersAndStart(FMODConstants.MATERIAL.MUD);
+                setTerrainRollParametersAndStart(FMODConstants.MATERIAL.MUD);
                 break;
             case "Balancin":
             case "SueloMadera":
             case "Box":
                 if (Utils.IsCollisionAbove(collision, transform.position.y))
                 {
-                    if (yVelocity > 1)
+                    if (yVelocity > LIMIT_VELOCITY_IMPACT_INTO_WATER)
                     {
                         setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
+                        setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.WOOD);
                     }
-
-                    setTerrainParametersAndStart(FMODConstants.MATERIAL.WOOD);
-                } else
+                    setTerrainRollParametersAndStart(FMODConstants.MATERIAL.WOOD);
+                }
+                else
                 {
                     float collisionForce = Utils.limitValue(collision.relativeVelocity.magnitude + 3, FMODConstants.LIMIT_SOUND_VALUE);
                     impactObjetc.setParameterByName(FMODConstants.SPEED, collisionForce);
@@ -412,7 +418,12 @@ public class Player : MonoBehaviour, IResettable
                 }
                 break;
             case "SueloPiedra":
-                setTerrainParametersAndStart(FMODConstants.MATERIAL.STONE);
+                if (yVelocity > LIMIT_VELOCITY_IMPACT_INTO_WATER)
+                {
+                    setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
+                    setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.STONE);
+                }
+                setTerrainRollParametersAndStart(FMODConstants.MATERIAL.STONE);
                 break;
             default:
                 // Handle other cases or do nothing
@@ -442,7 +453,7 @@ public class Player : MonoBehaviour, IResettable
             case "Box":
                 if (materialActual != FMODConstants.MATERIAL.WOOD && Utils.IsCollisionAbove(collision, transform.position.y))
                 {
-                    setTerrainParametersAndStart(FMODConstants.MATERIAL.WOOD);
+                    setTerrainRollParametersAndStart(FMODConstants.MATERIAL.WOOD);
                 }
 
                 break;
@@ -464,14 +475,7 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-    private void setTerrainParametersAndStart(FMODConstants.MATERIAL material) {
-        playerSoundroll.setParameterByName(FMODConstants.TERRAIN, (int) material);
-        if (materialActual != material)
-        {
-            materialActual = material;
-            playerSoundroll.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            playerSoundroll.start();
-        }
+    private void setTerrainImpactParametersAndStart(FMODConstants.MATERIAL material) {
         if (stateImpactTerrain == StateSoundImpactPlayer.IMPACT_BOMB_TERRAIN)
         {
             impactBombFloor.setParameterByName(FMODConstants.TERRAIN, (int) material);
@@ -485,7 +489,18 @@ public class Player : MonoBehaviour, IResettable
             stateImpactTerrain = StateSoundImpactPlayer.NONE;
         }
     }
-    
+
+    private void setTerrainRollParametersAndStart(FMODConstants.MATERIAL material)
+    {
+        playerSoundroll.setParameterByName(FMODConstants.TERRAIN, (int)material);
+        if (materialActual != material)
+        {
+            materialActual = material;
+            playerSoundroll.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            playerSoundroll.start();
+        }
+    }
+
     private void setTerrainParametersToExitMaterialAndStart(FMODConstants.MATERIAL material) {
         underWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         exitTerrain.setParameterByName(FMODConstants.TERRAIN, (int) material);
@@ -497,11 +512,14 @@ public class Player : MonoBehaviour, IResettable
         string tag = other.tag;
         switch (tag) {
             case "Water":
-                collisionFloor();
+                collisionFloor(true);
                 setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
+                Debug.Log("Velocidad impacto agua: " + rb.velocity.y);
+                float yVelocity = Utils.limitValue(rb.velocity.y * -1, FMODConstants.LIMIT_SOUND_VALUE);
+                impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
                 rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
-                setTerrainParametersAndStart(FMODConstants.MATERIAL.WATER);
-                underWater.start();
+                setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.WATER);
+                //underWater.start();
                 break;
             case "TubeEnter":
                 freeFall = true;

@@ -231,7 +231,6 @@ public class MouseBall2 : MonoBehaviour, IResettable
                 }
             }
             checkState();
-            impactFloor.setParameterByName(FMODConstants.SPEED, rb.velocity.y);
         }
     }
 
@@ -353,7 +352,8 @@ public class MouseBall2 : MonoBehaviour, IResettable
     private void OnCollisionEnter(Collision collision)
     {
         string tag = collision.gameObject.tag;
-        float yVelocity = collision.relativeVelocity.y;
+        float yVelocity = Utils.limitValue(collision.relativeVelocity.y, FMODConstants.LIMIT_SOUND_VALUE);
+        
         impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
         switch (tag)
         {
@@ -363,13 +363,15 @@ public class MouseBall2 : MonoBehaviour, IResettable
             case "Balancin":
             case "SueloMadera":
             case "Box":
-                if (Utils.IsCollisionAbove(collision, transform.position.y))
+                if (Utils.IsCollisionAboveEnemies(collision, transform.position.y))
                 {
+                    Debug.Log("Sonido golpeo superior Raton: " + yVelocity);
                     FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.WOOD, transform);
                 }
                 else
                 {
                     float collisionForce = Utils.limitValue(collision.relativeVelocity.magnitude + 3, FMODConstants.LIMIT_SOUND_VALUE);
+                    Debug.Log("Sonido golpeo lateral Raton: " + collisionForce);
                     impactObjetc.setParameterByName(FMODConstants.SPEED, collisionForce);
                     FMODUtils.play3DSound(impactObjetc, transform);
                 }

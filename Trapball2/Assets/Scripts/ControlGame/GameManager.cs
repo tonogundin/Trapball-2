@@ -125,9 +125,9 @@ public class GameManager : MonoBehaviour
     IEnumerator Waiting(float secToWait, Vector3 initPos)
     {
         yield return new WaitForSeconds(secToWait);
+        player.transform.position = initPos;
         plScript = player.GetComponent<Player>();
         plScript.resetObject();
-        player.transform.position = initPos;
         plScript.especialStage = especialStage;
         NewPlayer();
         checkPoints.setActiveCheckpointsObjects(true);

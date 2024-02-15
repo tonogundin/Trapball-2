@@ -100,12 +100,12 @@ MonoBehaviour:
   - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters:
   - {fileID: -4324672326155644080}
   MinDistance: 1
   MaxDistance: 20
-  Length: 6000
+  Length: 4000
 --- !u!114 &-8429576476632380590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   - {fileID: 2596999478778139597}
   MinDistance: 1
   MaxDistance: 20
-  Length: 38500
+  Length: 38048
 --- !u!114 &-7162806991775911437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,11 +389,11 @@ MonoBehaviour:
   - {fileID: 8649223794283648005}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2125
+  Length: 2062
 --- !u!114 &-5873012223315549605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,11 +440,11 @@ MonoBehaviour:
   - {fileID: 8649223794283648005}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 625
+  Length: 543
 --- !u!114 &-5597698489069669132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,11 +576,11 @@ MonoBehaviour:
   - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4500
+  Length: 3800
 --- !u!114 &-4786526421349007878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -707,7 +707,7 @@ MonoBehaviour:
   - {fileID: 3295960355745021443}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -735,7 +735,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -763,12 +763,12 @@ MonoBehaviour:
   - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters:
   - {fileID: 4439321378680779826}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1062
+  Length: 0
 --- !u!114 &-3823262766152319626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,11 +816,11 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 257
+  Length: 206
 --- !u!114 &-3606730696414395008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,7 +917,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638422136745436589
+  lastModified: 638422462200426843
   FileSizes:
   - Name: Desktop
     Value: 3740
@@ -1064,11 +1064,11 @@ MonoBehaviour:
   - {fileID: 8649223794283648005}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2000
+  Length: 1935
 --- !u!114 &-1857931245834567527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,12 +1288,12 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters:
   - {fileID: -2763837879923221437}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1062
+  Length: 0
 --- !u!114 &-118219244937946807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   StringsBanks:
   - {fileID: -2787406691297457171}
-  cacheTime: 638422136746361199
+  cacheTime: 638422462240666669
   cacheVersion: 131616
 --- !u!114 &44017376591535906
 MonoBehaviour:
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters:
   - {fileID: -2404970849390190614}
   MinDistance: 1
@@ -1525,7 +1525,7 @@ MonoBehaviour:
   - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -1576,7 +1576,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters:
   - {fileID: -8803599599682159816}
   MinDistance: 1
@@ -1714,7 +1714,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2560
+  Length: 2031
 --- !u!114 &2596999478778139597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   - {fileID: 8649223794283648005}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -1813,12 +1813,12 @@ MonoBehaviour:
   - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters:
   - {fileID: -7902866007726578792}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1717
+  Length: 1334
 --- !u!114 &3295960355745021443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
   Name: Musica
   StudioPath: bank:/Musica
-  lastModified: 638421566750436570
+  lastModified: 638422462238936704
   FileSizes:
   - Name: Desktop
     Value: 6463776
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -2043,11 +2043,11 @@ MonoBehaviour:
   - {fileID: 8649223794283648005}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3000
+  Length: 2580
 --- !u!114 &5050432356729907520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -2237,10 +2237,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638422136745381118
+  lastModified: 638422462200371585
   FileSizes:
   - Name: Desktop
-    Value: 2078560
+    Value: 2078432
   Exists: 1
 --- !u!114 &8424018929093887242
 MonoBehaviour:
@@ -2315,10 +2315,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
   Name: SFX Dynamic
   StudioPath: bank:/SFX Dynamic
-  lastModified: 638421566757274399
+  lastModified: 638422375615017255
   FileSizes:
   - Name: Desktop
-    Value: 1743840
+    Value: 1743744
   Exists: 1
 --- !u!114 &8797814100714432702
 MonoBehaviour:
@@ -2335,10 +2335,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
   Name: SFX Linear
   StudioPath: bank:/SFX Linear
-  lastModified: 638422136746361199
+  lastModified: 638422462240666669
   FileSizes:
   - Name: Desktop
-    Value: 1097408
+    Value: 1097312
   Exists: 1
 --- !u!114 &8948373402745503836
 MonoBehaviour:
@@ -2363,8 +2363,8 @@ MonoBehaviour:
   - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4000
+  Length: 2125
