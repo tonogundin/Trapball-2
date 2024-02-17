@@ -99,4 +99,12 @@ public class FMODConstants
         MOUSE_BALL_SCREAM,
     }
 
+    public enum BUSES
+    {
+        [FMODUtils.StringValue("bus:/MASTER")]
+        MASTER,
+        [FMODUtils.StringValue("bus:/MUSIC")]
+        MUSIC
+    }
+
 }

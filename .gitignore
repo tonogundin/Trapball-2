@@ -40,3 +40,13 @@ Icon?
 ehthumbs.db
 Thumbs.db
 BuildWindows/
+Trapball2/Logs/
+Trapball2/Assets/Plugins/FMOD/
+Trapball2/Assets/Scenes/Level2_develop/Lightmap
+Trapball2/Assets/Scenes/Level2_develop/Lightmap*
+Trapball2/Assets/Scenes/Level1_develop_newMusic/Lightmap*
+Trapball2/Assets/Scenes/Level1_develop/Lightmap*
+Trapball2/Assets/Scenes/*/LightingData.asset
+Trapball2/Assets/Scenes/*/LightingData*
+Trapball2/Assets/Scenes/*/New Lighting Settings*
+apk/

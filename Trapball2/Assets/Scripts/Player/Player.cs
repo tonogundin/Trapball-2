@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IResettable
 {
@@ -97,18 +96,21 @@ public class Player : MonoBehaviour, IResettable
     }
 
     void FixedUpdate() {
-        movementPlayer = especialStage ? 60 : movementPlayer;
-        rb.AddForce(new Vector3(movementPlayer, 0, movementPlayerExpecialZ) * MOVEMENT_FORCE, ForceMode.Force); //Para movimiento.
-        manageExtraGravity();
-        if (!freeFall) {
-            ManageBallSpeed();
+        if (isActiveMovement())
+        {
+            movementPlayer = especialStage ? 60 : movementPlayer;
+            rb.AddForce(new Vector3(movementPlayer, 0, movementPlayerExpecialZ) * MOVEMENT_FORCE, ForceMode.Force); //Para movimiento.
+            manageExtraGravity();
+            if (!freeFall) {
+                ManageBallSpeed();
+            }
         }
         velocityBall = new Vector2(rb.velocity.x, rb.velocity.y);
         playerSoundroll.setParameterByName(FMODConstants.SPEED, velocityBall.x);
     }
 
     void Update() {
-        if (state != StatePlayer.DEAD && state != StatePlayer.FINISH)
+        if (isActiveMovement())
         {
             processJumpForce();
             checkTouchingFloor();
@@ -117,6 +119,11 @@ public class Player : MonoBehaviour, IResettable
             percentStage = getPercentPositionPlayer();
             emitter.SetParameter(FMODConstants.PERCENT_STAGE, percentStage);
         }
+    }
+
+    private bool isActiveMovement()
+    {
+        return state != StatePlayer.DEAD && state != StatePlayer.FINISH;
     }
 
     private void checkRotations()
@@ -507,6 +514,12 @@ public class Player : MonoBehaviour, IResettable
         exitTerrain.start();
     }
 
+    private void setVelocityZero()
+    {
+        movementPlayer = 0;
+        movementPlayerExpecialZ = 0;
+        rb.velocity = new Vector3(0, 0, 0);
+    }
 
     private void OnTriggerEnter(Collider other) {
         string tag = other.tag;
@@ -533,9 +546,9 @@ public class Player : MonoBehaviour, IResettable
                 break;
             case "Exit":
                 state = StatePlayer.FINISH;
-                rb.velocity = new Vector3(0, 0, 0);
                 playerSoundroll.setParameterByName(FMODConstants.SPEED, 0);
                 playerSoundroll.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                setVelocityZero();
                 break;
             default:
                 // Handle other cases or do nothing
@@ -569,6 +582,7 @@ public class Player : MonoBehaviour, IResettable
         rb.isKinematic = true;
         GetComponent<Renderer>().enabled = false;
         state = StatePlayer.DEAD;
+        setVelocityZero();
     }
 
     IEnumerator delayDead()
@@ -633,20 +647,28 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
+    public void OnMenu()
+    {
+        GameEvents.instance.pauseScene.Invoke();
+    }
+
     public void OnJump(InputValue value)
     {
-        if (value.isPressed)
+        if (Time.timeScale > 0)
         {
-            handleButtonDown();
-        } else
-        {
-            handleButtonUp();
+            if (value.isPressed)
+            {
+                handleButtonDown();
+            } else
+            {
+                handleButtonUp();
+            }
         }
     }
 
     public void OnMove(InputValue value)
     {
-        if (state != StatePlayer.DEAD && state != StatePlayer.FINISH)
+        if (Time.timeScale > 0 && isActiveMovement())
         {
 #if UNITY_STANDALONE
 
@@ -660,15 +682,6 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-    public void OnMenu()
-    {
-        StartCoroutine(delayChangeScene());
-    }
-    IEnumerator delayChangeScene()
-    {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadSceneAsync("Menu");
-    }
     public void OnDetectController(InputValue value)
     {
         if (Cursor.visible)

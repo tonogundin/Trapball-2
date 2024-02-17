@@ -36,6 +36,26 @@ public class FMODUtils
         return attrs.Length > 0 ? attrs[0].StringValue : null;
     }
 
+    public static void stopAllEvents()
+    {
+        FMODUnity.RuntimeManager.GetBus("bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+    public static void pauseAllEvents()
+    {
+        setPauseEvents(true);
+    }
+
+    public static void resumeAllEvents()
+    {
+        setPauseEvents(false);
+    }
+
+    private static void setPauseEvents(bool value)
+    {
+        FMODUnity.RuntimeManager.GetBus("bus:/").setPaused(value);
+    }
+
     public class StringValueAttribute : Attribute
     {
         public string StringValue { get; private set; }

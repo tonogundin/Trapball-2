@@ -22,9 +22,7 @@ public class Exit : MonoBehaviour
         emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         emitter.SetParameter(FMODConstants.STATE_MUSIC, (int) FMODConstants.MUSIC_STATE.FINAL);
         yield return new WaitForSeconds(5.5f);
-        FMOD.Studio.Bus masterBus;
-        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/");
-        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        FMODUtils.stopAllEvents();
         SceneManager.LoadSceneAsync("Menu");
     }
 }
