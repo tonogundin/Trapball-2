@@ -123,7 +123,7 @@ public class Player : MonoBehaviour, IResettable
 
     private bool isActiveMovement()
     {
-        return state != StatePlayer.DEAD && state != StatePlayer.FINISH;
+        return state != StatePlayer.DEAD && state != StatePlayer.FINISH && Time.timeScale > 0;
     }
 
     private void checkRotations()
@@ -216,18 +216,6 @@ public class Player : MonoBehaviour, IResettable
     void handleButtonDown()
     {
         jumpCharge = true;
-        switch (state)
-        {
-            case StatePlayer.NORMAL:
-                
-                break;
-            case StatePlayer.JUMP:
-                if (jumpBombEnabled)
-                {
-                    setStateBombJump();
-                }
-                break;
-        }
     }
     void handleButtonUp() {
         jumpCharge = false;
@@ -654,7 +642,7 @@ public class Player : MonoBehaviour, IResettable
 
     public void OnJump(InputValue value)
     {
-        if (Time.timeScale > 0)
+        if (isActiveMovement())
         {
             if (value.isPressed)
             {
@@ -666,9 +654,28 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
+    public void OnBombJump(InputValue value)
+    {
+        if (Time.timeScale > 0)
+        {
+            if (value.isPressed && value.Get<float>() == 1)
+            {
+                switch (state)
+                {
+                    case StatePlayer.JUMP:
+                        if (jumpBombEnabled)
+                        {
+                            setStateBombJump();
+                        }
+                        break;
+                }
+            }
+        }
+    }
+
     public void OnMove(InputValue value)
     {
-        if (Time.timeScale > 0 && isActiveMovement())
+        if (isActiveMovement())
         {
 #if UNITY_STANDALONE
 
@@ -700,10 +707,6 @@ public class Player : MonoBehaviour, IResettable
     }
     public void OnDetectMouse(InputValue value)
     {
-        if (!Cursor.visible)
-        {
-            Cursor.visible = true;
-        }
         isRumbleActive = false;
     }
 

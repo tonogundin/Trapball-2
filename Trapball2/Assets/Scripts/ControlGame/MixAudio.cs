@@ -1,8 +1,11 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MixAudio : MonoBehaviour
 {
+    public static MixAudio Instance;
+
     public GameObject Music;
     public GameObject FX;
 
@@ -11,41 +14,66 @@ public class MixAudio : MonoBehaviour
 
     private float volumenBankMaster = 1;
     private float volumenBankMusic = 1;
-    private FMOD.Studio.Bus musicBusMaster;
-    private FMOD.Studio.Bus musicBusMusic;
     private float scaleIncrement= 0.05f;
     private const string nameGameObjectUnit = "Unit";
 
-    // Start is called before the first frame update
-    void Start()
+    private Button menuSettingsVolumeMusicUp;
+    private Button menuSettingsVolumeMusicDown;
+    private Button menuSettingsVolumeFXUp;
+    private Button menuSettingsVolumeFXDown;
+    private Button menuPauseExitButton;
+
+
+    public void Start()
     {
-        musicBusMaster = FMODUnity.RuntimeManager.GetBus("bus:/MASTER");
-        musicBusMusic = FMODUnity.RuntimeManager.GetBus("bus:/MUSIC");
+
         textMusic = Music.transform.Find(nameGameObjectUnit).GetComponentInChildren<TextMeshProUGUI>();
         textFX = FX.transform.Find(nameGameObjectUnit).GetComponentInChildren<TextMeshProUGUI>();
+
+        var (musicVolume, fxVolume) = DataManager.Instance.LoadVolumeSettings();
+        volumenBankMaster = fxVolume;
+        volumenBankMusic = musicVolume;
+        setMusicVolume(volumenBankMusic);
+        setFXVolume(volumenBankMaster);
+        menuSettingsVolumeMusicUp = transform.Find("Music").transform.Find("ButtonUp").GetComponent<Button>();
+        menuSettingsVolumeMusicDown = transform.Find("Music").transform.Find("ButtonDown").GetComponent<Button>();
+        menuSettingsVolumeFXUp = transform.Find("FX").transform.Find("ButtonUp").GetComponent<Button>();
+        menuSettingsVolumeFXDown = transform.Find("FX").transform.Find("ButtonDown").GetComponent<Button>();
+        menuPauseExitButton = transform.Find("ExitButton").GetComponent<Button>();
     }
 
     public void upVolumeMusic()
     {
-        SetMusicVolume(true);
+        setMusicVolumeByStep(true);
+        menuSettingsVolumeMusicUp.interactable = false;
+        menuSettingsVolumeMusicUp.interactable = true;
     }
     public void downVolumeMusic()
     {
-        SetMusicVolume(false);
+        setMusicVolumeByStep(false);
+        menuSettingsVolumeMusicDown.interactable = false;
+        menuSettingsVolumeMusicDown.interactable = true;
     }
     public void upVolumeFX()
     {
-        SetFXVolume(true);
+        setFXVolumeByStep(true);
+        menuSettingsVolumeFXUp.interactable = false;
+        menuSettingsVolumeFXUp.interactable = true;
     }
     public void downVolumeFX()
     {
-        SetFXVolume(false);
+        setFXVolumeByStep(false);
+        menuSettingsVolumeFXDown.interactable = false;
+        menuSettingsVolumeFXDown.interactable = true;
     }
 
     public void buttonExit()
     {
         gameObject.SetActive(false);
-        GameEvents.instance.pauseScene.Invoke();
+        GameEvents.instance.returnPauseScene.Invoke();
+        DataManager.Instance.SaveVolumeSettings(volumenBankMusic, volumenBankMaster);
+        menuPauseExitButton.interactable = false;
+        menuPauseExitButton.interactable = true;
     }
 
     private string getVolumeMusicPercent()
@@ -57,16 +85,26 @@ public class MixAudio : MonoBehaviour
         return (volumenBankMaster * 100).ToString("0");
     }
 
-    private void SetMusicVolume(bool increment)
+    private void setMusicVolumeByStep(bool increment)
     {
-        volumenBankMusic = setLimitsAudio(increment ? volumenBankMusic + scaleIncrement : volumenBankMusic - scaleIncrement);
-        musicBusMusic.setVolume(volumenBankMusic);
+        setMusicVolume(increment ? volumenBankMusic + scaleIncrement : volumenBankMusic - scaleIncrement);
+    }
+
+    private void setMusicVolume(float value)
+    {
+        volumenBankMusic = setLimitsAudio(value);
+        FMODUtils.setVolumenBankMusic(volumenBankMusic);
         textMusic.text = getVolumeMusicPercent();
     }
-    private void SetFXVolume(bool increment)
+    private void setFXVolumeByStep(bool increment)
     {
-        volumenBankMaster = setLimitsAudio(increment ? volumenBankMaster + scaleIncrement : volumenBankMaster - scaleIncrement);
-        musicBusMaster.setVolume(volumenBankMaster);
+        setFXVolume(increment ? volumenBankMaster + scaleIncrement : volumenBankMaster - scaleIncrement);
+    }
+
+    private void setFXVolume(float value)
+    {
+        volumenBankMaster = setLimitsAudio(value);
+        FMODUtils.setVolumenBankMaster(volumenBankMusic);
         textFX.text = getVolumeFXPercent();
     }
 

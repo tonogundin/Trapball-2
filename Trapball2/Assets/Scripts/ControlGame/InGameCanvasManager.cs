@@ -6,25 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class InGameCanvasManager : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
-    [SerializeField] Button pauseButton;
-    [SerializeField] Sprite[] pauseImages;
-    Image pauseButtonImg;
+
     private void Awake()
     {
-        pauseButtonImg = pauseButton.GetComponent<Image>();
     }
     public void OnPauseButtonClicked()
     {
         Time.timeScale = 0; //Time stops.
-        pauseButtonImg.sprite = pauseImages[1];
-        pauseMenu.SetActive(true);
     }
     public void OnContinueButtonClicked()
     {
         Time.timeScale = 1;
-        pauseButtonImg.sprite = pauseImages[0];
-        pauseMenu.SetActive(false);
     }
     public void OnExitButtonClicked()
     {

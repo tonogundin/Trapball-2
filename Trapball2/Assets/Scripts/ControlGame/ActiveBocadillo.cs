@@ -5,6 +5,7 @@ public class ActiveBocadillo : MonoBehaviour
     public GameObject bocadilloObject;
     public bool isUsed = false;
     public string text = "";
+    public float timeLife = 4f;
     private Bocadillo bocadilloScript;
     // Start is called before the first frame update
     void Start()
@@ -27,12 +28,12 @@ public class ActiveBocadillo : MonoBehaviour
                 if (!isUsed && bocadilloScript != null)
                 {
                     // Llama al método "ActiveBocadillo" del script
-                    bocadilloScript.ActiveBocadillo(text);
+                    bocadilloScript.ActiveBocadillo(text, timeLife);
                     isUsed = true;
                 }
                 else
                 {
-                    Debug.LogError("Usado o bien El componente Bocadillo no se encontró en BocadilloObject");
+                    Debug.LogWarning("Usado o bien El componente Bocadillo no se encontró en BocadilloObject");
                 }
                 break;
         }

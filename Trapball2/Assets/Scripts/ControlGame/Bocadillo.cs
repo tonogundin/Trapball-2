@@ -5,6 +5,7 @@ using TMPro;
 public class Bocadillo : MonoBehaviour
 {
     public float growDuration = 2f;
+    public bool isWithScale = true;
 
     private RectTransform rectTransform;
 
@@ -15,14 +16,17 @@ public class Bocadillo : MonoBehaviour
     public float fadeDuration = 1.0f;
 
     // Tiempo antes de comenzar a desaparecer
-    public float waitTimeBeforeFade = 10.0f;
+    private float waitTimeBeforeFade = 10.0f;
 
     public TextMeshProUGUI textBocadillo;
 
-    public void ActiveBocadillo(string text)
-    {
-        text = text.Replace("\\n", "\n");
+    public Bocadillo otherBocadillo;
 
+    public void ActiveBocadillo(string text, float timeLife)
+    {
+        closed();
+        text = text.Replace("\\n", "\n");
+        waitTimeBeforeFade = timeLife;
         textBocadillo.text = text;
         // Si es un objeto UI, obtén el CanvasGroup
         canvasGroup = GetComponent<CanvasGroup>();
@@ -35,10 +39,24 @@ public class Bocadillo : MonoBehaviour
             canvasGroup.alpha = 1.0f;
         }
         // Establece el tamaño inicial a 0
-        transform.localScale = Vector3.zero;
+        if (isWithScale)
+        {
+            transform.localScale = Vector3.zero;
+        }
+        
         gameObject.SetActive(true);
+        otherBocadillo.closed();
+
         // Inicia la coroutine para crecer
         StartCoroutine(GrowFromZeroToOriginalSize());
+    }
+
+    public void closed()
+    {
+        if (this.isActiveAndEnabled)
+        {
+            StartCoroutine(FadeOutAction());
+        }
     }
 
     IEnumerator GrowFromZeroToOriginalSize()
@@ -76,21 +94,27 @@ public class Bocadillo : MonoBehaviour
     {
         // Espera un tiempo específico antes de comenzar a desaparecer
         yield return new WaitForSeconds(waitTimeBeforeFade);
-
+        StartCoroutine(FadeOutAction());
+    }
+    IEnumerator FadeOutAction()
+    {
         float currentTime = 0;
 
-        while (currentTime < fadeDuration)
+        if (canvasGroup.alpha == 1)
         {
-            // Incrementa el tiempo actual
-            currentTime += Time.deltaTime;
+            while (currentTime < fadeDuration)
+            {
+                // Incrementa el tiempo actual
+                currentTime += Time.deltaTime;
 
-            // Ajusta el alpha del CanvasGroup de 1 a 0 para desaparecer
-            canvasGroup.alpha = Mathf.Lerp(1, 0, currentTime / fadeDuration);
+                // Ajusta el alpha del CanvasGroup de 1 a 0 para desaparecer
+                canvasGroup.alpha = Mathf.Lerp(1, 0, currentTime / fadeDuration);
 
-            yield return null;
+                yield return null;
+            }
+
+            // Opcional: Desactiva el GameObject al finalizar la animación de desaparición
+            gameObject.SetActive(false);
         }
-
-        // Opcional: Desactiva el GameObject al finalizar la animación de desaparición
-        gameObject.SetActive(false);
     }
-}
+ }
