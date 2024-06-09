@@ -693,6 +693,7 @@ public class Player : MonoBehaviour, IResettable
     {
         if (Cursor.visible)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
         isRumbleActive = true;
@@ -702,11 +703,14 @@ public class Player : MonoBehaviour, IResettable
         if (Cursor.visible)
         {
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
         }
         isRumbleActive = false;
     }
     public void OnDetectMouse(InputValue value)
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         isRumbleActive = false;
     }
 

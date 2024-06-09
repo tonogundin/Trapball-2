@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
-
+    public string scene;
     FMODUnity.StudioEventEmitter emitter;
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +23,6 @@ public class Exit : MonoBehaviour
         emitter.SetParameter(FMODConstants.STATE_MUSIC, (int) FMODConstants.MUSIC_STATE.FINAL);
         yield return new WaitForSeconds(5.5f);
         FMODUtils.stopAllEvents();
-        SceneManager.LoadSceneAsync("Menu");
+        SceneManager.LoadSceneAsync(scene);
     }
 }

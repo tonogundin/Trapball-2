@@ -83,6 +83,16 @@ public class FMODConstants
         DEATH_VOICE,
     }
 
+    public enum HUD
+    {
+        [FMODUtils.StringValue("event:/HUD/Enter-Exit")]
+        BUTTON_CLICK,
+        [FMODUtils.StringValue("event:/HUD/Select")]
+        BUTTON_SELECT,
+        [FMODUtils.StringValue("event:/HUD/Stinger_Start")]
+        GAME_START,
+    }
+
     public enum ENEMIES
     {
         [FMODUtils.StringValue("event:/Enemigos/BallMouseRun")]

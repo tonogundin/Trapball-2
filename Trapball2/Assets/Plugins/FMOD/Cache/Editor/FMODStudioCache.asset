@@ -43,8 +43,8 @@ MonoBehaviour:
     Data3: 1359388800
     Data4: 897182370
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
     Data3: -789344862
     Data4: 2096164127
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -173,8 +173,8 @@ MonoBehaviour:
     Data3: 1420710287
     Data4: 1293108482
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -256,6 +256,32 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7173052928496586128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage1/StageFinal
+  m_EditorClassIdentifier: 
+  Name: StageFinal
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4093962573
+    data2: 678436107
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - OnStage
+  - Final
+  Exists: 1
 --- !u!114 &-7173019147825325065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,32 +310,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 38048
---- !u!114 &-7162806991775911437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage2/StageFinal
-  m_EditorClassIdentifier: 
-  Name: StageFinal
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4093962573
-    data2: 678436107
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - OnStage
-  - Final
-  Exists: 1
 --- !u!114 &-7037399623017574615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,8 +329,8 @@ MonoBehaviour:
     Data3: 1904919692
     Data4: 446484951
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: -2381375456174760787}
+  - {fileID: 7819196344126980065}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -357,8 +357,8 @@ MonoBehaviour:
     Data3: -1591944802
     Data4: -1047444788
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -394,6 +394,62 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2062
+--- !u!114 &-6657756018056006097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Select
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Select
+  Guid:
+    Data1: -399678512
+    Data2: 1074758580
+    Data3: 2077350022
+    Data4: -224220554
+  Banks:
+  - {fileID: 8797814100714432702}
+  - {fileID: 6458391617540543664}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 259
+--- !u!114 &-6523836414143946947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Enter-Exit
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Enter-Exit
+  Guid:
+    Data1: 476608042
+    Data2: 1236027669
+    Data3: 892328363
+    Data4: 1138379048
+  Banks:
+  - {fileID: 8797814100714432702}
+  - {fileID: 6458391617540543664}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 272
 --- !u!114 &-5873012223315549605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +525,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-5377616778252802998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Stage3
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Stage3
+  Guid:
+    Data1: 1356605075
+    Data2: 1337729166
+    Data3: 614084784
+    Data4: -569768865
+  Banks:
+  - {fileID: 3295960355745021443}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1980513221606097908}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 85161
 --- !u!114 &-5109906935518218415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,8 +572,8 @@ MonoBehaviour:
     Data3: 1685737346
     Data4: 973510672
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -518,8 +602,8 @@ MonoBehaviour:
     Data3: -929057633
     Data4: -973880825
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -572,8 +656,8 @@ MonoBehaviour:
     Data3: 1559816125
     Data4: 741189368
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -624,8 +708,8 @@ MonoBehaviour:
     Data3: -1611574607
     Data4: -1330225890
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -685,7 +769,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4231578581022753324
+--- !u!114 &-4099645709058698711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -695,23 +779,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/FinalStage
+  m_Name: event:/Musica/Stage2
   m_EditorClassIdentifier: 
-  Path: event:/Musica/FinalStage
+  Path: event:/Musica/Stage2
   Guid:
-    Data1: 1181394849
-    Data2: 1089843081
-    Data3: 1207296655
-    Data4: -1414091382
+    Data1: 1466804578
+    Data2: 1208971138
+    Data3: -116538742
+    Data4: 294334988
   Banks:
   - {fileID: 3295960355745021443}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8972926191891132645}
+  - {fileID: 3030708849534826217}
   MinDistance: 1
   MaxDistance: 20
-  Length: 8225
+  Length: 85645
 --- !u!114 &-3939099659395690153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,8 +817,8 @@ MonoBehaviour:
     Data3: 732003717
     Data4: 1853070876
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -759,8 +845,8 @@ MonoBehaviour:
     Data3: 2050484878
     Data4: 174142389
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -812,8 +898,8 @@ MonoBehaviour:
     Data3: -1019449463
     Data4: -496899729
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -891,8 +977,8 @@ MonoBehaviour:
     Data3: -1146396246
     Data4: 1241200842
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -917,10 +1003,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638476045370201046
+  lastModified: 638533010260621208
   FileSizes:
   - Name: Desktop
-    Value: 3786
+    Value: 4036
   Exists: 1
 --- !u!114 &-2763837879923221437
 MonoBehaviour:
@@ -1009,7 +1095,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Ambience.bank
   Name: SFX Ambience
   StudioPath: bank:/SFX Ambience
-  lastModified: 638476045409386919
+  lastModified: 638421566750724270
   FileSizes:
   - Name: Desktop
     Value: 332800
@@ -1069,30 +1155,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1935
---- !u!114 &-1857931245834567527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage1/percentStage
-  m_EditorClassIdentifier: 
-  Name: percentStage
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-1839853363818361927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,33 +1183,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1161325435347255070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Pause
-  m_EditorClassIdentifier: 
-  Path: snapshot:/Pause
-  Guid:
-    Data1: -659902367
-    Data2: 1096253232
-    Data3: -1097680742
-    Data4: 129428669
-  Banks:
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
 --- !u!114 &-1022528380665196886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,8 +1202,8 @@ MonoBehaviour:
     Data3: -288872779
     Data4: -948149343
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: -2381375456174760787}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1195,8 +1230,8 @@ MonoBehaviour:
     Data3: 990353588
     Data4: 981400755
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1224,8 +1259,8 @@ MonoBehaviour:
     Data3: -960846710
     Data4: 807945690
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: -2381375456174760787}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1233,35 +1268,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 30000
---- !u!114 &-582995894740504043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/Stage2
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/Stage2
-  Guid:
-    Data1: 1466804578
-    Data2: 1208971138
-    Data3: -116538742
-    Data4: 294334988
-  Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -27549972324201153}
-  - {fileID: -7162806991775911437}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 85645
 --- !u!114 &-500619951261303027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,8 +1287,8 @@ MonoBehaviour:
     Data3: -1413558892
     Data4: -77105335
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1340,8 +1346,8 @@ MonoBehaviour:
     Data3: -1510758466
     Data4: 265422733
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: -2381375456174760787}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1349,30 +1355,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12046
---- !u!114 &-27549972324201153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage2/percentStage
-  m_EditorClassIdentifier: 
-  Name: percentStage
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,6 +1374,7 @@ MonoBehaviour:
   - {fileID: -2381375456174760787}
   - {fileID: 8649223794283648005}
   - {fileID: 8797814100714432702}
+  - {fileID: 6458391617540543664}
   EditorEvents:
   - {fileID: -3939099659395690153}
   - {fileID: -8138172109560513262}
@@ -1419,11 +1402,7 @@ MonoBehaviour:
   - {fileID: 3901953700538720911}
   - {fileID: -4904376910731220231}
   - {fileID: 1599962591052970580}
-  - {fileID: 8602456570880089722}
-  - {fileID: -582995894740504043}
   - {fileID: -4968591759223071976}
-  - {fileID: 1886351174409139194}
-  - {fileID: -4231578581022753324}
   - {fileID: 2734258957869524580}
   - {fileID: -5847327289335076550}
   - {fileID: -4355568981393818176}
@@ -1440,40 +1419,23 @@ MonoBehaviour:
   - {fileID: -2233287210974964362}
   - {fileID: -3883866146420004137}
   - {fileID: -315958557170172007}
-  - {fileID: -1161325435347255070}
+  - {fileID: 8353789650512219328}
+  - {fileID: -4099645709058698711}
+  - {fileID: -5377616778252802998}
+  - {fileID: 6069167172903520065}
+  - {fileID: -6523836414143946947}
+  - {fileID: -6657756018056006097}
+  - {fileID: 1561360419414096071}
+  - {fileID: 2122826850651172171}
+  - {fileID: 5750801091396892903}
+  - {fileID: 4179748128995134435}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7819196344126980065}
   StringsBanks:
   - {fileID: -2787406691297457171}
-  cacheTime: 638476045418930295
+  cacheTime: 638533022927255255
   cacheVersion: 131616
---- !u!114 &44017376591535906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage1/StageFinal
-  m_EditorClassIdentifier: 
-  Name: StageFinal
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4093962573
-    data2: 678436107
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - OnStage
-  - Final
-  Exists: 1
 --- !u!114 &495266217526118376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,8 +1483,8 @@ MonoBehaviour:
     Data3: -429088337
     Data4: -606805632
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1610,6 +1572,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &1561360419414096071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Pause
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Pause
+  Guid:
+    Data1: -659902367
+    Data2: 1096253232
+    Data3: -1097680742
+    Data4: 129428669
+  Banks:
+  - {fileID: 7819196344126980065}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &1599962591052970580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1629,8 +1618,8 @@ MonoBehaviour:
     Data3: 1551542444
     Data4: 1686802647
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1663,34 +1652,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &1886351174409139194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/Stage3
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/Stage3
-  Guid:
-    Data1: 1356605075
-    Data2: 1337729166
-    Data3: 614084784
-    Data4: -569768865
-  Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 3400179851311594129}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 85161
 --- !u!114 &1946319249973331694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1715,6 +1676,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &1980513221606097908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage3/percentStage
+  m_EditorClassIdentifier: 
+  Name: percentStage
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2057384504852436467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1734,8 +1719,8 @@ MonoBehaviour:
     Data3: -1204491628
     Data4: 1442871186
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1743,6 +1728,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2031
+--- !u!114 &2122826850651172171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Stinger_Start
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Stinger_Start
+  Guid:
+    Data1: 536824201
+    Data2: 1221124697
+    Data3: 1699688636
+    Data4: -1721867965
+  Banks:
+  - {fileID: 6458391617540543664}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4008
 --- !u!114 &2596999478778139597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1818,6 +1830,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 813
+--- !u!114 &3030708849534826217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage2/percentStage
+  m_EditorClassIdentifier: 
+  Name: percentStage
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &3186518290046830061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,8 +1873,8 @@ MonoBehaviour:
     Data3: -1772429184
     Data4: 155299684
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1862,34 +1898,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
   Name: Musica
   StudioPath: bank:/Musica
-  lastModified: 638476045409052889
+  lastModified: 638533022927255255
   FileSizes:
   - Name: Desktop
-    Value: 6463776
-  Exists: 1
---- !u!114 &3400179851311594129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage3/percentStage
-  m_EditorClassIdentifier: 
-  Name: percentStage
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
+    Value: 8422816
   Exists: 1
 --- !u!114 &3901953700538720911
 MonoBehaviour:
@@ -1910,8 +1922,8 @@ MonoBehaviour:
     Data3: -57636446
     Data4: 2079947479
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1944,6 +1956,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &4179748128995134435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/MainMenu
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/MainMenu
+  Guid:
+    Data1: 211163831
+    Data2: 1084794540
+    Data3: -2066133876
+    Data4: -1797510395
+  Banks:
+  - {fileID: 3295960355745021443}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 141600
 --- !u!114 &4349392250277669389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,8 +2002,8 @@ MonoBehaviour:
     Data3: -1183417462
     Data4: 783710001
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2124,6 +2163,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5750801091396892903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Play
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Play
+  Guid:
+    Data1: 1116133344
+    Data2: 1198066591
+    Data3: -1554001257
+    Data4: 359627923
+  Banks:
+  - {fileID: 6458391617540543664}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 448
 --- !u!114 &5951720549856271208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2171,6 +2237,77 @@ MonoBehaviour:
   Type: 0
   IsGlobal: 0
   Labels: []
+  Exists: 1
+--- !u!114 &6069167172903520065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/FinalStage
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/FinalStage
+  Guid:
+    Data1: 1181394849
+    Data2: 1089843081
+    Data3: 1207296655
+    Data4: -1414091382
+  Banks:
+  - {fileID: 3295960355745021443}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8225
+--- !u!114 &6289362111234820807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage1/percentStage
+  m_EditorClassIdentifier: 
+  Name: percentStage
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6458391617540543664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/HUD.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/HUD.bank
+  Name: HUD
+  StudioPath: bank:/HUD
+  lastModified: 638533022926179210
+  FileSizes:
+  - Name: Desktop
+    Value: 74592
   Exists: 1
 --- !u!114 &6955445079511667569
 MonoBehaviour:
@@ -2265,41 +2402,12 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638476045370151042
+  lastModified: 638533010260569427
   FileSizes:
   - Name: Desktop
     Value: 2079520
   Exists: 1
---- !u!114 &8424018929093887242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoLow
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoLow
-  Guid:
-    Data1: 1941033933
-    Data2: 1209141892
-    Data3: -1560797530
-    Data4: 945605478
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -8023150298642515315}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1500
---- !u!114 &8602456570880089722
+--- !u!114 &8353789650512219328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2323,11 +2431,40 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -1857931245834567527}
-  - {fileID: 44017376591535906}
+  - {fileID: -7173052928496586128}
+  - {fileID: 6289362111234820807}
   MinDistance: 1
   MaxDistance: 20
   Length: 240483
+--- !u!114 &8424018929093887242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/SaltoLow
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/SaltoLow
+  Guid:
+    Data1: 1941033933
+    Data2: 1209141892
+    Data3: -1560797530
+    Data4: 945605478
+  Banks:
+  - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8023150298642515315}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &8649223794283648005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2343,7 +2480,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
   Name: SFX Dynamic
   StudioPath: bank:/SFX Dynamic
-  lastModified: 638476045416601256
+  lastModified: 638422375615017255
   FileSizes:
   - Name: Desktop
     Value: 1743744
@@ -2363,10 +2500,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
   Name: SFX Linear
   StudioPath: bank:/SFX Linear
-  lastModified: 638476045418930295
+  lastModified: 638533010302933897
   FileSizes:
   - Name: Desktop
-    Value: 1097312
+    Value: 1107808
   Exists: 1
 --- !u!114 &8948373402745503836
 MonoBehaviour:
@@ -2387,8 +2524,8 @@ MonoBehaviour:
     Data3: -781381974
     Data4: -532051344
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2396,3 +2533,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2125
+--- !u!114 &8972926191891132645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage2/StageFinal
+  m_EditorClassIdentifier: 
+  Name: StageFinal
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4093962573
+    data2: 678436107
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - OnStage
+  - Final
+  Exists: 1

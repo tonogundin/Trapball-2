@@ -44,27 +44,39 @@ public class MixAudio : MonoBehaviour
 
     public void upVolumeMusic()
     {
+        SetSelectSound(menuSettingsVolumeMusicUp, false);
         setMusicVolumeByStep(true);
         menuSettingsVolumeMusicUp.interactable = false;
         menuSettingsVolumeMusicUp.interactable = true;
+        menuSettingsVolumeMusicUp.Select();
+        SetSelectSound(menuSettingsVolumeMusicUp, true);
     }
     public void downVolumeMusic()
     {
+        SetSelectSound(menuSettingsVolumeMusicDown, false);
         setMusicVolumeByStep(false);
         menuSettingsVolumeMusicDown.interactable = false;
         menuSettingsVolumeMusicDown.interactable = true;
+        menuSettingsVolumeMusicDown.Select();
+        SetSelectSound(menuSettingsVolumeMusicDown, true);
     }
     public void upVolumeFX()
     {
+        SetSelectSound(menuSettingsVolumeFXUp, false);
         setFXVolumeByStep(true);
         menuSettingsVolumeFXUp.interactable = false;
         menuSettingsVolumeFXUp.interactable = true;
+        menuSettingsVolumeFXUp.Select();
+        SetSelectSound(menuSettingsVolumeFXUp, true);
     }
     public void downVolumeFX()
     {
+        SetSelectSound(menuSettingsVolumeFXDown, false);
         setFXVolumeByStep(false);
         menuSettingsVolumeFXDown.interactable = false;
         menuSettingsVolumeFXDown.interactable = true;
+        menuSettingsVolumeFXDown.Select();
+        SetSelectSound(menuSettingsVolumeFXDown, true);
     }
 
     public void buttonExit()
@@ -104,12 +116,21 @@ public class MixAudio : MonoBehaviour
     private void setFXVolume(float value)
     {
         volumenBankMaster = setLimitsAudio(value);
-        FMODUtils.setVolumenBankMaster(volumenBankMusic);
+        FMODUtils.setVolumenBankMaster(volumenBankMaster);
         textFX.text = getVolumeFXPercent();
     }
 
     private float setLimitsAudio(float volume)
     {
         return volume > 1 ? 1 : volume < 0 ? 0 : volume;
+    }
+
+    private void SetSelectSound(Button button, bool shouldPlay)
+    {
+        SoundButton soundButton = button.GetComponent<SoundButton>();
+        if (soundButton != null)
+        {
+            soundButton.SetShouldPlaySelectSound(shouldPlay);
+        }
     }
 }

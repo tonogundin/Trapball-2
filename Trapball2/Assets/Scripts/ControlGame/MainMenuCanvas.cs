@@ -9,13 +9,15 @@ public class MainMenuCanvas : MonoBehaviour
 
     public GameObject LogoTrapBall;
     public GameObject Instructions;
-    public GameObject pressA;
-    private bool firstPress = false;
-    private bool secondPress = false;
+    public GameObject Loading;
+
+    private StateMainMenu state = StateMainMenu.INITIAL;
+    private FMOD.Studio.EventInstance soundStart;
     // Start is called before the first frame update
     void Start()
     {
-        
+        state = StateMainMenu.INITIAL;
+        soundStart = FMODUtils.createInstance(FMODConstants.HUD.GAME_START);
     }
 
     // Update is called once per frame
@@ -27,16 +29,19 @@ public class MainMenuCanvas : MonoBehaviour
     {
         if (!value.isPressed)
         {
-            if (!firstPress && !secondPress)
+            switch(state)
             {
-                StartCoroutine(delayStep());
-                LogoTrapBall.SetActive(false);
-                pressA.SetActive(false);
-                Instructions.SetActive(true);
-            } else if (firstPress && !secondPress)
-            {
-                secondPress = true;
-                SceneManager.LoadSceneAsync("Level1_develop_newMusic");
+                case StateMainMenu.INITIAL:
+                    StartCoroutine(delayStep());
+                    LogoTrapBall.SetActive(false);
+                    Instructions.SetActive(true);
+                    break;
+                case StateMainMenu.INSTRUCTIONS:
+                    state = StateMainMenu.LOADING;
+                    FMODUtils.stopAllEvents();
+                    soundStart.start();
+                    StartCoroutine(delayStepLoading());
+                    break;
             }
 
         }
@@ -59,7 +64,30 @@ public class MainMenuCanvas : MonoBehaviour
     IEnumerator delayStep()
     {
         yield return new WaitForSeconds(0.5f);
-        firstPress = true;
+        state = StateMainMenu.INSTRUCTIONS;
+    }
+
+
+    IEnumerator delayStepLoading()
+    {
+        yield return new WaitForSeconds(2f);
+        Instructions.SetActive(false);
+        Loading.SetActive(true);
+        state = StateMainMenu.FINAL;
+        StartCoroutine(delayStepFinal());
+    }
+    IEnumerator delayStepFinal()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadSceneAsync("Level1_develop_newMusic");
+    }
+
+    private enum StateMainMenu
+    {
+        INITIAL,
+        INSTRUCTIONS,
+        LOADING,
+        FINAL
     }
 
 }

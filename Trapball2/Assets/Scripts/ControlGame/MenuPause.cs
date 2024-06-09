@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MenuPause : MonoBehaviour
@@ -9,8 +10,14 @@ public class MenuPause : MonoBehaviour
     private Button menuPauseContinueButton;
     private Button menuPauseSettingsButton;
     private Button menuPauseExitButton;
+    private Button menuPauseExitSettingsButton;
     public GameObject menuSettings;
-    // Start is called before the first frame update
+    public PlayerInput playerInput;
+    private Button[] buttons;
+
+    private Button lastSelectedButton;
+
+
     void Start()
     {
         GameEvents.instance.pauseScene.AddListener(showMenuPause);
@@ -21,6 +28,22 @@ public class MenuPause : MonoBehaviour
         menuPauseContinueButton = menuPause.transform.Find("ContinueButton").GetComponent<Button>();
         menuPauseSettingsButton = menuPause.transform.Find("SettingsButton").GetComponent<Button>();
         menuPauseExitButton = menuPause.transform.Find("ExitButton").GetComponent<Button>();
+        menuPauseExitSettingsButton = menuSettings.transform.Find("ExitButton").GetComponent<Button>();
+        buttons = new Button[] { menuPauseContinueButton, menuPauseSettingsButton, menuPauseExitButton };
+        lastSelectedButton = menuPauseContinueButton;
+    }
+
+    private void Update()
+    {
+        // Verifica si no hay ningún botón seleccionado
+        if (EventSystem.current.currentSelectedGameObject == null)
+        {
+            lastSelectedButton.Select();
+        }
+        else
+        {
+            lastSelectedButton = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+        }
     }
 
     void OnApplicationPause(bool pauseStatus)
@@ -30,11 +53,13 @@ public class MenuPause : MonoBehaviour
             FMODUtils.setSnapshot(true);
         }
     }
+
     public void OnMouse(InputValue value)
     {
         if (!Cursor.visible)
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -43,19 +68,14 @@ public class MenuPause : MonoBehaviour
         if (!Cursor.visible)
         {
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
-    public void OnMove(InputValue value)
-    {
-        
-    }
-    public void OnPressButton(InputValue value)
-    {
 
-    }
     public void buttonContinue()
     {
+        playerInput.enabled = false;
         menuPause.SetActive(false);
         Time.timeScale = 1;
         FMODUtils.setSnapshot(false);
@@ -65,7 +85,10 @@ public class MenuPause : MonoBehaviour
 
     public void buttonExit()
     {
-        FMODUtils.setSnapshot(true);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        playerInput.enabled = false;
+        FMODUtils.setSnapshot(false);
         SceneManager.LoadSceneAsync("Menu");
         menuPauseExitButton.interactable = false;
         menuPauseExitButton.interactable = true;
@@ -73,6 +96,7 @@ public class MenuPause : MonoBehaviour
 
     public void buttonSettings()
     {
+        EventSystem.current.SetSelectedGameObject(menuPauseExitSettingsButton.gameObject);
         menuPause.SetActive(false);
         menuSettings.SetActive(true);
         menuPauseSettingsButton.interactable = false;
@@ -84,6 +108,10 @@ public class MenuPause : MonoBehaviour
     {
         if (!menuPause.activeSelf && !menuSettings.activeSelf)
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            EventSystem.current.SetSelectedGameObject(buttons[(int)MenuButtons.CONTINUE].gameObject);
+            playerInput.enabled = true;
             FMODUtils.setSnapshot(true);
             menuPause.SetActive(true);
             Time.timeScale = 0;
@@ -93,7 +121,16 @@ public class MenuPause : MonoBehaviour
     {
         if (!menuPause.activeSelf && !menuSettings.activeSelf)
         {
+            EventSystem.current.SetSelectedGameObject(buttons[(int)MenuButtons.SETTINGS].gameObject);
             menuPause.SetActive(true);
         }
+    }
+
+
+    private enum MenuButtons
+    {
+        CONTINUE = 0,
+        SETTINGS = 1,
+        EXIT = 2
     }
 }
