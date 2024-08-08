@@ -1,23 +1,33 @@
-using UnityEngine.SceneManagement;
-using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 
 public class MainMenuCanvas : MonoBehaviour
 {
 
-    public GameObject LogoTrapBall;
-    public GameObject Instructions;
-    public GameObject Loading;
+    public GameObject logoTrapBall;
+    public GameObject instructions;
+    public GameObject loading;
+    public GameObject menu;
 
     private StateMainMenu state = StateMainMenu.INITIAL;
     private FMOD.Studio.EventInstance soundStart;
+
+    private Button menuNewGame;
+    private Button menuSettings;
+
     // Start is called before the first frame update
     void Start()
     {
+        menuNewGame = menu.transform.Find("NewGame").GetComponent<Button>();
+        menuSettings = menu.transform.Find("Settings").GetComponent<Button>();
         state = StateMainMenu.INITIAL;
         soundStart = FMODUtils.createInstance(FMODConstants.HUD.GAME_START);
+        EventSystem.current.SetSelectedGameObject(menuNewGame.gameObject);
     }
 
     // Update is called once per frame
@@ -31,11 +41,6 @@ public class MainMenuCanvas : MonoBehaviour
         {
             switch(state)
             {
-                case StateMainMenu.INITIAL:
-                    StartCoroutine(delayStep());
-                    LogoTrapBall.SetActive(false);
-                    Instructions.SetActive(true);
-                    break;
                 case StateMainMenu.INSTRUCTIONS:
                     state = StateMainMenu.LOADING;
                     FMODUtils.stopAllEvents();
@@ -46,6 +51,14 @@ public class MainMenuCanvas : MonoBehaviour
 
         }
     }
+
+    public void selectNewGame()
+    {
+        StartCoroutine(delayStep());
+        logoTrapBall.SetActive(false);
+        instructions.SetActive(true);
+    }
+
 
     public void OnDetectControllerOrKeyboard(InputValue value)
     {
@@ -70,16 +83,16 @@ public class MainMenuCanvas : MonoBehaviour
 
     IEnumerator delayStepLoading()
     {
-        yield return new WaitForSeconds(2f);
-        Instructions.SetActive(false);
-        Loading.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        instructions.SetActive(false);
+        loading.SetActive(true);
         state = StateMainMenu.FINAL;
         StartCoroutine(delayStepFinal());
     }
     IEnumerator delayStepFinal()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadSceneAsync("Level1_develop_newMusic");
+        SceneManager.LoadSceneAsync("Intro");
     }
 
     private enum StateMainMenu

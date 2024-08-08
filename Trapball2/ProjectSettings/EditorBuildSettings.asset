@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1_develop_newMusic.unity
     guid: b5104a57edfef5f4b8350971ca436dcb
   - enabled: 1
-    path: Assets/Scenes/Level2_develop.unity
-    guid: dd5f57caa03883b40ad137a5c0deec1a
+    path: Assets/Scenes/Intro.unity
+    guid: e44369717d7ee9142991ed9dbcfc7137
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4e9345c65098d46cdb5ca77cbcb6ff1f, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 2186a59b671c94b439fdf8ee610ecf5b, type: 2}

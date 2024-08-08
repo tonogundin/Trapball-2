@@ -17,7 +17,6 @@ public class Player : MonoBehaviour, IResettable
     public StatePlayer state = StatePlayer.NONE;
     private StateSoundImpactPlayer stateImpactTerrain = StateSoundImpactPlayer.NONE;
 
-
     public bool isRumbleActive = false;
     public GameController gameController;
     public bool especialStage = false;
@@ -26,6 +25,16 @@ public class Player : MonoBehaviour, IResettable
     public float positionFinal;
     public bool ejeX;
     public float percentStage;
+
+    // Variables para el efecto de stretch y squash
+    public float stretchHeight = 2f; // Factor de estiramiento en altura
+    public float squashHeight = 0.5f; // Factor de aplastamiento en altura
+    public float duration = 0.1f; // Duración del efecto en segundos
+
+    private Vector3 originalScale;
+    private Coroutine stretchCoroutine;
+    private Coroutine squashCoroutine;
+
 
     // PRIVATE
     [SerializeField] private PhysicMaterial BOUNCY;
@@ -71,19 +80,23 @@ public class Player : MonoBehaviour, IResettable
 
     void Awake()
     {
+        //ballParent = transform.parent.transform;
         liveInit = live;
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<SphereCollider>();
         particles = transform.GetChild(0).GetComponent<ParticlesExplosion>();
         currentGravityFactor = initGravityFactor;
         resetJumpForce();
+
+        // Inicializar la escala original
+        originalScale = transform.localScale;
     }
 
     void Start()
     {
         state = StatePlayer.JUMP;
         camShakeScript = GameManager.gM.cam.GetComponent<CameraShake>();
-        
+
         playerSoundroll = FMODUtils.createInstance(FMODConstants.MOVE.PLAYER_ROLL);
         impactFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_PLAYER);
         impactBombFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_BOMB);
@@ -95,13 +108,15 @@ public class Player : MonoBehaviour, IResettable
         playerSoundroll.start();
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         if (isActiveMovement())
         {
             movementPlayer = especialStage ? 60 : movementPlayer;
             rb.AddForce(new Vector3(movementPlayer, 0, movementPlayerExpecialZ) * MOVEMENT_FORCE, ForceMode.Force); //Para movimiento.
             manageExtraGravity();
-            if (!freeFall) {
+            if (!freeFall)
+            {
                 ManageBallSpeed();
             }
         }
@@ -109,7 +124,8 @@ public class Player : MonoBehaviour, IResettable
         playerSoundroll.setParameterByName(FMODConstants.SPEED, velocityBall.x);
     }
 
-    void Update() {
+    void Update()
+    {
         if (isActiveMovement())
         {
             processJumpForce();
@@ -133,6 +149,7 @@ public class Player : MonoBehaviour, IResettable
             rb.rotation = new Quaternion(0.0f, 0.0f, rb.rotation.z, rb.rotation.w);
         }
     }
+
     void checkTouchingFloor()
     {
         if (rb.velocity.y <= 0 && state != StatePlayer.INIT_JUMP)
@@ -144,7 +161,8 @@ public class Player : MonoBehaviour, IResettable
             else if (state == StatePlayer.NORMAL)
             {
                 state = StatePlayer.INIT_FALL;
-            } else if (state == StatePlayer.INIT_FALL)
+            }
+            else if (state == StatePlayer.INIT_FALL)
             {
                 StartCoroutine(setStateFallThreadDelay());
             }
@@ -182,10 +200,12 @@ public class Player : MonoBehaviour, IResettable
         if (state == StatePlayer.BOMBJUMP)
         {
             setStateEndBombJump(isWater);
+            ApplySquash();
         }
         else if (state != StatePlayer.BOMBJUMP && state != StatePlayer.NORMAL && !isWater)
         {
             setStateNormal();
+            ApplySquash();
         }
     }
 
@@ -197,7 +217,8 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-    void processJumpForce() {
+    void processJumpForce()
+    {
         switch (state)
         {
             case StatePlayer.NORMAL:
@@ -217,9 +238,11 @@ public class Player : MonoBehaviour, IResettable
     {
         jumpCharge = true;
     }
-    void handleButtonUp() {
+    void handleButtonUp()
+    {
         jumpCharge = false;
-        switch (state) {
+        switch (state)
+        {
             case StatePlayer.INIT_FALL:
             case StatePlayer.FALL:
             case StatePlayer.NORMAL:
@@ -232,8 +255,10 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-    void adjustJumpForce() {
-        if (jumpForce > 0) {
+    void adjustJumpForce()
+    {
+        if (jumpForce > 0)
+        {
             jumpForce = Mathf.Clamp(jumpForce, JUMP_LOW_LIMIT, JUMP_LIMIT);
         }
     }
@@ -243,7 +268,8 @@ public class Player : MonoBehaviour, IResettable
         jumpForce = JUMP_LOW_LIMIT - 1;
     }
 
-    void simpleJump() {
+    void simpleJump()
+    {
         state = StatePlayer.INIT_JUMP;
         if (jumpForce < JUMP_LOW_LIMIT)
         {
@@ -260,14 +286,16 @@ public class Player : MonoBehaviour, IResettable
                 FMODUtils.playOneShot(FMODConstants.JUMPS.HIGH, transform.position);
             }
             else
-            { 
+            {
                 FMODUtils.playOneShot(FMODConstants.JUMPS.LOW, transform.position);
             }
         }
         StartCoroutine(setStateJumpThreadDelay());
+        ApplyStretch();
     }
 
-    void setStateBombJump() {
+    void setStateBombJump()
+    {
         state = StatePlayer.BOMBJUMP;
         jumpBombEnabled = false;
         coll.material = BOUNCY; //Le ponemos un material rebotante.
@@ -301,7 +329,8 @@ public class Player : MonoBehaviour, IResettable
         jumpBombEnabled = false;
     }
 
-    IEnumerator setStateJumpThreadDelay() {
+    IEnumerator setStateJumpThreadDelay()
+    {
         yield return new WaitForSeconds(0.15f);
         state = StatePlayer.JUMP;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
@@ -336,21 +365,26 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-    void manageExtraGravity() {
-        if (state != StatePlayer.NORMAL) {
+    void manageExtraGravity()
+    {
+        if (state != StatePlayer.NORMAL)
+        {
             Vector3 vel = rb.velocity;
             vel.y -= currentGravityFactor * Time.fixedDeltaTime;
             rb.velocity = vel;
         }
     }
-    void ManageBallSpeed() {
+    void ManageBallSpeed()
+    {
         //Límite de velocidad
-        if (Mathf.Abs(rb.velocity.x) > SPEED_VELOCITY_LIMIT) {
+        if (Mathf.Abs(rb.velocity.x) > SPEED_VELOCITY_LIMIT)
+        {
             rb.velocity = new Vector3(SPEED_VELOCITY_LIMIT * Mathf.Sign(rb.velocity.x), rb.velocity.y, rb.velocity.z);
         }
         //Ayuda para que no cueste tanto dejar la bola quieta
         //Si la bola a penas se mueve, no hay input de usuario y no está en una rampa (y == 0 + TouchingFloor) se parará por completo.
-        else if (Mathf.Abs(rb.velocity.x) < 0.3f && movementPlayer == 0 && rb.velocity.y == 0) {
+        else if (Mathf.Abs(rb.velocity.x) < 0.3f && movementPlayer == 0 && rb.velocity.y == 0)
+        {
             rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
         }
     }
@@ -378,11 +412,13 @@ public class Player : MonoBehaviour, IResettable
     }
 
     private const float LIMIT_VELOCITY_IMPACT_INTO_WATER = 2.2f;
-    private void OnCollisionEnter(Collision collision) {
+    private void OnCollisionEnter(Collision collision)
+    {
         string tag = collision.gameObject.tag;
         float yVelocity = Utils.limitValue(collision.relativeVelocity.y, FMODConstants.LIMIT_SOUND_VALUE);
         impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
-        switch (tag) {
+        switch (tag)
+        {
             case "SueloPantanoso":
                 if (yVelocity > LIMIT_VELOCITY_IMPACT_INTO_WATER)
                 {
@@ -436,7 +472,6 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-
     private void OnCollisionStay(Collision collision)
     {
         string tag = collision.gameObject.tag;
@@ -470,16 +505,17 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-    private void setTerrainImpactParametersAndStart(FMODConstants.MATERIAL material) {
+    private void setTerrainImpactParametersAndStart(FMODConstants.MATERIAL material)
+    {
         if (stateImpactTerrain == StateSoundImpactPlayer.IMPACT_BOMB_TERRAIN)
         {
-            impactBombFloor.setParameterByName(FMODConstants.TERRAIN, (int) material);
+            impactBombFloor.setParameterByName(FMODConstants.TERRAIN, (int)material);
             impactBombFloor.start();
             stateImpactTerrain = StateSoundImpactPlayer.NONE;
         }
         else if (stateImpactTerrain == StateSoundImpactPlayer.IMPACT_TERRAIN)
         {
-            impactFloor.setParameterByName(FMODConstants.TERRAIN, (int) material);
+            impactFloor.setParameterByName(FMODConstants.TERRAIN, (int)material);
             impactFloor.start();
             stateImpactTerrain = StateSoundImpactPlayer.NONE;
         }
@@ -496,9 +532,10 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-    private void setTerrainParametersToExitMaterialAndStart(FMODConstants.MATERIAL material) {
+    private void setTerrainParametersToExitMaterialAndStart(FMODConstants.MATERIAL material)
+    {
         underWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        exitTerrain.setParameterByName(FMODConstants.TERRAIN, (int) material);
+        exitTerrain.setParameterByName(FMODConstants.TERRAIN, (int)material);
         exitTerrain.start();
     }
 
@@ -509,9 +546,11 @@ public class Player : MonoBehaviour, IResettable
         rb.velocity = new Vector3(0, 0, 0);
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other)
+    {
         string tag = other.tag;
-        switch (tag) {
+        switch (tag)
+        {
             case "Water":
                 collisionFloor(true);
                 setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
@@ -546,15 +585,17 @@ public class Player : MonoBehaviour, IResettable
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Water")) 
+        if (other.CompareTag("Water"))
         {
             currentGravityFactor = -5f;
             rb.angularDrag = 4;
             rb.drag = 2.2f;
         }
     }
-    private void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Water") && state != StatePlayer.NONE) {
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Water") && state != StatePlayer.NONE)
+        {
             currentGravityFactor = initGravityFactor;
             rb.angularDrag = 0.05f;
             rb.drag = 0;
@@ -566,7 +607,7 @@ public class Player : MonoBehaviour, IResettable
         GameManager.gM.ChangeGravityScale(-9.81f); //También cambio la gravedad aquí porque si no se nota más gravedad en las partículas.
         particles.Explode();
         StartCoroutine(delayDead());
-        FMODUtils.playOneShot(FMODConstants.DAMAGE.DEATH_VOICE  , transform.position);
+        FMODUtils.playOneShot(FMODConstants.DAMAGE.DEATH_VOICE, transform.position);
         rb.isKinematic = true;
         GetComponent<Renderer>().enabled = false;
         state = StatePlayer.DEAD;
@@ -598,7 +639,8 @@ public class Player : MonoBehaviour, IResettable
         underWater.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
-    public bool isTouchFloor() {
+    public bool isTouchFloor()
+    {
         return state == StatePlayer.NORMAL;
     }
 
@@ -629,7 +671,7 @@ public class Player : MonoBehaviour, IResettable
     public void addDamage()
     {
         live--;
-        if (live<=0)
+        if (live <= 0)
         {
             die();
         }
@@ -647,7 +689,8 @@ public class Player : MonoBehaviour, IResettable
             if (value.isPressed)
             {
                 handleButtonDown();
-            } else
+            }
+            else
             {
                 handleButtonUp();
             }
@@ -713,6 +756,86 @@ public class Player : MonoBehaviour, IResettable
         Cursor.lockState = CursorLockMode.None;
         isRumbleActive = false;
     }
+
+    private void ApplyStretch()
+    {
+        // Si ya hay una corutina de estiramiento en ejecución, la detenemos
+        if (stretchCoroutine != null)
+        {
+            StopCoroutine(stretchCoroutine);
+        }
+        // Iniciamos una nueva corutina de estiramiento
+        stretchCoroutine = StartCoroutine(Stretch());
+    }
+
+    private void ApplySquash()
+    {
+        // Si ya hay una corutina de aplastamiento en ejecución, la detenemos
+        if (squashCoroutine != null)
+        {
+            StopCoroutine(squashCoroutine);
+        }
+        // Iniciamos una nueva corutina de aplastamiento
+        squashCoroutine = StartCoroutine(Squash());
+    }
+
+    private IEnumerator Stretch()
+    {
+        // Escala objetivo de estiramiento
+        Vector3 stretchedScale = new Vector3(originalScale.x * 0.95f, originalScale.y * 1.05f, originalScale.z);
+
+        // Interpolamos la escala durante el tiempo especificado
+        float elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            transform.localScale = Vector3.Lerp(originalScale, stretchedScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = stretchedScale;
+
+        // Volvemos a la escala original
+        elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            transform.localScale = Vector3.Lerp(stretchedScale, originalScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = originalScale;
+
+        stretchCoroutine = null;
+    }
+
+    private IEnumerator Squash()
+    {
+        // Escala objetivo de aplastamiento
+        Vector3 squashedScale = new Vector3(originalScale.x * 1.05f, originalScale.y * 0.95f, originalScale.z);
+
+        // Interpolamos la escala durante el tiempo especificado
+        float elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            transform.localScale = Vector3.Lerp(originalScale, squashedScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = squashedScale;
+
+        // Volvemos a la escala original
+        elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            transform.localScale = Vector3.Lerp(squashedScale, originalScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = originalScale;
+
+        squashCoroutine = null;
+    }
+
+
 
     void OnGUI()
     {
