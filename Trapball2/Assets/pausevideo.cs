@@ -159,7 +159,7 @@ public class pausevideo : MonoBehaviour
 
     private void launchStage1()
     {
-        SceneManager.LoadSceneAsync("Level1_develop_newMusic");
+        SceneManager.LoadSceneAsync("Level1");
     }
     private void switchPart()
     {
