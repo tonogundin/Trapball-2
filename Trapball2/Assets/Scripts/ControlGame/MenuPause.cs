@@ -50,7 +50,7 @@ public class MenuPause : MonoBehaviour
     {
         if (!pauseStatus && Time.timeScale == 0)
         {
-            FMODUtils.setSnapshot(true);
+            FMODUtils.setSnapshotPause(true);
         }
     }
 
@@ -78,7 +78,7 @@ public class MenuPause : MonoBehaviour
         playerInput.enabled = false;
         menuPause.SetActive(false);
         Time.timeScale = 1;
-        FMODUtils.setSnapshot(false);
+        FMODUtils.setSnapshotPause(false);
         menuPauseContinueButton.interactable = false;
         menuPauseContinueButton.interactable = true;
     }
@@ -88,7 +88,7 @@ public class MenuPause : MonoBehaviour
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
         playerInput.enabled = false;
-        FMODUtils.setSnapshot(false);
+        FMODUtils.setSnapshotPause(false);
         SceneManager.LoadSceneAsync("Menu");
         menuPauseExitButton.interactable = false;
         menuPauseExitButton.interactable = true;
@@ -112,7 +112,7 @@ public class MenuPause : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             EventSystem.current.SetSelectedGameObject(buttons[(int)MenuButtons.CONTINUE].gameObject);
             playerInput.enabled = true;
-            FMODUtils.setSnapshot(true);
+            FMODUtils.setSnapshotPause(true);
             menuPause.SetActive(true);
             Time.timeScale = 0;
         }

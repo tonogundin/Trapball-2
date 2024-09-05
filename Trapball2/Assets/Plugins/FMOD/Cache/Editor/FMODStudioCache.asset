@@ -501,6 +501,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 543
+--- !u!114 &-5834445168513828353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Stage4
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Stage4
+  Guid:
+    Data1: 1356605075
+    Data2: 1337729166
+    Data3: 614084784
+    Data4: -569768865
+  Banks:
+  - {fileID: 3295960355745021443}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7748312405964340615}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 85161
 --- !u!114 &-5597698489069669132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,10 +567,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Musica/Stage3
   Guid:
-    Data1: 1356605075
-    Data2: 1337729166
-    Data3: 614084784
-    Data4: -569768865
+    Data1: 1466804578
+    Data2: 1208971138
+    Data3: -116538742
+    Data4: 294334988
   Banks:
   - {fileID: 3295960355745021443}
   IsStream: 1
@@ -550,9 +578,10 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 1980513221606097908}
+  - {fileID: 5509469898037563785}
   MinDistance: 1
   MaxDistance: 20
-  Length: 85161
+  Length: 85645
 --- !u!114 &-5109906935518218415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,7 +767,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 8649223794283648005}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: 1375351055752245768}
@@ -783,21 +812,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Musica/Stage2
   Guid:
-    Data1: 1466804578
-    Data2: 1208971138
-    Data3: -116538742
-    Data4: 294334988
+    Data1: 839079466
+    Data2: 1131122036
+    Data3: 1495029418
+    Data4: -1130294311
   Banks:
   - {fileID: 3295960355745021443}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8972926191891132645}
   - {fileID: 3030708849534826217}
   MinDistance: 1
   MaxDistance: 20
-  Length: 85645
+  Length: 95865
 --- !u!114 &-3939099659395690153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,10 +1031,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638536457354757911
+  lastModified: 638611669651104450
   FileSizes:
   - Name: Desktop
-    Value: 4036
+    Value: 4206
   Exists: 1
 --- !u!114 &-2763837879923221437
 MonoBehaviour:
@@ -1095,7 +1123,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Ambience.bank
   Name: SFX Ambience
   StudioPath: bank:/SFX Ambience
-  lastModified: 638536457396168106
+  lastModified: 638611669693226065
   FileSizes:
   - Name: Desktop
     Value: 332800
@@ -1429,12 +1457,14 @@ MonoBehaviour:
   - {fileID: 2122826850651172171}
   - {fileID: 5750801091396892903}
   - {fileID: 4179748128995134435}
+  - {fileID: -5834445168513828353}
+  - {fileID: 9079984998275859102}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7819196344126980065}
   StringsBanks:
   - {fileID: -2787406691297457171}
-  cacheTime: 638536457404938454
+  cacheTime: 638611669701405218
   cacheVersion: 131616
 --- !u!114 &495266217526118376
 MonoBehaviour:
@@ -1898,10 +1928,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
   Name: Musica
   StudioPath: bank:/Musica
-  lastModified: 638536457395881002
+  lastModified: 638611669692935341
   FileSizes:
   - Name: Desktop
-    Value: 8422816
+    Value: 11182944
   Exists: 1
 --- !u!114 &3901953700538720911
 MonoBehaviour:
@@ -2163,6 +2193,32 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5509469898037563785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage3/StageFinal
+  m_EditorClassIdentifier: 
+  Name: StageFinal
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4093962573
+    data2: 678436107
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - OnStage
+  - Final
+  Exists: 1
 --- !u!114 &5750801091396892903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2304,7 +2360,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/HUD.bank
   Name: HUD
   StudioPath: bank:/HUD
-  lastModified: 638536457346203630
+  lastModified: 638611669642502317
   FileSizes:
   - Name: Desktop
     Value: 94400
@@ -2387,6 +2443,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &7748312405964340615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage4/percentStage
+  m_EditorClassIdentifier: 
+  Name: percentStage
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7819196344126980065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,10 +2482,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638536457354717520
+  lastModified: 638611669651054437
   FileSizes:
   - Name: Desktop
-    Value: 2079520
+    Value: 2081312
   Exists: 1
 --- !u!114 &8353789650512219328
 MonoBehaviour:
@@ -2480,10 +2560,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
   Name: SFX Dynamic
   StudioPath: bank:/SFX Dynamic
-  lastModified: 638536457403298987
+  lastModified: 638611669699792280
   FileSizes:
   - Name: Desktop
-    Value: 1743744
+    Value: 1744032
   Exists: 1
 --- !u!114 &8797814100714432702
 MonoBehaviour:
@@ -2500,7 +2580,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
   Name: SFX Linear
   StudioPath: bank:/SFX Linear
-  lastModified: 638536457404938454
+  lastModified: 638611669701405218
   FileSizes:
   - Name: Desktop
     Value: 1107808
@@ -2533,7 +2613,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2125
---- !u!114 &8972926191891132645
+--- !u!114 &9079984998275859102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2542,20 +2622,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage2/StageFinal
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Underwater
   m_EditorClassIdentifier: 
-  Name: StageFinal
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4093962573
-    data2: 678436107
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - OnStage
-  - Final
-  Exists: 1
+  Path: snapshot:/Underwater
+  Guid:
+    Data1: 253927180
+    Data2: 1337856698
+    Data3: -1110984044
+    Data4: -348466764
+  Banks:
+  - {fileID: 7819196344126980065}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0

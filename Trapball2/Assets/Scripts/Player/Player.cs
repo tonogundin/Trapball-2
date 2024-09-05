@@ -180,20 +180,73 @@ public class Player : MonoBehaviour, IResettable
 
     private bool isColliderPlatforms()
     {
-        Vector3 centralOffset = new(0, -0.35f, 0);
-        Vector3 leftOffset = new(-0.35f, -0.35f, 0);
-        Vector3 rightOffset = new(0.35f, -0.35f, 0);
+        Vector3 centralOffset = new Vector3(0, -0.35f, 0); // Abajo
+        Vector3 leftRampOffset = new Vector3(-0.2f, -0.3f, 0); // Diagonal abajo izquierda (rampa)
+        Vector3 rightRampOffset = new Vector3(0.2f, -0.3f, 0); // Diagonal abajo derecha (rampa)
+        Vector3 leftWallOffset = new Vector3(-0.35f, 0, 0); // Izquierda
+        Vector3 rightWallOffset = new Vector3(0.35f, 0, 0); // Derecha
+
+        // Detección de colisión en el suelo (directamente abajo y rampas)
         Collider[] centralColls = Physics.OverlapSphere(transform.position + centralOffset, 0.1f, jumpable.value);
-        bool result = centralColls.Length > 0;
-        if (!result)
+        Collider[] leftRampColls = Physics.OverlapSphere(transform.position + leftRampOffset, 0.1f, jumpable.value);
+        Collider[] rightRampColls = Physics.OverlapSphere(transform.position + rightRampOffset, 0.1f, jumpable.value);
+        bool isOnGround = centralColls.Length > 0;
+        bool isLateralLeft = leftRampColls.Length > 0;
+        bool isLateralRight = rightRampColls.Length > 0;
+
+        // Detección de colisión en las paredes laterales (izquierda y derecha)
+        Collider[] leftWallColls = Physics.OverlapSphere(transform.position + leftWallOffset, 0.1f, jumpable.value);
+        Collider[] rightWallColls = Physics.OverlapSphere(transform.position + rightWallOffset, 0.1f, jumpable.value);
+        bool isOnLeftWall = leftWallColls.Length > 0;
+        bool isOnRightWall = rightWallColls.Length > 0;
+
+        // Condición 1: Solo toca el suelo (abajo)
+        if (isOnGround && !isOnLeftWall && !isOnRightWall)
         {
-            // Si no hay colisión en el centro, entonces verificamos los lados
-            Collider[] leftColls = Physics.OverlapSphere(transform.position + leftOffset, 0.1f, jumpable.value);
-            Collider[] rightColls = Physics.OverlapSphere(transform.position + rightOffset, 0.1f, jumpable.value);
-            result = leftColls.Length > 0 && rightColls.Length > 0;
+            Debug.Log("Detecta solo suelo");
+            return true;
         }
-        return result;
+        // Condición 1: Solo toca el suelo (abajo)
+        if (isLateralLeft && !isOnLeftWall && !isOnRightWall)
+        {
+            Debug.Log("Detecta solo lateral izquierda");
+            return true;
+        }
+        // Condición 1: Solo toca el suelo (abajo)
+        if (isLateralRight && !isOnLeftWall && !isOnRightWall)
+        {
+            Debug.Log("Detecta solo lateral derecha");
+            return true;
+        }
+
+        // Condición 2: Está tocando ambos lados (encajonado)
+        if (isOnLeftWall && isOnRightWall)
+        {
+            Debug.Log("Detecta izquierda y derecha");
+            return true;
+        }
+
+        // Condición 3: Está tocando la derecha y el suelo
+        if (isOnRightWall && isOnGround)
+        {
+            Debug.Log("Detecta abajo y derecha");
+            return true;
+        }
+
+        // Condición 4: Está tocando la izquierda y el suelo
+        if (isOnLeftWall && isOnGround)
+        {
+            Debug.Log("Detecta abajo y izquierda");
+            return true;
+        }
+
+        // Si no cumple ninguna condición, no puede saltar
+        return false;
     }
+
+
+
+
 
     private void collisionFloor(bool isWater)
     {

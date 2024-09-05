@@ -3,7 +3,8 @@ using System;
 using UnityEngine;
 public class FMODUtils
 {
-    static FMOD.Studio.EventInstance snapshotInstance = FMODUnity.RuntimeManager.CreateInstance($"snapshot:/Pause");
+    static FMOD.Studio.EventInstance snapshotPauseInstance = FMODUnity.RuntimeManager.CreateInstance($"snapshot:/Pause");
+    static FMOD.Studio.EventInstance snapshotUnderWaterInstance = FMODUnity.RuntimeManager.CreateInstance($"snapshot:/Underwater");
     public static FMOD.Studio.EventInstance createInstance<T>(T sound) where T : Enum
     {
         string soundPath = GetStringValue(sound);
@@ -38,15 +39,28 @@ public class FMODUtils
         return attrs.Length > 0 ? attrs[0].StringValue : null;
     }
 
-    public static void setSnapshot(bool value)
+    public static void setSnapshotPause(bool value)
     {
         if (value)
         {
-            snapshotInstance.start();
+            snapshotPauseInstance.start();
         }
         else
         {
-            snapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            snapshotPauseInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+    
+
+    public static void setSnapshotUnderwater(bool value)
+    {
+        if (value)
+        {
+            snapshotUnderWaterInstance.start();
+        }
+        else
+        {
+            snapshotUnderWaterInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 

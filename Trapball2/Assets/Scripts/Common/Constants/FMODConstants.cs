@@ -93,20 +93,31 @@ public class FMODConstants
         GAME_START,
     }
 
-    public enum ENEMIES
+    public enum BALLMOUSE
     {
         [FMODUtils.StringValue("event:/Enemigos/BallMouseRun")]
-        MOUSE_BALL_RUN,
+        RUN,
         [FMODUtils.StringValue("event:/Enemigos/BallMouseHurt")]
-        MOUSE_BALL_HURT,
+        HURT,
         [FMODUtils.StringValue("event:/Enemigos/BallMouseHit2")]
-        MOUSE_BALL_HIT,
+        HIT,
         [FMODUtils.StringValue("event:/Enemigos/BallMouseInflatingPop")]
-        MOUSE_BALL_INFLATING_POP,
+        INFLATING_POP,
         [FMODUtils.StringValue("event:/Enemigos/BallMouseJump")]
-        MOUSE_BALL_JUMP,
+        JUMP,
         [FMODUtils.StringValue("event:/Enemigos/BallMouseScream")]
-        MOUSE_BALL_SCREAM,
+        SCREAM,
+    }
+    public enum BEATLE
+    {
+        [FMODUtils.StringValue("event:/Enemigos/EscarabajoAttack")]
+        ATTACK,
+        [FMODUtils.StringValue("event:/Enemigos/EscarabajoCaída")]
+        FALL,
+        [FMODUtils.StringValue("event:/Enemigos/EscarabajoRun")]
+        RUN,
+        [FMODUtils.StringValue("event:/Enemigos/EscarabajoSalida")]
+        EXIT
     }
 
     public enum BUSES

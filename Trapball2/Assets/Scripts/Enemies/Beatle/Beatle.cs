@@ -49,6 +49,12 @@ public class Beatle : MonoBehaviour
     public float forceAttackY = 20;
     public bool launchReverse = false;
     private bool launch = false;
+    public float distanceXHang = 2.5f;
+
+    FMOD.Studio.EventInstance SoundAttack;
+    FMOD.Studio.EventInstance SoundFall;
+    FMOD.Studio.EventInstance SoundRun;
+    FMOD.Studio.EventInstance SoundExit;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +63,11 @@ public class Beatle : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         initialPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+        SoundAttack = FMODUtils.createInstance(FMODConstants.BEATLE.ATTACK);
+        SoundFall = FMODUtils.createInstance(FMODConstants.BEATLE.FALL);
+        SoundRun = FMODUtils.createInstance(FMODConstants.BEATLE.RUN);
+        SoundExit = FMODUtils.createInstance(FMODConstants.BEATLE.EXIT);
+
     }
     void Update()
     {
@@ -68,11 +79,14 @@ public class Beatle : MonoBehaviour
             }
             else
             {
+                if (state == State.MOVE)
+                {
+                    SoundRun.setParameterByName("speed", rb.velocity.x * 10);
+                }
                 dirToPlayer = (player.transform.position - transform.position).normalized;
                 if (velocityZ != 0)
                 {
                     dirToPlayer = new Vector3(dirToPlayer.x, dirToPlayer.y, velocityZ > 0 ? 180 : -180);
-
                 }
                 else if (objectReference != null)
                 {
@@ -151,7 +165,7 @@ public class Beatle : MonoBehaviour
 
         if (state == State.HANG)
         {
-            return Mathf.Abs(distToPlayer.x) < 2.5f // tenga un rango x para visualizarlo desde la altura.
+            return Mathf.Abs(distToPlayer.x) < distanceXHang // tenga un rango x para visualizarlo desde la altura.
                    && distToPlayer.y < -1 // el player esté por debajo del beatle en y.
                    && distToPlayer.y > -10; // que el player no esté a una distancia muy grande en altura.
         } else
@@ -307,7 +321,8 @@ public class Beatle : MonoBehaviour
                         break;
                 case State.MOVE:
                     animator.SetTrigger(animBeatleMove);
-
+                    SoundRun.start();
+                    //FMODUtils.play3DSound(SoundRun, transform);
                     break;
                 case State.MOVE_AGRESSIVE:
                     animator.SetTrigger(animBeatleMoveAgressive);
@@ -320,9 +335,11 @@ public class Beatle : MonoBehaviour
                     animator.SetTrigger(animBeatleAttack);
                     break;
                 case State.IMPACT:
+                    SoundAttack.start();
                     StartCoroutine(impulsePlayer());
                     break;
                 case State.NAIL:
+                    SoundFall.start();
                     animator.SetTrigger(animBeatleNail);
                     StartCoroutine(stateFreeNailToNormal());
                     break;
@@ -450,6 +467,7 @@ public class Beatle : MonoBehaviour
         yield return new WaitForSeconds(1f);
         state = State.FREE_NAIL;
         yield return new WaitForSeconds(0.26f);
+        SoundExit.start();
         rb.isKinematic = false;
         rb.AddForce(new Vector3(isBeatleInPositionLeft() ? -80 : 80, 40, 0), ForceMode.Impulse);
         ManageRotation(true);

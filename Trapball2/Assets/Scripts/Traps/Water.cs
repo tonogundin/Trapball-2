@@ -4,25 +4,27 @@ public class Water : MonoBehaviour
 {
     public const string TAG = "Water";
     FMOD.Studio.EventInstance enterWater;
-    // Start is called before the first frame update
+
     void Start()
     {
         enterWater = FMODUnity.RuntimeManager.CreateInstance("event:/Ambientes/AmbienteUnderwater");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    private void OnTriggeEnter(Collider other)
-    {
-        enterWater.start();
+        if (other.CompareTag(Player.TAG))
+        {
+            enterWater.start();
+            FMODUtils.setSnapshotUnderwater(true);
+        }  
     }
 
     private void OnTriggerExit(Collider other)
     {
-        enterWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        if (other.CompareTag(Player.TAG))
+        {
+            enterWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            FMODUtils.setSnapshotUnderwater(false);
+        }
     }
 }

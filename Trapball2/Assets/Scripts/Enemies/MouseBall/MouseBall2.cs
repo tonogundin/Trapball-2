@@ -67,12 +67,12 @@ public class MouseBall2 : MonoBehaviour, IResettable
         timeSwimming = new Timer(150, new CallBackSwimmingTimer(this));
         changeCollider(false);
         
-        BallMouseRun = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_RUN);
-        BallMouseHurt = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_HURT);
-        BallMouseHit = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_HIT);
-        BallMouseInflatingPop = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_INFLATING_POP);
-        BallMouseJump = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_JUMP);
-        BallMouseScream = FMODUtils.createInstance(FMODConstants.ENEMIES.MOUSE_BALL_SCREAM);
+        BallMouseRun = FMODUtils.createInstance(FMODConstants.BALLMOUSE.RUN);
+        BallMouseHurt = FMODUtils.createInstance(FMODConstants.BALLMOUSE.HURT);
+        BallMouseHit = FMODUtils.createInstance(FMODConstants.BALLMOUSE.HIT);
+        BallMouseInflatingPop = FMODUtils.createInstance(FMODConstants.BALLMOUSE.INFLATING_POP);
+        BallMouseJump = FMODUtils.createInstance(FMODConstants.BALLMOUSE.JUMP);
+        BallMouseScream = FMODUtils.createInstance(FMODConstants.BALLMOUSE.SCREAM);
         impactFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_ENEMIES);
         exitTerrain = FMODUtils.createInstance(FMODConstants.JUMPS.EXIT_TERRAIN_ENEMIES);
         impactObjetc = FMODUtils.createInstance(FMODConstants.OBJECTS.IMPACT_OBJECT_ENEMIES);
@@ -154,7 +154,10 @@ public class MouseBall2 : MonoBehaviour, IResettable
     {
         if (isActiveAndEnabled)
         {
-           // BallMouseRun.setParameterByName("speed", rb.velocity.x);
+            if (state == State.MOVE)
+            {
+                BallMouseRun.setParameterByName("speed", rb.velocity.x);
+            }
             AddExtraGravityForce();
             if (!isSmashProcess())
             {
