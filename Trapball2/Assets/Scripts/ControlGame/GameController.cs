@@ -39,7 +39,6 @@ public class GameController : MonoBehaviour
             case InputDeviceChange.Disconnected:
                 if (device is Gamepad)
                 {
-                    Debug.Log("Un mando se ha desconectado");
                     gamepad = null;
                     // Aquí puedes agregar lógica adicional, como pausar el juego, mostrar un mensaje, etc.
                 }

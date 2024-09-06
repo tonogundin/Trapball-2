@@ -60,7 +60,7 @@ public class FMODUtils
         }
         else
         {
-            snapshotUnderWaterInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            snapshotUnderWaterInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
     }
 

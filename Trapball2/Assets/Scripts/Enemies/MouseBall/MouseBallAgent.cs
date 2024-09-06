@@ -30,7 +30,6 @@ public class MouseBallAgent : MonoBehaviour
             float a = DirectionToRotation(dirToPlayer);
             a -= 90; //Desfase.
             a = Mathf.Clamp(a, -22, 22);
-            Debug.Log(a);
             transform.eulerAngles = new Vector3(a, transform.eulerAngles.y, transform.eulerAngles.z);
         }
         else if(squashed)

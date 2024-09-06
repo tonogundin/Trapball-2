@@ -81,7 +81,7 @@ public class Beatle : MonoBehaviour
             {
                 if (state == State.MOVE)
                 {
-                    SoundRun.setParameterByName("speed", rb.velocity.x * 10);
+                    SoundRun.setParameterByName("speed", rb.velocity.x);
                 }
                 dirToPlayer = (player.transform.position - transform.position).normalized;
                 if (velocityZ != 0)
@@ -321,8 +321,8 @@ public class Beatle : MonoBehaviour
                         break;
                 case State.MOVE:
                     animator.SetTrigger(animBeatleMove);
-                    SoundRun.start();
-                    //FMODUtils.play3DSound(SoundRun, transform);
+                    //SoundRun.start();
+                    FMODUtils.play3DSound(SoundRun, transform);
                     break;
                 case State.MOVE_AGRESSIVE:
                     animator.SetTrigger(animBeatleMoveAgressive);
@@ -410,7 +410,6 @@ public class Beatle : MonoBehaviour
 
     }
 
-
     private void OnCollisionStay(Collision collision)
     {
         switch (collision.gameObject.tag)
@@ -442,6 +441,26 @@ public class Beatle : MonoBehaviour
         if (other.gameObject.tag == Player.TAG && state == State.ATTACK)
         {
             state = State.IMPACT;
+        }
+        if (other.CompareTag("Water"))
+        {
+            if (rb.velocity.x > 0.6f)
+            {
+                rb.velocity = new Vector2(0.6f, rb.velocity.y);
+            }
+            if (rb.velocity.x < -0.6f)
+            {
+                rb.velocity = new Vector2(-0.6f, rb.velocity.y);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            rb.angularDrag = 0.05f;
+            rb.drag = 0;
         }
     }
 

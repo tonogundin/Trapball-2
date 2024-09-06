@@ -41,7 +41,6 @@ public class pausevideo : MonoBehaviour
         {
             holdTimer += Time.deltaTime;
             float fillAmount = (holdTimer / holdTime);
-            Debug.Log("new Fill Amount: " + progressCircle.fillAmount);
             if (fillAmount > 0.2f)
             {
                 if (!buttonALoad.activeSelf)
@@ -73,7 +72,6 @@ public class pausevideo : MonoBehaviour
         float initialVolume = (float)videoPlayer.GetDirectAudioVolume(0);
         fundidoNegro.color = new Color(0f, 0f, 0f, 0.01f);
         isHolding = false;
-        Debug.Log("isHolding a false fadetoblack");
         holdTimer = 0f;
         Color color = fundidoNegro.color;
         float elapsedTime = 0f;
@@ -104,7 +102,6 @@ public class pausevideo : MonoBehaviour
         buttonAPress.SetActive(false);
         activeAnimationButton = true;
         StartCoroutine(PressButton());
-        Debug.Log("Video pausado");
     }
     IEnumerator PressButton()
     {
@@ -134,7 +131,6 @@ public class pausevideo : MonoBehaviour
             {
                 StartCoroutine(delayLaunchStage1());
             }
-            Debug.Log("Video reanudado");
         }
 
         if (value.isPressed)

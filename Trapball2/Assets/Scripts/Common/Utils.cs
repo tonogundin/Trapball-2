@@ -8,10 +8,9 @@ public class Utils
         float myYPosition = positionY;
 
         // Obtener la posición en Y de la caja
-        float otherObjectYPosition = collision.gameObject.transform.position.y + 0.5f;
+        float otherObjectYPosition = collision.gameObject.transform.position.y + 0.35f;
 
         // Comparar las posiciones en Y
-        Debug.Log("Posicion Objeto: " + myYPosition + " Posicion Plataforma:" + otherObjectYPosition);
         return myYPosition > otherObjectYPosition;
     }
     public static bool IsCollisionAboveEnemies(Collision collision, float positionY)
@@ -23,7 +22,6 @@ public class Utils
         float otherObjectYPosition = collision.gameObject.transform.position.y;
 
         // Comparar las posiciones en Y
-        Debug.Log("Posicion Enemigo: " + myYPosition + " Posicion Plataforma:" + otherObjectYPosition);
         return myYPosition > otherObjectYPosition;
     }
 

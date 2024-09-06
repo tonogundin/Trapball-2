@@ -368,13 +368,11 @@ public class MouseBall2 : MonoBehaviour, IResettable
             case "Box":
                 if (Utils.IsCollisionAboveEnemies(collision, transform.position.y))
                 {
-                    Debug.Log("Sonido golpeo superior Raton: " + yVelocity);
                     FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.WOOD, transform);
                 }
                 else
                 {
                     float collisionForce = Utils.limitValue(collision.relativeVelocity.magnitude + 3, FMODConstants.LIMIT_SOUND_VALUE);
-                    Debug.Log("Sonido golpeo lateral Raton: " + collisionForce);
                     impactObjetc.setParameterByName(FMODConstants.SPEED, collisionForce);
                     FMODUtils.play3DSound(impactObjetc, transform);
                 }

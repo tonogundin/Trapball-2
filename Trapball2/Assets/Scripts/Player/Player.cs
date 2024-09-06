@@ -55,7 +55,6 @@ public class Player : MonoBehaviour, IResettable
     private FMOD.Studio.EventInstance exitTerrain;
     private FMOD.Studio.EventInstance impactBombFloor;
     private FMOD.Studio.EventInstance impactObjetc;
-    private FMOD.Studio.EventInstance underWater;
     private FMOD.Studio.EventInstance soundCourage;
 
     private const float JUMP_LOW_PERCENT = 0.70f;
@@ -102,7 +101,6 @@ public class Player : MonoBehaviour, IResettable
         impactBombFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_BOMB);
         exitTerrain = FMODUtils.createInstance(FMODConstants.JUMPS.EXIT_TERRAIN_PLAYER);
         impactObjetc = FMODUtils.createInstance(FMODConstants.OBJECTS.IMPACT_OBJECT_PLAYER);
-        underWater = FMODUtils.createInstance(FMODConstants.AMBIENT.UNDER_WATER);
         soundCourage = FMODUtils.createInstance(FMODConstants.OBJECTS.GRAB_MOON);
         emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         playerSoundroll.start();
@@ -203,40 +201,34 @@ public class Player : MonoBehaviour, IResettable
         // Condición 1: Solo toca el suelo (abajo)
         if (isOnGround && !isOnLeftWall && !isOnRightWall)
         {
-            Debug.Log("Detecta solo suelo");
             return true;
         }
         // Condición 1: Solo toca el suelo (abajo)
         if (isLateralLeft && !isOnLeftWall && !isOnRightWall)
         {
-            Debug.Log("Detecta solo lateral izquierda");
             return true;
         }
         // Condición 1: Solo toca el suelo (abajo)
         if (isLateralRight && !isOnLeftWall && !isOnRightWall)
         {
-            Debug.Log("Detecta solo lateral derecha");
             return true;
         }
 
         // Condición 2: Está tocando ambos lados (encajonado)
         if (isOnLeftWall && isOnRightWall)
         {
-            Debug.Log("Detecta izquierda y derecha");
             return true;
         }
 
         // Condición 3: Está tocando la derecha y el suelo
         if (isOnRightWall && isOnGround)
         {
-            Debug.Log("Detecta abajo y derecha");
             return true;
         }
 
         // Condición 4: Está tocando la izquierda y el suelo
         if (isOnLeftWall && isOnGround)
         {
-            Debug.Log("Detecta abajo y izquierda");
             return true;
         }
 
@@ -475,7 +467,6 @@ public class Player : MonoBehaviour, IResettable
             case "SueloPantanoso":
                 if (yVelocity > LIMIT_VELOCITY_IMPACT_INTO_WATER)
                 {
-                    Debug.Log("Velocidad Caida: " + yVelocity);
                     setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
                     setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.MUD);
                 }
@@ -507,7 +498,10 @@ public class Player : MonoBehaviour, IResettable
                     setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
                     setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.STONE);
                 }
-                setTerrainRollParametersAndStart(FMODConstants.MATERIAL.STONE);
+                if (isTouchFloor())
+                {
+                    setTerrainRollParametersAndStart(FMODConstants.MATERIAL.STONE);
+                }
                 break;
             default:
                 // Handle other cases or do nothing
@@ -538,7 +532,6 @@ public class Player : MonoBehaviour, IResettable
                 {
                     setTerrainRollParametersAndStart(FMODConstants.MATERIAL.WOOD);
                 }
-
                 break;
         }
     }
@@ -587,7 +580,6 @@ public class Player : MonoBehaviour, IResettable
 
     private void setTerrainParametersToExitMaterialAndStart(FMODConstants.MATERIAL material)
     {
-        underWater.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         exitTerrain.setParameterByName(FMODConstants.TERRAIN, (int)material);
         exitTerrain.start();
     }
@@ -607,12 +599,10 @@ public class Player : MonoBehaviour, IResettable
             case "Water":
                 collisionFloor(true);
                 setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
-                Debug.Log("Velocidad impacto agua: " + rb.velocity.y);
                 float yVelocity = Utils.limitValue(rb.velocity.y * -1, FMODConstants.LIMIT_SOUND_VALUE);
                 impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
                 rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
                 setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.WATER);
-                //underWater.start();
                 break;
             case "TubeEnter":
                 freeFall = true;
@@ -647,7 +637,7 @@ public class Player : MonoBehaviour, IResettable
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Water") && state != StatePlayer.NONE)
+        if (other.CompareTag("Water") && state != StatePlayer.NONE && state != StatePlayer.DEAD && state != StatePlayer.FINISH)
         {
             currentGravityFactor = initGravityFactor;
             rb.angularDrag = 0.05f;
@@ -688,8 +678,6 @@ public class Player : MonoBehaviour, IResettable
         int valorResult = valor - 10;
         valor = (valorResult > 0) ? valorResult : 0;
         live = liveInit;
-
-        underWater.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     public bool isTouchFloor()
