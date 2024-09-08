@@ -55,7 +55,6 @@ public class Player : MonoBehaviour, IResettable
     private FMOD.Studio.EventInstance exitTerrain;
     private FMOD.Studio.EventInstance impactBombFloor;
     private FMOD.Studio.EventInstance impactObjetc;
-    private FMOD.Studio.EventInstance soundCourage;
 
     private const float JUMP_LOW_PERCENT = 0.70f;
     private const float JUMP_LOW_BOMB_PERCENT = 0.85f;
@@ -101,7 +100,6 @@ public class Player : MonoBehaviour, IResettable
         impactBombFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_BOMB);
         exitTerrain = FMODUtils.createInstance(FMODConstants.JUMPS.EXIT_TERRAIN_PLAYER);
         impactObjetc = FMODUtils.createInstance(FMODConstants.OBJECTS.IMPACT_OBJECT_PLAYER);
-        soundCourage = FMODUtils.createInstance(FMODConstants.OBJECTS.GRAB_MOON);
         emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         playerSoundroll.start();
     }
@@ -612,7 +610,6 @@ public class Player : MonoBehaviour, IResettable
                 break;
             case "Courage":
                 valor++;
-                soundCourage.start();
                 break;
             case "Exit":
                 state = StatePlayer.FINISH;

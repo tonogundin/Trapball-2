@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 11ba7828214ba3a47aa2131228f66ca9, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2af4cbf932a2bdd489d3e8e2e8bbb719, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 0d475981f7ff44149ab4c0de925ad4bb, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -11809,8 +11809,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.129672, y: 2.556121, z: 2.7804518}
-  m_Center: {x: -0.064836025, y: 0.77806056, z: -0.7728629}
+  m_Size: {x: 1.129672, y: 2.7883482, z: 2.7804518}
+  m_Center: {x: -0.064836025, y: 1.0869265, z: -0.7728629}
 --- !u!1001 &164899571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14162,6 +14162,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.12109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.47
@@ -14173,6 +14185,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.29296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0.26171875
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19504,8 +19532,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.129672, y: 3.7237487, z: 2.7804518}
-  m_Center: {x: -0.064836025, y: 1.3618743, z: -0.7728629}
+  m_Size: {x: 1.129672, y: 3.205305, z: 2.7804518}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &415154520
 Transform:
   m_ObjectHideFlags: 0
@@ -19515,7 +19543,7 @@ Transform:
   m_GameObject: {fileID: 415154517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.46, y: 4.51, z: 6.63}
+  m_LocalPosition: {x: 2.46, y: 5.98, z: 5.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22535,6 +22563,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.12109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.29
@@ -22546,6 +22586,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0.26171875
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24125,6 +24181,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 1.05e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 7.54923e-40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 7e-45
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.46
@@ -24136,6 +24208,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -6.1444266e-18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 7.17e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.964e-42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26931,6 +27019,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.12109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.19
@@ -26942,6 +27042,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.04296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 117
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27538,6 +27650,22 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 450
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.27734375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.42
@@ -27549,6 +27677,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28304,6 +28444,22 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.3203125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0.26171875
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.13
@@ -28315,6 +28471,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 5.76e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.04296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -1.6587905e+15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 7.17e-43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34705,6 +34877,22 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -2.2782802e+14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.05e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.13
@@ -34716,6 +34904,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.3046875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35170,6 +35370,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.2109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.19
@@ -35181,6 +35397,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.03515625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35275,6 +35503,96 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843931540}
   m_Mesh: {fileID: 3993185032278220044, guid: fa3cf5fc0a99ace488f30a3531b4b668, type: 3}
+--- !u!1001 &848045895
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 928421026}
+    m_Modifications:
+    - target: {fileID: 1770152992476506299, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_Name
+      value: Floor_1_cell (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002655414324933890, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -72.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000104308114
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239284382209698485, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_Size.x
+      value: 0.78796625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239284382209698485, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8968153
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239284382209698485, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_Center.x
+      value: 1.7345994
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239284382209698485, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+      propertyPath: m_Center.y
+      value: 2.4845514
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+--- !u!4 &848045896 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6081747573947105671, guid: 15b312f1c96f4d244b9d2a6baa811f93, type: 3}
+  m_PrefabInstance: {fileID: 848045895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &850227691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36121,6 +36439,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -35.767
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.19140625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -60.82
@@ -36136,6 +36470,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.40234375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38237,6 +38583,7 @@ Transform:
   - {fileID: 1655973949}
   - {fileID: 877145116}
   - {fileID: 2007475041}
+  - {fileID: 848045896}
   - {fileID: 791478534}
   - {fileID: 352064160}
   - {fileID: 781037563}
@@ -39377,6 +39724,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -59.14
@@ -39392,6 +39755,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40800,6 +41179,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.25390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.14
@@ -40811,6 +41206,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.17578125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41873,8 +42280,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.129672, y: 2.045988, z: 2.7804518}
-  m_Center: {x: -0.064836025, y: 0.5001888, z: -0.7728629}
+  m_Size: {x: 1.129672, y: 1.8491683, z: 2.7804518}
+  m_Center: {x: -0.064836025, y: 0.5538671, z: -0.7728629}
 --- !u!4 &1031733768
 Transform:
   m_ObjectHideFlags: 0
@@ -41953,6 +42360,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.06640625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43509,6 +43932,22 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 6.521797e-31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 5.6607e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 7.17e-43
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.13
@@ -43520,6 +43959,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 1.8133181e+31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 5.3936e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: -1.1059086e+18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -2.8322138e+38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48663,8 +49118,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.129672, y: 2.556121, z: 2.7804518}
-  m_Center: {x: -0.064836025, y: 0.77806056, z: -0.7728629}
+  m_Size: {x: 1.129672, y: 2.4638777, z: 2.7804518}
+  m_Center: {x: -0.064836025, y: 0.8241823, z: -0.7728629}
 --- !u!4 &1245257850
 Transform:
   m_ObjectHideFlags: 0
@@ -52198,6 +52653,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -2.5436482e+38
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.48
@@ -52209,6 +52680,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -1.2761392e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: -2.8322085e+38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -2.8323594e+38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -53129,7 +53616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caf0347882c4d04c92359407f55e753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level2_develop
+  scene: Level2
 --- !u!65 &1370827914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54171,6 +54658,22 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.05e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.19
@@ -54182,6 +54685,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 8.07e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54785,9 +55300,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 8.1e-44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.05e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57374,6 +57921,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 81
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0.265625
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.13
@@ -57385,6 +57948,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61111,8 +61690,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.129672, y: 1.9478283, z: 2.7804518}
-  m_Center: {x: -0.064836025, y: 0.47391415, z: -0.7728629}
+  m_Size: {x: 1.129672, y: 1.872922, z: 2.7804518}
+  m_Center: {x: -0.064836025, y: 0.5113673, z: -0.7728629}
 --- !u!4 &1651491335
 Transform:
   m_ObjectHideFlags: 0
@@ -63544,6 +64123,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.03
@@ -63555,6 +64150,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -63858,6 +64469,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -27.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 3.4e-44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.37
@@ -63869,6 +64496,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.37109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 171
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -64984,6 +65623,18 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.09765625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.19
@@ -64995,6 +65646,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.12109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66862,6 +67525,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.13671875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.08
@@ -66873,6 +67552,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.12109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -67971,6 +68662,22 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 450
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0.3203125
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.42
@@ -67982,6 +68689,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.01953125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0.1328125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68224,8 +68947,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.129672, y: 3.5303974, z: 2.7804518}
-  m_Center: {x: -0.064836025, y: 1.2651987, z: -0.7728629}
+  m_Size: {x: 2.7439156, y: 2.9676332, z: 2.7804518}
+  m_Center: {x: -0.8719578, y: 1.5465808, z: -0.7728629}
 --- !u!1 &1874919418
 GameObject:
   m_ObjectHideFlags: 0
@@ -68924,6 +69647,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 3.4500105
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 50.2716
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 3.65
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.45
@@ -68935,6 +69674,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69085,6 +69836,22 @@ PrefabInstance:
       propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 67
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.19
@@ -69096,6 +69863,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70537,6 +71316,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.3
@@ -70548,6 +71343,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.37109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 168
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -72737,6 +73544,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.37109375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 171
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.13
@@ -72748,6 +73567,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 91
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.1015625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0.4140625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -73387,6 +74222,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.19921875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.4
@@ -73398,6 +74245,22 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.1328125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74837,6 +75700,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.04296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0
@@ -74848,6 +75723,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.4140625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -76167,6 +77054,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.29296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
+      objectReference: {fileID: 0}
     - target: {fileID: 2163110249937694708, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.17
@@ -76178,6 +77081,18 @@ PrefabInstance:
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1 (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0.36328125
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77972,9 +78887,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 147
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0.13671875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371679143162803926, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0.36328125
+      objectReference: {fileID: 0}
     - target: {fileID: 3640571748082018270, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
       propertyPath: m_Name
       value: LightShortZoneStage1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.04296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045172324973015120, guid: d6109f33be113e74ea4e1345e790a9a9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: NaN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

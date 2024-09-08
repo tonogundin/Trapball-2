@@ -40,7 +40,7 @@ public class CheckPointActive : MonoBehaviour
         {
             foreach (CheckPoint checkpoint in checkPoints)
             {
-                checkpoint.setActiveObjects(active);
+                //checkpoint.setActiveObjects(active);
             }
         }
     }

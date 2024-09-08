@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 
-public class Beatle : MonoBehaviour
+public class Beatle : MonoBehaviour, IResettable
 {
     public const string TAG = "Beatle";
     Rigidbody rb;
@@ -26,6 +26,7 @@ public class Beatle : MonoBehaviour
     private State initialState;
 
     private Vector3 initialPosition;
+    private Quaternion initialRotation;
 
     private float velocityZ = 0;
 
@@ -63,6 +64,7 @@ public class Beatle : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         initialPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+        initialRotation = new Quaternion(transform.localRotation.x, transform.localRotation.y, transform.localRotation.z, transform.localRotation.w);
         SoundAttack = FMODUtils.createInstance(FMODConstants.BEATLE.ATTACK);
         SoundFall = FMODUtils.createInstance(FMODConstants.BEATLE.FALL);
         SoundRun = FMODUtils.createInstance(FMODConstants.BEATLE.RUN);
@@ -314,7 +316,7 @@ public class Beatle : MonoBehaviour
                     animator.SetTrigger(animBeatleIdle);
                     break;
                 case State.HANG:
-
+                    animator.SetTrigger(animBeatleIdle);
                     break;
                 case State.FALL:
                         animator.SetTrigger(animBeatleFall);
@@ -504,11 +506,14 @@ public class Beatle : MonoBehaviour
         outofObjectReference = false;
         playerDetected = false;
         state = initialState;
+        antState = State.NONE;
         transform.localPosition = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
+        transform.localRotation = new Quaternion(initialRotation.x, initialRotation.y, initialRotation.z, initialRotation.w);
         if (!rb.isKinematic)
         {
             rb.velocity = new Vector3(0, 0, 0);
         }
+        rb.isKinematic = true;
     }
 
     private bool isObjetEqualsPlayer(GameObject gameObject)
