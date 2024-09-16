@@ -25,6 +25,7 @@ public class Water : MonoBehaviour
         if (other.CompareTag(Player.TAG))
         {
             enterWater.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            FMODUtils.setSnapshotUnderwater(false);
         }
     }
 }

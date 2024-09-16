@@ -114,6 +114,8 @@ public class FMODConstants
         ATTACK,
         [FMODUtils.StringValue("event:/Enemigos/EscarabajoCaída")]
         FALL,
+        [FMODUtils.StringValue("event:/Enemigos/EscarabajoHit")]
+        HIT,
         [FMODUtils.StringValue("event:/Enemigos/EscarabajoRun")]
         RUN,
         [FMODUtils.StringValue("event:/Enemigos/EscarabajoSalida")]

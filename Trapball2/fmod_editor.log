@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000020296BB2F48 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000227CC66C048 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -24,22 +24,22 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 1031744
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 76064
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1698272
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 69984
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000070726FF4D8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000AFE64FEE28
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB58993F70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB58993F30
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB58994050
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB58994110
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000020255F83318
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB97963F70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB97963F30
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB97964050
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB97964110
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000229A6E8B0E8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SFX_GrabMoon', format=5, channels=2, frequency=48000, lengthbytes=12192, lengthpcm=70244, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.276362.
-[LOG] SoundI::release                          :  (0000020426C90E28)
-[LOG] SoundI::release                          :     SFX_GrabMoon (000002023D3F0228)
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SFX_mouse_hit_escarabajo', format=5, channels=2, frequency=48000, lengthbytes=22880, lengthpcm=101649, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SoundI::release                          :  (0000022B21F148C8)
+[LOG] SoundI::release                          :     SFX_mouse_hit_escarabajo (00000229A6D250B8)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 

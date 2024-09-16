@@ -3,7 +3,12 @@ guid: eb8fa6ea103becf4c82d785ec0d3f4b5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HuecoAscensorMat
+    second: {fileID: 2100000, guid: b94915af0b39ec242a034dc028a0a8fd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

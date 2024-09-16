@@ -5,6 +5,7 @@ public class FMODUtils
 {
     static FMOD.Studio.EventInstance snapshotPauseInstance = FMODUnity.RuntimeManager.CreateInstance($"snapshot:/Pause");
     static FMOD.Studio.EventInstance snapshotUnderWaterInstance = FMODUnity.RuntimeManager.CreateInstance($"snapshot:/Underwater");
+    static FMOD.Studio.EventInstance snapshotResetInstance = FMODUnity.RuntimeManager.CreateInstance($"snapshot:/NoSnapshot");
     public static FMOD.Studio.EventInstance createInstance<T>(T sound) where T : Enum
     {
         string soundPath = GetStringValue(sound);
@@ -56,11 +57,13 @@ public class FMODUtils
     {
         if (value)
         {
+            //snapshotResetInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             snapshotUnderWaterInstance.start();
         }
         else
         {
             snapshotUnderWaterInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            //snapshotResetInstance.start();
         }
     }
 

@@ -15,6 +15,7 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private float initialMass;
+    public bool isFreezePositionX = false;
 
     void Start()
     {
@@ -66,7 +67,14 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
             rb.mass = 10; //Para mejorar comportamiento cuando la bola se pone encima de una caja en el agua.
             waterYPos = other.bounds.center.y;
             //rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
+            if (isFreezePositionX)
+            {
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+            }
+            else
+            {
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
+            }
             floating = true;
 
             impactFloor.setParameterByName(FMODConstants.SPEED, 8);

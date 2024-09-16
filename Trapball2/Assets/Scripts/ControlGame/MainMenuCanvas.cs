@@ -19,46 +19,80 @@ public class MainMenuCanvas : MonoBehaviour
 
     private Button menuNewGame;
     private Button menuSettings;
+    private Button menuExit;
+    private GameObject selectButton;
+    private GameObject antSelectButton;
+
+    private const string newGame = "NewGame";
+    private const string settings = "Settings";
+    private const string exit = "Exit";
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        menuNewGame = menu.transform.Find("NewGame").GetComponent<Button>();
-        menuSettings = menu.transform.Find("Settings").GetComponent<Button>();
+        menuNewGame = menu.transform.Find(newGame).GetComponent<Button>();
+        menuSettings = menu.transform.Find(settings).GetComponent<Button>();
+        menuExit = menu.transform.Find(exit).GetComponent<Button>();
         state = StateMainMenu.INITIAL;
         soundStart = FMODUtils.createInstance(FMODConstants.HUD.GAME_START);
         EventSystem.current.SetSelectedGameObject(menuNewGame.gameObject);
+        selectButton = EventSystem.current.currentSelectedGameObject;
+        antSelectButton = selectButton;
+    }
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        selectButton = EventSystem.current.currentSelectedGameObject;
+        if (selectButton != antSelectButton)
+        {
+            if (selectButton != null && selectButton.GetComponent<Button>() != null)
+            {
+                antSelectButton = selectButton;
+            } else
+            {
+                selectButton = antSelectButton;
+                EventSystem.current.SetSelectedGameObject(selectButton);
+            }   
+        }
     }
     public void OnJump(InputValue value)
     {
-        if (!value.isPressed)
+        if (!value.isPressed && selectButton != null)
         {
-            switch(state)
+            switch (selectButton.name)
             {
-                case StateMainMenu.INSTRUCTIONS:
-                    state = StateMainMenu.LOADING;
-                    FMODUtils.stopAllEvents();
-                    soundStart.start();
-                    StartCoroutine(delayStepLoading());
+                case newGame:
+                    switch (state)
+                    {
+                        case StateMainMenu.INITIAL:
+                            StartCoroutine(delayStep());
+                            logoTrapBall.SetActive(false);
+                            instructions.SetActive(true);
+                            break;
+                        case StateMainMenu.INSTRUCTIONS:
+                            state = StateMainMenu.LOADING;
+                            FMODUtils.stopAllEvents();
+                            soundStart.start();
+                            StartCoroutine(delayStepLoading());
+                            break;
+                    }
+                    break;
+                case exit:
+                    // Cierra la aplicación
+                    Application.Quit();
+                    // Si estás en el editor de Unity, esto detendrá la ejecución del juego
+#if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+#endif
                     break;
             }
-
         }
     }
-
-    public void selectNewGame()
-    {
-        StartCoroutine(delayStep());
-        logoTrapBall.SetActive(false);
-        instructions.SetActive(true);
-    }
-
 
     public void OnDetectControllerOrKeyboard(InputValue value)
     {
@@ -80,7 +114,6 @@ public class MainMenuCanvas : MonoBehaviour
         state = StateMainMenu.INSTRUCTIONS;
     }
 
-
     IEnumerator delayStepLoading()
     {
         yield return new WaitForSeconds(3f);
@@ -92,7 +125,7 @@ public class MainMenuCanvas : MonoBehaviour
     IEnumerator delayStepFinal()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadSceneAsync("Intro");
+        SceneManager.LoadSceneAsync("Level1");
     }
 
     private enum StateMainMenu

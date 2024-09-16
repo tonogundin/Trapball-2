@@ -55,6 +55,7 @@ public class Beatle : MonoBehaviour, IResettable
     FMOD.Studio.EventInstance SoundAttack;
     FMOD.Studio.EventInstance SoundFall;
     FMOD.Studio.EventInstance SoundRun;
+    FMOD.Studio.EventInstance SoundHit;
     FMOD.Studio.EventInstance SoundExit;
 
     // Start is called before the first frame update
@@ -69,6 +70,7 @@ public class Beatle : MonoBehaviour, IResettable
         SoundFall = FMODUtils.createInstance(FMODConstants.BEATLE.FALL);
         SoundRun = FMODUtils.createInstance(FMODConstants.BEATLE.RUN);
         SoundExit = FMODUtils.createInstance(FMODConstants.BEATLE.EXIT);
+        SoundHit = FMODUtils.createInstance(FMODConstants.BEATLE.HIT);
 
     }
     void Update()
@@ -396,6 +398,11 @@ public class Beatle : MonoBehaviour, IResettable
                 float impactY = collision.relativeVelocity.y * -1;
                 if (impactY > 0)
                 {
+                    Debug.Log("impactY: " + impactY);
+                    if (impactY > 2 && Utils.IsCollisionAboveMe(collision, transform.position.y))
+                    {
+                        SoundHit.start();
+                    }
                     if (impactY > 2)
                     {
                         impactY = 2;
@@ -541,5 +548,4 @@ public class Beatle : MonoBehaviour, IResettable
         MOVE,
         FALL,
     }
-
 }
