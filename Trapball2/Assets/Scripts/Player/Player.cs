@@ -138,6 +138,11 @@ public class Player : MonoBehaviour, IResettable
         return state != StatePlayer.DEAD && state != StatePlayer.FINISH && Time.timeScale > 0;
     }
 
+    public bool isNotDead()
+    {
+        return state != StatePlayer.DEAD && state != StatePlayer.FINISH;
+    }
+
     private void checkRotations()
     {
         if (!especialStage && (rb.rotation.x != 0.000f || rb.rotation.y != 0.000f))
@@ -649,6 +654,7 @@ public class Player : MonoBehaviour, IResettable
         StartCoroutine(delayDead());
         FMODUtils.playOneShot(FMODConstants.DAMAGE.DEATH_VOICE, transform.position);
         rb.isKinematic = true;
+        coll.enabled = false;
         GetComponent<Renderer>().enabled = false;
         state = StatePlayer.DEAD;
         setVelocityZero();
@@ -663,6 +669,7 @@ public class Player : MonoBehaviour, IResettable
     public void resetObject()
     {
         rb.isKinematic = false;
+        coll.enabled = true;
         GetComponent<Renderer>().enabled = true;
         state = StatePlayer.NONE;
         stateImpactTerrain = StateSoundImpactPlayer.NONE;

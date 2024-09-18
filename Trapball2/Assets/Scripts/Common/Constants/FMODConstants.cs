@@ -24,6 +24,7 @@ public class FMODConstants
     public const string TERRAIN = "Terrain";
     public const string SPEED = "speed";
     public const string ON_TRIGGER = "Ontrigger";
+    public const string HIT_FORCE = "hit_force";
 
 
     public const float LIMIT_SOUND_VALUE = 8;

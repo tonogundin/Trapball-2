@@ -399,9 +399,9 @@ public class Beatle : MonoBehaviour, IResettable
                 if (impactY > 0)
                 {
                     Debug.Log("impactY: " + impactY);
-                    if (impactY > 2 && Utils.IsCollisionAboveMe(collision, transform.position.y))
+                    if (Utils.IsCollisionAboveMe(collision, transform.position.y))
                     {
-                        SoundHit.start();
+                        soundHit(impactY);
                     }
                     if (impactY > 2)
                     {
@@ -416,7 +416,26 @@ public class Beatle : MonoBehaviour, IResettable
                 }
             }
         }
+    }
 
+    private void soundHit(float impact)
+    {
+        int value = 0;
+        if (impact > 0 && impact < 1.5f)
+        {
+            value = 15;
+        }
+        else if (impact > 1.5f && impact < 8)
+        {
+            value = 50;
+        }
+        else if (impact > 8)
+        {
+            value = 90;
+        }
+        SoundHit.setParameterByName(FMODConstants.HIT_FORCE, value);
+
+        SoundHit.start();
     }
 
     private void OnCollisionStay(Collision collision)
@@ -447,9 +466,23 @@ public class Beatle : MonoBehaviour, IResettable
             state = State.NAIL;
         }
         //posibleLaunchPlayer && 
-        if (other.gameObject.tag == Player.TAG && state == State.ATTACK)
+        if (other.CompareTag(Player.TAG))
         {
-            state = State.IMPACT;
+            switch(state)
+            {
+                case State.ATTACK:
+                    state = State.IMPACT;
+                    break;
+
+                case State.FALL:
+                    Player player = other.GetComponent<Player>();
+                    if (player.isNotDead())
+                    {
+                        FMODUtils.playOneShot(FMODConstants.DAMAGE.IMPACT_SPIKES, transform.position);
+                        player.die();
+                    }
+                    break;
+            }
         }
         if (other.CompareTag("Water"))
         {
