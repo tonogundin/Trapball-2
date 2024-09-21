@@ -44,6 +44,7 @@ public class BallHud : MonoBehaviour
     private int bufferLiveIndex = -1;
 
     public GameController gameController;
+    private FMOD.Studio.EventInstance soundChargeEnergy;
 
     void Start()
     {
@@ -51,7 +52,8 @@ public class BallHud : MonoBehaviour
         targetImage = GetComponent<Image>();
         originalColor = targetImage.color;
         imageLive = live.GetComponent<Image>();
-        imageEnergy = energy.GetComponent<Image>();    
+        imageEnergy = energy.GetComponent<Image>();
+        soundChargeEnergy = FMODUtils.createInstance(FMODConstants.JUMPS.CHARGE_JUMP);
     }
 
     private void Update()
@@ -95,6 +97,14 @@ public class BallHud : MonoBehaviour
 
         if (bufferEnergyIndex != spriteIndex)
         {
+            if (spriteIndex == 0)
+            {
+                soundChargeEnergy.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+            else if (bufferEnergyIndex == 0)
+            {
+                soundChargeEnergy.start();
+            }
             bufferEnergyIndex = spriteIndex;
             imageEnergy.sprite = spritesEnergy[spriteIndex];
             if (player.isRumbleActive)
@@ -102,6 +112,12 @@ public class BallHud : MonoBehaviour
                 gameController.ApplyRumble(gameController.NormalizeValue(jumpForce, lowLimitEnergy, limitEnergy), 0.05f);
             }
         }
+        float normalizedSoundEnergy = Mathf.Clamp((jumpForce - lowLimitEnergy) / (limitEnergy - lowLimitEnergy), 0f, 1f);
+
+        // Escalamos el valor para estar en el rango de 25 a 100
+        float scaledSoundEnergy = 50f + (normalizedSoundEnergy * 50f);
+        //Debug.Log("SpeedSound: " + scaledSoundEnergy);
+        soundChargeEnergy.setParameterByName(FMODConstants.JUMP_CHARGE, scaledSoundEnergy);
     }
     private void setPlayerLive(float live)
     {

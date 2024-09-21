@@ -24,6 +24,32 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-9133197360488449656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage2/StageFinal
+  m_EditorClassIdentifier: 
+  Name: StageFinal
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4093962573
+    data2: 678436107
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - OnStage
+  - Final
+  Exists: 1
 --- !u!114 &-9099703750881921421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,34 +180,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-8149961557781226537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/EscarabajoHit
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/EscarabajoHit
-  Guid:
-    Data1: 2143530469
-    Data2: 1317517058
-    Data3: 1826351792
-    Data4: -1606318813
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 2481266453709557754}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-8138172109560513262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,7 +876,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 3030708849534826217}
-  - {fileID: -3245727324760562711}
+  - {fileID: -9133197360488449656}
   MinDistance: 1
   MaxDistance: 20
   Length: 106225
@@ -939,6 +937,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3827955128420287498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/Salto_charge
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/Salto_charge
+  Guid:
+    Data1: 598051210
+    Data2: 1190299260
+    Data3: 254312849
+    Data4: -1101542267
+  Banks:
+  - {fileID: 8797814100714432702}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2642282774555946264}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22944
 --- !u!114 &-3823262766152319626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,32 +1068,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
---- !u!114 &-3245727324760562711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage2/StageFinal
-  m_EditorClassIdentifier: 
-  Name: StageFinal
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4093962573
-    data2: 678436107
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - OnStage
-  - Final
-  Exists: 1
 --- !u!114 &-2790596710866375359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,10 +1113,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638622932977057987
+  lastModified: 638625105243827669
   FileSizes:
   - Name: Desktop
-    Value: 4426
+    Value: 4504
   Exists: 1
 --- !u!114 &-2763837879923221437
 MonoBehaviour:
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Ambience.bank
   Name: SFX Ambience
   StudioPath: bank:/SFX Ambience
-  lastModified: 638622933018985900
+  lastModified: 638625105286278270
   FileSizes:
   - Name: Desktop
     Value: 332800
@@ -1290,6 +1290,34 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters:
   - {fileID: -3606730696414395008}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1141371481747799110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/EscarabajoHit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/EscarabajoHit
+  Guid:
+    Data1: 2143530469
+    Data2: 1317517058
+    Data3: 1826351792
+    Data4: -1606318813
+  Banks:
+  - {fileID: 8649223794283648005}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7252601275516974497}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -1409,6 +1437,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 14000
+--- !u!114 &-469972204454455101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voices/Eight_Voice_Dialogs
+  m_EditorClassIdentifier: 
+  Path: event:/Voices/Eight_Voice_Dialogs
+  Guid:
+    Data1: -1792269762
+    Data2: 1162506065
+    Data3: 1293669008
+    Data4: -4174358
+  Banks:
+  - {fileID: 8797814100714432702}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3610088638739279003}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-315958557170172007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1542,14 +1598,15 @@ MonoBehaviour:
   - {fileID: 2576716998453480536}
   - {fileID: -4421189367787650054}
   - {fileID: -6643302211595012568}
-  - {fileID: -8149961557781226537}
-  - {fileID: 6356251977165997006}
+  - {fileID: -1141371481747799110}
+  - {fileID: -469972204454455101}
+  - {fileID: -3827955128420287498}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7819196344126980065}
   StringsBanks:
   - {fileID: -2787406691297457171}
-  cacheTime: 638622933028531872
+  cacheTime: 638625105297705371
   cacheVersion: 131616
 --- !u!114 &495266217526118376
 MonoBehaviour:
@@ -1894,30 +1951,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &2481266453709557754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/EscarabajoHit/hit_force
-  m_EditorClassIdentifier: 
-  Name: hit_force
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 1195696259
-    data2: 3982278489
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &2576716998453480536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,7 +2026,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &2636147531773257122
+--- !u!114 &2642282774555946264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2003,22 +2036,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Eight_Voice_Dialogs/Eight_diag_state
+  m_Name: parameter:/Salto_charge/SalgoCharge
   m_EditorClassIdentifier: 
-  Name: Eight_diag_state
+  Name: SalgoCharge
   StudioPath: 
   Min: 0
-  Max: 2
+  Max: 100
   Default: 0
   ID:
-    data1: 3250252393
-    data2: 2923502780
-  Type: 2
+    data1: 3955826316
+    data2: 3024060640
+  Type: 0
   IsGlobal: 0
-  Labels:
-  - Worried
-  - Thinking
-  - Solution
+  Labels: []
   Exists: 1
 --- !u!114 &2734258957869524580
 MonoBehaviour:
@@ -2141,10 +2171,37 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
   Name: Musica
   StudioPath: bank:/Musica
-  lastModified: 638622933018699565
+  lastModified: 638625105285996770
   FileSizes:
   - Name: Desktop
     Value: 11184320
+  Exists: 1
+--- !u!114 &3610088638739279003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Eight_Voice_Dialogs/Eight_diag_state
+  m_EditorClassIdentifier: 
+  Name: Eight_diag_state
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3250252393
+    data2: 2923502780
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Worried
+  - Thinking
+  - Solution
   Exists: 1
 --- !u!114 &3901953700538720911
 MonoBehaviour:
@@ -2532,34 +2589,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &6356251977165997006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Voices/Eight_Voice_Dialogs
-  m_EditorClassIdentifier: 
-  Path: event:/Voices/Eight_Voice_Dialogs
-  Guid:
-    Data1: -1792269762
-    Data2: 1162506065
-    Data3: 1293669008
-    Data4: -4174358
-  Banks:
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 2636147531773257122}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &6458391617540543664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2575,7 +2604,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/HUD.bank
   Name: HUD
   StudioPath: bank:/HUD
-  lastModified: 638622932967775788
+  lastModified: 638625105235261961
   FileSizes:
   - Name: Desktop
     Value: 94400
@@ -2631,6 +2660,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1463
+--- !u!114 &7252601275516974497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EscarabajoHit/hit_force
+  m_EditorClassIdentifier: 
+  Name: hit_force
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 1195696259
+    data2: 3982278489
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7600526504558290509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2673,7 +2726,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638622932976997605
+  lastModified: 638625105243792477
   FileSizes:
   - Name: Desktop
     Value: 2081952
@@ -2751,10 +2804,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
   Name: SFX Dynamic
   StudioPath: bank:/SFX Dynamic
-  lastModified: 638622933026023336
+  lastModified: 638625105293081522
   FileSizes:
   - Name: Desktop
-    Value: 1820480
+    Value: 1820704
   Exists: 1
 --- !u!114 &8797814100714432702
 MonoBehaviour:
@@ -2771,10 +2824,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
   Name: SFX Linear
   StudioPath: bank:/SFX Linear
-  lastModified: 638622933028531872
+  lastModified: 638625105297705371
   FileSizes:
   - Name: Desktop
-    Value: 1529472
+    Value: 1814880
   Exists: 1
 --- !u!114 &8948373402745503836
 MonoBehaviour:

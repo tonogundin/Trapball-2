@@ -70,8 +70,6 @@ public class Beatle : MonoBehaviour, IResettable
         SoundFall = FMODUtils.createInstance(FMODConstants.BEATLE.FALL);
         SoundRun = FMODUtils.createInstance(FMODConstants.BEATLE.RUN);
         SoundExit = FMODUtils.createInstance(FMODConstants.BEATLE.EXIT);
-        SoundHit = FMODUtils.createInstance(FMODConstants.BEATLE.HIT);
-
     }
     void Update()
     {
@@ -110,14 +108,7 @@ public class Beatle : MonoBehaviour, IResettable
                     if (isDetectedPlayerNear())
                     {
                         dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
-
-
-                        if (!launch && isBeatleInPositionForAttack() && (state == State.NORMAL || state == State.MOVE))
-                        {
-                           launch = true;
-                           state = State.PREPARE_ATTACK;
-                           positionAttack = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                        }
+                        activePrepareAttack();
                     }
                 }
                 else
@@ -139,6 +130,16 @@ public class Beatle : MonoBehaviour, IResettable
             {
                 rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
             }
+        }
+    }
+
+    private void activePrepareAttack()
+    {
+        if (!launch && isBeatleInPositionForAttack() && (state == State.NORMAL || state == State.MOVE))
+        {
+            launch = true;
+            state = State.PREPARE_ATTACK;
+            positionAttack = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
     
@@ -332,8 +333,7 @@ public class Beatle : MonoBehaviour, IResettable
                     animator.SetTrigger(animBeatleMoveAgressive);
                     break;
                 case State.PREPARE_ATTACK:
-                    StartCoroutine(changeStateAttackAndNormal());
-                    animator.SetTrigger(animBeatlePreAttack);
+                    prepareAttack();
                     break;
                 case State.ATTACK:
                     animator.SetTrigger(animBeatleAttack);
@@ -352,6 +352,12 @@ public class Beatle : MonoBehaviour, IResettable
                     break;
             }
         }
+    }
+
+    private void prepareAttack()
+    {
+        StartCoroutine(changeStateAttackAndNormal());
+        animator.SetTrigger(animBeatlePreAttack);
     }
 
     void ManageRotation()
@@ -403,13 +409,13 @@ public class Beatle : MonoBehaviour, IResettable
                     {
                         soundHit(impactY);
                     }
-                    if (impactY > 2)
+                    if (impactY > 6)
                     {
-                        impactY = 2;
+                        impactY = 6;
                     }
-                    if (impactY < 1)
+                    if (impactY < 4)
                     {
-                        impactY = 1;
+                        impactY = 4;
                     }
                     rbPlayer.AddForce(new Vector3(0, impactY, 0), ForceMode.Impulse);
                     rbPlayer.velocity = new Vector3(0, rbPlayer.velocity.y, rbPlayer.velocity.z);
@@ -421,22 +427,29 @@ public class Beatle : MonoBehaviour, IResettable
     private void soundHit(float impact)
     {
         int value = 0;
-        if (impact > 0 && impact < 1.5f)
+
+        if (impact >= 0 && impact <= 1.5f)
         {
-            value = 15;
+            // Mapeamos el rango de 0 a 1.5 a 0 a 30
+            value = Mathf.RoundToInt(Mathf.Lerp(0, 30, impact / 1.5f));
         }
-        else if (impact > 1.5f && impact < 8)
+        else if (impact > 1.5f && impact <= 8)
         {
-            value = 50;
+            // Mapeamos el rango de 1.5 a 8 a 35 a 75
+            value = Mathf.RoundToInt(Mathf.Lerp(35, 75, (impact - 1.5f) / (8 - 1.5f)));
         }
         else if (impact > 8)
         {
-            value = 90;
+            // Mapeamos el rango de 8 a 18 a 85 a 100
+            value = Mathf.RoundToInt(Mathf.Lerp(85, 100, (impact - 8) / (18 - 8)));
         }
-        SoundHit.setParameterByName(FMODConstants.HIT_FORCE, value);
 
+        SoundHit = FMODUtils.createInstance(FMODConstants.BEATLE.HIT);
+        SoundHit.setParameterByName(FMODConstants.HIT_FORCE, value);
         SoundHit.start();
+        SoundHit.release();
     }
+
 
     private void OnCollisionStay(Collision collision)
     {
@@ -465,7 +478,6 @@ public class Beatle : MonoBehaviour, IResettable
             rb.isKinematic = true;
             state = State.NAIL;
         }
-        //posibleLaunchPlayer && 
         if (other.CompareTag(Player.TAG))
         {
             switch(state)

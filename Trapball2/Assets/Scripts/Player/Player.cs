@@ -47,7 +47,9 @@ public class Player : MonoBehaviour, IResettable
     private float movementPlayerExpecialZ;
     private const float SPEED_VELOCITY_LIMIT = 5f;
     private const float MOVEMENT_FORCE = 10f;
-    private ParticlesExplosion particles;
+    private ParticlesExplosion particlesDeath;
+    private ParticlesWater particlesWaterEnter;
+    private ParticlesWater particlesWaterExit;
     private SphereCollider coll;
 
     private FMOD.Studio.EventInstance playerSoundroll;
@@ -82,7 +84,10 @@ public class Player : MonoBehaviour, IResettable
         liveInit = live;
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<SphereCollider>();
-        particles = transform.GetChild(0).GetComponent<ParticlesExplosion>();
+        particlesDeath = transform.GetChild(0).GetComponent<ParticlesExplosion>();
+        particlesWaterEnter = transform.GetChild(1).GetComponent<ParticlesWater>();
+        particlesWaterExit = transform.GetChild(2).GetComponent<ParticlesWater>();
+
         currentGravityFactor = initGravityFactor;
         resetJumpForce();
 
@@ -94,7 +99,6 @@ public class Player : MonoBehaviour, IResettable
     {
         state = StatePlayer.JUMP;
         camShakeScript = GameManager.gM.cam.GetComponent<CameraShake>();
-
         playerSoundroll = FMODUtils.createInstance(FMODConstants.MOVE.PLAYER_ROLL);
         impactFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_PLAYER);
         impactBombFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_BOMB);
@@ -201,6 +205,7 @@ public class Player : MonoBehaviour, IResettable
         bool isOnLeftWall = leftWallColls.Length > 0;
         bool isOnRightWall = rightWallColls.Length > 0;
 
+
         // Condición 1: Solo toca el suelo (abajo)
         if (isOnGround && !isOnLeftWall && !isOnRightWall)
         {
@@ -238,9 +243,6 @@ public class Player : MonoBehaviour, IResettable
         // Si no cumple ninguna condición, no puede saltar
         return false;
     }
-
-
-
 
 
     private void collisionFloor(bool isWater)
@@ -606,6 +608,7 @@ public class Player : MonoBehaviour, IResettable
                 impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
                 rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
                 setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.WATER);
+                launchParticlesWaterEnter();
                 break;
             case "TubeEnter":
                 freeFall = true;
@@ -645,12 +648,24 @@ public class Player : MonoBehaviour, IResettable
             rb.angularDrag = 0.05f;
             rb.drag = 0;
             setTerrainParametersToExitMaterialAndStart(FMODConstants.MATERIAL.WATER);
+            launchParticlesWaterExit();
         }
+    }
+
+    private void launchParticlesWaterEnter()
+    {
+        particlesWaterEnter.Explode();
+        StartCoroutine(delayResetParticlesWaterEnter());
+    }
+    private void launchParticlesWaterExit()
+    {
+        particlesWaterExit.Explode();
+        StartCoroutine(delayResetParticlesWaterExit());
     }
     public void die()
     {
         GameManager.gM.ChangeGravityScale(-9.81f); //También cambio la gravedad aquí porque si no se nota más gravedad en las partículas.
-        particles.Explode();
+        particlesDeath.Explode();
         StartCoroutine(delayDead());
         FMODUtils.playOneShot(FMODConstants.DAMAGE.DEATH_VOICE, transform.position);
         rb.isKinematic = true;
@@ -666,6 +681,17 @@ public class Player : MonoBehaviour, IResettable
         GameManager.gM.InstantiateNewBall(2);
     }
 
+    IEnumerator delayResetParticlesWaterEnter()
+    {
+        yield return new WaitForSeconds(1f);
+        particlesWaterEnter.resetObject();
+    }
+    IEnumerator delayResetParticlesWaterExit()
+    {
+        yield return new WaitForSeconds(1f);
+        particlesWaterExit.resetObject();
+    }
+
     public void resetObject()
     {
         rb.isKinematic = false;
@@ -675,7 +701,9 @@ public class Player : MonoBehaviour, IResettable
         stateImpactTerrain = StateSoundImpactPlayer.NONE;
         materialActual = FMODConstants.MATERIAL.NONE;
         jumpBombEnabled = false;
-        particles.resetObject();
+        particlesDeath.resetObject();
+        particlesWaterEnter.resetObject();
+        particlesWaterExit.resetObject();
         currentGravityFactor = initGravityFactor;
         rb.angularDrag = 0.05f;
         rb.drag = 0;

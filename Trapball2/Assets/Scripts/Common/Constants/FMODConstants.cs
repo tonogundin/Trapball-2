@@ -25,6 +25,7 @@ public class FMODConstants
     public const string SPEED = "speed";
     public const string ON_TRIGGER = "Ontrigger";
     public const string HIT_FORCE = "hit_force";
+    public const string JUMP_CHARGE = "SalgoCharge";
 
 
     public const float LIMIT_SOUND_VALUE = 8;
@@ -74,6 +75,8 @@ public class FMODConstants
         LOW,
         [FMODUtils.StringValue("event:/Saltos/SaltoBomba")]
         JUMP_BOMB,
+        [FMODUtils.StringValue("event:/Saltos/Salto_charge")]
+        CHARGE_JUMP
     }
 
     public enum DAMAGE
