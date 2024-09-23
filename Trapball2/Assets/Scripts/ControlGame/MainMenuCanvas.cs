@@ -60,7 +60,7 @@ public class MainMenuCanvas : MonoBehaviour
             }   
         }
     }
-    public void OnJump(InputValue value)
+    public void OnPressButton(InputValue value)
     {
         if (!value.isPressed && selectButton != null)
         {
@@ -70,22 +70,14 @@ public class MainMenuCanvas : MonoBehaviour
                     switch (state)
                     {
                         case StateMainMenu.INITIAL:
-                            StartCoroutine(delayStep());
-                            logoTrapBall.SetActive(false);
-                            instructions.SetActive(true);
-                            break;
-                        case StateMainMenu.INSTRUCTIONS:
-                            state = StateMainMenu.LOADING;
+                            StartCoroutine(delayStepFinal());
                             FMODUtils.stopAllEvents();
                             soundStart.start();
-                            StartCoroutine(delayStepLoading());
                             break;
                     }
                     break;
                 case exit:
-                    // Cierra la aplicación
                     Application.Quit();
-                    // Si estás en el editor de Unity, esto detendrá la ejecución del juego
 #if UNITY_EDITOR
                     UnityEditor.EditorApplication.isPlaying = false;
 #endif
@@ -101,38 +93,24 @@ public class MainMenuCanvas : MonoBehaviour
             Cursor.visible = false;
         }
     }
-    public void OnDetectMouse(InputValue value)
+    public void OnMouseMove(InputValue value)
     {
         if (!Cursor.visible)
         {
             Cursor.visible = true;
         }
     }
-    IEnumerator delayStep()
-    {
-        yield return new WaitForSeconds(0.5f);
-        state = StateMainMenu.INSTRUCTIONS;
-    }
 
-    IEnumerator delayStepLoading()
-    {
-        yield return new WaitForSeconds(3f);
-        instructions.SetActive(false);
-        loading.SetActive(true);
-        state = StateMainMenu.FINAL;
-        StartCoroutine(delayStepFinal());
-    }
     IEnumerator delayStepFinal()
     {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadSceneAsync("Level1");
+        state = StateMainMenu.FINAL;
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadSceneAsync("Loading");
     }
 
     private enum StateMainMenu
     {
         INITIAL,
-        INSTRUCTIONS,
-        LOADING,
         FINAL
     }
 

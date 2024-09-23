@@ -77,6 +77,14 @@ public class Player : MonoBehaviour, IResettable
     private CameraShake camShakeScript;
     private FMODConstants.MATERIAL materialActual = FMODConstants.MATERIAL.NONE;
 
+    private Renderer objectRenderer;
+    private Color originalColor;
+
+    private Color greenColor = new Color(0.7f, 1f, 0.7f);
+    private Color redColor = new Color(1f, 0.7f, 0.7f);
+    private Color blinkColor = new Color(0.7f, 1f, 0.7f);
+    private float blinkDuration = 0.1f;
+    private bool isBlinking = false; 
 
     void Awake()
     {
@@ -106,6 +114,8 @@ public class Player : MonoBehaviour, IResettable
         impactObjetc = FMODUtils.createInstance(FMODConstants.OBJECTS.IMPACT_OBJECT_PLAYER);
         emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         playerSoundroll.start();
+        objectRenderer = GetComponent<Renderer>();
+        originalColor = objectRenderer.material.color;  // Guardamos el color original del material
     }
 
     void FixedUpdate()
@@ -281,6 +291,10 @@ public class Player : MonoBehaviour, IResettable
                     }
                 }
                 break;
+        }
+        if (jumpCharge && jumpForce > 0)
+        {
+            BlinkPlayerBasedOnValue(jumpForce);
         }
     }
 
@@ -828,6 +842,44 @@ public class Player : MonoBehaviour, IResettable
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         isRumbleActive = false;
+    }
+
+    private void BlinkPlayerBasedOnValue(float value)
+    {
+        float normalizedSoundEnergy = Mathf.Clamp((jumpForce - getJumpLowLimit()) / (getJumpLimit() - getJumpLowLimit()), 0f, 1f);
+
+        float scaledSoundEnergy = normalizedSoundEnergy * 100f;
+        if (scaledSoundEnergy <= 25)
+        {
+            return;
+        }
+
+        blinkColor = Color.Lerp(greenColor, redColor, (scaledSoundEnergy - 25f) / 75f);
+
+        // Llamamos a la corrutina para parpadear
+        blinkDuration = Mathf.Lerp(0.1f, 0.025f, (scaledSoundEnergy - 25f) / 75f);
+
+        if (!isBlinking)
+        {
+            StartCoroutine(BlinkCoroutine());
+        }
+    }
+
+    private IEnumerator BlinkCoroutine()
+    {
+        isBlinking = true;  // Marcamos que el parpadeo ha comenzado
+
+        objectRenderer.material.color = blinkColor;
+
+        // Espera durante el blinkDuration
+        yield return new WaitForSeconds(blinkDuration);
+
+        // Cambia de nuevo al color original
+        objectRenderer.material.color = originalColor;
+
+        // Espera nuevamente
+        yield return new WaitForSeconds(blinkDuration);
+        isBlinking = false;  // Marcamos que el parpadeo ha terminado
     }
 
     private void ApplyStretch()

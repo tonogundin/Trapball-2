@@ -445,6 +445,17 @@
                 {
                     "name": "",
                     "id": "4679d32b-7145-4bb6-b3e4-030a9ba488b2",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BombJump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a19a1f3-c324-4505-96a3-42b0cbb0d089",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",

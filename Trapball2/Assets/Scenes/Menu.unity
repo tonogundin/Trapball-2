@@ -683,8 +683,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca13e0bb0a583343adb750423d66332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 934390731}
+  image1: {fileID: 0}
+  image2: {fileID: 0}
   tmp_text: {fileID: 1508475617}
+  sprites1: []
+  sprites2: []
 --- !u!1 &208899724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,7 +2158,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: MenuPause
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &538391980

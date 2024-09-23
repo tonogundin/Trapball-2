@@ -103,6 +103,7 @@ public class BallHud : MonoBehaviour
             }
             else if (bufferEnergyIndex == 0)
             {
+                soundChargeEnergy.setParameterByName(FMODConstants.JUMP_CHARGE, 25);
                 soundChargeEnergy.start();
             }
             bufferEnergyIndex = spriteIndex;
@@ -115,7 +116,7 @@ public class BallHud : MonoBehaviour
         float normalizedSoundEnergy = Mathf.Clamp((jumpForce - lowLimitEnergy) / (limitEnergy - lowLimitEnergy), 0f, 1f);
 
         // Escalamos el valor para estar en el rango de 25 a 100
-        float scaledSoundEnergy = 50f + (normalizedSoundEnergy * 50f);
+        float scaledSoundEnergy = 0f + (normalizedSoundEnergy * 100f);
         //Debug.Log("SpeedSound: " + scaledSoundEnergy);
         soundChargeEnergy.setParameterByName(FMODConstants.JUMP_CHARGE, scaledSoundEnergy);
     }

@@ -1,0 +1,2158 @@
+﻿++Solución "Trapball2" ‎(6 de 6 proyectos)
+i:{00000000-0000-0000-0000-000000000000}:Trapball2.sln
+++Assembly-CSharp
+i:{00000000-0000-0000-0000-000000000000}:Assembly-CSharp
+++Referencias
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Assets
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\
+++Scripts
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\scripts\
+++Common
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\common\
+++ControlGame
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\
+++Debug
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\debug\
+++Enemies
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\enemies\
+++Interfaces
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\interfaces\
+++Level3
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level3\
+++Level4
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level4\
+++Level5
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level5\
+++Level6
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level6\
+++Level7
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level7\
+++LevelMenu
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\levelmenu\
+++Particles
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\particles\
+++ParticlesExplosion.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\particles\particlesexplosion.cs
+++ParticlesWater.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\particles\particleswater.cs
+++Player
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\player\
+++Player.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\player\player.cs
+++Traps
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\
+++DinamicWater
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\dinamicwater\
+++Elevator
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\elevator\
+++MobilePlatform
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\mobileplatform\
+++Balancin.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\balancin.cs
+++BreakablePlatform.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\breakableplatform.cs
+++BreakableWood.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\breakablewood.cs
+++Courage.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\courage.cs
+++FloatingBehaviour.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\floatingbehaviour.cs
+++Spikes.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\spikes.cs
+++Water.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\water.cs
+++Bomb.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\bomb.cs
+++CheckMouseCursor.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\checkmousecursor.cs
+++Loading.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\loading.cs
+++SineMovement.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\sinemovement.cs
+++SoundButton.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\soundbutton.cs
+++TextBlink.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\textblink.cs
+++TextMesh Pro
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\
+++pausevideo.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\pausevideo.cs
+++Assembly-CSharp-firstpass
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{00000000-0000-0000-0000-000000000000}:Assembly-CSharp-firstpass
+++Autodesk.Fbx
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Autodesk.Fbx.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++FMODUnity
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{00000000-0000-0000-0000-000000000000}:FMODUnity
+++FMODUnityEditor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{00000000-0000-0000-0000-000000000000}:FMODUnityEditor
+++FMODUnityResonance
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{00000000-0000-0000-0000-000000000000}:FMODUnityResonance
+++FMODUnityResonanceEditor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{00000000-0000-0000-0000-000000000000}:FMODUnityResonanceEditor
+++Microsoft.Win32.Primitives
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++mscorlib
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++netstandard
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++PPv2URPConverters
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++System
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.AppContext
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Buffers
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Collections
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Collections.Concurrent
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Collections.NonGeneric
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Collections.Specialized
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.ComponentModel
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.ComponentModel.Composition
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.ComponentModel.EventBasedAsync
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.ComponentModel.Primitives
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.ComponentModel.TypeConverter
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Console
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Core
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Data
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Data.Common
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.Contracts
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.Debug
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.FileVersionInfo
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.Process
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.StackTrace
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.TextWriterTraceListener
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.Tools
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.TraceSource
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Diagnostics.Tracing
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Drawing
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Drawing.Primitives
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Dynamic.Runtime
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Globalization
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Globalization.Calendars
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Globalization.Extensions
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.Compression
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.Compression.FileSystem
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.Compression.ZipFile
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.FileSystem
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.FileSystem.DriveInfo
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.FileSystem.Primitives
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.FileSystem.Watcher
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.IsolatedStorage
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.MemoryMappedFiles
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.Pipes
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.IO.UnmanagedMemoryStream
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Linq
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Linq.Expressions
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Linq.Parallel
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Linq.Queryable
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Memory
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.Http
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.NameResolution
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.NetworkInformation
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.Ping
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.Primitives
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.Requests
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.Security
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.Sockets
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.WebHeaderCollection
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.WebSockets
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Net.WebSockets.Client
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Numerics
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Numerics.Vectors
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.ObjectModel
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Reflection
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Reflection.DispatchProxy
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Reflection.Emit
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Reflection.Emit.ILGeneration
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Reflection.Emit.Lightweight
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Reflection.Extensions
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Reflection.Primitives
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Resources.Reader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Resources.ResourceManager
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Resources.Writer
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.CompilerServices.VisualC
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.Extensions
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.Handles
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.InteropServices
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.InteropServices.RuntimeInformation
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.InteropServices.WindowsRuntime
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.Numerics
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.Serialization
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.Serialization.Formatters
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.Serialization.Json
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.Serialization.Primitives
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Runtime.Serialization.Xml
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Security.Claims
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Security.Cryptography.Algorithms
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Security.Cryptography.Csp
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Security.Cryptography.Encoding
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Security.Cryptography.Primitives
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Security.Cryptography.X509Certificates
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Security.Principal
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Security.SecureString
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.ServiceModel.Web
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Text.Encoding
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Text.Encoding.Extensions
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Text.RegularExpressions
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Threading
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Threading.Overlapped
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Threading.Tasks
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Threading.Tasks.Extensions
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Threading.Tasks.Parallel
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Threading.Thread
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Threading.ThreadPool
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Threading.Timer
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Transactions
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.ValueTuple
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Web
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Windows
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml.Linq
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml.ReaderWriter
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml.Serialization
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml.XDocument
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml.XmlDocument
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml.XmlSerializer
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml.XPath
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++System.Xml.XPath.XDocument
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Unity.2D.Sprite.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.AI.Navigation
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.AI.Navigation.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.AI.Navigation.Editor.ConversionSystem
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.AI.Navigation.Updater
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Android.Gradle
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Unity.Android.GradleProject
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Unity.Android.Types
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Unity.Burst
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Burst.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Formats.Fbx.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Formats.Fbx.Runtime
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.InputSystem
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.InputSystem.ForUI
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Mathematics
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Mathematics.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.PlasticSCM.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.RenderPipeline.Universal.ShaderLibrary
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.RenderPipelines.Core.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.RenderPipelines.Core.Runtime
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.RenderPipelines.Core.ShaderLibrary
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.RenderPipelines.Universal.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.RenderPipelines.Universal.Runtime
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Unity.RenderPipelines.Universal.Shaders
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Rider.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Searcher.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.ShaderGraph.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.TextMeshPro
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.TextMeshPro.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.Timeline
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Unity.Timeline.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+++Unity.VisualStudio.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++Unity.VSCode.Editor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+++UnityEditor
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.CoreModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.DeviceSimulatorModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.DiagnosticsModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.EditorToolbarModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.GraphViewModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.iOS.Extensions.Common
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.iOS.Extensions.Xcode
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.PresetsUIModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.QuickSearchModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.SceneTemplateModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.SceneViewModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.TextCoreFontEngineModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.TextCoreTextEngineModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.UI
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.UIBuilderModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.UIElementsModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.UIElementsSamplesModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.UnityConnectModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.AccessibilityModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.AIModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.AndroidJNIModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.AnimationModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ARModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.AssetBundleModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.AudioModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ClothModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ClusterInputModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ClusterRendererModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ContentLoadModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.CoreModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.CrashReportingModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.DirectorModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.DSPGraphModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.GameCenterModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.GIModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.GridModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.HotReloadModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ImageConversionModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.IMGUIModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.InputLegacyModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.InputModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.JSONSerializeModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.LocalizationModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ParticleSystemModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.PerformanceReportingModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.Physics2DModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.PhysicsModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ProfilerModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.PropertiesModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.ScreenCaptureModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.SharedInternalsModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.SpriteMaskModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.SpriteShapeModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.StreamingModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.SubstanceModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.SubsystemsModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.TerrainModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.TerrainPhysicsModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.TextCoreFontEngineModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.TextCoreTextEngineModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.TextRenderingModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.TilemapModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.TLSModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UI
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UIElementsModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UIModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UmbraModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityAnalyticsCommonModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityAnalyticsModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityConnectModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityCurlModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityTestProtocolModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityWebRequestAssetBundleModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityWebRequestAudioModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityWebRequestModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityWebRequestTextureModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.UnityWebRequestWWWModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.VehiclesModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.VFXModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.VideoModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.VirtualTexturingModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.VRModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.WindModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.XRModule
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Constants
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\common\constants\
+++FMODUtils.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\common\fmodutils.cs
+++Timer.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\common\timer.cs
+++Utils.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\common\utils.cs
+++ActiveBocadillo.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\activebocadillo.cs
+++BallHud.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\ballhud.cs
+++Bocadillo.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\bocadillo.cs
+++CameraShake.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\camerashake.cs
+++CheckPoint.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\checkpoint.cs
+++CheckPointActive.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\checkpointactive.cs
+++DataManager.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\datamanager.cs
+++Exit.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\exit.cs
+++ExitGame.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\exitgame.cs
+++ExitJump.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\exitjump.cs
+++GameController.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\gamecontroller.cs
+++GameEvents.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\gameevents.cs
+++GameManager.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\gamemanager.cs
+++InGameCanvasManager.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\ingamecanvasmanager.cs
+++MainCamera.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\maincamera.cs
+++MainMenuCanvas.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\mainmenucanvas.cs
+++MenuPause.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\menupause.cs
+++MixAudio.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\mixaudio.cs
+++TextCourage.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\controlgame\textcourage.cs
+++FPSDisplay.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\debug\fpsdisplay.cs
+++Beatle
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\enemies\beatle\
+++MouseBall
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\enemies\mouseball\
+++IResettable.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\interfaces\iresettable.cs
+++Laser.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level3\laser.cs
+++BilliardStick.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level4\billiardstick.cs
+++SwitchForBarriers.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level4\switchforbarriers.cs
+++AirCube.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level5\aircube.cs
+++MovingPlatformLvl6.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level6\movingplatformlvl6.cs
+++RotatingSpikes.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level6\rotatingspikes.cs
+++MovingPlatformLvl7.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\level7\movingplatformlvl7.cs
+++LevelMenuManager.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\levelmenu\levelmenumanager.cs
+++DinamicWater.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\dinamicwater\dinamicwater.cs
+++ButtonElevator.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\elevator\buttonelevator.cs
+++Elevator.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\elevator\elevator.cs
+++ExitMouse.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\elevator\exitmouse.cs
+++HydraulicLift.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\elevator\hydrauliclift.cs
+++ResetMouse.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\elevator\resetmouse.cs
+++MecanismPlatform.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\traps\mobileplatform\mecanismplatform.cs
+++Fonts
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\fonts\
+++Resources
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\resources\
+++Shaders
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\
+++Sprites
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\sprites\
+++FMODConstants.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\common\constants\fmodconstants.cs
+++Layers.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\common\constants\layers.cs
+++Beatle.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\enemies\beatle\beatle.cs
+++EnterMouse.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\enemies\mouseball\entermouse.cs
+++MouseBall2.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\enemies\mouseball\mouseball2.cs
+++MouseBallAgent.cs
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\scripts\enemies\mouseball\mouseballagent.cs
+++LiberationSans - OFL.txt
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\fonts\liberationsans - ofl.txt
+++LineBreaking Following Characters.txt
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\resources\linebreaking following characters.txt
+++LineBreaking Leading Characters.txt
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\resources\linebreaking leading characters.txt
+++TMP_Bitmap-Custom-Atlas.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_bitmap-custom-atlas.shader
+++TMP_Bitmap-Mobile.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_bitmap-mobile.shader
+++TMP_Bitmap.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_bitmap.shader
+++TMP_SDF-Mobile Masking.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf-mobile masking.shader
+++TMP_SDF-Mobile Overlay.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf-mobile overlay.shader
+++TMP_SDF-Mobile SSD.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf-mobile ssd.shader
+++TMP_SDF-Mobile.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf-mobile.shader
+++TMP_SDF-Surface-Mobile.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf-surface-mobile.shader
+++TMP_SDF-Surface.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf-surface.shader
+++TMP_SDF Overlay.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf overlay.shader
+++TMP_SDF SSD.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf ssd.shader
+++TMP_SDF.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sdf.shader
+++TMP_Sprite.shader
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmp_sprite.shader
+++TMPro.cginc
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmpro.cginc
+++TMPro_Mobile.cginc
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmpro_mobile.cginc
+++TMPro_Properties.cginc
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmpro_properties.cginc
+++TMPro_Surface.cginc
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\shaders\tmpro_surface.cginc
+++EmojiOne Attribution.txt
+i:{534b610c-3ce7-953d-8cba-ab3f067e5d1e}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\textmesh pro\sprites\emojione attribution.txt
+++Plugins
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\
+++PlayerInput
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\playerinput\
+++New Controls.cs
+i:{8da83cd9-98b1-c0c3-bb02-9fef8e843a7c}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\playerinput\new controls.cs
+++log4netPlastic
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Microsoft.CSharp
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++nunit.framework
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++System.ComponentModel.Annotations
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++System.Data.DataSetExtensions
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++System.Net.Http.Rtc
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++System.ServiceModel.Duplex
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++System.ServiceModel.Http
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++System.ServiceModel.NetTcp
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++System.ServiceModel.Primitives
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++System.ServiceModel.Security
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++Unity.Plastic.Antlr3.Runtime
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++Unity.Plastic.Newtonsoft.Json
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.Android.Extensions
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.Graphs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.iOS.Extensions
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.TestRunner
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++UnityEditor.UWP.Extensions
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEditor.WindowsStandalone.Extensions
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++UnityEngine.NVIDIAModule
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++UnityEngine.TestRunner
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+++unityplastic
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:
+++FMOD
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\
+++src
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\android\src\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\html5\src\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\ios\src\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\linux\src\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\mac\src\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\tvos\src\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\src\
+++Editor
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\editor\
+++BankRefDrawer.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\bankrefdrawer.cs
+++BankRefresher.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\bankrefresher.cs
+++BankRefreshWindow.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\bankrefreshwindow.cs
+++BoltIntegration.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\boltintegration.cs
+++CodeGeneration.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\codegeneration.cs
+++CreateEventPopup.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\createeventpopup.cs
+++EditorBankRef.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\editorbankref.cs
+++EditorEventRef.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\editoreventref.cs
+++EditorParamRef.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\editorparamref.cs
+++EditorSettings.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\editorsettings.cs
+++EditorUtils.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\editorutils.cs
+++EventBrowser.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\eventbrowser.cs
+++EventCache.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\eventcache.cs
+++EventManager.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\eventmanager.cs
+++EventRefDrawer.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\eventrefdrawer.cs
+++EventReferenceUpdater.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\eventreferenceupdater.cs
+++FileReorganizer.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\filereorganizer.cs
+++FindAndReplace.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\findandreplace.cs
+++FMODEventPlayableEditor.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\fmodeventplayableeditor.cs
+++FMODEventTrackEditor.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\fmodeventtrackeditor.cs
+++FMODUnityEditor.asmdef
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\fmodunityeditor.asmdef
+++ListView.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\listview.cs
+++LogViewer.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\logviewer.cs
+++ParamRefDrawer.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\paramrefdrawer.cs
+++SettingsEditor.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\settingseditor.cs
+++SetupWizard.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\setupwizard.cs
+++StudioBankLoaderEditor.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\studiobankloadereditor.cs
+++StudioEventEmitterEditor.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\studioeventemittereditor.cs
+++StudioEventEmitterGizmoDrawer.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\studioeventemittergizmodrawer.cs
+++StudioGlobalParameterTriggerEditor.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\studioglobalparametertriggereditor.cs
+++StudioListenerEditor.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\studiolistenereditor.cs
+++StudioParameterTriggerEditor.cs
+i:{cffef3eb-9787-9123-381c-4208b21a9f6d}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\editor\studioparametertriggereditor.cs
+++addons
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\
+++ResonanceAudio
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\
+++FmodResonanceAudioRoomEditor.cs
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\editor\fmodresonanceaudioroomeditor.cs
+++FMODUnityResonanceEditor.asmdef
+i:{7ee934d2-f913-6afd-a32d-5a3159e2b2e5}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\editor\fmodunityresonanceeditor.asmdef
+++FmodResonanceAudio.cs
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\scripts\fmodresonanceaudio.cs
+++FmodResonanceAudioRoom.cs
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\scripts\fmodresonanceaudioroom.cs
+++FMODUnityResonance.asmdef
+i:{f3832300-41d7-bd0c-f0d0-4a17baaf9080}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\addons\resonanceaudio\scripts\fmodunityresonance.asmdef
+++platforms
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\
+++FMODUnity.asmdef
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\fmodunity.asmdef
+++LICENSE.TXT
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\license.txt
+++README.txt
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\readme.txt
+++android
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\android\
+++html5
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\html5\
+++ios
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\ios\
+++linux
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\linux\
+++mac
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\mac\
+++tvos
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\tvos\
+++uwp
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\
+++win
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\
+++AutomatableSlots.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\automatableslots.cs
+++BankRefAttribute.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\bankrefattribute.cs
+++EventHandler.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\eventhandler.cs
+++EventRefAttribute.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\eventrefattribute.cs
+++EventReference.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\eventreference.cs
+++fmod.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\fmod.cs
+++fmod_dsp.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\fmod_dsp.cs
+++fmod_errors.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\fmod_errors.cs
+++fmod_studio.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\fmod_studio.cs
+++FMODEventPlayable.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\fmodeventplayable.cs
+++FMODEventTrack.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\fmodeventtrack.cs
+++FMODRuntimeManagerOnGUIHelper.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\fmodruntimemanageronguihelper.cs
+++ParamRef.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\paramref.cs
+++ParamRefAttribute.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\paramrefattribute.cs
+++Platform.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\platform.cs
+++PlatformDefault.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\platformdefault.cs
+++PlatformGroup.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\platformgroup.cs
+++PlatformMobileHigh.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\platformmobilehigh.cs
+++PlatformMobileLow.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\platformmobilelow.cs
+++PlatformPlayInEditor.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\platformplayineditor.cs
+++RuntimeManager.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\runtimemanager.cs
+++RuntimeUtils.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\runtimeutils.cs
+++Settings.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\settings.cs
+++StudioBankLoader.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\studiobankloader.cs
+++StudioEventEmitter.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\studioeventemitter.cs
+++StudioGlobalParameterTrigger.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\studioglobalparametertrigger.cs
+++StudioListener.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\studiolistener.cs
+++StudioParameterTrigger.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\src\studioparametertrigger.cs
+++lib
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\
+++PlatformAndroid.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\android\src\platformandroid.cs
+++PlatformWebGL.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\html5\src\platformwebgl.cs
+++PlatformIOS.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\ios\src\platformios.cs
+++PlatformLinux.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\linux\src\platformlinux.cs
+++PlatformMac.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\mac\src\platformmac.cs
+++PlatformAppleTV.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\tvos\src\platformappletv.cs
+++arm
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\arm\
+++x64
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x64\
+++x86
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x86\
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\x86\
+++x86_64
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\x86_64\
+++PlatformWindows.cs
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\src\platformwindows.cs
+++fmod.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\arm\fmod.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x64\fmod.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x86\fmod.dll
+++fmodL.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\arm\fmodl.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x64\fmodl.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x86\fmodl.dll
+++fmodstudio.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\arm\fmodstudio.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x64\fmodstudio.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x86\fmodstudio.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\x86\fmodstudio.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\x86_64\fmodstudio.dll
+++fmodstudioL.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\arm\fmodstudiol.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x64\fmodstudiol.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\uwp\lib\x86\fmodstudiol.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\x86\fmodstudiol.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\x86_64\fmodstudiol.dll
+++resonanceaudio.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\x86\resonanceaudio.dll
+i:{f0d76fe7-3602-0ee5-715c-8119b951fbe6}:c:\users\tonog\programacion2021\axouxere\trap ball adventure\repounity2022.3.5f1\trapball2\assets\plugins\fmod\platforms\win\lib\x86_64\resonanceaudio.dll

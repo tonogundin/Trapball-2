@@ -21,13 +21,28 @@ public class Bocadillo : MonoBehaviour
     public TextMeshProUGUI textBocadillo;
 
     public Bocadillo otherBocadillo;
+    public TypeDialog type;
+
+    private FMOD.Studio.EventInstance dialogEight;
+
+    private float typingSpeed = 0.03f;
+
+    void Awake()
+    {
+        dialogEight = FMODUtils.createInstance(FMODConstants.HUD.VOICE_DIALOGS);
+        gameObject.SetActive(false);
+    }
+
+
 
     public void ActiveBocadillo(string text, float timeLife)
     {
         closed();
         text = text.Replace("\\n", "\n");
+        textBocadillo.text = "";
         waitTimeBeforeFade = timeLife;
-        textBocadillo.text = text;
+        setTypeDialog();
+        dialogEight.start();
         // Si es un objeto UI, obtén el CanvasGroup
         canvasGroup = GetComponent<CanvasGroup>();
         // Si estás usando UI, guarda el tamaño original desde el RectTransform
@@ -49,13 +64,52 @@ public class Bocadillo : MonoBehaviour
 
         // Inicia la coroutine para crecer
         StartCoroutine(GrowFromZeroToOriginalSize());
+
+        StartCoroutine(TypeText(text, typingSpeed));
     }
 
     public void closed()
     {
         if (this.isActiveAndEnabled)
         {
+            dialogEight.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             StartCoroutine(FadeOutAction());
+        }
+    }
+
+    private IEnumerator TypeText(string fullText, float typingSpeed)
+    {
+        yield return new WaitForSeconds(fadeDuration);
+        
+        string[] words = fullText.Split(' '); // Divide el texto en palabras
+                                              // Recorre cada letra del texto
+        foreach (char letter in fullText)
+        {
+            textBocadillo.text += letter; // Añade cada letra al texto del bocadillo
+            yield return new WaitForSeconds(typingSpeed); // Espera el tiempo especificado entre cada letra
+        }
+        /*
+        foreach (string word in words)
+        {
+            textBocadillo.text += word + " "; // Añade la palabra y un espacio
+            yield return new WaitForSeconds(typingSpeed); // Espera el tiempo especificado entre cada palabra
+        }
+        */
+    }
+
+    private void setTypeDialog()
+    {
+
+        switch (type)
+        {
+            case TypeDialog.HELP:
+                int selectedImage = Random.Range(0, 2);
+                dialogEight.setParameterByNameWithLabel(FMODConstants.TYPE_DIALOG, selectedImage == 0 ? FMODConstants.TYPE_DIALOG_THINKING : FMODConstants.TYPE_DIALOG_SOLUTION);
+                break;
+
+            case TypeDialog.LORE:
+                dialogEight.setParameterByNameWithLabel(FMODConstants.TYPE_DIALOG, FMODConstants.TYPE_DIALOG_WORRIED);
+                break;
         }
     }
 
@@ -116,5 +170,11 @@ public class Bocadillo : MonoBehaviour
             // Opcional: Desactiva el GameObject al finalizar la animación de desaparición
             gameObject.SetActive(false);
         }
+    }
+
+    public enum TypeDialog
+    {
+        LORE,
+        HELP
     }
  }

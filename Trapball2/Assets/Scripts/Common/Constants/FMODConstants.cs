@@ -26,6 +26,10 @@ public class FMODConstants
     public const string ON_TRIGGER = "Ontrigger";
     public const string HIT_FORCE = "hit_force";
     public const string JUMP_CHARGE = "SalgoCharge";
+    public const string TYPE_DIALOG = "Eight_diag_state";
+    public const string TYPE_DIALOG_WORRIED = "Worried";
+    public const string TYPE_DIALOG_THINKING = "Thinking";
+    public const string TYPE_DIALOG_SOLUTION = "Solution";
 
 
     public const float LIMIT_SOUND_VALUE = 8;
@@ -95,6 +99,8 @@ public class FMODConstants
         BUTTON_SELECT,
         [FMODUtils.StringValue("event:/HUD/Stinger_Start")]
         GAME_START,
+        [FMODUtils.StringValue("event:/Voices/Eight_Voice_Dialogs")]
+        VOICE_DIALOGS
     }
 
     public enum BALLMOUSE

@@ -1449,8 +1449,7 @@ namespace FMOD.Studio
         }
         public RESULT setParameterByNameWithLabel(string name, string label, bool ignoreseekspeed = false)
         {
-            using (StringHelper.ThreadSafeEncoding encoder = StringHelper.GetFreeHelper(),
-                                                   labelEncoder = StringHelper.GetFreeHelper())
+            using (StringHelper.ThreadSafeEncoding encoder = StringHelper.GetFreeHelper(), labelEncoder = StringHelper.GetFreeHelper())
             {
                 return FMOD_Studio_EventInstance_SetParameterByNameWithLabel(this.handle, encoder.byteFromStringUTF8(name), labelEncoder.byteFromStringUTF8(label), ignoreseekspeed);
             }
