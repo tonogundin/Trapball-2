@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ed597a04465a941874f60135579d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOffset: 0.25
+  bottomOffset: 0.5
   extraOffset: 0
 --- !u!199 &2577047088755950211
 ParticleSystemRenderer:
@@ -4947,7 +4947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ed597a04465a941874f60135579d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomOffset: 0.5
+  bottomOffset: 0
   extraOffset: 0
 --- !u!199 &120825881287452686
 ParticleSystemRenderer:
