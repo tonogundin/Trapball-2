@@ -34,9 +34,20 @@ public class BreakableWood : MonoBehaviour, IResettable
                 StartCoroutine(Disappear());
                 FMODUtils.playOneShot(FMODConstants.OBJECTS.PLATFORM_CRACK, transform.position);
             }
+            else if (yVelocity > 0)
+            {
+                rb.isKinematic = false;
+                rb.AddForce(Vector3.up * yVelocity * 0.25f, ForceMode.Impulse);
+            }
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            StartCoroutine(Disappear());
+        }
+    }
 
     IEnumerator Disappear()
     {

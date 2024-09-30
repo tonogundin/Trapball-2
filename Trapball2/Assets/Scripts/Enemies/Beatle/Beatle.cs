@@ -58,7 +58,8 @@ public class Beatle : MonoBehaviour, IResettable
     FMOD.Studio.EventInstance SoundHit;
     FMOD.Studio.EventInstance SoundExit;
 
-    // Start is called before the first frame update
+    private Coroutine currentCoroutine;
+
     void Start()
     {
         initialState = state;
@@ -340,12 +341,12 @@ public class Beatle : MonoBehaviour, IResettable
                     break;
                 case State.IMPACT:
                     SoundAttack.start();
-                    StartCoroutine(impulsePlayer());
+                    currentCoroutine = StartCoroutine(impulsePlayer());
                     break;
                 case State.NAIL:
                     SoundFall.start();
                     animator.SetTrigger(animBeatleNail);
-                    StartCoroutine(stateFreeNailToNormal());
+                    currentCoroutine = StartCoroutine(stateFreeNailToNormal());
                     break;
                 case State.FREE_NAIL:
                     animator.SetTrigger(animBeatleFreeNail);
@@ -356,7 +357,7 @@ public class Beatle : MonoBehaviour, IResettable
 
     private void prepareAttack()
     {
-        StartCoroutine(changeStateAttackAndNormal());
+        currentCoroutine = StartCoroutine(changeStateAttackAndNormal());
         animator.SetTrigger(animBeatlePreAttack);
     }
 
@@ -555,8 +556,14 @@ public class Beatle : MonoBehaviour, IResettable
 
     public void resetObject()
     {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+            currentCoroutine = null; // Resetear la referencia después de detenerla
+        }
         outofObjectReference = false;
         playerDetected = false;
+        launch = false;
         state = initialState;
         antState = State.NONE;
         transform.localPosition = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
