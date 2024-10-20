@@ -16,6 +16,7 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
     private Quaternion initialRotation;
     private float initialMass;
     public bool isFreezePositionX = false;
+    private ParticlesWaterController particlesWaterController;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
         initialRotation = transform.rotation;
         initialMass = rb.mass;
         impactFloor = FMODUtils.createInstance(FMODConstants.JUMPS.IMPACT_TERRAIN_ENEMIES);
+        particlesWaterController = GetComponent<ParticlesWaterController>();
     }
 
     private void FixedUpdate()
@@ -79,9 +81,14 @@ public class FloatingBehaviour : MonoBehaviour, IResettable
 
             impactFloor.setParameterByName(FMODConstants.SPEED, 8);
             FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.WATER, transform);
+
+        }
+        if (other.CompareTag(Water.TAG))
+        {
+            if (particlesWaterController != null)
+            {
+                particlesWaterController.launchParticlesWaterEnter(other.ClosestPoint(transform.position));
+            }
         }
     }
-
-
-
 }

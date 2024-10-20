@@ -708,7 +708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Courage
+  m_text: Coraje
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2193,6 +2193,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2356565262153460313, guid: 48da50ddaa59b89408e6d4cb464c9a31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2532730362275497902, guid: 48da50ddaa59b89408e6d4cb464c9a31, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6350258272090287286, guid: 48da50ddaa59b89408e6d4cb464c9a31, type: 3}

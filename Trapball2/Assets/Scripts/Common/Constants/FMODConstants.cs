@@ -132,6 +132,14 @@ public class FMODConstants
         EXIT
     }
 
+    public enum STRIP
+    {
+        [FMODUtils.StringValue("event:/VoiceOver/Viñeta 1")]
+        VOICE_OVER_01,
+        [FMODUtils.StringValue("event:/Musica/Viñeta 1/Viñeta_1")]
+        MUSIC_01,
+    }
+
     public enum BUSES
     {
         [FMODUtils.StringValue("bus:/MASTER")]

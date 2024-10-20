@@ -115,6 +115,12 @@ public class MenuPause : MonoBehaviour
             FMODUtils.setSnapshotPause(true);
             menuPause.SetActive(true);
             Time.timeScale = 0;
+        } else if (menuSettings.activeSelf)
+        {
+            showReturnMenuPause();
+        } else
+        {
+            buttonContinue();
         }
     }
     private void showReturnMenuPause()

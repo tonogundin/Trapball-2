@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class MouseBall2 : MonoBehaviour, IResettable
 {
@@ -52,7 +53,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
     private FMOD.Studio.EventInstance impactFloor;
     private FMOD.Studio.EventInstance exitTerrain;
 
-
+    private ParticlesWaterController particlesWaterController;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +67,8 @@ public class MouseBall2 : MonoBehaviour, IResettable
         timeRecover = new Timer((int)(clips[(int)Animations.RECOVER].length * 1000), new CallBackRecoverTimer(this));
         timeSwimming = new Timer(150, new CallBackSwimmingTimer(this));
         changeCollider(false);
-        
+        particlesWaterController = GetComponent<ParticlesWaterController>();
+
         BallMouseRun = FMODUtils.createInstance(FMODConstants.BALLMOUSE.RUN);
         BallMouseHurt = FMODUtils.createInstance(FMODConstants.BALLMOUSE.HURT);
         BallMouseHit = FMODUtils.createInstance(FMODConstants.BALLMOUSE.HIT);
@@ -466,7 +468,9 @@ public class MouseBall2 : MonoBehaviour, IResettable
         if (other.CompareTag(Water.TAG))
         {
             FMODUtils.setTerrainParametersAndStart3D(impactFloor, FMODConstants.MATERIAL.WATER, transform);
+            particlesWaterController.launchParticlesWaterEnter();
         }
+        
     }
 
 
@@ -494,10 +498,9 @@ public class MouseBall2 : MonoBehaviour, IResettable
         if (other.CompareTag(Water.TAG))
         {
             FMODUtils.setTerrainParametersAndStart3D(exitTerrain, FMODConstants.MATERIAL.WATER, transform);
+            particlesWaterController.launchParticlesWaterExit();
         }
     }
-
-
 
     void OnCollisionExit(Collision collision)
     {

@@ -35,6 +35,8 @@ public class Player : MonoBehaviour, IResettable
     private Coroutine stretchCoroutine;
     private Coroutine squashCoroutine;
 
+    private ParticlesWaterController particlesWaterController;
+
 
     // PRIVATE
     [SerializeField] private PhysicMaterial BOUNCY;
@@ -48,8 +50,6 @@ public class Player : MonoBehaviour, IResettable
     private const float SPEED_VELOCITY_LIMIT = 5f;
     private const float MOVEMENT_FORCE = 10f;
     private ParticlesExplosion particlesDeath;
-    private ParticlesWater particlesWaterEnter;
-    private ParticlesWater particlesWaterExit;
     private SphereCollider coll;
 
     private FMOD.Studio.EventInstance playerSoundroll;
@@ -93,8 +93,7 @@ public class Player : MonoBehaviour, IResettable
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<SphereCollider>();
         particlesDeath = transform.GetChild(0).GetComponent<ParticlesExplosion>();
-        particlesWaterEnter = transform.GetChild(1).GetComponent<ParticlesWater>();
-        particlesWaterExit = transform.GetChild(2).GetComponent<ParticlesWater>();
+        particlesWaterController = GetComponent<ParticlesWaterController>();
 
         currentGravityFactor = initGravityFactor;
         resetJumpForce();
@@ -622,7 +621,7 @@ public class Player : MonoBehaviour, IResettable
                 impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
                 rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
                 setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.WATER);
-                launchParticlesWaterEnter();
+                particlesWaterController.launchParticlesWaterEnter();
                 break;
             case "TubeEnter":
                 freeFall = true;
@@ -662,20 +661,11 @@ public class Player : MonoBehaviour, IResettable
             rb.angularDrag = 0.05f;
             rb.drag = 0;
             setTerrainParametersToExitMaterialAndStart(FMODConstants.MATERIAL.WATER);
-            launchParticlesWaterExit();
+            particlesWaterController.launchParticlesWaterExit();
         }
     }
 
-    private void launchParticlesWaterEnter()
-    {
-        particlesWaterEnter.Explode();
-        StartCoroutine(delayResetParticlesWaterEnter());
-    }
-    private void launchParticlesWaterExit()
-    {
-        particlesWaterExit.Explode();
-        StartCoroutine(delayResetParticlesWaterExit());
-    }
+
     public void die()
     {
         GameManager.gM.ChangeGravityScale(-9.81f); //También cambio la gravedad aquí porque si no se nota más gravedad en las partículas.
@@ -695,16 +685,7 @@ public class Player : MonoBehaviour, IResettable
         GameManager.gM.InstantiateNewBall(2);
     }
 
-    IEnumerator delayResetParticlesWaterEnter()
-    {
-        yield return new WaitForSeconds(1f);
-        particlesWaterEnter.resetObject();
-    }
-    IEnumerator delayResetParticlesWaterExit()
-    {
-        yield return new WaitForSeconds(1f);
-        particlesWaterExit.resetObject();
-    }
+
 
     public void resetObject()
     {
@@ -716,8 +697,6 @@ public class Player : MonoBehaviour, IResettable
         materialActual = FMODConstants.MATERIAL.NONE;
         jumpBombEnabled = false;
         particlesDeath.resetObject();
-        particlesWaterEnter.resetObject();
-        particlesWaterExit.resetObject();
         currentGravityFactor = initGravityFactor;
         rb.angularDrag = 0.05f;
         rb.drag = 0;
@@ -764,9 +743,12 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
-    public void OnMenu()
+    public void OnMenu(InputValue value)
     {
-        GameEvents.instance.pauseScene.Invoke();
+        if (!value.isPressed)
+        {
+            GameEvents.instance.pauseScene.Invoke();
+        }
     }
 
     public void OnJump(InputValue value)

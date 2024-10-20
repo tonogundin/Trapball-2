@@ -9,7 +9,7 @@ public class ParticlesWater : MonoBehaviour, IResettable
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag(Player.TAG);
+        player = transform.parent.gameObject;
     }
 
     void Update()
@@ -22,6 +22,14 @@ public class ParticlesWater : MonoBehaviour, IResettable
         transform.SetParent(null);
         transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y - bottomOffset, player.transform.position.z);
+        GetComponent<ParticleSystem>().Play();
+    }
+
+    public void Explode(Vector3 position)
+    {
+        transform.SetParent(null);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.position = new Vector3(position.x, position.y - bottomOffset, position.z);
         GetComponent<ParticleSystem>().Play();
     }
 

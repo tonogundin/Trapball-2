@@ -39,12 +39,7 @@ public class MainMenuCanvas : MonoBehaviour
         selectButton = EventSystem.current.currentSelectedGameObject;
         antSelectButton = selectButton;
     }
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         selectButton = EventSystem.current.currentSelectedGameObject;
@@ -60,6 +55,25 @@ public class MainMenuCanvas : MonoBehaviour
             }   
         }
     }
+    public void launchNewGame()
+    {
+        switch (state)
+        {
+            case StateMainMenu.INITIAL:
+                StartCoroutine(delayStepFinal());
+                FMODUtils.stopAllEvents();
+                soundStart.start();
+                break;
+        }
+    }
+
+    public void launchExitGame()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
     public void OnPressButton(InputValue value)
     {
         if (!value.isPressed && selectButton != null)
@@ -67,20 +81,10 @@ public class MainMenuCanvas : MonoBehaviour
             switch (selectButton.name)
             {
                 case newGame:
-                    switch (state)
-                    {
-                        case StateMainMenu.INITIAL:
-                            StartCoroutine(delayStepFinal());
-                            FMODUtils.stopAllEvents();
-                            soundStart.start();
-                            break;
-                    }
+                    launchNewGame();
                     break;
                 case exit:
-                    Application.Quit();
-#if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
-#endif
+                    launchExitGame();
                     break;
             }
         }
@@ -105,7 +109,7 @@ public class MainMenuCanvas : MonoBehaviour
     {
         state = StateMainMenu.FINAL;
         yield return new WaitForSeconds(3.5f);
-        SceneManager.LoadSceneAsync("Loading");
+        SceneManager.LoadSceneAsync("Intro");
     }
 
     private enum StateMainMenu
