@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
-using System;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Video;
 
 public class pausevideo : MonoBehaviour
 {
@@ -24,10 +24,16 @@ public class pausevideo : MonoBehaviour
     private Image colorBackgroundBlack;
     private Image colorBackgroundBlack2;
     private Image colorBackgroundYellow;
+    private GameObject frontblack;
     private TMP_Text text;
     private State state = State.STOP;
-    void Start()
+    private VideoPlayer videoPlayer;
+    public AudioSource audioSource;
+    public RawImage rawImage;
+
+    private void Awake()
     {
+        frontblack = GameObject.Find("frontblack");
         colorBackgroundBlack = transform.Find("PanelText").GetComponent<Image>();
         colorBackgroundBlack.color = new Color(colorBackgroundBlack.color.r, colorBackgroundBlack.color.g, colorBackgroundBlack.color.b, 0f);
 
@@ -38,8 +44,19 @@ public class pausevideo : MonoBehaviour
         colorBackgroundYellow.color = new Color(colorBackgroundYellow.color.r, colorBackgroundYellow.color.g, colorBackgroundYellow.color.b, 0f);
         text = transform.Find("PanelText").Find("text").GetComponent<TMP_Text>();
         text.color = new Color(text.color.r, text.color.g, text.color.b, 0f);
-
+        rawImage = GetComponent<RawImage>();
+        videoPlayer = GetComponent<VideoPlayer>();
+        audioSource = GetComponent<AudioSource>();
+        videoPlayer.Stop();
+        videoPlayer.time = 0;
+        audioSource.Stop();
+    }
+    void Start()
+    {
+        videoPlayer.Play();
+        audioSource.Play();
         progressCircle.fillAmount = 0f;
+        StartCoroutine(quitblackfront());
     }  
 
 
@@ -76,7 +93,11 @@ public class pausevideo : MonoBehaviour
                 return;
         }
     }
-
+    IEnumerator quitblackfront()
+    {
+        yield return new WaitForSeconds(0.2f);
+        frontblack.SetActive(false);
+    }
     IEnumerator playingVideo()
     {
         StartCoroutine(fadeToOpaque());
@@ -218,13 +239,12 @@ public class pausevideo : MonoBehaviour
     private void launchLoading()
     {
         state = State.GO_LOADING;
+        videoPlayer.Stop();
+        videoPlayer.time = 0;
+        frontblack.SetActive(true);
         SceneManager.LoadSceneAsync("Loading");
         state = State.STOP;
-    }
-    private void switchPart()
-    {
-        state = (State)(((int)state + 1) % Enum.GetValues(typeof(State)).Length);
-
+        audioSource.Stop();
     }
 
     enum State
