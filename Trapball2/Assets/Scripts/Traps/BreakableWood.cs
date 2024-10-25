@@ -68,6 +68,7 @@ public class BreakableWood : MonoBehaviour, IResettable
         transform.rotation = initialRotation;
         rb.rotation = initialRotation;
         transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
+        state = State.NORMAL;
     }
     public enum State
     {

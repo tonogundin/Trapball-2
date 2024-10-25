@@ -7,13 +7,145 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000019F3F6EFD78 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002BCFC48E7F8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000002BC6003F7D8, queue head = 000002BD02C904B8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BC6003F7D8
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 000002BCB5949268, queue head = 000002BD02C904B8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BC6003F7D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002BCB5949268
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002BCB5949268
+[LOG] SoundI::release                          :  (000002B94B032678)
+[LOG] SoundI::release                          :     sxf_mouse_hurt (000002BB45B84C18)
+[LOG] SoundI::release                          :  (000002BB41F3D8D8)
+[LOG] SoundI::release                          :     sxf_mouse_run (000002BB41B73CE8)
+[LOG] SoundI::release                          :  (000002BB459997E8)
+[LOG] SoundI::release                          :     SFX_escarabajo pasos (000002BCD3C4D728)
+[LOG] SoundI::release                          :  (000002B94B032508)
+[LOG] SoundI::release                          :     sxf_player_roll_mud_fast (000002BB45B855D8)
+[LOG] SoundI::release                          :  (000002BCB60D2F78)
+[LOG] SoundI::release                          :     sxf_player_roll_wood (000002BB395F77F8)
+[LOG] SoundI::release                          :  (000002BCB60D29B8)
+[LOG] SoundI::release                          :     SFX_roll_stone (000002BB3924DC68)
+[LOG] SoundI::release                          :  (000002BB41F3DA48)
+[LOG] SoundI::release                          :     SFX_roll_wood (000002BB41B72148)
+[LOG] SoundI::release                          :  (000002BB41F3DD28)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart07 (000002BB41B722E8)
+[LOG] SoundI::release                          :  (000002BCB60D33C8)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart04 (000002BB394A3788)
+[LOG] SoundI::release                          :  (000002BCB60D2B28)
+[LOG] SoundI::release                          :     SFXPlayerMudRollStart02 (000002BB395F7CD8)
+[LOG] SoundI::release                          :  (000002BCB5F86FB8)
+[LOG] SoundI::release                          :     sxf_player_roll_mud (000002BCD3C504A8)
+[LOG] SoundI::release                          :  (000002BB41F3ECF8)
+[LOG] SoundI::release                          :     sxf_mouse_scream (000002BB45B86E38)
+[LOG] SoundI::release                          :  (000002BB45999958)
+[LOG] SoundI::release                          :     SFX_GrabMoon (000002BCD3C4CD68)
+[LOG] SoundI::release                          :  (000002BCB5F86CD8)
+[LOG] SoundI::release                          :     sxf_mouse inglating (000002BCD3C50B28)
+[LOG] SoundI::release                          :  (000002BB459990B8)
+[LOG] SoundI::release                          :     SFX_escarabajo_attack (000002BCD3C4F608)
+[LOG] SoundI::release                          :  (000002BB41F3E008)
+[LOG] SoundI::release                          :     TrapBallAdventure_Stage1.5_124_roll (000002BB41B71E08)
+[LOG] SoundI::release                          :  (000002BC67ECA928)
+[LOG] SoundI::release                          :     sxf_mouse_jump (000002BB45B843F8)
+[LOG] SoundI::release                          :  (000002BCB5F87578)
+[LOG] SoundI::release                          :     SFX_DRIP4 (000002BCD3C4E0E8)
+[LOG] SoundI::release                          :  (000002B94B032DA8)
+[LOG] SoundI::release                          :     SFX_DRIP1 (000002BB45B83898)
+[LOG] SoundI::release                          :  (000002B995236B48)
+[LOG] SoundI::release                          :     SFX_DRIP5 (000002BB45B86138)
+[LOG] SoundI::release                          :  (000002B94B032958)
+[LOG] SoundI::release                          :     SFX_DRIP6 (000002BB45B862D8)
+[LOG] SoundI::release                          :  (000002BB41F3EB88)
+[LOG] SoundI::release                          :     SFX_DRIP3 (000002BB45B84598)
+[LOG] SoundI::release                          :  (000002B94B032AC8)
+[LOG] SoundI::release                          :     SFX_DRIP2 (000002BB45B874B8)
+[LOG] SoundI::release                          :  (000002BB45999AC8)
+[LOG] SoundI::release                          :     SFX_FullMoon (000002BCD3C4D248)
+[LOG] SoundI::release                          :  (000002BB45999C38)
+[LOG] SoundI::release                          :     SFX_escarabajo caida (000002BCD3C4FC88)
+[LOG] SoundI::release                          : TrapBallAdventure_Stage1.5_124_a (000002BCD6CA9D58)
+[LOG] SoundI::release                          :     TrapBallAdventure_Stage1.5_124_a (000002BB41F6CCC8)
+[LOG] SoundI::release                          :     TrapBallAdventure_Stage1.5_124_a (000002BC6003F7D8)
+[LOG] SoundI::release                          : TrapBallAdventure_Stage1.5_124_b (000002BC5FC74758)
+[LOG] SoundI::release                          :     TrapBallAdventure_Stage1.5_124_b (000002BCB5673768)
+[LOG] SoundI::release                          :     TrapBallAdventure_Stage1.5_124_b (000002BCB5949268)
+[LOG] SoundI::release                          :  (000002BCB5F86E48)
+[LOG] SoundI::release                          :     sxf_hit_cardboard4 (000002BCD3C4FFC8)
+[LOG] SoundI::release                          :  (000002BCB60D30E8)
+[LOG] SoundI::release                          :     sxf_hit_carboard3 (000002BB394A2268)
+[LOG] SoundI::release                          :  (000002BCB60D36A8)
+[LOG] SoundI::release                          :     sxf_hit_cardboard2 (000002BB39253A18)
+[LOG] SoundI::release                          :  (000002BCB5F87408)
+[LOG] SoundI::release                          :     sxf_hit_carboard (000002BCD3C507E8)
+[LOG] SoundI::release                          :  (000002B94B0327E8)
+[LOG] SoundI::release                          :     SFX_waterexit (000002BB45B86478)
+[LOG] SoundI::release                          :  (000002BCB60D2C98)
+[LOG] SoundI::release                          :     SFX_waterimpacto (000002BB3924D448)
+[LOG] SoundI::release                          :  (000002B94B0320B8)
+[LOG] SoundI::release                          :     sfx_waterfootstep (000002BB45B86AF8)
+[LOG] SoundI::release                          :  (000002B94B032398)
+[LOG] SoundI::release                          :     sfx_waterfootstep2 (000002BB45B86618)
+[LOG] SoundI::release                          :  (000002BCB60D3258)
+[LOG] SoundI::release                          :     sfx_footstep metal1 (000002BB395F7998)
+[LOG] SoundI::release                          :  (000002BCB5F876E8)
+[LOG] SoundI::release                          :     sfx_footstep metal2 (000002BCD3C4EF88)
+[LOG] SoundI::release                          :  (000002B94B032C38)
+[LOG] SoundI::release                          :     sfx_footsteprug2 (000002BB45B84F58)
+[LOG] SoundI::release                          :  (000002BB41F3E738)
+[LOG] SoundI::release                          :     sfx_footsteprug1 (000002BB41B74508)
+[LOG] SoundI::release                          :  (000002B94B032228)
+[LOG] SoundI::release                          :     sfx_footstepstone1 (000002BB45B85AB8)
+[LOG] SoundI::release                          :  (000002BCB5F87298)
+[LOG] SoundI::release                          :     sfx_footstepstone2 (000002BCD3C4EDE8)
+[LOG] SoundI::release                          :  (000002BC67ECB4A8)
+[LOG] SoundI::release                          :     sfx_footstepsand (000002BB45B84DB8)
+[LOG] SoundI::release                          :  (000002BB41F3DBB8)
+[LOG] SoundI::release                          :     sfx_footstepsand2 (000002BB45B83A38)
+[LOG] SoundI::release                          :  (000002BCB60D3538)
+[LOG] SoundI::release                          :     sfx_footstepgrass 2 (000002BB39253D58)
+[LOG] SoundI::release                          :  (000002BCB5F87128)
+[LOG] SoundI::release                          :     sfx_footstepgrass (000002BCD3C4FAE8)
+[LOG] SoundI::release                          :  (000002BCB60D2E08)
+[LOG] SoundI::release                          :     sfx_footstep metal3 (000002BAB589CDF8)
+[LOG] SoundI::release                          :  (000002BCB5F86B68)
+[LOG] SoundI::release                          :     sfx_footstep metal4 (000002BCD3C4FE28)
+[LOG] SoundI::release                          :  (000002BB447AA798)
+[LOG] SoundI::release                          :     sfx__WATER1 (000002BB45B83BD8)
+[LOG] SoundI::release                          :  (000002BCB5F869F8)
+[LOG] SoundI::release                          :     sfx__Water2 (000002BCD3C4E428)
+[LOG] SoundI::release                          :  (000002BB41F3EA18)
+[LOG] SoundI::release                          :     sfx__water3 (000002BB41B72E48)
+[LOG] SoundI::release                          :  (000002BC67ECA368)
+[LOG] SoundI::release                          :     FOLEY EARTH DIRT CLUMP IMPACT SCATTER 01 (000002BB45B85F98)
+[LOG] SoundI::release                          :  (000002BB45999DA8)
+[LOG] SoundI::release                          :     SFX_mouse_hit_2 (000002BCD3C4DC08)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
@@ -31,3 +163,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

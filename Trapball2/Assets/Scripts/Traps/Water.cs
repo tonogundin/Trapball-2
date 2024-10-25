@@ -9,6 +9,7 @@ public class Water : MonoBehaviour
     {
         enterWater = FMODUnity.RuntimeManager.CreateInstance("event:/Ambientes/AmbienteUnderwater");
         FMODUtils.setSnapshotUnderwater(false);
+        GameEvents.instance.death.AddListener(exitWater);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,8 +25,12 @@ public class Water : MonoBehaviour
     {
         if (other.CompareTag(Player.TAG))
         {
-            enterWater.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            FMODUtils.setSnapshotUnderwater(false);
+            exitWater();
         }
+    }
+    private void exitWater()
+    {
+        enterWater.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        FMODUtils.setSnapshotUnderwater(false);
     }
 }

@@ -66,7 +66,7 @@ public class pausevideo : MonoBehaviour
         {
             holdTimer += Time.deltaTime;
             float fillAmount = (holdTimer / holdTime);
-            if (fillAmount > 0.2f)
+            if (fillAmount > 0.05f)
             {
                 if (!buttonALoad.activeSelf)
                 {

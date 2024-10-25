@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
     IEnumerator Waiting(float secToWait, Vector3 initPos)
     {
         yield return new WaitForSeconds(secToWait);
+        GameEvents.instance.death.Invoke();
         player.transform.position = initPos;
         plScript = player.GetComponent<Player>();
         plScript.resetObject();
