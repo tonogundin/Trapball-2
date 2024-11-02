@@ -84,7 +84,7 @@ public class Beatle : MonoBehaviour, IResettable
             {
                 if (state == State.MOVE)
                 {
-                    SoundRun.setParameterByName("speed", rb.velocity.x);
+                    SoundRun.setParameterByName("speed", rb.linearVelocity.x);
                 }
                 dirToPlayer = (player.transform.position - transform.position).normalized;
                 if (velocityZ != 0)
@@ -108,7 +108,7 @@ public class Beatle : MonoBehaviour, IResettable
                     }
                     if (isDetectedPlayerNear())
                     {
-                        dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
+                        dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotaciï¿½n rara.
                         activePrepareAttack();
                     }
                 }
@@ -123,7 +123,7 @@ public class Beatle : MonoBehaviour, IResettable
                 transform.position = positionAttack;
             }
 
-            if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
+            if (rb.linearVelocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
             {
                 rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
             }
@@ -151,7 +151,7 @@ public class Beatle : MonoBehaviour, IResettable
         // Define un rango de tolerancia
         float tolerance = 5f; // 5 grados de tolerancia a cada lado
 
-        // Verifica si la rotación está dentro del rango de 90 +/- tolerancia o 270 +/- tolerancia
+        // Verifica si la rotaciï¿½n estï¿½ dentro del rango de 90 +/- tolerancia o 270 +/- tolerancia
         return Mathf.Abs(rotationY - 90) <= tolerance || Mathf.Abs(rotationY - 270) <= tolerance;
     }
 
@@ -162,7 +162,7 @@ public class Beatle : MonoBehaviour, IResettable
         // Define un rango de tolerancia
         float tolerance = 5f; // 5 grados de tolerancia a cada lado
 
-        // Verifica si la rotación está dentro del rango de 90 +/- tolerancia o 270 +/- tolerancia
+        // Verifica si la rotaciï¿½n estï¿½ dentro del rango de 90 +/- tolerancia o 270 +/- tolerancia
         return Mathf.Abs(rotationY - 90) <= tolerance;
     }
     private bool isDetectPlayer()
@@ -172,8 +172,8 @@ public class Beatle : MonoBehaviour, IResettable
         if (state == State.HANG)
         {
             return Mathf.Abs(distToPlayer.x) < distanceXHang // tenga un rango x para visualizarlo desde la altura.
-                   && distToPlayer.y < -1 // el player esté por debajo del beatle en y.
-                   && distToPlayer.y > -10; // que el player no esté a una distancia muy grande en altura.
+                   && distToPlayer.y < -1 // el player estï¿½ por debajo del beatle en y.
+                   && distToPlayer.y > -10; // que el player no estï¿½ a una distancia muy grande en altura.
         } else
         {
             return Mathf.Abs(distToPlayer.x) <= 10f;
@@ -188,7 +188,7 @@ public class Beatle : MonoBehaviour, IResettable
 
     private void checkVelocity()
     {
-        float velocityX = rb.velocity.x;
+        float velocityX = rb.linearVelocity.x;
         if (velocityX > 1)
         {
             velocityX = 1;
@@ -197,7 +197,7 @@ public class Beatle : MonoBehaviour, IResettable
         {
             velocityX = -1;
         }
-        float velocity_Z = rb.velocity.z;
+        float velocity_Z = rb.linearVelocity.z;
         if (velocity_Z > 0.25f)
         {
             velocityX = 0.25f;
@@ -208,13 +208,17 @@ public class Beatle : MonoBehaviour, IResettable
         }
         if (!rb.isKinematic)
         {
-            rb.velocity = new Vector3(velocityX, rb.velocity.y, velocity_Z);
+            rb.linearVelocity = new Vector3(velocityX, rb.linearVelocity.y, velocity_Z);
         }
     }
     private void FixedUpdate()
     {
         if (isActiveAndEnabled)
         {
+            if (!rb.isKinematic)
+            {
+                Utils.SanitizeRigidbody(rb);
+            }
             AddExtraGravityForce();
             float velocityX = Mathf.Sign(distToPlayer.x);
             if (transform.localPosition.z < maxPositionZ - 0.05f)
@@ -258,7 +262,7 @@ public class Beatle : MonoBehaviour, IResettable
                     state = State.NORMAL;
                     if (!rb.isKinematic)
                     {
-                        rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+                        rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
                     }
                 }
             }
@@ -289,7 +293,7 @@ public class Beatle : MonoBehaviour, IResettable
     {
         if (objectReference != null)
         {
-            // Asegúrate de que el objeto detectado tiene un Collider
+            // Asegï¿½rate de que el objeto detectado tiene un Collider
             Collider[] detectedColliders = objectReference.GetComponentsInChildren<Collider>();
             if (detectedColliders == null || detectedColliders.Length == 0) return false;
 
@@ -298,13 +302,13 @@ public class Beatle : MonoBehaviour, IResettable
             float detectedLeftX = objectReference.transform.position.x - detectedHalfWidth;
             float detectedRightX = objectReference.transform.position.x + detectedHalfWidth;
 
-            // Obtén la posición x y z del GameObject actual (el que tiene este script)
+            // Obtï¿½n la posiciï¿½n x y z del GameObject actual (el que tiene este script)
             float currentX = transform.position.x;
 
             // Compara las posiciones en ambos ejes
             bool isOutOfXBounds = currentX <= detectedLeftX || currentX >= detectedRightX;
 
-            return isOutOfXBounds; // Si está fuera de los límites en cualquiera de los ejes, retorna true
+            return isOutOfXBounds; // Si estï¿½ fuera de los lï¿½mites en cualquiera de los ejes, retorna true
         }
         return false;
     }
@@ -370,7 +374,7 @@ public class Beatle : MonoBehaviour, IResettable
         if (isNormalsState() || force)
         {
             float rotVelocity = 2.5f;
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); // Restricción en Z
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0); // Restricciï¿½n en Z
 
             Vector3 directionToTarget = (objectReference != null && outofObjectReference) ? dirToObjectReference : dirToPlayer;
             Quaternion rotToPlayer = Quaternion.LookRotation(directionToTarget, Vector3.up);
@@ -387,9 +391,9 @@ public class Beatle : MonoBehaviour, IResettable
     {
         if (!rb.isKinematic && !stayonShip)
         {
-            Vector3 vel = rb.velocity;
+            Vector3 vel = rb.linearVelocity;
             vel.y -= extraGravityFactor * Time.fixedDeltaTime;
-            rb.velocity = vel;
+            rb.linearVelocity = vel;
         }
     }
 
@@ -419,7 +423,7 @@ public class Beatle : MonoBehaviour, IResettable
                         impactY = 4;
                     }
                     rbPlayer.AddForce(new Vector3(0, impactY, 0), ForceMode.Impulse);
-                    rbPlayer.velocity = new Vector3(0, rbPlayer.velocity.y, rbPlayer.velocity.z);
+                    rbPlayer.linearVelocity = new Vector3(0, rbPlayer.linearVelocity.y, rbPlayer.linearVelocity.z);
                 }
             }
         }
@@ -499,13 +503,13 @@ public class Beatle : MonoBehaviour, IResettable
         }
         if (other.CompareTag("Water"))
         {
-            if (rb.velocity.x > 0.6f)
+            if (rb.linearVelocity.x > 0.6f)
             {
-                rb.velocity = new Vector2(0.6f, rb.velocity.y);
+                rb.linearVelocity = new Vector2(0.6f, rb.linearVelocity.y);
             }
-            if (rb.velocity.x < -0.6f)
+            if (rb.linearVelocity.x < -0.6f)
             {
-                rb.velocity = new Vector2(-0.6f, rb.velocity.y);
+                rb.linearVelocity = new Vector2(-0.6f, rb.linearVelocity.y);
             }
         }
     }
@@ -514,8 +518,8 @@ public class Beatle : MonoBehaviour, IResettable
     {
         if (other.CompareTag("Water"))
         {
-            rb.angularDrag = 0.05f;
-            rb.drag = 0;
+            rb.angularDamping = 0.05f;
+            rb.linearDamping = 0;
         }
     }
 
@@ -559,7 +563,7 @@ public class Beatle : MonoBehaviour, IResettable
         if (currentCoroutine != null)
         {
             StopCoroutine(currentCoroutine);
-            currentCoroutine = null; // Resetear la referencia después de detenerla
+            currentCoroutine = null; // Resetear la referencia despuï¿½s de detenerla
         }
         outofObjectReference = false;
         playerDetected = false;
@@ -570,7 +574,7 @@ public class Beatle : MonoBehaviour, IResettable
         transform.localRotation = new Quaternion(initialRotation.x, initialRotation.y, initialRotation.z, initialRotation.w);
         if (!rb.isKinematic)
         {
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.linearVelocity = new Vector3(0, 0, 0);
         }
         rb.isKinematic = true;
     }

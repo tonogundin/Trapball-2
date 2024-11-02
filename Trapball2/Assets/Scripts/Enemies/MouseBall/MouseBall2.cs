@@ -109,7 +109,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     playerDetected = true;
                     if (Mathf.Abs(distToPlayer) <= 0.75f)
                     {
-                        dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
+                        dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotaciï¿½n rara.
                     }
                 }
                 else
@@ -118,7 +118,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
                 }
             }
             ManageRotation();
-            if (rb.velocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
+            if (rb.linearVelocity.y < -4 && rb.collisionDetectionMode != CollisionDetectionMode.ContinuousDynamic)
             {
                 rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Volvemos a discreto para consumir menos recursos.
             }
@@ -130,7 +130,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
     }
     private void checkVelocity()
     {
-        float velocityX = rb.velocity.x;
+        float velocityX = rb.linearVelocity.x;
         if (velocityX > 6)
         {
             velocityX = 6;
@@ -138,7 +138,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
         {
             velocityX = -6;
         }
-        float velocity_Z = rb.velocity.z;
+        float velocity_Z = rb.linearVelocity.z;
         if (velocity_Z > 0.25f)
         {
             velocityX = 0.25f;
@@ -149,16 +149,21 @@ public class MouseBall2 : MonoBehaviour, IResettable
         }
         if (!rb.isKinematic)
         {
-            rb.velocity = new Vector3(velocityX, rb.velocity.y, velocity_Z);
+            rb.linearVelocity = new Vector3(velocityX, rb.linearVelocity.y, velocity_Z);
         }
     }
     private void FixedUpdate()
     {
         if (isActiveAndEnabled)
         {
+
+            if (!rb.isKinematic)
+            {
+                Utils.SanitizeRigidbody(rb);
+            }
             if (state == State.MOVE)
             {
-                BallMouseRun.setParameterByName("speed", rb.velocity.x);
+                BallMouseRun.setParameterByName("speed", rb.linearVelocity.x);
             }
             AddExtraGravityForce();
             if (!isSmashProcess())
@@ -204,7 +209,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
                         state = State.NORMAL;
                         if (!rb.isKinematic)
                         {
-                            rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+                            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
                         }
                     }
                 }
@@ -213,17 +218,18 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     move(0, 0.25f, 0, ForceMode.Impulse);
 
                     move(limitVelocity(velocityX, 0.25f), 0, velocityZ, ForceMode.Acceleration);
-                    if (rb.velocity.y > 5)
+
+                    if (rb.linearVelocity.y > 5)
                     {
-                        rb.velocity = new Vector3(rb.velocity.x, 5, rb.velocity.z);
+                        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 5, rb.linearVelocity.z);
                     }
-                    if (rb.velocity.x > 2)
+                    if (rb.linearVelocity.x > 2)
                     {
-                        rb.velocity = new Vector3(2, rb.velocity.y, rb.velocity.z);
+                        rb.linearVelocity = new Vector3(2, rb.linearVelocity.y, rb.linearVelocity.z);
                     }
-                    if (rb.velocity.x < -2)
+                    if (rb.linearVelocity.x < -2)
                     {
-                        rb.velocity = new Vector3(-2, rb.velocity.y, rb.velocity.z);
+                        rb.linearVelocity = new Vector3(-2, rb.linearVelocity.y, rb.linearVelocity.z);
                     }
                 }
 
@@ -232,7 +238,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
             {
                 if (!contactBall)
                 {
-                    rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+                    rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
                 }
             }
             checkState();
@@ -262,7 +268,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
     {
         if (objectReference != null)
         {
-            // Asegúrate de que el objeto detectado tiene un Collider
+            // Asegï¿½rate de que el objeto detectado tiene un Collider
             Collider[] detectedColliders = objectReference.GetComponentsInChildren<Collider>();
             if (detectedColliders == null || detectedColliders.Length == 0) return false;
 
@@ -271,13 +277,13 @@ public class MouseBall2 : MonoBehaviour, IResettable
             float detectedLeftX = objectReference.transform.position.x - detectedHalfWidth;
             float detectedRightX = objectReference.transform.position.x + detectedHalfWidth;
 
-            // Obtén la posición x y z del GameObject actual (el que tiene este script)
+            // Obtï¿½n la posiciï¿½n x y z del GameObject actual (el que tiene este script)
             float currentX = transform.position.x;
 
             // Compara las posiciones en ambos ejes
             bool isOutOfXBounds = currentX <= detectedLeftX || currentX >= detectedRightX;
 
-            return isOutOfXBounds; // Si está fuera de los límites en cualquiera de los ejes, retorna true
+            return isOutOfXBounds; // Si estï¿½ fuera de los lï¿½mites en cualquiera de los ejes, retorna true
         }
         return false;
     }
@@ -348,9 +354,9 @@ public class MouseBall2 : MonoBehaviour, IResettable
     {
         if (!rb.isKinematic && !stayonShip)
         {
-            Vector3 vel = rb.velocity;
+            Vector3 vel = rb.linearVelocity;
             vel.y -= extraGravityFactor * Time.fixedDeltaTime;
-            rb.velocity = vel;
+            rb.linearVelocity = vel;
         }
     }
 
@@ -421,15 +427,15 @@ public class MouseBall2 : MonoBehaviour, IResettable
                 }
                 else
                 {
-                    // Obtenemos la dirección en X hacia el otro objeto
+                    // Obtenemos la direcciï¿½n en X hacia el otro objeto
                     float directionToOtherX = Mathf.Sign(collision.transform.position.x - transform.position.x);
 
-                    // Obtenemos la dirección en X de la velocidad de nuestro objeto
-                    float velocityDirectionX = Mathf.Sign(rb.velocity.x);
+                    // Obtenemos la direcciï¿½n en X de la velocidad de nuestro objeto
+                    float velocityDirectionX = Mathf.Sign(rb.linearVelocity.x);
 
                     // Comparamos las dos direcciones
-                    if (directionToOtherX == velocityDirectionX && collisionForce > 2 && rb.velocity.magnitude > 1) {
-                        float forceX = rb.velocity.x;
+                    if (directionToOtherX == velocityDirectionX && collisionForce > 2 && rb.linearVelocity.magnitude > 1) {
+                        float forceX = rb.linearVelocity.x;
                         if (forceX > ForceXImpact)
                         {
                             forceX = ForceXImpact;
@@ -534,7 +540,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
         transform.localPosition = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
         if (!rb.isKinematic)
         {
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.linearVelocity = new Vector3(0, 0, 0);
         }
     }
 

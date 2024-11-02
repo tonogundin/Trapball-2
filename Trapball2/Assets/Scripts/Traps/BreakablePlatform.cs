@@ -27,7 +27,7 @@ public class BreakablePlatform : MonoBehaviour, IResettable
         rb.isKinematic = true;
         rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
         transform.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);
         transform.rotation = initialRotation;

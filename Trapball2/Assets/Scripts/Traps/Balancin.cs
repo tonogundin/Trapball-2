@@ -38,41 +38,44 @@ public class Balancin : MonoBehaviour, IResettable
     }
     private void FixedUpdate()
     {
-        float zRotation = transform.eulerAngles.z;
-        //Debug.Log(zRotation);
-        int turnDirection;
+
+
         if (floating)
         {
-            //Si la caja está por encima del agua, entonces la variable quedará como negativa y positiva al contrario
+            // Calcula el desplazamiento de balanceo
             float displacementMultiplier = Mathf.Clamp01((waterYPos + offset - transform.position.y) / depthBeforeSumerged) * displacementAmount;
-            //Así, se va aplicando una fuerza en ambas direcciones (arriba y abajo) en función de la posición de la caja respecto al agua.
-            //Finalmente, se acabará cancelando la fuerza aplicada ya que las posiciones se igualarán.
-            rb.AddForce(new Vector3(forceXBalancin, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0), ForceMode.Acceleration);
-            if (forceXBalancin > 0)
+
+            if (!float.IsInfinity(displacementMultiplier) && !float.IsNaN(displacementMultiplier))
             {
-                forceXBalancin -= 0.5f;
+                rb.AddForce(new Vector3(forceXBalancin, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0), ForceMode.Acceleration);
+                if (forceXBalancin > 0)
+                {
+                    forceXBalancin -= 0.5f;
+                }
+                repositionMouse(rb.position.x - oldPosition.x);
             }
-            repositionMouse(rb.position.x - oldPosition.x);
-            if (zRotation > 0.5f || zRotation < 359.5f)
+
+            // Controla la rotaciÃ³n Z
+            // Calcula la rotaciÃ³n en Z, asegurando que 0 grados sea la posiciÃ³n estable
+            float zRotation = transform.eulerAngles.z;
+            if (!float.IsNaN(zRotation) && !float.IsInfinity(zRotation))
             {
-                turnDirection = zRotation > 0.5f && zRotation < 180 ? -1 : 1;
-                rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
-            }
-            if (zRotation > 15)
-            {
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 1f);
-            }
-            if (zRotation < -15)
-            {
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -1f);
+                if (zRotation > 0.5f || zRotation < 359.5f)
+                {
+                    int turnDirection = zRotation > 0.5f && zRotation < 180 ? -1 : 1;
+                    rb.AddTorque(transform.forward * torque * turnDirection, ForceMode.Acceleration);
+                }
             }
         }
     }
 
+
+
+
     public void resetObject()
     {
         rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
-        rb.velocity = new Vector3(0, 0, 0);
+        rb.linearVelocity = new Vector3(0, 0, 0);
         setOldPosition(rb.position);
     }
 
@@ -89,6 +92,7 @@ public class Balancin : MonoBehaviour, IResettable
                     energyImpactBall = 8;
                 }
                 moveBalancin(forceX);
+
                 moveMouse(new Vector3(forceX, 0, 0), ForceMode.Acceleration);
                 moveMouse(new Vector3(0, energyImpactBall, 0), ForceMode.Impulse);
                 energyImpactBall = 0;
@@ -148,7 +152,7 @@ public class Balancin : MonoBehaviour, IResettable
         if (player != null && player.GetComponent<Player>().isOnBalancin())
         {
             Rigidbody playerRB = player.GetComponent<Rigidbody>();
-            if (player.GetComponent<Player>().isTouchFloor() && player.GetComponent<Rigidbody>().velocity.y <= 1 && player.GetComponent<Rigidbody>().velocity.y >= -1)
+            if (player.GetComponent<Player>().isTouchFloor() && player.GetComponent<Rigidbody>().linearVelocity.y <= 1 && player.GetComponent<Rigidbody>().linearVelocity.y >= -1)
             {
                 player.GetComponent<Player>().resetJumpForce();
                 playerRB.AddForce(force, forceMode);

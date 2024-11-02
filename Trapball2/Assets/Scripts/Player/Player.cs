@@ -39,7 +39,7 @@ public class Player : MonoBehaviour, IResettable
 
 
     // PRIVATE
-    [SerializeField] private PhysicMaterial BOUNCY;
+    [SerializeField] private PhysicsMaterial BOUNCY;
     [SerializeField] private const float JUMP_DELTA = 5; //Define cuánto de rápido se alcanza el límite de fuerza de salto.
     [SerializeField] private const float JUMP_LIMIT = 10; //Define la mayor fuerza de salto posible a aplicar.
     [SerializeField] private float initGravityFactor;
@@ -119,6 +119,10 @@ public class Player : MonoBehaviour, IResettable
 
     void FixedUpdate()
     {
+        if (!rb.isKinematic)
+        {
+            Utils.SanitizeRigidbody(rb);
+        }
         if (isActiveMovement())
         {
             movementPlayer = especialStage ? 60 : movementPlayer;
@@ -129,7 +133,7 @@ public class Player : MonoBehaviour, IResettable
                 ManageBallSpeed();
             }
         }
-        velocityBall = new Vector2(rb.velocity.x, rb.velocity.y);
+        velocityBall = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
         playerSoundroll.setParameterByName(FMODConstants.SPEED, velocityBall.x);
     }
 
@@ -166,7 +170,7 @@ public class Player : MonoBehaviour, IResettable
 
     void checkTouchingFloor()
     {
-        if (rb.velocity.y <= 0 && state != StatePlayer.INIT_JUMP)
+        if (rb.linearVelocity.y <= 0 && state != StatePlayer.INIT_JUMP)
         {
             if (isColliderPlatforms())
             {
@@ -185,7 +189,7 @@ public class Player : MonoBehaviour, IResettable
                 state = StatePlayer.JUMP;
             }
         }
-        else if (rb.velocity.y > 3 && state == StatePlayer.NORMAL && !isColliderPlatforms())
+        else if (rb.linearVelocity.y > 3 && state == StatePlayer.NORMAL && !isColliderPlatforms())
         {
             resetJumpForce();
             state = StatePlayer.JUMP;
@@ -432,23 +436,23 @@ public class Player : MonoBehaviour, IResettable
     {
         if (state != StatePlayer.NORMAL)
         {
-            Vector3 vel = rb.velocity;
+            Vector3 vel = rb.linearVelocity;
             vel.y -= currentGravityFactor * Time.fixedDeltaTime;
-            rb.velocity = vel;
+            rb.linearVelocity = vel;
         }
     }
     void ManageBallSpeed()
     {
         //Límite de velocidad
-        if (Mathf.Abs(rb.velocity.x) > SPEED_VELOCITY_LIMIT)
+        if (Mathf.Abs(rb.linearVelocity.x) > SPEED_VELOCITY_LIMIT)
         {
-            rb.velocity = new Vector3(SPEED_VELOCITY_LIMIT * Mathf.Sign(rb.velocity.x), rb.velocity.y, rb.velocity.z);
+            rb.linearVelocity = new Vector3(SPEED_VELOCITY_LIMIT * Mathf.Sign(rb.linearVelocity.x), rb.linearVelocity.y, rb.linearVelocity.z);
         }
         //Ayuda para que no cueste tanto dejar la bola quieta
         //Si la bola a penas se mueve, no hay input de usuario y no está en una rampa (y == 0 + TouchingFloor) se parará por completo.
-        else if (Mathf.Abs(rb.velocity.x) < 0.3f && movementPlayer == 0 && rb.velocity.y == 0)
+        else if (Mathf.Abs(rb.linearVelocity.x) < 0.3f && movementPlayer == 0 && rb.linearVelocity.y == 0)
         {
-            rb.velocity = new Vector3(0, rb.velocity.y, rb.velocity.z);
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
         }
     }
 
@@ -606,7 +610,7 @@ public class Player : MonoBehaviour, IResettable
     {
         movementPlayer = 0;
         movementPlayerExpecialZ = 0;
-        rb.velocity = new Vector3(0, 0, 0);
+        rb.linearVelocity = new Vector3(0, 0, 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -617,9 +621,9 @@ public class Player : MonoBehaviour, IResettable
             case "Water":
                 collisionFloor(true);
                 setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
-                float yVelocity = Utils.limitValue(rb.velocity.y * -1, FMODConstants.LIMIT_SOUND_VALUE);
+                float yVelocity = Utils.limitValue(rb.linearVelocity.y * -1, FMODConstants.LIMIT_SOUND_VALUE);
                 impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
-                rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, -0.5f, rb.linearVelocity.z);
                 setTerrainImpactParametersAndStart(FMODConstants.MATERIAL.WATER);
                 particlesWaterController.launchParticlesWaterEnter();
                 break;
@@ -649,8 +653,8 @@ public class Player : MonoBehaviour, IResettable
         if (other.CompareTag("Water"))
         {
             currentGravityFactor = -5f;
-            rb.angularDrag = 4;
-            rb.drag = 2.2f;
+            rb.angularDamping = 4;
+            rb.linearDamping = 2.2f;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -658,8 +662,8 @@ public class Player : MonoBehaviour, IResettable
         if (other.CompareTag("Water") && state != StatePlayer.NONE && state != StatePlayer.DEAD && state != StatePlayer.FINISH)
         {
             currentGravityFactor = initGravityFactor;
-            rb.angularDrag = 0.05f;
-            rb.drag = 0;
+            rb.angularDamping = 0.05f;
+            rb.linearDamping = 0;
             setTerrainParametersToExitMaterialAndStart(FMODConstants.MATERIAL.WATER);
             particlesWaterController.launchParticlesWaterExit();
         }
@@ -698,8 +702,8 @@ public class Player : MonoBehaviour, IResettable
         jumpBombEnabled = false;
         particlesDeath.resetObject();
         currentGravityFactor = initGravityFactor;
-        rb.angularDrag = 0.05f;
-        rb.drag = 0;
+        rb.angularDamping = 0.05f;
+        rb.linearDamping = 0;
         int valorResult = valor - 10;
         valor = (valorResult > 0) ? valorResult : 0;
         live = liveInit;
