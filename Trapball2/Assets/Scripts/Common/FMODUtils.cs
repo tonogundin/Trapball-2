@@ -88,6 +88,7 @@ public class FMODUtils
 
     public static void setVolumenBankMaster(float value)
     {
+        setVolumenBank(FMODConstants.BUSES.SFX, value);
         setVolumenBank(FMODConstants.BUSES.MASTER, value);
     }
 

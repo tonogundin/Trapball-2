@@ -142,6 +142,8 @@ public class FMODConstants
 
     public enum BUSES
     {
+        [FMODUtils.StringValue("bus:/SFX")]
+        SFX,
         [FMODUtils.StringValue("bus:/MASTER")]
         MASTER,
         [FMODUtils.StringValue("bus:/MUSIC")]

@@ -36,6 +36,7 @@ public class Player : MonoBehaviour, IResettable
     private Coroutine squashCoroutine;
 
     private ParticlesWaterController particlesWaterController;
+    private Stella stella;
 
 
     // PRIVATE
@@ -95,6 +96,8 @@ public class Player : MonoBehaviour, IResettable
         particlesDeath = transform.GetChild(0).GetComponent<ParticlesExplosion>();
         particlesWaterController = GetComponent<ParticlesWaterController>();
 
+        stella = transform.Find("ParentStella").GetComponent<Stella>();
+        stella.gameObject.SetActive(false);
         currentGravityFactor = initGravityFactor;
         resetJumpForce();
 
@@ -191,7 +194,7 @@ public class Player : MonoBehaviour, IResettable
         }
         else if (rb.linearVelocity.y > 3 && state == StatePlayer.NORMAL && !isColliderPlatforms())
         {
-            resetJumpForce();
+            //resetJumpForce();
             state = StatePlayer.JUMP;
         }
     }
@@ -282,18 +285,13 @@ public class Player : MonoBehaviour, IResettable
 
     void processJumpForce()
     {
-        switch (state)
+        if (jumpCharge && jumpForce < JUMP_LIMIT)
         {
-            case StatePlayer.NORMAL:
-                if (jumpCharge && jumpForce < JUMP_LIMIT)
-                {
-                    jumpForce += JUMP_DELTA * Time.deltaTime;
-                    if (jumpForce > JUMP_LIMIT)
-                    {
-                        jumpForce = JUMP_LIMIT;
-                    }
-                }
-                break;
+            jumpForce += JUMP_DELTA * Time.deltaTime;
+            if (jumpForce > JUMP_LIMIT)
+            {
+                jumpForce = JUMP_LIMIT;
+            }
         }
         if (jumpCharge && jumpForce > 0)
         {
@@ -364,6 +362,7 @@ public class Player : MonoBehaviour, IResettable
     void setStateBombJump()
     {
         state = StatePlayer.BOMBJUMP;
+        stella.active();
         jumpBombEnabled = false;
         coll.material = BOUNCY; //Le ponemos un material rebotante.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
@@ -377,6 +376,7 @@ public class Player : MonoBehaviour, IResettable
         {
             gameController.ApplyRumble(1f, 0.15f);
         }
+        stella.desActive();
         StartCoroutine(camShakeScript.Shake(0.15f, 0.15f));
         coll.material = null;
         setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_BOMB_TERRAIN);

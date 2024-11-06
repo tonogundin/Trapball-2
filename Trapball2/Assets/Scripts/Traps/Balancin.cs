@@ -154,7 +154,7 @@ public class Balancin : MonoBehaviour, IResettable
             Rigidbody playerRB = player.GetComponent<Rigidbody>();
             if (player.GetComponent<Player>().isTouchFloor() && player.GetComponent<Rigidbody>().linearVelocity.y <= 1 && player.GetComponent<Rigidbody>().linearVelocity.y >= -1)
             {
-                player.GetComponent<Player>().resetJumpForce();
+                //player.GetComponent<Player>().resetJumpForce();
                 playerRB.AddForce(force, forceMode);
             }
         }
