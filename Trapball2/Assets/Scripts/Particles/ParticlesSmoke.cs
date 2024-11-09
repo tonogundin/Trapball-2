@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ParticlesStella : MonoBehaviour, IResettable
+public class ParticlesSmoke : MonoBehaviour, IResettable
 {
     GameObject player;
     public float bottomOffset = 0.5f;

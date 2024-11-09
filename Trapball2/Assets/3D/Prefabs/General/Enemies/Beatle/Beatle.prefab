@@ -48,9 +48,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -89.976
       objectReference: {fileID: 0}
+    - target: {fileID: 890237250269199685, guid: 2e4644b37db6036409323365a665938d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e4644b37db6036409323365a665938d, type: 3}
       propertyPath: m_Name
       value: Beatle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e4644b37db6036409323365a665938d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215099837682590711, guid: 2e4644b37db6036409323365a665938d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -155,7 +167,7 @@ Rigidbody:
   m_CollisionDetection: 2
 --- !u!95 &3225590266303092054
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -169,6 +181,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1

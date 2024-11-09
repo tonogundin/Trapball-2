@@ -55,7 +55,10 @@ public class MouseBall2 : MonoBehaviour, IResettable
 
     private ParticlesWaterController particlesWaterController;
 
-    // Start is called before the first frame update
+    private static bool canApplyImpulse = true; // Bandera para controlar si se puede aplicar el impulso
+    private static float impulseCooldown = 0.1f; // Duración del cooldown en segundos
+
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -411,18 +414,28 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     }
                     state = State.SMASH;
                     changeCollider(true);
-                    float impact = collision.relativeVelocity.y * -1;
-                    if (impact > 0)
+
+                    if (canApplyImpulse)
                     {
-                        if (impact > 9)
+
+                        float impact = collision.relativeVelocity.y * -1;
+                        if (impact > 0)
                         {
-                            impact = 9;
+                            if (impact >= 15)
+                            {
+                                impact = 19;
+                            }
+                            if (impact > 9 && impact < 15)
+                            {
+                                impact = 9;
+                            }
+                            if (impact < 5)
+                            {
+                                impact = 5;
+                            }
+                            rbPlayer.AddForce(new Vector3(0, impact, 0), ForceMode.Impulse);
+                            StartCoroutine(ImpulseCooldown());
                         }
-                        if (impact < 5)
-                        {
-                            impact = 5;
-                        }
-                        rbPlayer.AddForce(new Vector3(0, impact, 0), ForceMode.Impulse);
                     }
                 }
                 else
@@ -454,7 +467,12 @@ public class MouseBall2 : MonoBehaviour, IResettable
 
     }
 
-
+    private IEnumerator ImpulseCooldown()
+    {
+        canApplyImpulse = false; // Desactiva el impulso
+        yield return new WaitForSeconds(impulseCooldown); // Espera el tiempo de cooldown
+        canApplyImpulse = true; // Reactiva el impulso
+    }
     private void OnCollisionStay(Collision collision)
     {
         if (isObjetEqualsPlayer(collision.gameObject))

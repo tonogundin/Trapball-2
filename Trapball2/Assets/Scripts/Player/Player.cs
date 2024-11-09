@@ -36,7 +36,7 @@ public class Player : MonoBehaviour, IResettable
     private Coroutine squashCoroutine;
 
     private ParticlesWaterController particlesWaterController;
-    private ParticlesStellaController particlesStellaController;
+    private ParticlesSmokeController particlesSmokeController;
     private Stella stella;
 
 
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour, IResettable
     private const float JUMP_LOW_LIMIT = JUMP_LIMIT * JUMP_LOW_PERCENT;
     private const float JUMP_LOW_LIMIT_BOMB = JUMP_LIMIT * JUMP_LOW_BOMB_PERCENT;
 
-    private bool jumpCharge = false;
+    public bool jumpCharge = false;
 
     private bool debugger = false;
 
@@ -96,7 +96,7 @@ public class Player : MonoBehaviour, IResettable
         coll = GetComponent<SphereCollider>();
         particlesDeath = transform.GetChild(0).GetComponent<ParticlesExplosion>();
         particlesWaterController = GetComponent<ParticlesWaterController>();
-        particlesStellaController = GetComponent<ParticlesStellaController>();
+        particlesSmokeController = GetComponent<ParticlesSmokeController>();
         stella = transform.Find("ParentStella").GetComponent<Stella>();
         stella.gameObject.SetActive(false);
         currentGravityFactor = initGravityFactor;
@@ -177,13 +177,9 @@ public class Player : MonoBehaviour, IResettable
         if (rb.linearVelocity.y <= 0 && state != StatePlayer.INIT_JUMP)
         {
             bool isCollisionPlatforms = isColliderPlatforms();
-
-                Debug.Log("Is collision Platform: " + isCollisionPlatforms);
-                Debug.Log("State: " + state);
-
             if (isCollisionPlatforms)
             {
-                collisionFloor(false);
+                collisionFloor(false, false);
             }
             else if (state == StatePlayer.NORMAL)
             {
@@ -267,11 +263,11 @@ public class Player : MonoBehaviour, IResettable
     }
 
 
-    private void collisionFloor(bool isWater)
+    private void collisionFloor(bool isWater, bool withoutRetard)
     {
         if (state == StatePlayer.BOMBJUMP)
         {
-            setStateEndBombJump(isWater);
+            setStateEndBombJump(isWater, withoutRetard);
             ApplySquash();
         }
         else if (state != StatePlayer.BOMBJUMP && state != StatePlayer.NORMAL && !isWater)
@@ -312,17 +308,22 @@ public class Player : MonoBehaviour, IResettable
     void handleButtonUp()
     {
         jumpCharge = false;
-        switch (state)
+        if (isActiveMovement()) {
+            switch (state)
+            {
+                case StatePlayer.INIT_FALL:
+                //case StatePlayer.FALL:
+                case StatePlayer.NORMAL:
+                    adjustJumpForce();
+                    simpleJump();
+                    break;
+                case StatePlayer.JUMP:
+                    resetJumpForce();
+                    break;
+            }
+        } else
         {
-            case StatePlayer.INIT_FALL:
-            case StatePlayer.FALL:
-            case StatePlayer.NORMAL:
-                adjustJumpForce();
-                simpleJump();
-                break;
-            case StatePlayer.JUMP:
-                resetJumpForce();
-                break;
+            resetJumpForce();
         }
     }
 
@@ -368,7 +369,6 @@ public class Player : MonoBehaviour, IResettable
     void setStateBombJump()
     {
         state = StatePlayer.BOMBJUMP;
-        particlesStellaController.launchParticles();
         stella.active();
         jumpBombEnabled = false;
         coll.material = BOUNCY; //Le ponemos un material rebotante.
@@ -378,22 +378,29 @@ public class Player : MonoBehaviour, IResettable
         FMODUtils.playOneShot(FMODConstants.JUMPS.JUMP_BOMB, transform.position);
         playerSoundroll.setVolume(0);
     }
-    private void setStateEndBombJump(bool isWater)
+    private void setStateEndBombJump(bool isWater, bool withoutRetard)
     {
         if (isRumbleActive)
         {
             gameController.ApplyRumble(1f, 0.15f);
         }
-        particlesStellaController.stopParticles();
+        particlesSmokeController.launchParticles();
         stella.desActive();
-        StartCoroutine(camShakeScript.Shake(0.15f, 0.15f));
+        StartCoroutine(camShakeScript.Shake(0.5f, 0.5f));
         coll.material = null;
         setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_BOMB_TERRAIN);
         playerSoundroll.setVolume(1);
         state = StatePlayer.END_BOMB_JUMP;
         if (!isWater)
         {
-            StartCoroutine(stateNormalThreadDelay());
+            if (withoutRetard)
+            {
+                setStateNormal();
+            }
+            else
+            {
+                StartCoroutine(stateNormalThreadDelay());
+            }
         }
     }
 
@@ -418,7 +425,7 @@ public class Player : MonoBehaviour, IResettable
     }
     IEnumerator setStateFallThreadDelay()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.08f);
         state = StatePlayer.FALL;
     }
     IEnumerator stateNormalThreadDelay()
@@ -549,9 +556,9 @@ public class Player : MonoBehaviour, IResettable
                 // Handle other cases or do nothing
                 break;
         }
-        if (state == StatePlayer.BOMBJUMP && layer == Layers.PLATFORM && Utils.IsCollisionAboveEnemies(collision, transform.position.y))
+        if (state == StatePlayer.BOMBJUMP && (layer == Layers.PLATFORM || layer == Layers.ENEMIES) && Utils.IsCollisionAboveEnemies(collision, transform.position.y))
         {
-            collisionFloor(false);
+            collisionFloor(false, layer == Layers.ENEMIES);
         }
     }
 
@@ -633,7 +640,7 @@ public class Player : MonoBehaviour, IResettable
         switch (tag)
         {
             case "Water":
-                collisionFloor(true);
+                collisionFloor(true, false);
                 setStateImpactTerrain(StateSoundImpactPlayer.IMPACT_TERRAIN);
                 float yVelocity = Utils.limitValue(rb.linearVelocity.y * -1, FMODConstants.LIMIT_SOUND_VALUE);
                 impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
@@ -771,16 +778,13 @@ public class Player : MonoBehaviour, IResettable
 
     public void OnJump(InputValue value)
     {
-        if (isActiveMovement())
+        if (value.isPressed)
         {
-            if (value.isPressed)
-            {
-                handleButtonDown();
-            }
-            else
-            {
-                handleButtonUp();
-            }
+            handleButtonDown();
+        }
+        else
+        {
+            handleButtonUp();
         }
     }
 

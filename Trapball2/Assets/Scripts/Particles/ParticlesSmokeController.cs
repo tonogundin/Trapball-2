@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class ParticlesStellaController : MonoBehaviour
+public class ParticlesSmokeController : MonoBehaviour
 {
 
 
-    private ParticlesStella particles;
+    private ParticlesSmoke particles;
     // Start is called before the first frame update
     void Start()
     {
         // Encuentra los GameObjects por nombre y obtiene el componente ParticlesWater
-        particles = transform.Find("ParticleStella").GetComponent<ParticlesStella>();
+        particles = transform.Find("ParticlesSmoke").GetComponent<ParticlesSmoke>();
 
     }
 
@@ -21,7 +21,7 @@ public class ParticlesStellaController : MonoBehaviour
 
     public void launchParticles()
     {
-        //particles.Explode();
+        particles.Explode();
     }
 
     public void stopParticles()
