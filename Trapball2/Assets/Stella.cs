@@ -5,15 +5,16 @@ public class Stella : MonoBehaviour
 {
     private GameObject player;
     private float bottomOffset = 0.1f;  // Distancia desde el centro hasta la parte inferior (ajústala según tu personaje)
-    private float scaleSpeed = 9f; // velocidad de escalado
-    private Vector3 targetScale = new Vector3(1, 1, 1); // escala final
-    private Vector3 startScale = new Vector3(1, 0, 1); // escala inicial
+    private float scaleSpeed = 9f; // Velocidad de escalado
+    private Vector3 targetScale = new Vector3(1, 1, 1); // Escala final
+    private Vector3 startScale = new Vector3(1, 0, 1); // Escala inicial
     private bool isDeactivating = false; // Controla si está en proceso de desactivarse
+    private float rotationSmoothing = 5f; // Velocidad de interpolación para la rotación
 
     private void Awake()
     {
         player = transform.parent.gameObject;
-        transform.localScale = startScale; // empieza con escala mínima
+        transform.localScale = startScale; // Empieza con escala mínima
     }
 
     private void Update()
@@ -21,8 +22,11 @@ public class Stella : MonoBehaviour
         // Solo ejecuta la lógica de crecimiento si no está en desactivación
         if (!isDeactivating)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            // Ajustar la rotación para que siga la rotación del jugador en el eje Y
+            Quaternion targetRotation = Quaternion.Euler(0, player.transform.rotation.eulerAngles.y, 0);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSmoothing);
 
+            // Mantén la posición del plano ligeramente por debajo del jugador
             transform.position = new Vector3(
                 player.transform.position.x,
                 player.transform.position.y - bottomOffset,
@@ -44,7 +48,7 @@ public class Stella : MonoBehaviour
         isDeactivating = false; // Asegura que pueda crecer
         transform.SetParent(null);
         transform.localScale = startScale; // Resetea la escala al activarse
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.rotation = Quaternion.Euler(0, player.transform.rotation.eulerAngles.y, 0);
         transform.position = new Vector3(
             player.transform.position.x,
             player.transform.position.y - bottomOffset,

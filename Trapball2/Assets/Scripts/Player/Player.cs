@@ -36,6 +36,7 @@ public class Player : MonoBehaviour, IResettable
     private Coroutine squashCoroutine;
 
     private ParticlesWaterController particlesWaterController;
+    private ParticlesStellaController particlesStellaController;
     private Stella stella;
 
 
@@ -95,7 +96,7 @@ public class Player : MonoBehaviour, IResettable
         coll = GetComponent<SphereCollider>();
         particlesDeath = transform.GetChild(0).GetComponent<ParticlesExplosion>();
         particlesWaterController = GetComponent<ParticlesWaterController>();
-
+        particlesStellaController = GetComponent<ParticlesStellaController>();
         stella = transform.Find("ParentStella").GetComponent<Stella>();
         stella.gameObject.SetActive(false);
         currentGravityFactor = initGravityFactor;
@@ -155,7 +156,7 @@ public class Player : MonoBehaviour, IResettable
 
     private bool isActiveMovement()
     {
-        return state != StatePlayer.DEAD && state != StatePlayer.FINISH && Time.timeScale > 0;
+        return state != StatePlayer.DEAD && state != StatePlayer.FINISH && state != StatePlayer.BOMBJUMP && state != StatePlayer.END_BOMB_JUMP && Time.timeScale > 0;
     }
 
     public bool isNotDead()
@@ -175,7 +176,12 @@ public class Player : MonoBehaviour, IResettable
     {
         if (rb.linearVelocity.y <= 0 && state != StatePlayer.INIT_JUMP)
         {
-            if (isColliderPlatforms())
+            bool isCollisionPlatforms = isColliderPlatforms();
+
+                Debug.Log("Is collision Platform: " + isCollisionPlatforms);
+                Debug.Log("State: " + state);
+
+            if (isCollisionPlatforms)
             {
                 collisionFloor(false);
             }
@@ -362,10 +368,12 @@ public class Player : MonoBehaviour, IResettable
     void setStateBombJump()
     {
         state = StatePlayer.BOMBJUMP;
+        particlesStellaController.launchParticles();
         stella.active();
         jumpBombEnabled = false;
         coll.material = BOUNCY; //Le ponemos un material rebotante.
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic; //Cambiamos a dinámico por si atraviesa.
+        rb.linearVelocity = Vector3.zero;
         rb.AddForce(Vector3.down * 15f, ForceMode.Impulse);
         FMODUtils.playOneShot(FMODConstants.JUMPS.JUMP_BOMB, transform.position);
         playerSoundroll.setVolume(0);
@@ -376,6 +384,7 @@ public class Player : MonoBehaviour, IResettable
         {
             gameController.ApplyRumble(1f, 0.15f);
         }
+        particlesStellaController.stopParticles();
         stella.desActive();
         StartCoroutine(camShakeScript.Shake(0.15f, 0.15f));
         coll.material = null;
@@ -484,6 +493,7 @@ public class Player : MonoBehaviour, IResettable
         string tag = collision.gameObject.tag;
         float yVelocity = Utils.limitValue(collision.relativeVelocity.y, FMODConstants.LIMIT_SOUND_VALUE);
         impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
+        int layer = collision.gameObject.layer;
         switch (tag)
         {
             case "SueloPantanoso":
@@ -538,6 +548,10 @@ public class Player : MonoBehaviour, IResettable
             default:
                 // Handle other cases or do nothing
                 break;
+        }
+        if (state == StatePlayer.BOMBJUMP && layer == Layers.PLATFORM && Utils.IsCollisionAboveEnemies(collision, transform.position.y))
+        {
+            collisionFloor(false);
         }
     }
 
