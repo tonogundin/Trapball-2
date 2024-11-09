@@ -86,7 +86,8 @@ public class Player : MonoBehaviour, IResettable
     private Color redColor = new Color(1f, 0.7f, 0.7f);
     private Color blinkColor = new Color(0.7f, 1f, 0.7f);
     private float blinkDuration = 0.1f;
-    private bool isBlinking = false; 
+    private bool isBlinking = false;
+    public bool isBufferJump = false;
 
     void Awake()
     {
@@ -274,6 +275,11 @@ public class Player : MonoBehaviour, IResettable
         {
             setStateNormal();
             ApplySquash();
+            if (isBufferJump)
+            {
+                isBufferJump = false;
+                StartCoroutine(ejecuteJumpBuffer());
+            }
         }
     }
 
@@ -304,27 +310,49 @@ public class Player : MonoBehaviour, IResettable
     void handleButtonDown()
     {
         jumpCharge = true;
+        Debug.Log("Button Down");
     }
     void handleButtonUp()
     {
+        Debug.Log("Button UP");
         jumpCharge = false;
         if (isActiveMovement()) {
             switch (state)
             {
                 case StatePlayer.INIT_FALL:
-                //case StatePlayer.FALL:
                 case StatePlayer.NORMAL:
                     adjustJumpForce();
                     simpleJump();
                     break;
                 case StatePlayer.JUMP:
-                    resetJumpForce();
+                    bufferJump = StartCoroutine(setBufferJump());
                     break;
             }
         } else
         {
             resetJumpForce();
         }
+    }
+
+    Coroutine bufferJump;
+
+    IEnumerator setBufferJump()
+    {
+        isBufferJump = true;
+        yield return new WaitForSeconds(0.25f);
+        if (isBufferJump)
+        {
+            resetJumpForce();
+            isBufferJump = false;
+        }
+    }
+
+    private IEnumerator ejecuteJumpBuffer()
+    {
+        StopCoroutine(bufferJump);
+        yield return new WaitForSeconds(0.04f);
+        adjustJumpForce();
+        simpleJump();
     }
 
     void adjustJumpForce()
@@ -348,6 +376,7 @@ public class Player : MonoBehaviour, IResettable
             jumpForce = JUMP_LOW_LIMIT;
         }
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
+
         playerSoundroll.setVolume(0);
         float playSoundProbability = 0.65f;  // 80%
 
@@ -384,7 +413,10 @@ public class Player : MonoBehaviour, IResettable
         {
             gameController.ApplyRumble(1f, 0.15f);
         }
-        particlesSmokeController.launchParticles();
+        if (!isWater)
+        {
+            particlesSmokeController.launchParticles();
+        }
         stella.desActive();
         StartCoroutine(camShakeScript.Shake(0.5f, 0.5f));
         coll.material = null;
@@ -401,6 +433,9 @@ public class Player : MonoBehaviour, IResettable
             {
                 StartCoroutine(stateNormalThreadDelay());
             }
+        } else
+        {
+            state = StatePlayer.JUMP;
         }
     }
 
@@ -711,6 +746,7 @@ public class Player : MonoBehaviour, IResettable
     }
 
 
+    public bool isTimeReset = false;
 
     public void resetObject()
     {
@@ -728,6 +764,14 @@ public class Player : MonoBehaviour, IResettable
         int valorResult = valor - 10;
         valor = (valorResult > 0) ? valorResult : 0;
         live = liveInit;
+        isTimeReset = true;
+        StartCoroutine(delayControllers());
+    }
+
+    IEnumerator delayControllers()
+    {
+        yield return new WaitForSeconds(0.5f);
+        isTimeReset = false;
     }
 
     public bool isTouchFloor()
@@ -778,13 +822,16 @@ public class Player : MonoBehaviour, IResettable
 
     public void OnJump(InputValue value)
     {
-        if (value.isPressed)
+        if (!isTimeReset)
         {
-            handleButtonDown();
-        }
-        else
-        {
-            handleButtonUp();
+            if (value.isPressed)
+            {
+                handleButtonDown();
+            }
+            else
+            {
+                handleButtonUp();
+            }
         }
     }
 
