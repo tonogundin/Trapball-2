@@ -1146,7 +1146,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638651424132351801
+  lastModified: 638668537233779290
   FileSizes:
   - Name: Desktop
     Value: 4806
@@ -1266,7 +1266,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Ambience.bank
   Name: SFX Ambience
   StudioPath: bank:/SFX Ambience
-  lastModified: 638651424176737388
+  lastModified: 638668536960876523
   FileSizes:
   - Name: Desktop
     Value: 332704
@@ -1638,7 +1638,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   StringsBanks:
   - {fileID: -2787406691297457171}
-  cacheTime: 638651424191617542
+  cacheTime: 638668537234893937
   cacheVersion: 131616
 --- !u!114 &244127888474021729
 MonoBehaviour:
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
   Name: Musica
   StudioPath: bank:/Musica
-  lastModified: 638651424176451165
+  lastModified: 638668536960564580
   FileSizes:
   - Name: Desktop
     Value: 13793248
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Voiceover.bank
   Name: Voiceover
   StudioPath: bank:/Voiceover
-  lastModified: 638651424191617542
+  lastModified: 638668536975326097
   FileSizes:
   - Name: Desktop
     Value: 802784
@@ -2744,7 +2744,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/HUD.bank
   Name: HUD
   StudioPath: bank:/HUD
-  lastModified: 638651424124589097
+  lastModified: 638668536908773352
   FileSizes:
   - Name: Desktop
     Value: 94400
@@ -2842,10 +2842,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638651424132306658
+  lastModified: 638668537233709967
   FileSizes:
   - Name: Desktop
-    Value: 2081888
+    Value: 2144000
   Exists: 1
 --- !u!114 &7854933041883950289
 MonoBehaviour:
@@ -2947,7 +2947,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
   Name: SFX Dynamic
   StudioPath: bank:/SFX Dynamic
-  lastModified: 638651424183417352
+  lastModified: 638668536967601696
   FileSizes:
   - Name: Desktop
     Value: 1820704
@@ -2967,10 +2967,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
   Name: SFX Linear
   StudioPath: bank:/SFX Linear
-  lastModified: 638651424188202222
+  lastModified: 638668537234893937
   FileSizes:
   - Name: Desktop
-    Value: 1762528
+    Value: 1824608
   Exists: 1
 --- !u!114 &8948373402745503836
 MonoBehaviour:

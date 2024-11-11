@@ -26,6 +26,7 @@ public class MainMenuCanvas : MonoBehaviour
     private const string newGame = "NewGame";
     private const string settings = "Settings";
     private const string exit = "Exit";
+    public bool interact = true;
 
     // Start is called before the first frame update
     private void Awake()
@@ -38,6 +39,8 @@ public class MainMenuCanvas : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(menuNewGame.gameObject);
         selectButton = EventSystem.current.currentSelectedGameObject;
         antSelectButton = selectButton;
+
+        interact = true;
     }
 
     void Update()
@@ -57,26 +60,39 @@ public class MainMenuCanvas : MonoBehaviour
     }
     public void launchNewGame()
     {
-        switch (state)
+        if (interact)
         {
-            case StateMainMenu.INITIAL:
-                StartCoroutine(delayStepFinal());
-                FMODUtils.stopAllEvents();
-                soundStart.start();
-                break;
+            switch (state)
+            {
+                case StateMainMenu.INITIAL:
+                    interact = false;
+                    Navigation noNavigation = new Navigation
+                    {
+                        mode = Navigation.Mode.None
+                    };
+                    menuNewGame.navigation = noNavigation;
+                    menuExit.navigation = noNavigation;
+                    StartCoroutine(delayStepFinal());
+                    FMODUtils.stopAllEvents();
+                    soundStart.start();
+                    break;
+            }
         }
     }
 
     public void launchExitGame()
     {
-        Application.Quit();
+        if (interact)
+        {
+            Application.Quit();
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #endif
+        }
     }
     public void OnPressButton(InputValue value)
     {
-        if (!value.isPressed && selectButton != null)
+        if (!value.isPressed && selectButton != null && interact)
         {
             switch (selectButton.name)
             {

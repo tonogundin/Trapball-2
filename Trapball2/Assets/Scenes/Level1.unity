@@ -10842,7 +10842,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138560865}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -11215,7 +11215,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149794848}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -14489,7 +14489,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252283776}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -21464,7 +21464,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463922805}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -24329,7 +24329,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519823884}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -26077,9 +26077,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "\xBFC\xF3mo he llegado a esto?\\n\\nEl eco de mi rodar por estos corredores
-    oscuros me recuerda\\nque estoy sola, huyendo de una traici\xF3n que nunca vi
-    venir."
+  text: "\xBFC\xF3mo he llegado a esto?\\n\\nToda una princesa como yo, rodando por
+    esta pocilga sin un mal criado que la ayude, huyendo de una traici\xF3n que nadie
+    vi\xF3 venir."
   timeLife: 12
 --- !u!1001 &575385871
 PrefabInstance:
@@ -32562,9 +32562,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  text: "Al fondo de esa poza encharcada, hay objetos afilados.\\n\\nDebo tener cuidado
-    si no quiero herirme.\\n\\nQuiz\xE1 si uso esta caja para pasar por encima de
-    ellos..."
+  text: "\xBFA qui\xE9n se le ocurre poner pinchos al fondo de esa poza asquerosa?\\n\\nCuando
+    salga de esta, el arquitecto real me va a o\xEDr...\\n\\nQuiz\xE1 pueda usar
+    esta caja para pasar por encima\u2026"
   timeLife: 8
 --- !u!33 &782231219
 MeshFilter:
@@ -34061,8 +34061,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  text: "Creo que debo romper el tabl\xF3n mediante mi salto Bomba.\\n\\nDebo realizar
-    un salto fuerte y cuando est\xE9 en lo mas alto debo realizar el golpe Bomba."
+  text: "Creo que puedo romper ese tabl\xF3n con aquella t\xE9cnica.\\n\\n\xBFC\xF3mo
+    era?\u2026Recuerdo que hab\xEDa que pegar un buen salto y en lo m\xE1s alto hacer
+    el Impacto Carambola.\\n\\nDeber\xEDa haber prestado m\xE1s atenci\xF3n a mis
+    instructores\u2026"
   timeLife: 8
 --- !u!1 &810911403
 GameObject:
@@ -35363,7 +35365,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838549717}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -36125,9 +36127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  text: "Otro de esos molestos ratones de goma, y esta vez encima de lo que parece
-    un balanc\xEDn de madera.\\n\\nDebo aturdirlo si quiero encontrar c\xF3mo atravesar
-    esa poza de agua maloliente."
+  text: "Otro de esos cochinos ratones de goma, y esta vez encima de lo que parece
+    un balanc\xEDn de madera.\\n\\nMejor dejarlo grogui con un buen golpe en el mel\xF3n
+    si quiero atravesar esa poza de agua maloliente."
   timeLife: 8
 --- !u!33 &850297290
 MeshFilter:
@@ -37143,7 +37145,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880512689}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -44477,7 +44479,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077982261}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -47047,9 +47049,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "Este lugar... nunca imagin\xE9 que los cimientos de nuestro reino\\nescondieran
-    tan andrajosos parajes.\\n\\n\xBFQu\xE9 m\xE1s habr\xE1 bajo la superficie de
-    Sphereland que desconozco?"
+  text: "Este sitio... \xA1nunca imagin\xE9 que los cimientos de nuestro reino escondieran
+    tanta ro\xF1a!\\n\\n\xBFQu\xE9 m\xE1s sorpresas habr\xE1 bajo la superficie de
+    Sphereland?"
   timeLife: 12
 --- !u!1 &1151810087
 GameObject:
@@ -48540,7 +48542,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184579333}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -55781,9 +55783,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "  No hay tiempo para l\xE1grimas, no me sirven de nada ahora.\\n \\n  Debo
-    encontrar en m\xED algo de valor para seguir adelante.\\n \\n  Una vez est\xE9
-    a salvo, tendr\xE9 tiempo de pensar."
+  text: "No hay tiempo para lloriqueos, ahora no me sirven de nada.\\n\\n\xA1Debo
+    reunir valor para seguir adelante!\\n\\nY una vez a salvo, ya podr\xE9 pensar.
+    Y con suerte, \xA1darme un ba\xF1o!"
   timeLife: 12
 --- !u!1 &1393777242
 GameObject:
@@ -56025,7 +56027,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397325069}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -59969,7 +59971,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525246308}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -60891,7 +60893,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554562109}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -73061,7 +73063,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905658490}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -78429,9 +78431,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "Los ecos en la oscuridad me persiguen, vibraciones de sombras que quiz\xE1
-    presagian un destino peor que si me capturan.\\n\\nNo estoy segura... pero no
-    tengo otra opci\xF3n m\xE1s que seguir rodando, escapar."
+  text: "No s\xE9 qu\xE9 es peor, si la rebeli\xF3n o tener que rodar por estos lares,
+    quiz\xE1 me he escapado del taco solo para caer en la tronera.\\n\\nPero ahora
+    no me queda otra que escapar echando tizas."
   timeLife: 12
 --- !u!1 &2021308855
 GameObject:
@@ -79615,9 +79617,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "No puedo creer lo que ha sucedido. \xA1Debo escapar!\\n\\n\xBFPor qu\xE9
-    Ovalain nos habr\xE1 traicionado?\\n\\nNo estaba preparada para la coronaci\xF3n,
-    pero menos para esto."
+  text: "No puedo creer lo que ha pasado. \xA1Tengo que escapar!\\n\\nNunca hubiese
+    imaginado semejante carambola a tres bandas de Ovalain...\\n\\nCon lo bien que
+    estaba yo tumbada a la bartola... \xA1y mira c\xF3mo me las tengo que ver ahora!"
   timeLife: 12
 --- !u!1 &2071093935
 GameObject:
@@ -82642,6 +82644,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2688196302661107197, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_text
+      value: "No hay tiempo para lloriqueos, ahora no me sirven de nada.\\n\\n\xA1Debo
+        reunir valor para seguir adelante!\\n\\nY una vez a salvo, ya podr\xE9 pensar.
+        Y con suerte, \xA1darme un ba\xF1o!"
+      objectReference: {fileID: 0}
     - target: {fileID: 3469897594453350253, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: gameController
       value: 
@@ -82653,6 +82661,17 @@ PrefabInstance:
     - target: {fileID: 6566142188593335471, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: m_text
       value: Coraje
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624325685464836798, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_text
+      value: "Creo que puedo romper ese tabl\xF3n con aquella t\xE9cnica.\\n\\n\xBFC\xF3mo
+        era?\u2026Recuerdo que hab\xEDa que pegar un buen salto y en lo mas alto
+        hacer el Impacto Carambola.\\n\\nDeber\xEDa haber prestado m\xE1s atenci\xF3n
+        a mis instructores\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6624325685464836798, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 7513998728909796192, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: m_Pivot.x

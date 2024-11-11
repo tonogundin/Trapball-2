@@ -33,4 +33,8 @@ public class Water : MonoBehaviour
         enterWater.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         FMODUtils.setSnapshotUnderwater(false);
     }
+    private void OnDestroy()
+    {
+        exitWater();
+    }
 }

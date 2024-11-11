@@ -124,10 +124,6 @@ public class Player : MonoBehaviour, IResettable
 
     void FixedUpdate()
     {
-        if (!rb.isKinematic)
-        {
-            Utils.SanitizeRigidbody(rb);
-        }
         if (isActiveMovement())
         {
             movementPlayer = especialStage ? 60 : movementPlayer;
@@ -137,6 +133,9 @@ public class Player : MonoBehaviour, IResettable
             {
                 ManageBallSpeed();
             }
+        } else
+        {
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, rb.linearVelocity.z);
         }
         velocityBall = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
         playerSoundroll.setParameterByName(FMODConstants.SPEED, velocityBall.x);
@@ -310,11 +309,9 @@ public class Player : MonoBehaviour, IResettable
     void handleButtonDown()
     {
         jumpCharge = true;
-        Debug.Log("Button Down");
     }
     void handleButtonUp()
     {
-        Debug.Log("Button UP");
         jumpCharge = false;
         if (isActiveMovement()) {
             switch (state)
@@ -867,6 +864,10 @@ public class Player : MonoBehaviour, IResettable
 
             movementPlayer = especialStage ? 0 : value.Get<Vector2>().x;
             movementPlayerExpecialZ = especialStage ? value.Get<Vector2>().x * -2 : 0;
+        } else
+        {
+            movementPlayer = 0;
+            movementPlayerExpecialZ = 0;
         }
     }
 

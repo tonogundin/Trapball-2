@@ -159,11 +159,6 @@ public class MouseBall2 : MonoBehaviour, IResettable
     {
         if (isActiveAndEnabled)
         {
-
-            if (!rb.isKinematic)
-            {
-                Utils.SanitizeRigidbody(rb);
-            }
             if (state == State.MOVE)
             {
                 BallMouseRun.setParameterByName("speed", rb.linearVelocity.x);

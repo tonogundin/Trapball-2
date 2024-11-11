@@ -85,6 +85,11 @@ public class FMODUtils
         FMODUnity.RuntimeManager.GetBus("bus:/").setPaused(value);
         
     }
+    public static void setPauseEventsFX(bool value)
+    {
+        FMODUnity.RuntimeManager.GetBus(GetStringValue(FMODConstants.BUSES.SFX)).setPaused(value);
+        FMODUnity.RuntimeManager.GetBus(GetStringValue(FMODConstants.BUSES.MASTER)).setPaused(value);
+    }
 
     public static void setVolumenBankMaster(float value)
     {

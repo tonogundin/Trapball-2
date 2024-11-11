@@ -79,6 +79,7 @@ public class MenuPause : MonoBehaviour
         menuPause.SetActive(false);
         Time.timeScale = 1;
         FMODUtils.setSnapshotPause(false);
+        FMODUtils.setPauseEventsFX(false);
         menuPauseContinueButton.interactable = false;
         menuPauseContinueButton.interactable = true;
     }
@@ -113,6 +114,7 @@ public class MenuPause : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(buttons[(int)MenuButtons.CONTINUE].gameObject);
             playerInput.enabled = true;
             FMODUtils.setSnapshotPause(true);
+            FMODUtils.setPauseEventsFX(true);
             menuPause.SetActive(true);
             Time.timeScale = 0;
         } else if (menuSettings.activeSelf)

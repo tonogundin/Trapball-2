@@ -215,10 +215,6 @@ public class Beatle : MonoBehaviour, IResettable
     {
         if (isActiveAndEnabled)
         {
-            if (!rb.isKinematic)
-            {
-                Utils.SanitizeRigidbody(rb);
-            }
             AddExtraGravityForce();
             float velocityX = Mathf.Sign(distToPlayer.x);
             if (transform.localPosition.z < maxPositionZ - 0.05f)
