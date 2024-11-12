@@ -442,6 +442,7 @@ public class Player : MonoBehaviour, IResettable
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete; //Volvemos a discreto para consumir menos recursos.
         playerSoundroll.setVolume(1);
         jumpBombEnabled = false;
+        setMovement();
     }
 
     IEnumerator setStateJumpThreadDelay()
@@ -850,9 +851,12 @@ public class Player : MonoBehaviour, IResettable
             }
         }
     }
-
+    private float bufferMovementPlayer;
+    private float bufferMovementExpecialZ;
     public void OnMove(InputValue value)
     {
+        bufferMovementPlayer = especialStage ? 0 : value.Get<Vector2>().x;
+        bufferMovementExpecialZ = especialStage ? value.Get<Vector2>().x * -2 : 0;
         if (isActiveMovement())
         {
 #if UNITY_STANDALONE
@@ -862,13 +866,18 @@ public class Player : MonoBehaviour, IResettable
                                 //movementPlayer = Input.acceleration.x * 2;
 #endif
 
-            movementPlayer = especialStage ? 0 : value.Get<Vector2>().x;
-            movementPlayerExpecialZ = especialStage ? value.Get<Vector2>().x * -2 : 0;
+            setMovement();
         } else
         {
             movementPlayer = 0;
             movementPlayerExpecialZ = 0;
         }
+    }
+
+    private void setMovement()
+    {
+        movementPlayer = bufferMovementPlayer;
+        movementPlayerExpecialZ = bufferMovementExpecialZ;
     }
 
     public void OnDetectController(InputValue value)

@@ -842,7 +842,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.001
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -1136,9 +1136,9 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 2.4501889
-          outSlope: 2.4501889
+          value: 0.3101654
+          inSlope: 1.690225
+          outSlope: 1.690225
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
@@ -1146,8 +1146,8 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0.4081318
           value: 1
-          inSlope: 1.2250944
-          outSlope: 1.2250944
+          inSlope: 0.8451125
+          outSlope: 0.8451125
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -1216,21 +1216,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          value: 0.31550598
+          inSlope: 1.1099267
+          outSlope: 1.1099267
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.1927415
         - serializedVersion: 3
           time: 0.3749653
           value: 0.8322355
-          inSlope: 2.3352304
-          outSlope: 2.3352304
+          inSlope: 0.95326215
+          outSlope: 0.95326215
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.18700117
+          inWeight: 0.17396493
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 0.612282
@@ -1287,25 +1287,25 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
+          value: 0.31550598
+          inSlope: 1.2085832
+          outSlope: 1.2085832
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.20048687
         - serializedVersion: 3
           time: 0.37519282
           value: 0.8323189
-          inSlope: 2.2271
-          outSlope: 2.2271
+          inSlope: 1.2472787
+          outSlope: 1.2472787
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.16594705
+          inWeight: 0.19019035
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.613906
-          value: 0.84210044
+          time: 0.6050559
+          value: 0.85814506
           inSlope: -1.1924424
           outSlope: -1.1924424
           tangentMode: 0
@@ -15336,6 +15336,9 @@ MonoBehaviour:
   jumpable:
     serializedVersion: 2
     m_Bits: 512
+  jumpCharge: 0
+  isBufferJump: 0
+  isTimeReset: 0
 --- !u!33 &8355018171138524629
 MeshFilter:
   m_ObjectHideFlags: 0
