@@ -120,9 +120,9 @@ public class GameManager : MonoBehaviour
         {
             checkPoints.setActiveCheckpointsObjects(false);
         }
-        StartCoroutine(Waiting(secToWait, new Vector3(position.x, position.y, initPosForPlayerZ)));
+        StartCoroutine(Waiting(secToWait, new Vector3(position.x, position.y, initPosForPlayerZ), firstTime));
     }
-    IEnumerator Waiting(float secToWait, Vector3 initPos)
+    IEnumerator Waiting(float secToWait, Vector3 initPos, bool firstTime)
     {
         yield return new WaitForSeconds(secToWait);
         GameEvents.instance.death.Invoke();
@@ -130,6 +130,10 @@ public class GameManager : MonoBehaviour
         plScript = player.GetComponent<Player>();
         plScript.resetObject();
         plScript.especialStage = especialStage;
+        if (firstTime)
+        {
+            plScript.GetComponent<Rigidbody>().AddForce(new Vector3(15f, 0, 0), ForceMode.Impulse);
+        }
         NewPlayer();
         checkPoints.setActiveCheckpointsObjects(true);
         checkPoints.setResetCheckpointsObjects();

@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     public float duration = 1.0f; // Duración de la vibración
     public float minRumbleIntensity = 0.1f; // Intensidad mínima de vibración
     public float maxRumbleIntensity = 0.5f; // Intensidad máxima de vibración
-
+    
 
     void Start()
     {
@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
             gamepad = Gamepad.all[0];
             OnEnable();
         }
+        GameEvents.instance.pauseScene.AddListener(StopRumble);
     }
 
     private void OnEnable()
@@ -30,6 +31,11 @@ public class GameController : MonoBehaviour
     {
         // Desuscribirse de los eventos para evitar llamadas a funciones ya destruidas.
         InputSystem.onDeviceChange -= OnDeviceChange;
+    }
+
+    private void OnDestroy()
+    {
+        StopRumble();
     }
 
     private void OnDeviceChange(InputDevice device, InputDeviceChange change)

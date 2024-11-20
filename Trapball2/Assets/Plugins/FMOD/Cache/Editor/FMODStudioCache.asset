@@ -43,8 +43,8 @@ MonoBehaviour:
     Data3: 1359388800
     Data4: 897182370
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
     Data3: -789344862
     Data4: 2096164127
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -130,6 +130,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-8282039491715937024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/AmbienteBatalla
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/AmbienteBatalla
+  Guid:
+    Data1: 1829619172
+    Data2: 1296988348
+    Data3: 437512126
+    Data4: -1985462780
+  Banks:
+  - {fileID: -2381375456174760787}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 39079
 --- !u!114 &-8166031057568628040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +200,8 @@ MonoBehaviour:
     Data3: 1420710287
     Data4: 1293108482
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -385,8 +412,8 @@ MonoBehaviour:
     Data3: -1591944802
     Data4: -1047444788
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -689,8 +716,8 @@ MonoBehaviour:
     Data3: 1685737346
     Data4: 973510672
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -719,8 +746,8 @@ MonoBehaviour:
     Data3: -929057633
     Data4: -973880825
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -773,8 +800,8 @@ MonoBehaviour:
     Data3: 1559816125
     Data4: 741189368
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -851,8 +878,8 @@ MonoBehaviour:
     Data3: -1611574607
     Data4: -1330225890
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -960,8 +987,8 @@ MonoBehaviour:
     Data3: 732003717
     Data4: 1853070876
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -988,8 +1015,8 @@ MonoBehaviour:
     Data3: 2050484878
     Data4: 174142389
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1041,8 +1068,8 @@ MonoBehaviour:
     Data3: -1019449463
     Data4: -496899729
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1120,8 +1147,8 @@ MonoBehaviour:
     Data3: -1146396246
     Data4: 1241200842
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1146,10 +1173,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638668537233779290
+  lastModified: 638677382613882478
   FileSizes:
   - Name: Desktop
-    Value: 4806
+    Value: 4844
   Exists: 1
 --- !u!114 &-2763837879923221437
 MonoBehaviour:
@@ -1266,10 +1293,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Ambience.bank
   Name: SFX Ambience
   StudioPath: bank:/SFX Ambience
-  lastModified: 638668536960876523
+  lastModified: 638677393249535026
   FileSizes:
   - Name: Desktop
-    Value: 332704
+    Value: 1853216
   Exists: 1
 --- !u!114 &-2233287210974964362
 MonoBehaviour:
@@ -1425,8 +1452,8 @@ MonoBehaviour:
     Data3: 990353588
     Data4: 981400755
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1482,8 +1509,8 @@ MonoBehaviour:
     Data3: -1413558892
     Data4: -77105335
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1633,12 +1660,13 @@ MonoBehaviour:
   - {fileID: -2614596016504957404}
   - {fileID: 5856511850230095005}
   - {fileID: -7610012785291700465}
+  - {fileID: -8282039491715937024}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7819196344126980065}
   StringsBanks:
   - {fileID: -2787406691297457171}
-  cacheTime: 638668537234893937
+  cacheTime: 638677393249535026
   cacheVersion: 131616
 --- !u!114 &244127888474021729
 MonoBehaviour:
@@ -1719,8 +1747,8 @@ MonoBehaviour:
     Data3: -429088337
     Data4: -606805632
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1881,8 +1909,8 @@ MonoBehaviour:
     Data3: 1551542444
     Data4: 1686802647
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1982,8 +2010,8 @@ MonoBehaviour:
     Data3: -1204491628
     Data4: 1442871186
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2213,8 +2241,8 @@ MonoBehaviour:
     Data3: -1772429184
     Data4: 155299684
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2238,7 +2266,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
   Name: Musica
   StudioPath: bank:/Musica
-  lastModified: 638668536960564580
+  lastModified: 638677382677863445
   FileSizes:
   - Name: Desktop
     Value: 13793248
@@ -2314,8 +2342,8 @@ MonoBehaviour:
     Data3: -57636446
     Data4: 2079947479
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2363,7 +2391,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Voiceover.bank
   Name: Voiceover
   StudioPath: bank:/Voiceover
-  lastModified: 638668536975326097
+  lastModified: 638677382711005586
   FileSizes:
   - Name: Desktop
     Value: 802784
@@ -2414,8 +2442,8 @@ MonoBehaviour:
     Data3: -1183417462
     Data4: 783710001
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8649223794283648005}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2744,7 +2772,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/HUD.bank
   Name: HUD
   StudioPath: bank:/HUD
-  lastModified: 638668536908773352
+  lastModified: 638677382597263062
   FileSizes:
   - Name: Desktop
     Value: 94400
@@ -2842,10 +2870,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638668537233709967
+  lastModified: 638677382613718101
   FileSizes:
   - Name: Desktop
-    Value: 2144000
+    Value: 2144096
   Exists: 1
 --- !u!114 &7854933041883950289
 MonoBehaviour:
@@ -2922,8 +2950,8 @@ MonoBehaviour:
     Data3: -1560797530
     Data4: 945605478
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2947,7 +2975,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
   Name: SFX Dynamic
   StudioPath: bank:/SFX Dynamic
-  lastModified: 638668536967601696
+  lastModified: 638677382697988189
   FileSizes:
   - Name: Desktop
     Value: 1820704
@@ -2967,7 +2995,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
   Name: SFX Linear
   StudioPath: bank:/SFX Linear
-  lastModified: 638668537234893937
+  lastModified: 638677383414878117
   FileSizes:
   - Name: Desktop
     Value: 1824608
@@ -2991,8 +3019,8 @@ MonoBehaviour:
     Data3: -781381974
     Data4: -532051344
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: 8797814100714432702}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

@@ -88,6 +88,7 @@ public class Player : MonoBehaviour, IResettable
     private float blinkDuration = 0.1f;
     private bool isBlinking = false;
     public bool isBufferJump = false;
+    public bool dontController = true;
 
     void Awake()
     {
@@ -120,6 +121,7 @@ public class Player : MonoBehaviour, IResettable
         playerSoundroll.start();
         objectRenderer = GetComponent<Renderer>();
         originalColor = objectRenderer.material.color;  // Guardamos el color original del material
+        StartCoroutine(activateController());
     }
 
     void FixedUpdate()
@@ -196,7 +198,6 @@ public class Player : MonoBehaviour, IResettable
         }
         else if (rb.linearVelocity.y > 3 && state == StatePlayer.NORMAL && !isColliderPlatforms())
         {
-            //resetJumpForce();
             state = StatePlayer.JUMP;
         }
     }
@@ -321,6 +322,7 @@ public class Player : MonoBehaviour, IResettable
                     adjustJumpForce();
                     simpleJump();
                     break;
+                case StatePlayer.FALL:
                 case StatePlayer.JUMP:
                     bufferJump = StartCoroutine(setBufferJump());
                     break;
@@ -367,33 +369,36 @@ public class Player : MonoBehaviour, IResettable
 
     void simpleJump()
     {
-        state = StatePlayer.INIT_JUMP;
-        if (jumpForce < JUMP_LOW_LIMIT)
+        if (state == StatePlayer.NORMAL || state == StatePlayer.INIT_FALL)
         {
-            jumpForce = JUMP_LOW_LIMIT;
-        }
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
-
-        playerSoundroll.setVolume(0);
-        float playSoundProbability = 0.65f;  // 80%
-
-        if (Random.Range(0f, 1f) < playSoundProbability)
-        {
-            if (jumpForce > JUMP_LOW_LIMIT_BOMB)
+            state = StatePlayer.INIT_JUMP;
+            if (jumpForce < JUMP_LOW_LIMIT)
             {
-                FMODUtils.playOneShot(FMODConstants.JUMPS.HIGH, transform.position);
+                jumpForce = JUMP_LOW_LIMIT;
             }
-            else
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); //Para salto.
+            playerSoundroll.setVolume(0);
+            float playSoundProbability = 0.65f;  // 80%
+
+            if (Random.Range(0f, 1f) < playSoundProbability)
             {
-                FMODUtils.playOneShot(FMODConstants.JUMPS.LOW, transform.position);
+                if (jumpForce > JUMP_LOW_LIMIT_BOMB)
+                {
+                    FMODUtils.playOneShot(FMODConstants.JUMPS.HIGH, transform.position);
+                }
+                else
+                {
+                    FMODUtils.playOneShot(FMODConstants.JUMPS.LOW, transform.position);
+                }
             }
+            StartCoroutine(setStateJumpThreadDelay());
+            ApplyStretch();
         }
-        StartCoroutine(setStateJumpThreadDelay());
-        ApplyStretch();
     }
 
     void setStateBombJump()
     {
+        Debug.Log("Play Stella");
         state = StatePlayer.BOMBJUMP;
         stella.active();
         jumpBombEnabled = false;
@@ -406,6 +411,7 @@ public class Player : MonoBehaviour, IResettable
     }
     private void setStateEndBombJump(bool isWater, bool withoutRetard)
     {
+        Debug.Log("Stop Stella");
         if (isRumbleActive)
         {
             gameController.ApplyRumble(1f, 0.15f);
@@ -733,6 +739,7 @@ public class Player : MonoBehaviour, IResettable
         rb.isKinematic = true;
         coll.enabled = false;
         GetComponent<Renderer>().enabled = false;
+        stella.desActive();
         state = StatePlayer.DEAD;
         setVelocityZero();
     }
@@ -810,6 +817,12 @@ public class Player : MonoBehaviour, IResettable
         }
     }
 
+    private IEnumerator activateController()
+    {
+        yield return new WaitForSeconds(1.5f);
+        dontController = false;
+    }
+
     public void OnMenu(InputValue value)
     {
         if (!value.isPressed)
@@ -820,7 +833,7 @@ public class Player : MonoBehaviour, IResettable
 
     public void OnJump(InputValue value)
     {
-        if (!isTimeReset)
+        if (!isTimeReset && !dontController)
         {
             if (value.isPressed)
             {
@@ -876,8 +889,11 @@ public class Player : MonoBehaviour, IResettable
 
     private void setMovement()
     {
-        movementPlayer = bufferMovementPlayer;
-        movementPlayerExpecialZ = bufferMovementExpecialZ;
+        if (!dontController)
+        {
+            movementPlayer = bufferMovementPlayer;
+            movementPlayerExpecialZ = bufferMovementExpecialZ;
+        }
     }
 
     public void OnDetectController(InputValue value)

@@ -82,6 +82,7 @@ public class MenuPause : MonoBehaviour
         FMODUtils.setPauseEventsFX(false);
         menuPauseContinueButton.interactable = false;
         menuPauseContinueButton.interactable = true;
+        GameEvents.instance.resumeScene.Invoke();
     }
 
     public void buttonExit()
@@ -93,6 +94,8 @@ public class MenuPause : MonoBehaviour
         SceneManager.LoadSceneAsync("Menu");
         menuPauseExitButton.interactable = false;
         menuPauseExitButton.interactable = true;
+        FMODUtils.setSnapshotPause(false);
+        FMODUtils.setPauseEventsFX(false);
     }
 
     public void buttonSettings()

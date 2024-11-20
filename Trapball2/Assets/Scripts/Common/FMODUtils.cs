@@ -15,6 +15,11 @@ public class FMODUtils
         string soundPath = GetStringValue(sound);
         FMODUnity.RuntimeManager.PlayOneShot(soundPath, position);
     }
+    public static void playOneShot<T>(T sound) where T : Enum
+    {
+        string soundPath = GetStringValue(sound);
+        FMODUnity.RuntimeManager.PlayOneShot(soundPath);
+    }
 
     public static void play3DSound(FMOD.Studio.EventInstance sound, Transform transform)
     {
