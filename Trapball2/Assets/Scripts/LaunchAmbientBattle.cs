@@ -3,10 +3,14 @@ using System.Collections;
 
 public class LaunchAmbientBattle : MonoBehaviour
 {
-
+    public bool launchOnStart = false;
+    private bool isPlay = false;
     void Start()
     {
-        StartCoroutine(activeSound());
+        if (launchOnStart)
+        {
+            StartCoroutine(activeSound());
+        }
     }
 
     void Update()
@@ -16,6 +20,15 @@ public class LaunchAmbientBattle : MonoBehaviour
     private IEnumerator activeSound()
     {
         yield return new WaitForSeconds(0.0001f);
+        isPlay = true;
         FMODUtils.playOneShot(FMODConstants.AMBIENT.BATTLE, transform.position);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!launchOnStart && !isPlay && other.gameObject.CompareTag(Player.TAG))
+        {
+            StartCoroutine(activeSound());
+        }
     }
 }

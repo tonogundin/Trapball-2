@@ -21,6 +21,7 @@ public class Exit : MonoBehaviour
     {
         emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         emitter.SetParameter(FMODConstants.STATE_MUSIC, (int) FMODConstants.MUSIC_STATE.FINAL);
+        GameEvents.instance.finishGame.Invoke();
         yield return new WaitForSeconds(5.5f);
         FMODUtils.stopAllEvents();
         SceneManager.LoadSceneAsync(scene);

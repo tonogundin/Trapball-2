@@ -8,15 +8,18 @@ public class InGameCanvasManager : MonoBehaviour
 
     public float fadeDuration = 3f; // Duración del fundido en segundos
     public float stayBlack = 1f;
+    public float stayTransparent = 1f;
     public Image fundidoNegro;
     private void Awake()
     {
         // Establece el color inicial con alfa 0 (completamente transparente)
         fundidoNegro.color = new Color(0f, 0f, 0f, 0f);
+        
     }
     private void Start()
     {
         StartCoroutine(fadeToTransparent());
+        GameEvents.instance.finishGame.AddListener(runFadetoBlack);
     }
     public void OnPauseButtonClicked()
     {
@@ -76,12 +79,17 @@ public class InGameCanvasManager : MonoBehaviour
         fundidoNegro.enabled = false;
     }
 
+    private void runFadetoBlack()
+    {
+        StartCoroutine(fadeToBlack());
+    }
+
     private IEnumerator fadeToBlack()
     {
         fundidoNegro.enabled = true;
         // Establece el color inicial con alfa 0 (completamente transparente)
         fundidoNegro.color = new Color(0f, 0f, 0f, 0f);
-
+        yield return new WaitForSeconds(stayTransparent);
         // Copia el color actual
         Color color = fundidoNegro.color;
 

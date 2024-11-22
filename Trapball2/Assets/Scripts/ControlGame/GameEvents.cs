@@ -17,6 +17,7 @@ public class GameEvents : MonoBehaviour
     // EVENTS IN GAME.
     public UnityEvent initScene = new UnityEvent();
     public UnityEvent pauseScene = new UnityEvent();
+    public UnityEvent finishGame = new UnityEvent();
     public UnityEvent returnPauseScene = new UnityEvent();
     public UnityEvent resumeScene = new UnityEvent();
     public UnityEvent onPause = new UnityEvent();

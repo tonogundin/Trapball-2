@@ -384,8 +384,8 @@ MonoBehaviour:
     Data3: 1904919692
     Data4: 446484951
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: -2381375456174760787}
+  - {fileID: 7819196344126980065}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638677382613882478
+  lastModified: 638678913374500745
   FileSizes:
   - Name: Desktop
     Value: 4844
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Ambience.bank
   Name: SFX Ambience
   StudioPath: bank:/SFX Ambience
-  lastModified: 638677393249535026
+  lastModified: 638678908960249198
   FileSizes:
   - Name: Desktop
     Value: 1853216
@@ -1400,8 +1400,8 @@ MonoBehaviour:
     Data3: -288872779
     Data4: -948149343
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: -2381375456174760787}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1481,8 +1481,8 @@ MonoBehaviour:
     Data3: -960846710
     Data4: 807945690
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: -2381375456174760787}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1568,8 +1568,8 @@ MonoBehaviour:
     Data3: -1510758466
     Data4: 265422733
   Banks:
-  - {fileID: 7819196344126980065}
   - {fileID: -2381375456174760787}
+  - {fileID: 7819196344126980065}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   StringsBanks:
   - {fileID: -2787406691297457171}
-  cacheTime: 638677393249535026
+  cacheTime: 638678913374500745
   cacheVersion: 131616
 --- !u!114 &244127888474021729
 MonoBehaviour:
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638677382613718101
+  lastModified: 638678913374424665
   FileSizes:
   - Name: Desktop
     Value: 2144096
@@ -2995,7 +2995,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
   Name: SFX Linear
   StudioPath: bank:/SFX Linear
-  lastModified: 638677383414878117
+  lastModified: 638678907925227828
   FileSizes:
   - Name: Desktop
     Value: 1824608

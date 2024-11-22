@@ -591,7 +591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &928096411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1044,6 +1044,17 @@ MonoBehaviour:
   progressCircle: {fileID: 783402037}
   audioSource: {fileID: 0}
   rawImage: {fileID: 0}
+  textSubtitles:
+  - Erase una vez en el reino de Sphereland,
+  - "viv\xEDa un rey anciano que anta\xF1o goberno con valentia,"
+  - sus gestas llenas de valor y gallardia, se recordaban a lo largo y ancho de sus
+    dominios.
+  - "Pero los a\xF1os pasaron y el rey Pool ahora era un anciano que solo podia recordar
+    su gloria pasada."
+  - "Pero todo empezar\xEDa a cambiar."
+  - El visir ovaline, su mas leal consejero, sospechaba que el rey ya no era capaz
+    de sostener la corona ni su gobierno.
+  - Por encima de todo estaba su deseo de gobernar y mantener el orden en sphereland.
 --- !u!114 &1064107495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,7 +1487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1616142299
 RectTransform:
   m_ObjectHideFlags: 0

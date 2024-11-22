@@ -30,6 +30,8 @@ public class pausevideo : MonoBehaviour
     private VideoPlayer videoPlayer;
     public AudioSource audioSource;
     public RawImage rawImage;
+    private TMP_Text subtitles;
+    public string[] textSubtitles;
 
     private void Awake()
     {
@@ -43,6 +45,7 @@ public class pausevideo : MonoBehaviour
         colorBackgroundYellow = transform.Find("PanelText").Find("ColorBackground").GetComponent<Image>();
         colorBackgroundYellow.color = new Color(colorBackgroundYellow.color.r, colorBackgroundYellow.color.g, colorBackgroundYellow.color.b, 0f);
         text = transform.Find("PanelText").Find("text").GetComponent<TMP_Text>();
+        subtitles = transform.Find("Subtitle").GetComponent<TMP_Text>();
         text.color = new Color(text.color.r, text.color.g, text.color.b, 0f);
         rawImage = GetComponent<RawImage>();
         videoPlayer = GetComponent<VideoPlayer>();
