@@ -25,7 +25,7 @@ public class Bocadillo : MonoBehaviour
 
     private FMOD.Studio.EventInstance dialogEight;
 
-    private float typingSpeed = 0.03f;
+    private float typingSpeed = 0.02f;
 
     void Awake()
     {

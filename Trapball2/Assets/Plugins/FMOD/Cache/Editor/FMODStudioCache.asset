@@ -96,8 +96,8 @@ MonoBehaviour:
     Data3: -789344862
     Data4: 2096164127
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -412,8 +412,8 @@ MonoBehaviour:
     Data3: -1591944802
     Data4: -1047444788
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -716,8 +716,8 @@ MonoBehaviour:
     Data3: 1685737346
     Data4: 973510672
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -746,8 +746,8 @@ MonoBehaviour:
     Data3: -929057633
     Data4: -973880825
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -800,8 +800,8 @@ MonoBehaviour:
     Data3: 1559816125
     Data4: 741189368
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1015,8 +1015,8 @@ MonoBehaviour:
     Data3: 2050484878
     Data4: 174142389
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1147,8 +1147,8 @@ MonoBehaviour:
     Data3: -1146396246
     Data4: 1241200842
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638678913374500745
+  lastModified: 638679539751048354
   FileSizes:
   - Name: Desktop
     Value: 4844
@@ -1509,8 +1509,8 @@ MonoBehaviour:
     Data3: -1413558892
     Data4: -77105335
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1666,7 +1666,7 @@ MonoBehaviour:
   - {fileID: 7819196344126980065}
   StringsBanks:
   - {fileID: -2787406691297457171}
-  cacheTime: 638678913374500745
+  cacheTime: 638679539751910636
   cacheVersion: 131616
 --- !u!114 &244127888474021729
 MonoBehaviour:
@@ -1747,8 +1747,8 @@ MonoBehaviour:
     Data3: -429088337
     Data4: -606805632
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2010,8 +2010,8 @@ MonoBehaviour:
     Data3: -1204491628
     Data4: 1442871186
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2241,8 +2241,8 @@ MonoBehaviour:
     Data3: -1772429184
     Data4: 155299684
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2342,8 +2342,8 @@ MonoBehaviour:
     Data3: -57636446
     Data4: 2079947479
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638678913374424665
+  lastModified: 638679539750997676
   FileSizes:
   - Name: Desktop
     Value: 2144096
@@ -2950,8 +2950,8 @@ MonoBehaviour:
     Data3: -1560797530
     Data4: 945605478
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2995,7 +2995,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
   Name: SFX Linear
   StudioPath: bank:/SFX Linear
-  lastModified: 638678907925227828
+  lastModified: 638679539751910636
   FileSizes:
   - Name: Desktop
     Value: 1824608
@@ -3019,8 +3019,8 @@ MonoBehaviour:
     Data3: -781381974
     Data4: -532051344
   Banks:
-  - {fileID: 8797814100714432702}
   - {fileID: 7819196344126980065}
+  - {fileID: 8797814100714432702}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
