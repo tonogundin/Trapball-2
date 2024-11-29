@@ -8,9 +8,11 @@ public class CameraShake : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        GameEvents.instance.pauseScene.AddListener(setPauseShake);
-        GameEvents.instance.resumeScene.AddListener(setDesPauseShake);
+        if (GameEvents.instance != null)
+        {
+            GameEvents.instance.pauseScene.AddListener(setPauseShake);
+            GameEvents.instance.resumeScene.AddListener(setDesPauseShake);
+        }
     }
 
     // Update is called once per frame

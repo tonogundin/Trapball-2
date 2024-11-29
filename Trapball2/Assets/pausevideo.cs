@@ -25,13 +25,14 @@ public class pausevideo : MonoBehaviour
     private Image colorBackgroundBlack2;
     private Image colorBackgroundYellow;
     private GameObject frontblack;
-    private TMP_Text text;
     private State state = State.STOP;
     private VideoPlayer videoPlayer;
     public AudioSource audioSource;
     public RawImage rawImage;
-    private TMP_Text subtitles;
-    public string[] textSubtitles;
+    private TMP_Text textComic;
+    private LocalizedText subtitles;
+    public float[] timesSubtitles;
+    public string keySubtitles;
 
     private void Awake()
     {
@@ -44,9 +45,9 @@ public class pausevideo : MonoBehaviour
 
         colorBackgroundYellow = transform.Find("PanelText").Find("ColorBackground").GetComponent<Image>();
         colorBackgroundYellow.color = new Color(colorBackgroundYellow.color.r, colorBackgroundYellow.color.g, colorBackgroundYellow.color.b, 0f);
-        text = transform.Find("PanelText").Find("text").GetComponent<TMP_Text>();
-        subtitles = transform.Find("Subtitle").GetComponent<TMP_Text>();
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 0f);
+        textComic = transform.Find("PanelText").Find("text").GetComponent<TMP_Text>();
+        subtitles = transform.Find("Subtitle").GetComponent<LocalizedText>();
+        textComic.color = new Color(textComic.color.r, textComic.color.g, textComic.color.b, 0f);
         rawImage = GetComponent<RawImage>();
         videoPlayer = GetComponent<VideoPlayer>();
         audioSource = GetComponent<AudioSource>();
@@ -90,12 +91,25 @@ public class pausevideo : MonoBehaviour
             case State.STOP:
                 state = State.PLAYING;
                 StartCoroutine(playingVideo());
+                StartCoroutine(subtitlesThread());
                 return;
             case State.FINISH:
                 launchLoading();
                 return;
         }
     }
+
+    IEnumerator subtitlesThread()
+    {
+        int index = 0;
+        foreach (float time in timesSubtitles)
+        {
+            subtitles.UpdateText(keySubtitles + "_line_" + index);
+            index++;
+            yield return new WaitForSeconds(time);
+        }
+    }
+
     IEnumerator quitblackfront()
     {
         yield return new WaitForSeconds(0.2f);
@@ -115,7 +129,7 @@ public class pausevideo : MonoBehaviour
         Color startColorBlack = colorBackgroundBlack.color;
         Color startColorBlack2 = colorBackgroundBlack2.color;
         Color startColorYellow = colorBackgroundYellow.color;
-        Color startColorText = text.color;
+        Color startColorText = textComic.color;
         Color targetColorBlack = new Color(startColorBlack.r, startColorBlack.g, startColorBlack.b, 1f); // Color opaco
         Color targetColorBlack2 = new Color(startColorBlack2.r, startColorBlack2.g, startColorBlack2.b, 1f); // Color opaco
         Color targetColorYellow = new Color(startColorYellow.r, startColorYellow.g, startColorYellow.b, 1f); // Color opaco
@@ -127,13 +141,13 @@ public class pausevideo : MonoBehaviour
             colorBackgroundBlack.color = Color.Lerp(startColorBlack, targetColorBlack, elapsedTime / fadeOpaqueBackgroundDuration);
             colorBackgroundBlack2.color = Color.Lerp(startColorBlack2, targetColorBlack2, elapsedTime / fadeOpaqueBackgroundDuration);
             colorBackgroundYellow.color = Color.Lerp(startColorYellow, targetColorYellow, elapsedTime / fadeOpaqueBackgroundDuration);
-            text.color = Color.Lerp(startColorText, targetColorText, elapsedTime / fadeOpaqueBackgroundDuration);
+            textComic.color = Color.Lerp(startColorText, targetColorText, elapsedTime / fadeOpaqueBackgroundDuration);
             yield return null;
         }
         colorBackgroundBlack.color = targetColorBlack;
         colorBackgroundBlack2.color = targetColorBlack2;
         colorBackgroundYellow.color = targetColorYellow;
-        text.color = targetColorText;
+        textComic.color = targetColorText;
     }
     private IEnumerator fadeToTranslucid()
     {
@@ -142,7 +156,7 @@ public class pausevideo : MonoBehaviour
         Color startColorBlack = colorBackgroundBlack.color;
         Color startColorBlack2 = colorBackgroundBlack2.color;
         Color startColorYellow = colorBackgroundYellow.color;
-        Color startColorText = text.color;
+        Color startColorText = textComic.color;
         Color targetColorBlack = new Color(startColorBlack.r, startColorBlack.g, startColorBlack.b, 0f);
         Color targetColorBlack2 = new Color(startColorBlack2.r, startColorBlack2.g, startColorBlack2.b, 0f);
         Color targetColorYellow = new Color(startColorYellow.r, startColorYellow.g, startColorYellow.b, 0f);
@@ -154,13 +168,13 @@ public class pausevideo : MonoBehaviour
             colorBackgroundBlack.color = Color.Lerp(startColorBlack, targetColorBlack, elapsedTime / fadeTranslucidBackgroundDuration);
             colorBackgroundBlack2.color = Color.Lerp(startColorBlack2, targetColorBlack2, elapsedTime / fadeTranslucidBackgroundDuration);
             colorBackgroundYellow.color = Color.Lerp(startColorYellow, targetColorYellow, elapsedTime / fadeTranslucidBackgroundDuration);
-            text.color = Color.Lerp(startColorText, targetColorText, elapsedTime / fadeTranslucidBackgroundDuration);
+            textComic.color = Color.Lerp(startColorText, targetColorText, elapsedTime / fadeTranslucidBackgroundDuration);
             yield return null;
         }
         colorBackgroundBlack.color = targetColorBlack;
         colorBackgroundBlack2.color = targetColorBlack2;
         colorBackgroundYellow.color = targetColorYellow;
-        text.color = targetColorText;
+        textComic.color = targetColorText;
         panel.SetActive(false);
     }
     private IEnumerator fadeToBlack()

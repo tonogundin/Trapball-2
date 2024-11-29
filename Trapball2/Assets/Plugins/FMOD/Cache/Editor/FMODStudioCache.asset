@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9207949329385848943
+--- !u!114 &-8954484233687497483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,21 +10,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactoTerrenoEnemies/speed
+  m_Name: parameter:/ImpactoTerrenoEnemies/Terrain
   m_EditorClassIdentifier: 
-  Name: speed
+  Name: Terrain
   StudioPath: 
-  Min: -8
-  Max: 8
+  Min: 0
+  Max: 7
   Default: 0
   ID:
-    data1: 2946692642
-    data2: 3281837607
+    data1: 2640767625
+    data2: 2735643528
   Type: 0
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-9099703750881921421
+--- !u!114 &-8708029741975367204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/ImpactObjectEnemies
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/ImpactObjectEnemies
+  Guid:
+    Data1: -1773594395
+    Data2: 1186583709
+    Data3: -72791933
+    Data4: 1313659119
+  Banks:
+  - {fileID: 8860583673294448850}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3843443203114336361}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8640062198054261806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,41 +71,17 @@ MonoBehaviour:
     Data3: 1359388800
     Data4: 897182370
   Banks:
-  - {fileID: 8649223794283648005}
-  - {fileID: 7819196344126980065}
+  - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5951720549856271208}
+  - {fileID: 7818591611457719773}
   MinDistance: 1
   MaxDistance: 20
   Length: 3163
---- !u!114 &-8803599599682159816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/DeathVoice/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-8549788947928224060
+--- !u!114 &-8303543215129924972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,26 +91,137 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/PlatformSplash
+  m_Name: event:/Ambientes/AmbienteRumor
   m_EditorClassIdentifier: 
-  Path: event:/Objetos/PlatformSplash
+  Path: event:/Ambientes/AmbienteRumor
   Guid:
-    Data1: 434537533
-    Data2: 1270595276
-    Data3: -789344862
-    Data4: 2096164127
+    Data1: -1633230794
+    Data2: 1331219346
+    Data3: -1510758466
+    Data4: 265422733
   Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
+  - {fileID: 8860583673294448850}
+  - {fileID: 1340625082097580265}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12000
+--- !u!114 &-8234640860826898501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/PlatformHit
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/PlatformHit
+  Guid:
+    Data1: 971690262
+    Data2: 1297519623
+    Data3: -1772429184
+    Data4: 155299684
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -4324672326155644080}
+  - {fileID: -4276877313588611366}
   MinDistance: 1
   MaxDistance: 20
-  Length: 4000
---- !u!114 &-8429576476632380590
+  Length: 1334
+--- !u!114 &-8203202824948487765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/AscensorMagia
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/AscensorMagia
+  Guid:
+    Data1: -1402863775
+    Data2: 1081359378
+    Data3: 120874389
+    Data4: -484593560
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3397075832638777286}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 38048
+--- !u!114 &-7467279405093493835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Da\xF1o/DeathVoice"
+  m_EditorClassIdentifier: 
+  Path: "event:/Da\xF1o/DeathVoice"
+  Guid:
+    Data1: -304690277
+    Data2: 1170564516
+    Data3: 1052293797
+    Data4: -778065853
+  Banks:
+  - {fileID: 8860583673294448850}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4599991450832134540}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60000
+--- !u!114 &-7184831018474395549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/MainMenu
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/MainMenu
+  Guid:
+    Data1: 211163831
+    Data2: 1084794540
+    Data3: -2066133876
+    Data4: -1797510395
+  Banks:
+  - {fileID: 2387650941851638265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 141600
+--- !u!114 &-6961079236281766610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,7 +231,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactWater/Terrain
+  m_Name: parameter:/ImpactoTerrenoPlayer/Terrain
   m_EditorClassIdentifier: 
   Name: Terrain
   StudioPath: 
@@ -130,7 +245,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-8282039491715937024
+--- !u!114 &-6865576681360763222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,24 +255,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteBatalla
+  m_Name: event:/Saltos/SaltoHigh
   m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteBatalla
+  Path: event:/Saltos/SaltoHigh
   Guid:
-    Data1: 1829619172
-    Data2: 1296988348
-    Data3: 437512126
-    Data4: -1985462780
+    Data1: -1489469402
+    Data2: 1178725830
+    Data3: -429088337
+    Data4: -606805632
   Banks:
-  - {fileID: -2381375456174760787}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2161900363358828105}
   MinDistance: 1
   MaxDistance: 20
-  Length: 39079
---- !u!114 &-8166031057568628040
+  Length: 125
+--- !u!114 &-6618946691674598199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,22 +283,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactoTerrenoBomba/speed
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/ImpactoTerrenoEnemies
   m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-8138172109560513262
+  Path: event:/Saltos/ImpactoTerrenoEnemies
+  Guid:
+    Data1: 490008403
+    Data2: 1217331575
+    Data3: -1756387917
+    Data4: -393673960
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5733168675511935453}
+  - {fileID: -8954484233687497483}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6511491241375372160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,18 +322,128 @@ MonoBehaviour:
     Data3: 1420710287
     Data4: 1293108482
   Banks:
-  - {fileID: 8649223794283648005}
-  - {fileID: 7819196344126980065}
+  - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5873012223315549605}
-  - {fileID: 6955445079511667569}
+  - {fileID: 8093411079906424751}
+  - {fileID: -4321480696642714366}
   MinDistance: 1
   MaxDistance: 20
   Length: 14000
---- !u!114 &-8023150298642515315
+--- !u!114 &-6122095177898866077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/TrampillaDuckOpen
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/TrampillaDuckOpen
+  Guid:
+    Data1: 2128576830
+    Data2: 1082619116
+    Data3: -599671121
+    Data4: 1116039582
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2580
+--- !u!114 &-5934184795462642046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/TrampillaDuckClose
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/TrampillaDuckClose
+  Guid:
+    Data1: 298882629
+    Data2: 1137561412
+    Data3: -1446366274
+    Data4: 1410340368
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1935
+--- !u!114 &-5864779465655118225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/PlatformSplash
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/PlatformSplash
+  Guid:
+    Data1: 434537533
+    Data2: 1270595276
+    Data3: -789344862
+    Data4: 2096164127
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7241367168564839937}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-5775208505452941549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/EscarabajoSalida
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/EscarabajoSalida
+  Guid:
+    Data1: -1987414007
+    Data2: 1100686472
+    Data3: -1118832492
+    Data4: 1693164022
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 813
+--- !u!114 &-5702065844979085913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +453,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SaltoLow/speed
+  m_Name: parameter:/ImpactObjectPlayer/speed
   m_EditorClassIdentifier: 
   Name: speed
   StudioPath: 
@@ -235,7 +467,64 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7980551639599178227
+--- !u!114 &-5560858440913205182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/GrabMoon
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/GrabMoon
+  Guid:
+    Data1: -1229625667
+    Data2: 1261498270
+    Data3: 2041759130
+    Data4: 1476586866
+  Banks:
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1463
+--- !u!114 &-5536664783332284881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/ImpactoTerrenoBomba
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/ImpactoTerrenoBomba
+  Guid:
+    Data1: -1145953896
+    Data2: 1310006855
+    Data3: -1146396246
+    Data4: 1241200842
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8083500085312146005}
+  - {fileID: 1681614114340364238}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 148
+--- !u!114 &-5146388065355759163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,21 +534,238 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ExitMaterialPlayer/Terrain
+  m_Name: parameter:/Stage3/StageFinal
   m_EditorClassIdentifier: 
-  Name: Terrain
+  Name: StageFinal
   StudioPath: 
   Min: 0
-  Max: 7
+  Max: 1
   Default: 0
   ID:
-    data1: 2640767625
-    data2: 2735643528
+    data1: 4093962573
+    data2: 678436107
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - OnStage
+  - Final
+  Exists: 1
+--- !u!114 &-4963650979858202043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/FullMoon
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/FullMoon
+  Guid:
+    Data1: -572926299
+    Data2: 1112092949
+    Data3: -920383810
+    Data4: -1030543624
+  Banks:
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4146
+--- !u!114 &-4947080362380287632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/FinalStage
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/FinalStage
+  Guid:
+    Data1: 1181394849
+    Data2: 1089843081
+    Data3: 1207296655
+    Data4: -1414091382
+  Banks:
+  - {fileID: 2387650941851638265}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8225
+--- !u!114 &-4912442749233415620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/ExitMaterialPlayer
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/ExitMaterialPlayer
+  Guid:
+    Data1: -802911288
+    Data2: 1233789439
+    Data3: 1007291069
+    Data4: 2119839298
+  Banks:
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3255545759524057472}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4589707208218083237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/AmbienteUnderwater
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/AmbienteUnderwater
+  Guid:
+    Data1: -1412345042
+    Data2: 1204714703
+    Data3: 1904919692
+    Data4: 446484951
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 1340625082097580265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 38500
+--- !u!114 &-4373076606277766999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/ImpactWater
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/ImpactWater
+  Guid:
+    Data1: -1169364362
+    Data2: 1192672050
+    Data3: 1685737346
+    Data4: 973510672
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1449879114338250576}
+  - {fileID: 2085905400878368374}
+  MinDistance: 9
+  MaxDistance: 30
+  Length: 0
+--- !u!114 &-4356240983509150184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Pause
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Pause
+  Guid:
+    Data1: 1614324177
+    Data2: 1311137243
+    Data3: -1982592104
+    Data4: 673011839
+  Banks:
+  - {fileID: 8860583673294448850}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-4352773226132390689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BallMouseRun/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
   Type: 0
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7902866007726578792
+--- !u!114 &-4321480696642714366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXRollRatonBola/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-4276877313588611366
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,146 +789,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-7610012785291700465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/VoiceOver/Vi\xF1eta 1"
-  m_EditorClassIdentifier: 
-  Path: "event:/VoiceOver/Vi\xF1eta 1"
-  Guid:
-    Data1: -1688176282
-    Data2: 1212003226
-    Data3: -1001396335
-    Data4: -188392607
-  Banks:
-  - {fileID: 4139711928483227499}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -6745903701501480724}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-7173052928496586128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage1/StageFinal
-  m_EditorClassIdentifier: 
-  Name: StageFinal
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4093962573
-    data2: 678436107
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - OnStage
-  - Final
-  Exists: 1
---- !u!114 &-7173019147825325065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/AscensorMagia
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/AscensorMagia
-  Guid:
-    Data1: -1402863775
-    Data2: 1081359378
-    Data3: 120874389
-    Data4: -484593560
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 2596999478778139597}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 38048
---- !u!114 &-7037399623017574615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteUnderwater
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteUnderwater
-  Guid:
-    Data1: -1412345042
-    Data2: 1204714703
-    Data3: 1904919692
-    Data4: 446484951
-  Banks:
-  - {fileID: -2381375456174760787}
-  - {fileID: 7819196344126980065}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 38500
---- !u!114 &-6835379787691462047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoShort
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoShort
-  Guid:
-    Data1: -846088768
-    Data2: 1109139290
-    Data3: -1591944802
-    Data4: -1047444788
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 2629133870614026475}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 173
---- !u!114 &-6745903701501480724
+--- !u!114 &-4047639380335434463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -454,118 +821,7 @@ MonoBehaviour:
   - Part 5
   - Final
   Exists: 1
---- !u!114 &-6694078829252493080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Enemigos/EscarabajoCa\xEDda"
-  m_EditorClassIdentifier: 
-  Path: "event:/Enemigos/EscarabajoCa\xEDda"
-  Guid:
-    Data1: -2025877298
-    Data2: 1306382054
-    Data3: -589745519
-    Data4: 510269443
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2062
---- !u!114 &-6657756018056006097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HUD/Select
-  m_EditorClassIdentifier: 
-  Path: event:/HUD/Select
-  Guid:
-    Data1: -399678512
-    Data2: 1074758580
-    Data3: 2077350022
-    Data4: -224220554
-  Banks:
-  - {fileID: 6458391617540543664}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 259
---- !u!114 &-6643302211595012568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/Stage4
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/Stage4
-  Guid:
-    Data1: 1356605075
-    Data2: 1337729166
-    Data3: 614084784
-    Data4: -569768865
-  Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 2151492425419444070}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 85161
---- !u!114 &-6523836414143946947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HUD/Enter-Exit
-  m_EditorClassIdentifier: 
-  Path: event:/HUD/Enter-Exit
-  Guid:
-    Data1: 476608042
-    Data2: 1236027669
-    Data3: 892328363
-    Data4: 1138379048
-  Banks:
-  - {fileID: 6458391617540543664}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 272
---- !u!114 &-5873012223315549605
+--- !u!114 &-3932895955023705904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -575,21 +831,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFXRollRatonBola/onTheFloor
+  m_Name: parameter:/Stage2/percentStage
   m_EditorClassIdentifier: 
-  Name: onTheFloor
+  Name: percentStage
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 100
   Default: 0
   ID:
-    data1: 2751212688
-    data2: 766424047
+    data1: 419306491
+    data2: 395642479
   Type: 0
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-5847327289335076550
+--- !u!114 &-3843443203114336361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -598,25 +854,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/EscarabajoAttack
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactObjectEnemies/speed
   m_EditorClassIdentifier: 
-  Path: event:/Enemigos/EscarabajoAttack
-  Guid:
-    Data1: -1006292208
-    Data2: 1155949840
-    Data3: -1741142649
-    Data4: 2079392683
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 543
---- !u!114 &-5723099321966665265
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3682904361793005790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -635,16 +888,44 @@ MonoBehaviour:
     Data3: 708658340
     Data4: 784928191
   Banks:
-  - {fileID: 3295960355745021443}
+  - {fileID: 2387650941851638265}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 244127888474021729}
+  - {fileID: 9108804701578418400}
   MinDistance: 1
   MaxDistance: 20
   Length: 237714
---- !u!114 &-5597698489069669132
+--- !u!114 &-3449367714256247465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Enter-Exit
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Enter-Exit
+  Guid:
+    Data1: 476608042
+    Data2: 1236027669
+    Data3: 892328363
+    Data4: 1138379048
+  Banks:
+  - {fileID: 8542877647447593512}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 272
+--- !u!114 &-3397075832638777286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -654,7 +935,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactoTerrenoEnemies/Terrain
+  m_Name: parameter:/AscensorMagia/UpDown
+  m_EditorClassIdentifier: 
+  Name: UpDown
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4071764426
+    data2: 176118608
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3255545759524057472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ExitMaterialPlayer/Terrain
   m_EditorClassIdentifier: 
   Name: Terrain
   StudioPath: 
@@ -668,7 +973,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-5377616778252802998
+--- !u!114 &-3227598083384514751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -678,26 +983,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/Stage3
+  m_Name: snapshot:/Underwater
   m_EditorClassIdentifier: 
-  Path: event:/Musica/Stage3
+  Path: snapshot:/Underwater
   Guid:
-    Data1: 1466804578
-    Data2: 1208971138
-    Data3: -116538742
-    Data4: 294334988
+    Data1: 253927180
+    Data2: 1337856698
+    Data3: -1110984044
+    Data4: -348466764
   Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 1
+  - {fileID: 8860583673294448850}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
-  Parameters:
-  - {fileID: 1980513221606097908}
-  - {fileID: 2876852581595482797}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 85645
---- !u!114 &-5109906935518218415
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-3212322621708000879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EscarabajoHit/hit_force
+  m_EditorClassIdentifier: 
+  Name: hit_force
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 1195696259
+    data2: 3982278489
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3094846347302104063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -707,27 +1034,54 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/ImpactWater
+  m_Name: event:/Saltos/SaltoShort
   m_EditorClassIdentifier: 
-  Path: event:/Saltos/ImpactWater
+  Path: event:/Saltos/SaltoShort
   Guid:
-    Data1: -1169364362
-    Data2: 1192672050
-    Data3: 1685737346
-    Data4: 973510672
+    Data1: -846088768
+    Data2: 1109139290
+    Data3: -1591944802
+    Data4: -1047444788
   Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6275221908366226557}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 173
+--- !u!114 &-2923376604101777599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseInflatingPop
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseInflatingPop
+  Guid:
+    Data1: -810505411
+    Data2: 1277908185
+    Data3: -1611574607
+    Data4: -1330225890
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
-  Parameters:
-  - {fileID: -3823262766152319626}
-  - {fileID: -8429576476632380590}
-  MinDistance: 9
-  MaxDistance: 30
-  Length: 0
---- !u!114 &-4968591759223071976
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1251
+--- !u!114 &-2779790659158510593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -737,27 +1091,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/ImpactoTerrenoPlayer
+  m_Name: event:/Enemigos/EscarabajoRun
   m_EditorClassIdentifier: 
-  Path: event:/Saltos/ImpactoTerrenoPlayer
+  Path: event:/Enemigos/EscarabajoRun
   Guid:
-    Data1: -870319442
-    Data2: 1241911657
-    Data3: -929057633
-    Data4: -973880825
+    Data1: 692450856
+    Data2: 1194111242
+    Data3: -689608028
+    Data4: -182898687
   Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
+  - {fileID: 27386034857978245}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters:
-  - {fileID: 1946319249973331694}
-  - {fileID: 5050432356729907520}
+  - {fileID: 4335250335132353831}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-4928221120513974752
+  Length: 8500
+--- !u!114 &-2736394767575346263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -767,21 +1119,69 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactoTerrenoBomba/Terrain
+  m_Name: parameter:/Stage3/percentStage
   m_EditorClassIdentifier: 
-  Name: Terrain
+  Name: percentStage
   StudioPath: 
   Min: 0
-  Max: 7
+  Max: 100
   Default: 0
   ID:
-    data1: 2640767625
-    data2: 2735643528
+    data1: 419306491
+    data2: 395642479
   Type: 0
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4904376910731220231
+--- !u!114 &-2642658708993807310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXPlayerRollMud/onTheFloor
+  m_EditorClassIdentifier: 
+  Name: onTheFloor
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2751212688
+    data2: 766424047
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2228079763646102505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXPlayerRollMud/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1777268846830514121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -791,25 +1191,699 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/ObjectWaterDrop
+  m_Name: event:/Objetos/ImpactObjectPlayer
   m_EditorClassIdentifier: 
-  Path: event:/Objetos/ObjectWaterDrop
+  Path: event:/Objetos/ImpactObjectPlayer
   Guid:
-    Data1: -1174548756
-    Data2: 1262033682
-    Data3: 1559816125
-    Data4: 741189368
+    Data1: -651545442
+    Data2: 1321478265
+    Data3: 2050484878
+    Data4: 174142389
   Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -5702065844979085913}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1652666743527545147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/SaltoBomba
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/SaltoBomba
+  Guid:
+    Data1: 49277412
+    Data2: 1111525130
+    Data3: -57636446
+    Data4: 2079947479
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1771108807203508877}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 402
+--- !u!114 &-1554672970241290652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Da\xF1o/ImpactoPinchos"
+  m_EditorClassIdentifier: 
+  Path: "event:/Da\xF1o/ImpactoPinchos"
+  Guid:
+    Data1: -125016520
+    Data2: 1310966496
+    Data3: 66098590
+    Data4: -384476356
+  Banks:
+  - {fileID: 8860583673294448850}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8124350831417159061}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1190
+--- !u!114 &-1318835739243170587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/AmbienteAire
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/AmbienteAire
+  Guid:
+    Data1: -648866708
+    Data2: 1146160489
+    Data3: -960846710
+    Data4: 807945690
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 1340625082097580265}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3800
---- !u!114 &-4786526421349007878
+  Length: 30000
+--- !u!114 &-1244912204637547496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Desplazamiento/SFXPlayerRollMud
+  m_EditorClassIdentifier: 
+  Path: event:/Desplazamiento/SFXPlayerRollMud
+  Guid:
+    Data1: 127226507
+    Data2: 1144597073
+    Data3: -1413558892
+    Data4: -77105335
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3727082224046689950}
+  - {fileID: -2642658708993807310}
+  - {fileID: -2228079763646102505}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14000
+--- !u!114 &-1119011082806525983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Stage1
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Stage1
+  Guid:
+    Data1: 1319352086
+    Data2: 1313155502
+    Data3: 1137709701
+    Data4: 747190538
+  Banks:
+  - {fileID: 2387650941851638265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3059628094149192686}
+  - {fileID: -572483092279590458}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240483
+--- !u!114 &-1118694963163474792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/VoiceOver/Vi\xF1eta 1"
+  m_EditorClassIdentifier: 
+  Path: "event:/VoiceOver/Vi\xF1eta 1"
+  Guid:
+    Data1: -1688176282
+    Data2: 1212003226
+    Data3: -1001396335
+    Data4: -188392607
+  Banks:
+  - {fileID: 9191132543310392823}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4047639380335434463}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-974665884892952470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseHit2
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseHit2
+  Guid:
+    Data1: 372828841
+    Data2: 1143781488
+    Data3: 486614677
+    Data4: 97826547
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-572483092279590458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage1/percentStage
+  m_EditorClassIdentifier: 
+  Name: percentStage
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-513473166533141176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voices/Eight_Voice_Dialogs
+  m_EditorClassIdentifier: 
+  Path: event:/Voices/Eight_Voice_Dialogs
+  Guid:
+    Data1: -1792269762
+    Data2: 1162506065
+    Data3: 1293669008
+    Data4: -4174358
+  Banks:
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1771401262034737059}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8983420344077024651}
+  - {fileID: 8542877647447593512}
+  - {fileID: 8860583673294448850}
+  - {fileID: 2387650941851638265}
+  - {fileID: 1340625082097580265}
+  - {fileID: 27386034857978245}
+  - {fileID: 2189074460112383813}
+  - {fileID: 9191132543310392823}
+  EditorEvents:
+  - {fileID: -3449367714256247465}
+  - {fileID: 1147337943663909803}
+  - {fileID: 1636617930947154339}
+  - {fileID: 5054085133003955349}
+  - {fileID: 2552486512539641996}
+  - {fileID: -3227598083384514751}
+  - {fileID: -6511491241375372160}
+  - {fileID: 887377659614691219}
+  - {fileID: -8234640860826898501}
+  - {fileID: -6865576681360763222}
+  - {fileID: -4589707208218083237}
+  - {fileID: -8303543215129924972}
+  - {fileID: -1554672970241290652}
+  - {fileID: -5864779465655118225}
+  - {fileID: -2923376604101777599}
+  - {fileID: 8656227111041802259}
+  - {fileID: 3085481852731387550}
+  - {fileID: -8640062198054261806}
+  - {fileID: 7685383183900007781}
+  - {fileID: -1318835739243170587}
+  - {fileID: -4373076606277766999}
+  - {fileID: -1244912204637547496}
+  - {fileID: -5536664783332284881}
+  - {fileID: -7467279405093493835}
+  - {fileID: -1777268846830514121}
+  - {fileID: 6539059327248184363}
+  - {fileID: 842612163569998865}
+  - {fileID: 5921165706660059432}
+  - {fileID: -3094846347302104063}
+  - {fileID: 8362520101086083690}
+  - {fileID: -4356240983509150184}
+  - {fileID: 2555555401080989951}
+  - {fileID: -1652666743527545147}
+  - {fileID: -8708029741975367204}
+  - {fileID: 2737461376862987521}
+  - {fileID: 5876699913710723416}
+  - {fileID: 2394780346243503133}
+  - {fileID: -1119011082806525983}
+  - {fileID: 7271835371608884174}
+  - {fileID: 6407526389082451384}
+  - {fileID: -3682904361793005790}
+  - {fileID: 1202716417393220450}
+  - {fileID: -4947080362380287632}
+  - {fileID: -7184831018474395549}
+  - {fileID: 2764745092664795319}
+  - {fileID: -5775208505452941549}
+  - {fileID: 1083006103606034943}
+  - {fileID: -2779790659158510593}
+  - {fileID: -6122095177898866077}
+  - {fileID: -5934184795462642046}
+  - {fileID: -6618946691674598199}
+  - {fileID: -8203202824948487765}
+  - {fileID: -974665884892952470}
+  - {fileID: 3477008453547468535}
+  - {fileID: 5829394560597837375}
+  - {fileID: 2465415185336175134}
+  - {fileID: -513473166533141176}
+  - {fileID: 1655012849431474277}
+  - {fileID: -4963650979858202043}
+  - {fileID: -5560858440913205182}
+  - {fileID: -4912442749233415620}
+  - {fileID: -1118694963163474792}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 8860583673294448850}
+  StringsBanks:
+  - {fileID: 8983420344077024651}
+  cacheTime: 638679539751910636
+  cacheVersion: 131621
+--- !u!114 &27386034857978245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX Dynamic.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
+  Name: SFX Dynamic
+  StudioPath: bank:/SFX Dynamic
+  lastModified: 638677382697988189
+  FileSizes:
+  - Name: Desktop
+    Value: 1820704
+  Exists: 1
+--- !u!114 &842612163569998865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseJump
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseJump
+  Guid:
+    Data1: 251434153
+    Data2: 1186103840
+    Data3: -1019449463
+    Data4: -496899729
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 206
+--- !u!114 &887377659614691219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambientes/AmbienteColector
+  m_EditorClassIdentifier: 
+  Path: event:/Ambientes/AmbienteColector
+  Guid:
+    Data1: 1291420947
+    Data2: 1299921463
+    Data3: -288872779
+    Data4: -948149343
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 1340625082097580265}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12421
+--- !u!114 &1083006103606034943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/EscarabajoAttack
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/EscarabajoAttack
+  Guid:
+    Data1: -1006292208
+    Data2: 1155949840
+    Data3: -1741142649
+    Data4: 2079392683
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 543
+--- !u!114 &1147337943663909803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Stinger_Start
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Stinger_Start
+  Guid:
+    Data1: 536824201
+    Data2: 1221124697
+    Data3: 1699688636
+    Data4: -1721867965
+  Banks:
+  - {fileID: 8542877647447593512}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5750
+--- !u!114 &1149685952179745635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Stage4/percentStage
+  m_EditorClassIdentifier: 
+  Name: percentStage
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 419306491
+    data2: 395642479
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1202716417393220450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Stage4
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Stage4
+  Guid:
+    Data1: 1356605075
+    Data2: 1337729166
+    Data3: 614084784
+    Data4: -569768865
+  Banks:
+  - {fileID: 2387650941851638265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1149685952179745635}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 85161
+--- !u!114 &1340625082097580265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Ambience.bank
+  Name: SFX Ambience
+  StudioPath: bank:/SFX Ambience
+  lastModified: 638678908960249198
+  FileSizes:
+  - Name: Desktop
+    Value: 1853216
+  Exists: 1
+--- !u!114 &1449879114338250576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactWater/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1559356247614610260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactoTerrenoPlayer/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1636617930947154339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Select
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Select
+  Guid:
+    Data1: -399678512
+    Data2: 1074758580
+    Data3: 2077350022
+    Data4: -224220554
+  Banks:
+  - {fileID: 8542877647447593512}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 259
+--- !u!114 &1655012849431474277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/Salto_charge
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/Salto_charge
+  Guid:
+    Data1: 598051210
+    Data2: 1190299260
+    Data3: 254312849
+    Data4: -1101542267
+  Banks:
+  - {fileID: 2189074460112383813}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2482061281392739513}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19944
+--- !u!114 &1681614114340364238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactoTerrenoBomba/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1771108807203508877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -833,7 +1907,257 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4666270094839508838
+--- !u!114 &1771401262034737059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Eight_Voice_Dialogs/Eight_diag_state
+  m_EditorClassIdentifier: 
+  Name: Eight_diag_state
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3250252393
+    data2: 2923502780
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Worried
+  - Thinking
+  - Solution
+  Exists: 1
+--- !u!114 &2085905400878368374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactWater/Terrain
+  m_EditorClassIdentifier: 
+  Name: Terrain
+  StudioPath: 
+  Min: 0
+  Max: 7
+  Default: 0
+  ID:
+    data1: 2640767625
+    data2: 2735643528
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2161900363358828105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SaltoHigh/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2189074460112383813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX Linear.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
+  Name: SFX Linear
+  StudioPath: bank:/SFX Linear
+  lastModified: 638679539751910636
+  FileSizes:
+  - Name: Desktop
+    Value: 1824608
+  Exists: 1
+--- !u!114 &2387650941851638265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Musica.bank
+  m_EditorClassIdentifier: 
+  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
+  Name: Musica
+  StudioPath: bank:/Musica
+  lastModified: 638677382677863445
+  FileSizes:
+  - Name: Desktop
+    Value: 13793248
+  Exists: 1
+--- !u!114 &2394780346243503133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Loading_Music
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Loading_Music
+  Guid:
+    Data1: -1231649018
+    Data2: 1182285543
+    Data3: 2044273836
+    Data4: -727752740
+  Banks:
+  - {fileID: 2387650941851638265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13617
+--- !u!114 &2465415185336175134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/EscarabajoHit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/EscarabajoHit
+  Guid:
+    Data1: 2143530469
+    Data2: 1317517058
+    Data3: 1826351792
+    Data4: -1606318813
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3212322621708000879}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2482061281392739513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Salto_charge/SalgoCharge
+  m_EditorClassIdentifier: 
+  Name: SalgoCharge
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 3955826316
+    data2: 3024060640
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2552486512539641996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseHurt
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseHurt
+  Guid:
+    Data1: -1481568254
+    Data2: 1110999864
+    Data3: 732003717
+    Data4: 1853070876
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 507
+--- !u!114 &2555555401080989951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemigos/BallMouseScream
+  m_EditorClassIdentifier: 
+  Path: event:/Enemigos/BallMouseScream
+  Guid:
+    Data1: 436195543
+    Data2: 1264267429
+    Data3: -1183417462
+    Data4: 783710001
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 837
+--- !u!114 &2706281883419338519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -859,7 +2183,7 @@ MonoBehaviour:
   - OnStage
   - Final
   Exists: 1
---- !u!114 &-4356763544252110408
+--- !u!114 &2737461376862987521
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -869,25 +2193,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseInflatingPop
+  m_Name: event:/Objetos/ObjectWaterDrop
   m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseInflatingPop
+  Path: event:/Objetos/ObjectWaterDrop
   Guid:
-    Data1: -810505411
-    Data2: 1277908185
-    Data3: -1611574607
-    Data4: -1330225890
+    Data1: -1174548756
+    Data2: 1262033682
+    Data3: 1559816125
+    Data4: 741189368
   Banks:
-  - {fileID: 8649223794283648005}
-  - {fileID: 7819196344126980065}
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1251
---- !u!114 &-4355568981393818176
+  Length: 3800
+--- !u!114 &2764745092664795319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -897,25 +2221,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/EscarabajoRun
+  m_Name: event:/Ambientes/AmbienteBatalla
   m_EditorClassIdentifier: 
-  Path: event:/Enemigos/EscarabajoRun
+  Path: event:/Ambientes/AmbienteBatalla
   Guid:
-    Data1: 692450856
-    Data2: 1194111242
-    Data3: -689608028
-    Data4: -182898687
+    Data1: 1829619172
+    Data2: 1296988348
+    Data3: 437512126
+    Data4: -1985462780
   Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
+  - {fileID: 1340625082097580265}
+  IsStream: 1
   Is3D: 1
   IsOneShot: 0
-  Parameters:
-  - {fileID: 1375351055752245768}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 8500
---- !u!114 &-4324672326155644080
+  Length: 39079
+--- !u!114 &3059628094149192686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -925,21 +2248,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/PlatformSplash/Ontrigger
+  m_Name: parameter:/Stage1/StageFinal
   m_EditorClassIdentifier: 
-  Name: Ontrigger
+  Name: StageFinal
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 2608070743
-    data2: 4064022051
-  Type: 0
+    data1: 4093962573
+    data2: 678436107
+  Type: 2
   IsGlobal: 0
-  Labels: []
+  Labels:
+  - OnStage
+  - Final
   Exists: 1
---- !u!114 &-4099645709058698711
+--- !u!114 &3085481852731387550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -949,135 +2274,53 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/Stage2
+  m_Name: event:/Enemigos/BallMouseRun 3
   m_EditorClassIdentifier: 
-  Path: event:/Musica/Stage2
+  Path: event:/Enemigos/BallMouseRun 3
   Guid:
-    Data1: 839079466
-    Data2: 1131122036
-    Data3: 1495029418
-    Data4: -1130294311
+    Data1: -327265195
+    Data2: 1185405664
+    Data3: 990353588
+    Data4: 981400755
   Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 3030708849534826217}
-  - {fileID: -4666270094839508838}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 102429
---- !u!114 &-3939099659395690153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseHurt
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseHurt
-  Guid:
-    Data1: -1481568254
-    Data2: 1110999864
-    Data3: 732003717
-    Data4: 1853070876
-  Banks:
-  - {fileID: 8649223794283648005}
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 507
---- !u!114 &-3883866146420004137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/ImpactObjectPlayer
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/ImpactObjectPlayer
-  Guid:
-    Data1: -651545442
-    Data2: 1321478265
-    Data3: 2050484878
-    Data4: 174142389
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 4439321378680779826}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3823262766152319626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactWater/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-3619221346388245822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseJump
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseJump
-  Guid:
-    Data1: 251434153
-    Data2: 1186103840
-    Data3: -1019449463
-    Data4: -496899729
-  Banks:
-  - {fileID: 8649223794283648005}
-  - {fileID: 7819196344126980065}
+  - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7033455031541532767}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12038
+--- !u!114 &3477008453547468535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Enemigos/EscarabajoCa\xEDda"
+  m_EditorClassIdentifier: 
+  Path: "event:/Enemigos/EscarabajoCa\xEDda"
+  Guid:
+    Data1: -2025877298
+    Data2: 1306382054
+    Data3: -589745519
+    Data4: 510269443
+  Banks:
+  - {fileID: 27386034857978245}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 206
---- !u!114 &-3606730696414395008
+  Length: 2062
+--- !u!114 &3602327093855906690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1101,7 +2344,154 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-3571683883115837458
+--- !u!114 &3727082224046689950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXPlayerRollMud/Terrain
+  m_EditorClassIdentifier: 
+  Name: Terrain
+  StudioPath: 
+  Min: 0
+  Max: 7
+  Default: 0
+  ID:
+    data1: 2640767625
+    data2: 2735643528
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4335250335132353831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EscarabajoRun/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4599991450832134540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DeathVoice/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5054085133003955349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Play
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Play
+  Guid:
+    Data1: 1116133344
+    Data2: 1198066591
+    Data3: -1554001257
+    Data4: 359627923
+  Banks:
+  - {fileID: 8542877647447593512}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 448
+--- !u!114 &5606617056607806428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SaltoLow/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5733168675511935453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactoTerrenoEnemies/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5829394560597837375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1120,7 +2510,7 @@ MonoBehaviour:
     Data3: 1176269454
     Data4: 946128024
   Banks:
-  - {fileID: 8649223794283648005}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1128,7 +2518,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
---- !u!114 &-2790596710866375359
+--- !u!114 &5876699913710723416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1138,71 +2528,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/ImpactoTerrenoBomba
+  m_Name: event:/Enemigos/BallMouseRun
   m_EditorClassIdentifier: 
-  Path: event:/Saltos/ImpactoTerrenoBomba
+  Path: event:/Enemigos/BallMouseRun
   Guid:
-    Data1: -1145953896
-    Data2: 1310006855
-    Data3: -1146396246
-    Data4: 1241200842
+    Data1: -1202737166
+    Data2: 1157189197
+    Data3: 1551542444
+    Data4: 1686802647
   Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
+  - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters:
-  - {fileID: -4928221120513974752}
-  - {fileID: -8166031057568628040}
+  - {fileID: -4352773226132390689}
   MinDistance: 1
   MaxDistance: 20
-  Length: 148
---- !u!114 &-2787406691297457171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638679539751048354
-  FileSizes:
-  - Name: Desktop
-    Value: 4844
-  Exists: 1
---- !u!114 &-2763837879923221437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactObjectEnemies/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-2614596016504957404
+  Length: 18500
+--- !u!114 &5921165706660059432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1212,25 +2557,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Voices/Eight_Voice_Dialogs
+  m_Name: event:/Saltos/ImpactoTerrenoPlayer
   m_EditorClassIdentifier: 
-  Path: event:/Voices/Eight_Voice_Dialogs
+  Path: event:/Saltos/ImpactoTerrenoPlayer
   Guid:
-    Data1: -1792269762
-    Data2: 1162506065
-    Data3: 1293669008
-    Data4: -4174358
+    Data1: -870319442
+    Data2: 1241911657
+    Data3: -929057633
+    Data4: -973880825
   Banks:
-  - {fileID: 8797814100714432702}
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 7854933041883950289}
+  - {fileID: -6961079236281766610}
+  - {fileID: 1559356247614610260}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2512735440727556914
+--- !u!114 &6275221908366226557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1240,7 +2587,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFXPlayerRollMud/speed
+  m_Name: parameter:/SaltoShort/speed
   m_EditorClassIdentifier: 
   Name: speed
   StudioPath: 
@@ -1254,7 +2601,241 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2404970849390190614
+--- !u!114 &6407526389082451384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Stage3
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Stage3
+  Guid:
+    Data1: 1466804578
+    Data2: 1208971138
+    Data3: -116538742
+    Data4: 294334988
+  Banks:
+  - {fileID: 2387650941851638265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5146388065355759163}
+  - {fileID: -2736394767575346263}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 85645
+--- !u!114 &6539059327248184363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objetos/PlatformBreaking
+  m_EditorClassIdentifier: 
+  Path: event:/Objetos/PlatformBreaking
+  Guid:
+    Data1: -2092716892
+    Data2: 1218649500
+    Data3: -781381974
+    Data4: -532051344
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2125
+--- !u!114 &7033455031541532767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BallMouseRun 3/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7241367168564839937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PlatformSplash/Ontrigger
+  m_EditorClassIdentifier: 
+  Name: Ontrigger
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2608070743
+    data2: 4064022051
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7271835371608884174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Stage2
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Stage2
+  Guid:
+    Data1: 839079466
+    Data2: 1131122036
+    Data3: 1495029418
+    Data4: -1130294311
+  Banks:
+  - {fileID: 2387650941851638265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2706281883419338519}
+  - {fileID: -3932895955023705904}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 102429
+--- !u!114 &7685383183900007781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/ExitMaterialEnemies
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/ExitMaterialEnemies
+  Guid:
+    Data1: -21300119
+    Data2: 1251143705
+    Data3: 577359013
+    Data4: 542214699
+  Banks:
+  - {fileID: 8860583673294448850}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 3602327093855906690}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7818591611457719773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BallMouseRun 2/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  StudioPath: 
+  Min: -8
+  Max: 8
+  Default: 0
+  ID:
+    data1: 2946692642
+    data2: 3281837607
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8083500085312146005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ImpactoTerrenoBomba/Terrain
+  m_EditorClassIdentifier: 
+  Name: Terrain
+  StudioPath: 
+  Min: 0
+  Max: 7
+  Default: 0
+  ID:
+    data1: 2640767625
+    data2: 2735643528
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8093411079906424751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXRollRatonBola/onTheFloor
+  m_EditorClassIdentifier: 
+  Name: onTheFloor
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2751212688
+    data2: 766424047
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8124350831417159061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1278,7 +2859,36 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2381375456174760787
+--- !u!114 &8362520101086083690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Saltos/SaltoLow
+  m_EditorClassIdentifier: 
+  Path: event:/Saltos/SaltoLow
+  Guid:
+    Data1: 1941033933
+    Data2: 1209141892
+    Data3: -1560797530
+    Data4: 945605478
+  Banks:
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5606617056607806428}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &8542877647447593512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1288,17 +2898,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX Ambience.bank
+  m_Name: bank:/HUD.bank
   m_EditorClassIdentifier: 
-  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Ambience.bank
-  Name: SFX Ambience
-  StudioPath: bank:/SFX Ambience
-  lastModified: 638678908960249198
+  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/HUD.bank
+  Name: HUD
+  StudioPath: bank:/HUD
+  lastModified: 638677382597263062
   FileSizes:
   - Name: Desktop
-    Value: 1853216
+    Value: 94400
   Exists: 1
---- !u!114 &-2233287210974964362
+--- !u!114 &8656227111041802259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1308,108 +2918,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/ExitMaterialPlayer
+  m_Name: event:/Objetos/PlatformCrack
   m_EditorClassIdentifier: 
-  Path: event:/Saltos/ExitMaterialPlayer
+  Path: event:/Objetos/PlatformCrack
   Guid:
-    Data1: -802911288
-    Data2: 1233789439
-    Data3: 1007291069
-    Data4: 2119839298
+    Data1: -1448624575
+    Data2: 1107979108
+    Data3: -1204491628
+    Data4: 1442871186
   Banks:
-  - {fileID: 8797814100714432702}
+  - {fileID: 8860583673294448850}
+  - {fileID: 2189074460112383813}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -7980551639599178227}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1883472834945301276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/TrampillaDuckClose
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/TrampillaDuckClose
-  Guid:
-    Data1: 298882629
-    Data2: 1137561412
-    Data3: -1446366274
-    Data4: 1410340368
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1935
---- !u!114 &-1839853363818361927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/ExitMaterialEnemies
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/ExitMaterialEnemies
-  Guid:
-    Data1: -21300119
-    Data2: 1251143705
-    Data3: 577359013
-    Data4: 542214699
-  Banks:
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -3606730696414395008}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1022528380665196886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteColector
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteColector
-  Guid:
-    Data1: 1291420947
-    Data2: 1299921463
-    Data3: -288872779
-    Data4: -948149343
-  Banks:
-  - {fileID: -2381375456174760787}
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 12421
---- !u!114 &-923960594503386169
+  Length: 2031
+--- !u!114 &8860583673294448850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1418,22 +2945,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/EscarabajoHit/hit_force
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Name: hit_force
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 1195696259
-    data2: 3982278489
-  Type: 0
-  IsGlobal: 0
-  Labels: []
+  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638679539750997676
+  FileSizes:
+  - Name: Desktop
+    Value: 2144096
   Exists: 1
---- !u!114 &-916394012624520517
+--- !u!114 &8983420344077024651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1442,233 +2965,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseRun 3
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseRun 3
-  Guid:
-    Data1: -327265195
-    Data2: 1185405664
-    Data3: 990353588
-    Data4: 981400755
-  Banks:
-  - {fileID: 8649223794283648005}
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 4957864669900506013}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 12038
---- !u!114 &-839909121842679469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteAire
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteAire
-  Guid:
-    Data1: -648866708
-    Data2: 1146160489
-    Data3: -960846710
-    Data4: 807945690
-  Banks:
-  - {fileID: -2381375456174760787}
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 30000
---- !u!114 &-500619951261303027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Desplazamiento/SFXPlayerRollMud
-  m_EditorClassIdentifier: 
-  Path: event:/Desplazamiento/SFXPlayerRollMud
-  Guid:
-    Data1: 127226507
-    Data2: 1144597073
-    Data3: -1413558892
-    Data4: -77105335
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 5966371419704725935}
-  - {fileID: 5158482463694520186}
-  - {fileID: -2512735440727556914}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 14000
---- !u!114 &-315958557170172007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/ImpactObjectEnemies
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/ImpactObjectEnemies
-  Guid:
-    Data1: -1773594395
-    Data2: 1186583709
-    Data3: -72791933
-    Data4: 1313659119
-  Banks:
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -2763837879923221437}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-118219244937946807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambientes/AmbienteRumor
-  m_EditorClassIdentifier: 
-  Path: event:/Ambientes/AmbienteRumor
-  Guid:
-    Data1: -1633230794
-    Data2: 1331219346
-    Data3: -1510758466
-    Data4: 265422733
-  Banks:
-  - {fileID: -2381375456174760787}
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 12000
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -2787406691297457171}
-  - {fileID: 7819196344126980065}
-  - {fileID: 3295960355745021443}
-  - {fileID: -2381375456174760787}
-  - {fileID: 8649223794283648005}
-  - {fileID: 8797814100714432702}
-  - {fileID: 6458391617540543664}
-  - {fileID: 4139711928483227499}
-  EditorEvents:
-  - {fileID: -3939099659395690153}
-  - {fileID: -8138172109560513262}
-  - {fileID: -1022528380665196886}
-  - {fileID: 3186518290046830061}
-  - {fileID: 649141965277040913}
-  - {fileID: -7037399623017574615}
-  - {fileID: -118219244937946807}
-  - {fileID: 495266217526118376}
-  - {fileID: -8549788947928224060}
-  - {fileID: -4356763544252110408}
-  - {fileID: 2057384504852436467}
-  - {fileID: -916394012624520517}
-  - {fileID: -9099703750881921421}
-  - {fileID: -839909121842679469}
-  - {fileID: -5109906935518218415}
-  - {fileID: -500619951261303027}
-  - {fileID: -2790596710866375359}
-  - {fileID: 1530634940842603821}
-  - {fileID: 8948373402745503836}
-  - {fileID: -3619221346388245822}
-  - {fileID: -6835379787691462047}
-  - {fileID: 8424018929093887242}
-  - {fileID: 4349392250277669389}
-  - {fileID: 3901953700538720911}
-  - {fileID: -4904376910731220231}
-  - {fileID: 1599962591052970580}
-  - {fileID: -4968591759223071976}
-  - {fileID: 2734258957869524580}
-  - {fileID: -5847327289335076550}
-  - {fileID: -4355568981393818176}
-  - {fileID: 5038527540369510519}
-  - {fileID: -1883472834945301276}
-  - {fileID: 4733424702984815350}
-  - {fileID: -7173019147825325065}
-  - {fileID: 7600526504558290509}
-  - {fileID: -6694078829252493080}
-  - {fileID: -3571683883115837458}
-  - {fileID: 1197595821186731293}
-  - {fileID: 7187162874001325105}
-  - {fileID: -1839853363818361927}
-  - {fileID: -2233287210974964362}
-  - {fileID: -3883866146420004137}
-  - {fileID: -315958557170172007}
-  - {fileID: 8353789650512219328}
-  - {fileID: -4099645709058698711}
-  - {fileID: -5377616778252802998}
-  - {fileID: 6069167172903520065}
-  - {fileID: -6523836414143946947}
-  - {fileID: -6657756018056006097}
-  - {fileID: 1561360419414096071}
-  - {fileID: 2122826850651172171}
-  - {fileID: 5750801091396892903}
-  - {fileID: 4179748128995134435}
-  - {fileID: 2576716998453480536}
-  - {fileID: -6643302211595012568}
-  - {fileID: 903278747211140020}
-  - {fileID: -5723099321966665265}
-  - {fileID: 3403610637604492979}
-  - {fileID: -2614596016504957404}
-  - {fileID: 5856511850230095005}
-  - {fileID: -7610012785291700465}
-  - {fileID: -8282039491715937024}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 7819196344126980065}
-  StringsBanks:
-  - {fileID: -2787406691297457171}
-  cacheTime: 638679539751910636
-  cacheVersion: 131616
---- !u!114 &244127888474021729
+  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638679539751048354
+  FileSizes:
+  - Name: Desktop
+    Value: 4844
+  Exists: 1
+--- !u!114 &9108804701578418400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1700,683 +3008,7 @@ MonoBehaviour:
   - Part 5
   - Final
   Exists: 1
---- !u!114 &495266217526118376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Da\xF1o/ImpactoPinchos"
-  m_EditorClassIdentifier: 
-  Path: "event:/Da\xF1o/ImpactoPinchos"
-  Guid:
-    Data1: -125016520
-    Data2: 1310966496
-    Data3: 66098590
-    Data4: -384476356
-  Banks:
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -2404970849390190614}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1190
---- !u!114 &649141965277040913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoHigh
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoHigh
-  Guid:
-    Data1: -1489469402
-    Data2: 1178725830
-    Data3: -429088337
-    Data4: -606805632
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 1851208676098725512}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 125
---- !u!114 &903278747211140020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/Loading_Music
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/Loading_Music
-  Guid:
-    Data1: -1231649018
-    Data2: 1182285543
-    Data3: 2044273836
-    Data4: -727752740
-  Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 13617
---- !u!114 &1197595821186731293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/FullMoon
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/FullMoon
-  Guid:
-    Data1: -572926299
-    Data2: 1112092949
-    Data3: -920383810
-    Data4: -1030543624
-  Banks:
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4146
---- !u!114 &1375351055752245768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/EscarabajoRun/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1530634940842603821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Da\xF1o/DeathVoice"
-  m_EditorClassIdentifier: 
-  Path: "event:/Da\xF1o/DeathVoice"
-  Guid:
-    Data1: -304690277
-    Data2: 1170564516
-    Data3: 1052293797
-    Data4: -778065853
-  Banks:
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -8803599599682159816}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 60000
---- !u!114 &1561360419414096071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Pause
-  m_EditorClassIdentifier: 
-  Path: snapshot:/Pause
-  Guid:
-    Data1: 1614324177
-    Data2: 1311137243
-    Data3: -1982592104
-    Data4: 673011839
-  Banks:
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &1599962591052970580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseRun
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseRun
-  Guid:
-    Data1: -1202737166
-    Data2: 1157189197
-    Data3: 1551542444
-    Data4: 1686802647
-  Banks:
-  - {fileID: 8649223794283648005}
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 4000793885948688140}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 18500
---- !u!114 &1851208676098725512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SaltoHigh/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1946319249973331694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactoTerrenoPlayer/Terrain
-  m_EditorClassIdentifier: 
-  Name: Terrain
-  StudioPath: 
-  Min: 0
-  Max: 7
-  Default: 0
-  ID:
-    data1: 2640767625
-    data2: 2735643528
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1980513221606097908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage3/percentStage
-  m_EditorClassIdentifier: 
-  Name: percentStage
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2057384504852436467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/PlatformCrack
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/PlatformCrack
-  Guid:
-    Data1: -1448624575
-    Data2: 1107979108
-    Data3: -1204491628
-    Data4: 1442871186
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2031
---- !u!114 &2122826850651172171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HUD/Stinger_Start
-  m_EditorClassIdentifier: 
-  Path: event:/HUD/Stinger_Start
-  Guid:
-    Data1: 536824201
-    Data2: 1221124697
-    Data3: 1699688636
-    Data4: -1721867965
-  Banks:
-  - {fileID: 6458391617540543664}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5750
---- !u!114 &2151492425419444070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage4/percentStage
-  m_EditorClassIdentifier: 
-  Name: percentStage
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2576716998453480536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: snapshot:/Underwater
-  m_EditorClassIdentifier: 
-  Path: snapshot:/Underwater
-  Guid:
-    Data1: 253927180
-    Data2: 1337856698
-    Data3: -1110984044
-    Data4: -348466764
-  Banks:
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &2596999478778139597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/AscensorMagia/UpDown
-  m_EditorClassIdentifier: 
-  Name: UpDown
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4071764426
-    data2: 176118608
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2629133870614026475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SaltoShort/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2734258957869524580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/EscarabajoSalida
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/EscarabajoSalida
-  Guid:
-    Data1: -1987414007
-    Data2: 1100686472
-    Data3: -1118832492
-    Data4: 1693164022
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 813
---- !u!114 &2876852581595482797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage3/StageFinal
-  m_EditorClassIdentifier: 
-  Name: StageFinal
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4093962573
-    data2: 678436107
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - OnStage
-  - Final
-  Exists: 1
---- !u!114 &3030708849534826217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage2/percentStage
-  m_EditorClassIdentifier: 
-  Name: percentStage
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &3186518290046830061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/PlatformHit
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/PlatformHit
-  Guid:
-    Data1: 971690262
-    Data2: 1297519623
-    Data3: -1772429184
-    Data4: 155299684
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -7902866007726578792}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1334
---- !u!114 &3295960355745021443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Musica.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
-  Name: Musica
-  StudioPath: bank:/Musica
-  lastModified: 638677382677863445
-  FileSizes:
-  - Name: Desktop
-    Value: 13793248
-  Exists: 1
---- !u!114 &3403610637604492979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/EscarabajoHit
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/EscarabajoHit
-  Guid:
-    Data1: 2143530469
-    Data2: 1317517058
-    Data3: 1826351792
-    Data4: -1606318813
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -923960594503386169}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3600969232646653601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Salto_charge/SalgoCharge
-  m_EditorClassIdentifier: 
-  Name: SalgoCharge
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 3955826316
-    data2: 3024060640
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &3901953700538720911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoBomba
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoBomba
-  Guid:
-    Data1: 49277412
-    Data2: 1111525130
-    Data3: -57636446
-    Data4: 2079947479
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -4786526421349007878}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 402
---- !u!114 &4000793885948688140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BallMouseRun/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &4139711928483227499
+--- !u!114 &9191132543310392823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2396,635 +3028,3 @@ MonoBehaviour:
   - Name: Desktop
     Value: 802784
   Exists: 1
---- !u!114 &4179748128995134435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/MainMenu
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/MainMenu
-  Guid:
-    Data1: 211163831
-    Data2: 1084794540
-    Data3: -2066133876
-    Data4: -1797510395
-  Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 141600
---- !u!114 &4349392250277669389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseScream
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseScream
-  Guid:
-    Data1: 436195543
-    Data2: 1264267429
-    Data3: -1183417462
-    Data4: 783710001
-  Banks:
-  - {fileID: 8649223794283648005}
-  - {fileID: 7819196344126980065}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 837
---- !u!114 &4439321378680779826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactObjectPlayer/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &4733424702984815350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/ImpactoTerrenoEnemies
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/ImpactoTerrenoEnemies
-  Guid:
-    Data1: 490008403
-    Data2: 1217331575
-    Data3: -1756387917
-    Data4: -393673960
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -9207949329385848943}
-  - {fileID: -5597698489069669132}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4957864669900506013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BallMouseRun 3/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &5038527540369510519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/TrampillaDuckOpen
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/TrampillaDuckOpen
-  Guid:
-    Data1: 2128576830
-    Data2: 1082619116
-    Data3: -599671121
-    Data4: 1116039582
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2580
---- !u!114 &5050432356729907520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/ImpactoTerrenoPlayer/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &5158482463694520186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFXPlayerRollMud/onTheFloor
-  m_EditorClassIdentifier: 
-  Name: onTheFloor
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2751212688
-    data2: 766424047
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &5750801091396892903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/HUD/Play
-  m_EditorClassIdentifier: 
-  Path: event:/HUD/Play
-  Guid:
-    Data1: 1116133344
-    Data2: 1198066591
-    Data3: -1554001257
-    Data4: 359627923
-  Banks:
-  - {fileID: 6458391617540543664}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 448
---- !u!114 &5856511850230095005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/Salto_charge
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/Salto_charge
-  Guid:
-    Data1: 598051210
-    Data2: 1190299260
-    Data3: 254312849
-    Data4: -1101542267
-  Banks:
-  - {fileID: 8797814100714432702}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 3600969232646653601}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 19944
---- !u!114 &5951720549856271208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/BallMouseRun 2/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &5966371419704725935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFXPlayerRollMud/Terrain
-  m_EditorClassIdentifier: 
-  Name: Terrain
-  StudioPath: 
-  Min: 0
-  Max: 7
-  Default: 0
-  ID:
-    data1: 2640767625
-    data2: 2735643528
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &6069167172903520065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/FinalStage
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/FinalStage
-  Guid:
-    Data1: 1181394849
-    Data2: 1089843081
-    Data3: 1207296655
-    Data4: -1414091382
-  Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 8225
---- !u!114 &6289362111234820807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Stage1/percentStage
-  m_EditorClassIdentifier: 
-  Name: percentStage
-  StudioPath: 
-  Min: 0
-  Max: 100
-  Default: 0
-  ID:
-    data1: 419306491
-    data2: 395642479
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &6458391617540543664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/HUD.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/HUD.bank
-  Name: HUD
-  StudioPath: bank:/HUD
-  lastModified: 638677382597263062
-  FileSizes:
-  - Name: Desktop
-    Value: 94400
-  Exists: 1
---- !u!114 &6955445079511667569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFXRollRatonBola/speed
-  m_EditorClassIdentifier: 
-  Name: speed
-  StudioPath: 
-  Min: -8
-  Max: 8
-  Default: 0
-  ID:
-    data1: 2946692642
-    data2: 3281837607
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &7187162874001325105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/GrabMoon
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/GrabMoon
-  Guid:
-    Data1: -1229625667
-    Data2: 1261498270
-    Data3: 2041759130
-    Data4: 1476586866
-  Banks:
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1463
---- !u!114 &7600526504558290509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemigos/BallMouseHit2
-  m_EditorClassIdentifier: 
-  Path: event:/Enemigos/BallMouseHit2
-  Guid:
-    Data1: 372828841
-    Data2: 1143781488
-    Data3: 486614677
-    Data4: 97826547
-  Banks:
-  - {fileID: 8649223794283648005}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &7819196344126980065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638679539750997676
-  FileSizes:
-  - Name: Desktop
-    Value: 2144096
-  Exists: 1
---- !u!114 &7854933041883950289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Eight_Voice_Dialogs/Eight_diag_state
-  m_EditorClassIdentifier: 
-  Name: Eight_diag_state
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 3250252393
-    data2: 2923502780
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Worried
-  - Thinking
-  - Solution
-  Exists: 1
---- !u!114 &8353789650512219328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musica/Stage1
-  m_EditorClassIdentifier: 
-  Path: event:/Musica/Stage1
-  Guid:
-    Data1: 1319352086
-    Data2: 1313155502
-    Data3: 1137709701
-    Data4: 747190538
-  Banks:
-  - {fileID: 3295960355745021443}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -7173052928496586128}
-  - {fileID: 6289362111234820807}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 240483
---- !u!114 &8424018929093887242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Saltos/SaltoLow
-  m_EditorClassIdentifier: 
-  Path: event:/Saltos/SaltoLow
-  Guid:
-    Data1: 1941033933
-    Data2: 1209141892
-    Data3: -1560797530
-    Data4: 945605478
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -8023150298642515315}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1500
---- !u!114 &8649223794283648005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX Dynamic.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
-  Name: SFX Dynamic
-  StudioPath: bank:/SFX Dynamic
-  lastModified: 638677382697988189
-  FileSizes:
-  - Name: Desktop
-    Value: 1820704
-  Exists: 1
---- !u!114 &8797814100714432702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX Linear.bank
-  m_EditorClassIdentifier: 
-  Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Linear.bank
-  Name: SFX Linear
-  StudioPath: bank:/SFX Linear
-  lastModified: 638679539751910636
-  FileSizes:
-  - Name: Desktop
-    Value: 1824608
-  Exists: 1
---- !u!114 &8948373402745503836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Objetos/PlatformBreaking
-  m_EditorClassIdentifier: 
-  Path: event:/Objetos/PlatformBreaking
-  Guid:
-    Data1: -2092716892
-    Data2: 1218649500
-    Data3: -781381974
-    Data4: -532051344
-  Banks:
-  - {fileID: 7819196344126980065}
-  - {fileID: 8797814100714432702}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2125
