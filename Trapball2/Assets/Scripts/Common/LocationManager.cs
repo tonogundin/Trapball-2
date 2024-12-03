@@ -8,7 +8,7 @@ public class LocationManager : MonoBehaviour
     public static LocationManager Instance;
 
     private Dictionary<string, string> localizedText;
-    private string currentLanguage = "es"; // Idioma por defecto
+    private Languages currentLanguage = Languages.ES;
 
     private void Awake()
     {
@@ -23,10 +23,10 @@ public class LocationManager : MonoBehaviour
         }
     }
 
-    public void LoadLocalization(string languageCode)
+    public void LoadLocalization(Languages languageCode)
     {
         currentLanguage = languageCode;
-        string filePath = Application.dataPath + "/Location/location_" + languageCode + ".json";
+        string filePath = Application.dataPath + "/Location/location_" + currentLanguage.ToString().ToLower() + ".json";
 
         if (File.Exists(filePath))
         {
@@ -92,4 +92,12 @@ public class LocalizationEntry
 {
     public string key;
     public string value;
+}
+
+public enum Languages
+{
+    ES,
+    CAT,
+    GAL,
+    ING
 }
