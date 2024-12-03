@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Princesa Eight
+  m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a4b2f8b67c9a9f748ada01cf593e62ea, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: a4b2f8b67c9a9f748ada01cf593e62ea, type: 2}

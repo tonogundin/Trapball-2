@@ -8,7 +8,7 @@ public class LocationManager : MonoBehaviour
     public static LocationManager Instance;
 
     private Dictionary<string, string> localizedText;
-    private Languages currentLanguage = Languages.ES;
+    public Languages currentLanguage = Languages.ES;
 
     private void Awake()
     {
@@ -99,5 +99,5 @@ public enum Languages
     ES,
     CAT,
     GAL,
-    ING
+    ENG
 }

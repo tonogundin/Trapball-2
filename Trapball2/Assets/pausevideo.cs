@@ -27,12 +27,14 @@ public class pausevideo : MonoBehaviour
     private GameObject frontblack;
     private State state = State.STOP;
     private VideoPlayer videoPlayer;
-    public AudioSource audioSource;
-    public RawImage rawImage;
     private TMP_Text textComic;
     private LocalizedText subtitles;
     public float[] timesSubtitles;
     public string keySubtitles;
+    private AudioSource audioES;
+    private AudioSource audioGAL;
+    private AudioSource audioENG;
+    private AudioSource audioCAT;
 
     private void Awake()
     {
@@ -48,17 +50,24 @@ public class pausevideo : MonoBehaviour
         textComic = transform.Find("PanelText").Find("text").GetComponent<TMP_Text>();
         subtitles = transform.Find("Subtitle").GetComponent<LocalizedText>();
         textComic.color = new Color(textComic.color.r, textComic.color.g, textComic.color.b, 0f);
-        rawImage = GetComponent<RawImage>();
         videoPlayer = GetComponent<VideoPlayer>();
-        audioSource = GetComponent<AudioSource>();
+        audioES = GetComponents<AudioSource>()[0];
+        audioENG = GetComponents<AudioSource>()[1];
         videoPlayer.Stop();
         videoPlayer.time = 0;
-        audioSource.Stop();
+        audioES.Stop();
+        audioENG.Stop();
     }
     void Start()
     {
         videoPlayer.Play();
-        audioSource.Play();
+        if (LocationManager.Instance.currentLanguage == Languages.ENG)
+        {
+            audioENG.Play();
+        } else
+        {
+            audioES.Play();
+        }
         progressCircle.fillAmount = 0f;
         StartCoroutine(quitblackfront());
     }  
@@ -261,7 +270,8 @@ public class pausevideo : MonoBehaviour
         frontblack.SetActive(true);
         SceneManager.LoadSceneAsync("Loading");
         state = State.STOP;
-        audioSource.Stop();
+        audioES.Stop();
+        audioENG.Stop();
     }
 
     enum State

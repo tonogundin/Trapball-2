@@ -17,7 +17,7 @@ public class LanguageSwitcher : MonoBehaviour
 
     public void buttonENG()
     {
-        SwitchLanguage(Languages.ING);
+        SwitchLanguage(Languages.ENG);
     }
     public void buttonES()
     {
