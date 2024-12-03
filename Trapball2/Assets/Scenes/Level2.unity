@@ -42502,9 +42502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 1095171169}
   isUsed: 0
-  text: "Es la primera vez que afronto peligros as\xED, yo solita.\\n\\nTal vez...
-    tal vez haya m\xE1s en m\xED de lo que cre\xEDa.\\n\\n(Y si me lo sigo repitiendo,
-    a lo mejor hasta me lo creo y todo)."
+  locationKey: lore_02_02
   timeLife: 12
 --- !u!1 &574177963
 GameObject:
@@ -45076,6 +45074,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4164824764561763255, guid: bc7c3efdcab91694f9e377dbf0cd6df0, type: 3}
   m_PrefabInstance: {fileID: 623774762}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &628659243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 628659245}
+  - component: {fileID: 628659244}
+  m_Layer: 0
+  m_Name: LocationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &628659244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628659243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f82c8c824be6d641b1679dc86b3a88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &628659245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628659243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46.146053, y: 6.076354, z: 5.417281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &628901131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51816,9 +51858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 1211438193}
   isUsed: 0
-  text: "Con tanto rat\xF3n aqu\xED abajo, no hay manera de avanzar.\\n\\nJe, je,
-    quiz\xE1 me pueda aprovechar de los muy membrillos para llegar m\xE1s alto salt\xE1ndoles
-    encima."
+  locationKey: userhelp_02_02
   timeLife: 8
 --- !u!33 &782231219
 MeshFilter:
@@ -52695,9 +52735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 1211438193}
   isUsed: 0
-  text: "\xA1Qu\xE9 asco! Hay un escarabajo colgando del techo.\\n\\nYa solo faltaba
-    que me cayera encima ese bicho.\\n\\nPero si me acerco con cautela quiz\xE1 me
-    pueda aupar a esa zona tan alta."
+  locationKey: userhelp_02_01
   timeLife: 8
 --- !u!1 &815738876
 GameObject:
@@ -68773,9 +68811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 1095171169}
   isUsed: 0
-  text: "No veo como avanzar por una alcantarilla apestosa me pueda ayudar.\\n\\nPero
-    ya no puedo volver atr\xE1s. Quiz\xE1 solo me quede seguir adelante, hacia lo
-    desconocido."
+  locationKey: lore_02_03
   timeLife: 12
 --- !u!1001 &1149184192
 PrefabInstance:
@@ -112292,9 +112328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 1095171169}
   isUsed: 0
-  text: "Lo que dar\xEDa yo ahora por un zumito y\u2026 \xA1Agh, despierta, Eight!\\n\\nMientras
-    otros se preparaban, yo me daba la gran vida, sin hacerle caso a mi padre.\\n\\n\xBFCu\xE1ntas
-    veces eleg\xED la comodidad sobre el deber?"
+  locationKey: lore_02_01
   timeLife: 12
 --- !u!1001 &2070200518
 PrefabInstance:
@@ -116856,3 +116890,4 @@ SceneRoots:
   - {fileID: 1386214891}
   - {fileID: 1811769785}
   - {fileID: 1208057312}
+  - {fileID: 628659245}

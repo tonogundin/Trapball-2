@@ -54,7 +54,6 @@ MonoBehaviour:
   growDuration: 0.4
   isWithScale: 1
   fadeDuration: 0.4
-  textBocadillo: {fileID: 6624325685464836798}
   otherBocadillo: {fileID: 8344708550038655374}
   type: 1
 --- !u!225 &7548314468902131438
@@ -403,7 +402,6 @@ MonoBehaviour:
   growDuration: 0.4
   isWithScale: 1
   fadeDuration: 0.4
-  textBocadillo: {fileID: 2688196302661107197}
   otherBocadillo: {fileID: 665999229376877827}
   type: 0
 --- !u!225 &2671948721470603175
@@ -654,6 +652,7 @@ GameObject:
   - component: {fileID: 3603662563482326032}
   - component: {fileID: 9148425540430535357}
   - component: {fileID: 6566142188593335471}
+  - component: {fileID: 446724227310504066}
   m_Layer: 9
   m_Name: textCourage
   m_TagString: Untagged
@@ -779,6 +778,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &446724227310504066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845010000915987673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aa5b9ebab1658448c29870292911ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationKey: UI_courage
 --- !u!1 &3940932981077042626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,6 +1780,7 @@ GameObject:
   - component: {fileID: 5467711318890362669}
   - component: {fileID: 1710244038626289787}
   - component: {fileID: 1376991862358781276}
+  - component: {fileID: 366642944357332970}
   m_Layer: 9
   m_Name: TextName
   m_TagString: Untagged
@@ -1893,6 +1906,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &366642944357332970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739880985320977845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aa5b9ebab1658448c29870292911ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationKey: UI_name_eight
 --- !u!1 &7843079137795461670
 GameObject:
   m_ObjectHideFlags: 0

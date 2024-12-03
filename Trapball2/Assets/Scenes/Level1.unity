@@ -26187,7 +26187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  locationKey: 
+  locationKey: lore_01_02
   timeLife: 12
 --- !u!1001 &575385871
 PrefabInstance:
@@ -32670,7 +32670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  locationKey: 
+  locationKey: userhelp_01_02
   timeLife: 8
 --- !u!33 &782231219
 MeshFilter:
@@ -34167,7 +34167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  locationKey: 
+  locationKey: userhelp_01_01
   timeLife: 8
 --- !u!1 &810911403
 GameObject:
@@ -36230,7 +36230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  locationKey: 
+  locationKey: userhelp_01_03
   timeLife: 8
 --- !u!33 &850297290
 MeshFilter:
@@ -47353,7 +47353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  locationKey: 
+  locationKey: lore_01_03
   timeLife: 12
 --- !u!1 &1151810087
 GameObject:
@@ -56089,7 +56089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  locationKey: 
+  locationKey: lore_01_05
   timeLife: 12
 --- !u!1 &1393777242
 GameObject:
@@ -78896,7 +78896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  locationKey: 
+  locationKey: lore_01_04
   timeLife: 12
 --- !u!1 &2021308855
 GameObject:
