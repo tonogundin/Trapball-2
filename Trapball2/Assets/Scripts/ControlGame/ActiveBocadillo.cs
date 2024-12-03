@@ -4,7 +4,7 @@ public class ActiveBocadillo : MonoBehaviour
 {
     public GameObject bocadilloObject;
     public bool isUsed = false;
-    public string text = "";
+    public string locationKey = "";
     public float timeLife = 4f;
     private Bocadillo bocadilloScript;
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class ActiveBocadillo : MonoBehaviour
                 if (!isUsed && bocadilloScript != null)
                 {
                     // Llama al método "ActiveBocadillo" del script
-                    bocadilloScript.ActiveBocadillo(text, timeLife);
+                    bocadilloScript.ActiveBocadillo(locationKey, timeLife);
                     isUsed = true;
                 }
                 else

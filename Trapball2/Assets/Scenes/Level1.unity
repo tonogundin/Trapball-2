@@ -20339,6 +20339,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6645811454749888514, guid: 4a364ffa1b256bf44abd05cc444707ae, type: 3}
   m_PrefabInstance: {fileID: 433818942}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &436240270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436240272}
+  - component: {fileID: 436240271}
+  m_Layer: 0
+  m_Name: LocationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &436240271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436240270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f82c8c824be6d641b1679dc86b3a88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &436240272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436240270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46.146053, y: 6.076354, z: 5.417281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440359366
 GameObject:
   m_ObjectHideFlags: 0
@@ -26143,9 +26187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "\xBFC\xF3mo he llegado a esto?\\n\\nToda una princesa como yo, rodando por
-    esta pocilga sin un mal criado que la ayude, huyendo de una traici\xF3n que nadie
-    vi\xF3 venir."
+  locationKey: 
   timeLife: 12
 --- !u!1001 &575385871
 PrefabInstance:
@@ -32628,9 +32670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  text: "\xBFA qui\xE9n se le ocurre poner pinchos al fondo de esa poza asquerosa?\\n\\nCuando
-    salga de esta, el arquitecto real me va a o\xEDr...\\n\\nQuiz\xE1 pueda usar
-    esta caja para pasar por encima\u2026"
+  locationKey: 
   timeLife: 8
 --- !u!33 &782231219
 MeshFilter:
@@ -34127,10 +34167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  text: "Creo que puedo romper ese tabl\xF3n con aquella t\xE9cnica.\\n\\n\xBFC\xF3mo
-    era?\u2026Recuerdo que hab\xEDa que pegar un buen salto y en lo m\xE1s alto hacer
-    el Impacto Carambola.\\n\\nDeber\xEDa haber prestado m\xE1s atenci\xF3n a mis
-    instructores\u2026"
+  locationKey: 
   timeLife: 8
 --- !u!1 &810911403
 GameObject:
@@ -36193,9 +36230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 468686800}
   isUsed: 0
-  text: "Otro de esos cochinos ratones de goma, y esta vez encima de lo que parece
-    un balanc\xEDn de madera.\\n\\nMejor dejarlo grogui con un buen golpe en el mel\xF3n
-    si quiero atravesar esa poza de agua maloliente."
+  locationKey: 
   timeLife: 8
 --- !u!33 &850297290
 MeshFilter:
@@ -47318,9 +47353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "Este sitio... \xA1nunca imagin\xE9 que los cimientos de nuestro reino escondieran
-    tanta ro\xF1a!\\n\\n\xBFQu\xE9 m\xE1s sorpresas habr\xE1 bajo la superficie de
-    Sphereland?"
+  locationKey: 
   timeLife: 12
 --- !u!1 &1151810087
 GameObject:
@@ -56056,9 +56089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "No hay tiempo para lloriqueos, ahora no me sirven de nada.\\n\\n\xA1Debo
-    reunir valor para seguir adelante!\\n\\nY una vez a salvo, ya podr\xE9 pensar.
-    Y con suerte, \xA1darme un ba\xF1o!"
+  locationKey: 
   timeLife: 12
 --- !u!1 &1393777242
 GameObject:
@@ -78865,9 +78896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "No s\xE9 qu\xE9 es peor, si la rebeli\xF3n o tener que rodar por estos lares,
-    quiz\xE1 me he escapado del taco solo para caer en la tronera.\\n\\nPero ahora
-    no me queda otra que escapar echando tizas."
+  locationKey: 
   timeLife: 12
 --- !u!1 &2021308855
 GameObject:
@@ -80051,9 +80080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bocadilloObject: {fileID: 497110286}
   isUsed: 0
-  text: "No puedo creer lo que ha pasado. \xA1Tengo que escapar!\\n\\nNunca hubiese
-    imaginado semejante carambola a tres bandas de Ovalain...\\n\\nCon lo bien que
-    estaba yo tumbada a la bartola... \xA1y mira c\xF3mo me las tengo que ver ahora!"
+  locationKey: lore_01_01
   timeLife: 12
 --- !u!1 &2071093935
 GameObject:
@@ -83212,6 +83239,10 @@ PrefabInstance:
         reunir valor para seguir adelante!\\n\\nY una vez a salvo, ya podr\xE9 pensar.
         Y con suerte, \xA1darme un ba\xF1o!"
       objectReference: {fileID: 0}
+    - target: {fileID: 2958817696120109825, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3469897594453350253, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: gameController
       value: 
@@ -83315,6 +83346,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7548314468902131438, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548314468902131438, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_IgnoreParentGroups
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7777700103243777510, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -2.9260025
@@ -83403,3 +83442,4 @@ SceneRoots:
   - {fileID: 1386214891}
   - {fileID: 1811769785}
   - {fileID: 1208057312}
+  - {fileID: 436240272}

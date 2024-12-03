@@ -16,5 +16,13 @@
 	"intro_subtitle_line_14": "Eight, asustada y confusa, emprendió la huida para salvarse del malvado visir.",
 	"intro_subtitle_line_15": "Viéndose acorralada por la situación, no le quedó otra que emprender su viaje a través de las malolientes alcantarillas del castillo.",
 	"intro_subtitle_line_16": "",
-	"text_comic": "ÉRASE UNA VEZ, EN EL REINO DE SPHERELAND..."
+	"text_comic": "ÉRASE UNA VEZ, EN EL REINO DE SPHERELAND...",
+	"menu_new_game": "Nueva\nPartida",
+	"menu_continue": "Continuar",
+	"menu_settings": "Ajustes",
+	"menu_exit": "Salir",
+	"loading": "Cargando",
+	"instructions": "Salto corto:\nPulsa y suelta\n\n\nSalto largo:\nPulsa, mantén pulsado y suelta\n\n\nImpacto Carambola:\nDespués de un salto largo, pulsa el Trigger R",
+	"lore_01_01": "No puedo creer lo que ha pasado. ¡Tengo que escapar!\n\nNunca hubiese imaginado semejante carambola a tres bandas de Ovalain...\n\nCon lo bien que estaba yo tumbada a la bartola... ¡y mira cómo me las tengo que ver ahora!"
+		
 }

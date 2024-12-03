@@ -1,13 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using TMPro;
 
 public class Bocadillo : MonoBehaviour
 {
     public float growDuration = 2f;
     public bool isWithScale = true;
-
-    private RectTransform rectTransform;
 
     // Referencia al CanvasGroup para objetos UI
     private CanvasGroup canvasGroup;
@@ -18,35 +15,29 @@ public class Bocadillo : MonoBehaviour
     // Tiempo antes de comenzar a desaparecer
     private float waitTimeBeforeFade = 10.0f;
 
-    public TextMeshProUGUI textBocadillo;
-
     public Bocadillo otherBocadillo;
     public TypeDialog type;
 
     private FMOD.Studio.EventInstance dialogEight;
 
     private float typingSpeed = 0.02f;
+    private LocalizedText localizedText;
 
     void Awake()
     {
         dialogEight = FMODUtils.createInstance(FMODConstants.HUD.VOICE_DIALOGS);
+        localizedText = transform.Find("Text").GetComponent<LocalizedText>();
         gameObject.SetActive(false);
     }
 
-
-
-    public void ActiveBocadillo(string text, float timeLife)
+    public void ActiveBocadillo(string locationKey, float timeLife)
     {
         closed();
-        text = text.Replace("\\n", "\n");
-        textBocadillo.text = "";
         waitTimeBeforeFade = timeLife;
         setTypeDialog();
         dialogEight.start();
         // Si es un objeto UI, obtén el CanvasGroup
         canvasGroup = GetComponent<CanvasGroup>();
-        // Si estás usando UI, guarda el tamaño original desde el RectTransform
-        rectTransform = GetComponent<RectTransform>();
 
         // Asegura que el objeto sea completamente opaco al inicio
         if (canvasGroup != null)
@@ -65,7 +56,7 @@ public class Bocadillo : MonoBehaviour
         // Inicia la coroutine para crecer
         StartCoroutine(GrowFromZeroToOriginalSize());
 
-        StartCoroutine(TypeText(text, typingSpeed));
+        localizedText.UpdateTextTyping(locationKey, typingSpeed, fadeDuration);
     }
 
     public void closed()
@@ -75,26 +66,6 @@ public class Bocadillo : MonoBehaviour
             dialogEight.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             StartCoroutine(FadeOutAction());
         }
-    }
-
-    private IEnumerator TypeText(string fullText, float typingSpeed)
-    {
-        yield return new WaitForSeconds(fadeDuration);
-        
-        string[] words = fullText.Split(' '); // Divide el texto en palabras
-                                              // Recorre cada letra del texto
-        foreach (char letter in fullText)
-        {
-            textBocadillo.text += letter; // Añade cada letra al texto del bocadillo
-            yield return new WaitForSeconds(typingSpeed); // Espera el tiempo especificado entre cada letra
-        }
-        /*
-        foreach (string word in words)
-        {
-            textBocadillo.text += word + " "; // Añade la palabra y un espacio
-            yield return new WaitForSeconds(typingSpeed); // Espera el tiempo especificado entre cada palabra
-        }
-        */
     }
 
     private void setTypeDialog()
@@ -150,6 +121,7 @@ public class Bocadillo : MonoBehaviour
         yield return new WaitForSeconds(waitTimeBeforeFade);
         StartCoroutine(FadeOutAction());
     }
+
     IEnumerator FadeOutAction()
     {
         float currentTime = 0;
