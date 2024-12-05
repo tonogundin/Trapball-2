@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f82c8c824be6d641b1679dc86b3a88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLanguage: 0
 --- !u!4 &316128070
 Transform:
   m_ObjectHideFlags: 0
@@ -1661,8 +1662,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Cargando
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efd013abbcb311a4da846bb04cc7c7d4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: efd013abbcb311a4da846bb04cc7c7d4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1949,8 +1950,8 @@ MonoBehaviour:
     y suelta\n\n\nImpacto Carambola:\nDespu\xE9s de un salto largo, pulsa el Trigger
     R"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: efd013abbcb311a4da846bb04cc7c7d4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: efd013abbcb311a4da846bb04cc7c7d4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

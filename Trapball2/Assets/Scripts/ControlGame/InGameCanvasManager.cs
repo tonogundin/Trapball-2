@@ -10,6 +10,7 @@ public class InGameCanvasManager : MonoBehaviour
     public float stayBlack = 1f;
     public float stayTransparent = 1f;
     public Image fundidoNegro;
+    public GameObject finalMoon;
     private void Awake()
     {
         // Establece el color inicial con alfa 0 (completamente transparente)
@@ -82,6 +83,7 @@ public class InGameCanvasManager : MonoBehaviour
     private void runFadetoBlack()
     {
         StartCoroutine(fadeToBlack());
+        StartCoroutine(showFinalMoon());
     }
 
     private IEnumerator fadeToBlack()
@@ -92,7 +94,6 @@ public class InGameCanvasManager : MonoBehaviour
         yield return new WaitForSeconds(stayTransparent);
         // Copia el color actual
         Color color = fundidoNegro.color;
-
         // Inicia el temporizador
         float elapsedTime = 0f;
 
@@ -114,5 +115,12 @@ public class InGameCanvasManager : MonoBehaviour
         // Asegura que el alfa final sea 1 (completamente opaco)
         color.a = 1f;
         fundidoNegro.color = color;
+    }
+
+
+    private IEnumerator showFinalMoon()
+    {
+        yield return new WaitForSeconds(stayTransparent * 3);
+        finalMoon.SetActive(true);
     }
 }

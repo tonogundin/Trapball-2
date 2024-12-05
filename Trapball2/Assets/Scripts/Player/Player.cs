@@ -37,6 +37,7 @@ public class Player : MonoBehaviour, IResettable
 
     private ParticlesWaterController particlesWaterController;
     private ParticlesSmokeController particlesSmokeController;
+    private ParticlesSmokeWaterController particlesSmokeWaterController;
     private Stella stella;
 
 
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour, IResettable
     [SerializeField] private const float JUMP_DELTA = 5; //Define cuánto de rápido se alcanza el límite de fuerza de salto.
     [SerializeField] private const float JUMP_LIMIT = 10; //Define la mayor fuerza de salto posible a aplicar.
     [SerializeField] private float initGravityFactor;
+    [SerializeField] private float gravityWater = -5f;
     [SerializeField] private LayerMask jumpable;
 
     private float movementPlayer;
@@ -99,6 +101,7 @@ public class Player : MonoBehaviour, IResettable
         particlesDeath = transform.GetChild(0).GetComponent<ParticlesExplosion>();
         particlesWaterController = GetComponent<ParticlesWaterController>();
         particlesSmokeController = GetComponent<ParticlesSmokeController>();
+        particlesSmokeWaterController = GetComponent<ParticlesSmokeWaterController>();
         stella = transform.Find("ParentStella").GetComponent<Stella>();
         stella.gameObject.SetActive(false);
         currentGravityFactor = initGravityFactor;
@@ -418,7 +421,13 @@ public class Player : MonoBehaviour, IResettable
         }
         if (!isWater)
         {
-            particlesSmokeController.launchParticles();
+            if (isInToWater())
+            {
+                particlesSmokeWaterController.launchParticles();
+            } else
+            {
+                particlesSmokeController.launchParticles();
+            }
         }
         stella.desActive();
         StartCoroutine(camShakeScript.Shake(0.5f, 0.5f));
@@ -712,7 +721,7 @@ public class Player : MonoBehaviour, IResettable
     {
         if (other.CompareTag("Water"))
         {
-            currentGravityFactor = -5f;
+            currentGravityFactor = gravityWater;
             rb.angularDamping = 4;
             rb.linearDamping = 2.2f;
         }
@@ -725,7 +734,6 @@ public class Player : MonoBehaviour, IResettable
             rb.angularDamping = 0.05f;
             rb.linearDamping = 0;
             setTerrainParametersToExitMaterialAndStart(FMODConstants.MATERIAL.WATER);
-            particlesWaterController.launchParticlesWaterExit();
         }
     }
 
@@ -1035,6 +1043,11 @@ public class Player : MonoBehaviour, IResettable
         transform.localScale = originalScale;
 
         squashCoroutine = null;
+    }
+
+    private bool isInToWater()
+    {
+        return currentGravityFactor == gravityWater;
     }
 
 

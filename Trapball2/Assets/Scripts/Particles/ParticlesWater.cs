@@ -21,8 +21,9 @@ public class ParticlesWater : MonoBehaviour, IResettable
     {
         transform.SetParent(null);
         transform.rotation = Quaternion.Euler(0, 0, 0);
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y - bottomOffset, player.transform.position.z);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + bottomOffset, player.transform.position.z);
         GetComponent<ParticleSystem>().Play();
+        Debug.Log("Position Particles: " + transform.position.y);
     }
 
     public void Explode(Vector3 position)

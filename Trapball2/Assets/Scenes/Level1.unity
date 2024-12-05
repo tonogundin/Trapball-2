@@ -20368,6 +20368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f82c8c824be6d641b1679dc86b3a88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLanguage: 0
 --- !u!4 &436240272
 Transform:
   m_ObjectHideFlags: 0
@@ -42865,7 +42866,7 @@ MonoBehaviour:
       Data4: 747190538
     Path: event:/Musica/Stage1
   Event: 
-  EventPlayTrigger: 0
+  EventPlayTrigger: 1
   EventStopTrigger: 12
   AllowFadeout: 1
   TriggerOnce: 0
@@ -59095,6 +59096,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[3].countCurve.scalar
       value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 5064721816291911035, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5432380652551910686, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
       propertyPath: m_Time
       value: 1
@@ -59175,9 +59180,9 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outWeight
       value: 0.13252631
       objectReference: {fileID: 0}
-    - target: {fileID: 7293876878974160503, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
-      propertyPath: bottomOffset
-      value: 0
+    - target: {fileID: 5650965703091503458, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8206805077932478488, guid: 3360a723610637649b9b53a7a5e33441, type: 3}
       propertyPath: m_Enabled
@@ -83251,6 +83256,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6319730158597404611, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 173.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319730158597404611, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -28.399963
+      objectReference: {fileID: 0}
     - target: {fileID: 6566142188593335471, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: m_text
       value: Coraje
@@ -83357,6 +83370,10 @@ PrefabInstance:
     - target: {fileID: 7777700103243777510, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -2.9260025
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289315925243687647, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.2280273
       objectReference: {fileID: 0}
     - target: {fileID: 8641581524413341770, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -45103,6 +45103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f82c8c824be6d641b1679dc86b3a88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentLanguage: 0
 --- !u!4 &628659245
 Transform:
   m_ObjectHideFlags: 0
