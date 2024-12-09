@@ -37,6 +37,7 @@ public class Loading : MonoBehaviour
 
     private void Start()
     {
+        FMODUtils.getVolumeSettings();
         StartCoroutine(delayStepFinal());
     }
 

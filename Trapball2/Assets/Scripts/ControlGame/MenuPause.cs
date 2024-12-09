@@ -22,9 +22,7 @@ public class MenuPause : MonoBehaviour
     {
         GameEvents.instance.pauseScene.AddListener(showMenuPause);
         GameEvents.instance.returnPauseScene.AddListener(showReturnMenuPause);
-        var (musicVolume, fxVolume) = DataManager.Instance.LoadVolumeSettings();
-        FMODUtils.setVolumenBankMaster(fxVolume);
-        FMODUtils.setVolumenBankMusic(musicVolume);
+        FMODUtils.getVolumeSettings();
         menuPauseContinueButton = menuPause.transform.Find("ContinueButton").GetComponent<Button>();
         menuPauseSettingsButton = menuPause.transform.Find("SettingsButton").GetComponent<Button>();
         menuPauseExitButton = menuPause.transform.Find("ExitButton").GetComponent<Button>();

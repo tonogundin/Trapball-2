@@ -26,7 +26,7 @@ public class LocationManager : MonoBehaviour
     public void LoadLocalization(Languages languageCode)
     {
         currentLanguage = languageCode;
-        string filePath = Application.dataPath + "/Location/location_" + currentLanguage.ToString().ToLower() + ".json";
+        string filePath = Application.streamingAssetsPath + "/Location/location_" + currentLanguage.ToString().ToLower() + ".json";
 
         if (File.Exists(filePath))
         {

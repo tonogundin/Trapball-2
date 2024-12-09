@@ -60,12 +60,15 @@ public class pausevideo : MonoBehaviour
     }
     void Start()
     {
+        var (musicVolume, fxVolume) = FMODUtils.getVolumeSettings();
         videoPlayer.Play();
         if (LocationManager.Instance.currentLanguage == Languages.ENG)
         {
+            audioENG.volume = musicVolume;
             audioENG.Play();
         } else
         {
+            audioES.volume = musicVolume;
             audioES.Play();
         }
         progressCircle.fillAmount = 0f;

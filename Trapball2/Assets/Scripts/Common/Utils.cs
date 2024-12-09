@@ -17,25 +17,19 @@ public class Utils
     {
         // Obtener la posición en Y de tu objeto
         float myYPosition = positionY;
-
-        // Obtener la posición en Y de la caja
-        float otherObjectYPosition = collision.gameObject.transform.position.y;
-        bool result = myYPosition > otherObjectYPosition;
-        if (!result)
+        bool result = false;
+        Debug.Log("collisions: " + collision.contactCount);
+        if (collision.contactCount > 0)
         {
-            if (collision.contactCount > 0)
-            {
-                // Obtener el primer punto de contacto
-                ContactPoint contact = collision.GetContact(0);
+            // Obtener el primer punto de contacto
+            ContactPoint contact = collision.GetContact(0);
 
-                // Comparar la altura (eje Y) del punto de contacto con la posición del jugador
-                if (myYPosition > contact.point.y)
-                {
-                    result = true;
-                }
+            // Comparar la altura (eje Y) del punto de contacto con la posición del jugador
+            if (myYPosition > contact.point.y)
+            {
+                result = true;
             }
         }
-        // Comparar las posiciones en Y
         return result;
     }
     public static bool IsCollisionAboveMe(Collision collision, float positionY)

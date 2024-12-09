@@ -43,6 +43,11 @@ public class MainMenuCanvas : MonoBehaviour
         interact = true;
     }
 
+    private void Start()
+    {
+        FMODUtils.getVolumeSettings();
+    }
+
     void Update()
     {
         selectButton = EventSystem.current.currentSelectedGameObject;

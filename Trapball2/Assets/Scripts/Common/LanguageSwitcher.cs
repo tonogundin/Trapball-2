@@ -2,13 +2,23 @@ using UnityEngine;
 
 public class LanguageSwitcher : MonoBehaviour
 {
-    private void Start()
+    public Languages languageSelected = Languages.ES;
+    private void Awake()
     {
-        string language = PlayerPrefs.GetString("language");
-        SwitchLanguage(convertStrintToLanguage(language));
+        if (!PlayerPrefs.HasKey("language"))
+        {
+            languageSelected = Languages.ES;
+            SwitchLanguage(languageSelected);
+        } else
+        {
+            string language = PlayerPrefs.GetString("language");
+            languageSelected = convertStrintToLanguage(language);
+            SwitchLanguage(languageSelected);
+        }
     }
     public void SwitchLanguage(Languages languageCode)
     {
+        languageSelected = languageCode;
         PlayerPrefs.SetString("language", languageCode.ToString());
         PlayerPrefs.Save();
         LocationManager.Instance.LoadLocalization(languageCode);

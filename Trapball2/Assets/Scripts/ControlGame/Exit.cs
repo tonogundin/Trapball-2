@@ -19,6 +19,7 @@ public class Exit : MonoBehaviour
 
     IEnumerator delayChangeScene()
     {
+        FMODUtils.setPauseEventsFX(true);
         emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         emitter.SetParameter(FMODConstants.STATE_MUSIC, (int) FMODConstants.MUSIC_STATE.FINAL);
         GameEvents.instance.finishGame.Invoke();

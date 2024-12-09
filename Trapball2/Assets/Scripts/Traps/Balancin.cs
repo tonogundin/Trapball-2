@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Balancin : MonoBehaviour, IResettable
 {
@@ -18,6 +19,7 @@ public class Balancin : MonoBehaviour, IResettable
     private Vector3 oldPosition;
     GameObject mouse;
     private Vector3 initialPosition;
+    public bool anclado = true;
 
 
     void Start()
@@ -76,7 +78,14 @@ public class Balancin : MonoBehaviour, IResettable
     {
         rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
         rb.linearVelocity = new Vector3(0, 0, 0);
+        anclado = true;
         setOldPosition(rb.position);
+        StartCoroutine(restoreConstraints());
+    }
+    IEnumerator restoreConstraints()
+    {
+        yield return new WaitForSeconds(1f);
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -84,6 +93,11 @@ public class Balancin : MonoBehaviour, IResettable
         float impact = collision.relativeVelocity.y * -1;
         if (collision.gameObject == player)
         {
+            if (anclado)
+            {
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
+                anclado = false;
+            }
             if (mouse != null && impact > 3f && mouse.GetComponent<MouseBall2>().isStayonShip())
             {
                 energyImpactBall = impact;
@@ -129,7 +143,15 @@ public class Balancin : MonoBehaviour, IResettable
         {
             rb.mass = 10; //Para mejorar comportamiento cuando la bola se pone encima de una caja en el agua.
             waterYPos = other.bounds.center.y;
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
+            if (anclado)
+            {
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+            }
+            else
+            {
+                rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ;
+
+            }
             floating = true;
         }
     }

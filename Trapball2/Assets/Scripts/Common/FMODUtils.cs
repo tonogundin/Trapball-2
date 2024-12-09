@@ -100,6 +100,7 @@ public class FMODUtils
     {
         setVolumenBank(FMODConstants.BUSES.SFX, value);
         setVolumenBank(FMODConstants.BUSES.MASTER, value);
+        setVolumenBank(FMODConstants.BUSES.HUD, value);
     }
 
     public static void setVolumenBankMusic(float value)
@@ -124,6 +125,22 @@ public class FMODUtils
         }
     }
 
+    public static void saveVolumeSettings(float musicVolume, float fxVolume)
+    {
+        PlayerPrefs.SetFloat("musicVolume", musicVolume);
+        PlayerPrefs.SetFloat("fxVolume", fxVolume);
+        PlayerPrefs.Save();
+        setVolumenBankMaster(fxVolume);
+        setVolumenBankMusic(musicVolume);
+    }
 
+    public static (float musicVolume, float fxVolume) getVolumeSettings()
+    {
+        float musicVolume = PlayerPrefs.GetFloat("musicVolume", 1f);
+        float fxVolume = PlayerPrefs.GetFloat("fxVolume", 1f);
+        setVolumenBankMaster(fxVolume);
+        setVolumenBankMusic(musicVolume);
+        return (musicVolume, fxVolume);
+    }
 
 }

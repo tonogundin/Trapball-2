@@ -26,10 +26,12 @@ public class CheckPoint : MonoBehaviour
     { 
         if (other.gameObject.CompareTag(Player.TAG))
         {
-            active = true;
-            if (resetInActive)
-            {
-                setResetObjects();
+            if (!active) {
+                active = true;
+                if (resetInActive)
+                {
+                    setResetObjects();
+                }
             }
         }
 

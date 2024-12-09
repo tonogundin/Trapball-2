@@ -30,7 +30,7 @@ public class MixAudio : MonoBehaviour
         textMusic = Music.transform.Find(nameGameObjectUnit).GetComponentInChildren<TextMeshProUGUI>();
         textFX = FX.transform.Find(nameGameObjectUnit).GetComponentInChildren<TextMeshProUGUI>();
 
-        var (musicVolume, fxVolume) = DataManager.Instance.LoadVolumeSettings();
+        var (musicVolume, fxVolume) = FMODUtils.getVolumeSettings();
         volumenBankMaster = fxVolume;
         volumenBankMusic = musicVolume;
         setMusicVolume(volumenBankMusic);
@@ -83,7 +83,6 @@ public class MixAudio : MonoBehaviour
     {
         gameObject.SetActive(false);
         GameEvents.instance.returnPauseScene.Invoke();
-        DataManager.Instance.SaveVolumeSettings(volumenBankMusic, volumenBankMaster);
         menuPauseExitButton.interactable = false;
         menuPauseExitButton.interactable = true;
     }
@@ -105,7 +104,7 @@ public class MixAudio : MonoBehaviour
     private void setMusicVolume(float value)
     {
         volumenBankMusic = setLimitsAudio(value);
-        FMODUtils.setVolumenBankMusic(volumenBankMusic);
+        FMODUtils.saveVolumeSettings(volumenBankMusic, volumenBankMaster);
         textMusic.text = getVolumeMusicPercent();
     }
     private void setFXVolumeByStep(bool increment)
@@ -116,7 +115,7 @@ public class MixAudio : MonoBehaviour
     private void setFXVolume(float value)
     {
         volumenBankMaster = setLimitsAudio(value);
-        FMODUtils.setVolumenBankMaster(volumenBankMaster);
+        FMODUtils.saveVolumeSettings(volumenBankMusic, volumenBankMaster);
         textFX.text = getVolumeFXPercent();
     }
 

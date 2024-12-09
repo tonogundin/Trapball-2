@@ -15,7 +15,7 @@ public class InGameCanvasManager : MonoBehaviour
     {
         // Establece el color inicial con alfa 0 (completamente transparente)
         fundidoNegro.color = new Color(0f, 0f, 0f, 0f);
-        
+        FMODUtils.setPauseEventsFX(false);
     }
     private void Start()
     {

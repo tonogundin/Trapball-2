@@ -327,7 +327,6 @@ public class Beatle : MonoBehaviour, IResettable
                         break;
                 case State.MOVE:
                     animator.SetTrigger(animBeatleMove);
-                    //SoundRun.start();
                     FMODUtils.play3DSound(SoundRun, transform);
                     break;
                 case State.MOVE_AGRESSIVE:
@@ -561,6 +560,7 @@ public class Beatle : MonoBehaviour, IResettable
             StopCoroutine(currentCoroutine);
             currentCoroutine = null; // Resetear la referencia despu�s de detenerla
         }
+        SoundRun.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         outofObjectReference = false;
         playerDetected = false;
         launch = false;

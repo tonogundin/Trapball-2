@@ -149,7 +149,9 @@ public class FMODConstants
         [FMODUtils.StringValue("bus:/MASTER")]
         MASTER,
         [FMODUtils.StringValue("bus:/MUSIC")]
-        MUSIC
+        MUSIC,
+        [FMODUtils.StringValue("bus:/HUD")]
+        HUD
     }
 
 }
