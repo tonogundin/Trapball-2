@@ -3,7 +3,7 @@ using UnityEngine;
 public class LanguageSwitcher : MonoBehaviour
 {
     public Languages languageSelected = Languages.ES;
-    private void Awake()
+    private void Start()
     {
         if (!PlayerPrefs.HasKey("language"))
         {

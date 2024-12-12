@@ -604,7 +604,6 @@ public class Player : MonoBehaviour, IResettable
                 // Handle other cases or do nothing
                 break;
         }
-        Debug.Log("state: " + state + "\n layer: " + layer);
         if (state == StatePlayer.BOMBJUMP && (layer == Layers.PLATFORM || layer == Layers.ENEMIES) && Utils.IsCollisionAboveEnemies(collision, transform.position.y))
         {
             collisionFloor(false, layer == Layers.ENEMIES);

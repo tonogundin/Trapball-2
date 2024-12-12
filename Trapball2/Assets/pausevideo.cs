@@ -35,6 +35,7 @@ public class pausevideo : MonoBehaviour
     private AudioSource audioGAL;
     private AudioSource audioENG;
     private AudioSource audioCAT;
+    private AudioSource audioSelected;
 
     private void Awake()
     {
@@ -53,24 +54,36 @@ public class pausevideo : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
         audioES = GetComponents<AudioSource>()[0];
         audioENG = GetComponents<AudioSource>()[1];
+        audioCAT = GetComponents<AudioSource>()[2];
+        audioGAL = GetComponents<AudioSource>()[3];
         videoPlayer.Stop();
         videoPlayer.time = 0;
         audioES.Stop();
         audioENG.Stop();
+        audioCAT.Stop();
+        audioGAL.Stop();
     }
     void Start()
     {
         var (musicVolume, fxVolume) = FMODUtils.getVolumeSettings();
         videoPlayer.Play();
-        if (LocationManager.Instance.currentLanguage == Languages.ENG)
+        switch (LocationManager.Instance.currentLanguage)
         {
-            audioENG.volume = musicVolume;
-            audioENG.Play();
-        } else
-        {
-            audioES.volume = musicVolume;
-            audioES.Play();
+            case Languages.ENG:
+                audioSelected = audioENG;
+                break;
+            case Languages.CAT:
+                audioSelected = audioCAT;
+                break;
+            case Languages.GAL:
+                audioSelected = audioGAL;
+                break;
+            default:
+                audioSelected = audioES;
+                break;
         }
+        audioSelected.volume = musicVolume;
+        audioSelected.Play();
         progressCircle.fillAmount = 0f;
         StartCoroutine(quitblackfront());
     }  
@@ -273,8 +286,7 @@ public class pausevideo : MonoBehaviour
         frontblack.SetActive(true);
         SceneManager.LoadSceneAsync("Loading");
         state = State.STOP;
-        audioES.Stop();
-        audioENG.Stop();
+        audioSelected.Stop();
     }
 
     enum State

@@ -16,7 +16,7 @@ public class SelectLanguage : MonoBehaviour
 
     public void updatePosition()
     {
-        languagueSelected = GameObject.Find("LocationManager").GetComponent<LanguageSwitcher>().languageSelected;
+        languagueSelected = transform.GetComponentInParent<LanguageSwitcher>().languageSelected;
         Vector3 buttonPosition = GameObject.Find("Button" + languagueSelected.ToString()).transform.position;
         transform.position = buttonPosition;
     }

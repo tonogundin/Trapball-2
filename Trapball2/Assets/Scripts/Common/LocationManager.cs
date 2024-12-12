@@ -44,7 +44,6 @@ public class LocationManager : MonoBehaviour
 
                 // Deserializar directamente a un Dictionary<string, string>
                 localizedText = JsonConvert.DeserializeObject<Dictionary<string, string>>(dataAsJson);
-                Debug.Log("Archivo de localización cargado correctamente.");
             }
             catch (System.Exception ex)
             {

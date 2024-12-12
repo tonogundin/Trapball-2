@@ -18,7 +18,6 @@ public class Utils
         // Obtener la posición en Y de tu objeto
         float myYPosition = positionY;
         bool result = false;
-        Debug.Log("collisions: " + collision.contactCount);
         if (collision.contactCount > 0)
         {
             // Obtener el primer punto de contacto
