@@ -60,7 +60,10 @@ public class Stella : MonoBehaviour
     {
         // Inicia la corrutina para el escalado inverso y marca como desactivando
         isDeactivating = true;
-        StartCoroutine(ScaleDownAndDeactivate());
+        if (isActiveAndEnabled)
+        {
+            StartCoroutine(ScaleDownAndDeactivate());
+        }
     }
 
     private IEnumerator ScaleDownAndDeactivate()

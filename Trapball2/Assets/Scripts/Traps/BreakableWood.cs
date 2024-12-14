@@ -63,8 +63,11 @@ public class BreakableWood : MonoBehaviour, IResettable
     {
         gameObject.SetActive(true);
         rb.position = new Vector3(initialPosition.x, initialPosition.y, initialPosition.z);
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        if (!rb.isKinematic)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
         transform.rotation = initialRotation;
         rb.rotation = initialRotation;
         transform.localScale = new Vector3(initialScale.x, initialScale.y, initialScale.z);

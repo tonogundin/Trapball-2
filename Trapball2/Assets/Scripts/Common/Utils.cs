@@ -31,6 +31,30 @@ public class Utils
         }
         return result;
     }
+
+    public static bool IsBombCollision(Collision collision, Rigidbody rb, float positionY)
+    {
+        // Obtener la posición en Y del objeto
+        float myYPosition = positionY;
+
+        // Validar que hay puntos de contacto
+        if (collision.contactCount > 0)
+        {
+            foreach (ContactPoint contact in collision.contacts)
+            {
+                if (myYPosition > contact.point.y)
+                {
+                    // Verificar si la velocidad en Y es igual o mayor a 0 (hacia abajo)
+                    if (rb.linearVelocity.y <= 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     public static bool IsCollisionAboveMe(Collision collision, float positionY)
     {
         // Obtener la posición en Y de tu objeto

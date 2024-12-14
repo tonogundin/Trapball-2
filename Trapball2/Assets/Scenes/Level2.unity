@@ -17551,7 +17551,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -116.1948, y: 1.06, z: 0.95}
-  m_LocalScale: {x: -4.9574757, y: 2.29606, z: 0.9461}
+  m_LocalScale: {x: 4.957476, y: 2.29606, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -17751,7 +17751,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 0.15926614, z: 10.000003}
-  m_Center: {x: -0.0000007966937, y: 0.3, z: 0.00000040199478}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!23 &90392417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21001,7 +21001,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &149794851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25700,10 +25700,6 @@ PrefabInstance:
     - target: {fileID: 1280756808420054365, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
       propertyPath: m_Name
       value: Tubo_Bajada (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280756808420054365, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2107099755696549549, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
       propertyPath: m_LocalScale.x
@@ -31296,7 +31292,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &382007771
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35740,7 +35736,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 0.15926614, z: 10.000003}
-  m_Center: {x: -0.0000007966937, y: 0.3, z: 0.00000040199478}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!23 &463922808
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39578,7 +39574,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -120.1978, y: 2.2884998, z: 0.95}
-  m_LocalScale: {x: -2.5621078, y: 0.57588136, z: 0.9461}
+  m_LocalScale: {x: 2.562108, y: 0.57588136, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -40873,7 +40869,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -120.6176, y: 1.7357999, z: 0.95}
-  m_LocalScale: {x: -0.61694264, y: 0.6576904, z: 0.9461}
+  m_LocalScale: {x: 0.6169426, y: 0.6576904, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -42759,7 +42755,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: 47.2404, y: -0.1061, z: 0.95}
-  m_LocalScale: {x: -10.537319, y: 0.9340943, z: 0.9461}
+  m_LocalScale: {x: 10.53732, y: 0.9340943, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -44166,7 +44162,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: 28.2361, y: -0.1061, z: 0.95}
-  m_LocalScale: {x: -8.906391, y: 0.9340943, z: 0.9461}
+  m_LocalScale: {x: 8.906391, y: 0.9340943, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -48618,7 +48614,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 0.15926614, z: 10.000003}
-  m_Center: {x: -0.0000007966937, y: 0.3, z: 0.00000040199478}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!23 &713396233
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48873,7 +48869,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -118.785, y: 1.2238, z: 0.95}
-  m_LocalScale: {x: -0.719259, y: 1.9684116, z: 0.9461}
+  m_LocalScale: {x: 0.719259, y: 1.9684116, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -54949,7 +54945,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -119.7576, y: 1.531, z: 0.95}
-  m_LocalScale: {x: -1.2722161, y: 1.0671856, z: 0.9461}
+  m_LocalScale: {x: 1.272216, y: 1.0671856, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -56040,7 +56036,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -119.4505, y: 1.3262, z: 0.95}
-  m_LocalScale: {x: -0.6579521, y: 1.4766648, z: 0.9461}
+  m_LocalScale: {x: 0.6579521, y: 1.4766648, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -56634,7 +56630,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &894613387
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59712,7 +59708,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: 12.7326, y: -0.0682, z: 0.95}
-  m_LocalScale: {x: -7.297701, y: 0.85833925, z: 0.9461}
+  m_LocalScale: {x: 7.297701, y: 0.85833925, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -64963,7 +64959,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -34.6738, y: 14.9029, z: 0.95}
-  m_LocalScale: {x: -8.738821, y: 0.7398027, z: 0.9461}
+  m_LocalScale: {x: 8.738821, y: 0.7398027, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -67374,7 +67370,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &1119665636
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -73466,6 +73462,14 @@ PrefabInstance:
       propertyPath: fadeDuration
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6319730158597404611, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 173.09998
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319730158597404611, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -28.399963
+      objectReference: {fileID: 0}
     - target: {fileID: 6624325685464836798, guid: 47d34ca6166381149bc641cc8582b793, type: 3}
       propertyPath: m_text
       value: "Con tanto rat\xF3n aqu\xED abajo, no hay manera de avanzar.\\n\\nJe,
@@ -73939,7 +73943,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 0.15926614, z: 10.000003}
-  m_Center: {x: -0.0000007966937, y: 0.3, z: 0.00000040199478}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!23 &1256403850
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79004,7 +79008,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &1351908307
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80849,35 +80853,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -131.35086
+      value: -131.34212
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.943
+      value: 20.912342
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10043596
+      value: 0.10000013
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70515436
+      value: 0.70615697
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.70515436
+      value: 0.70615697
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.05251074
+      value: 0.036637966
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.05251073
+      value: 0.03663795
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 81.482
+      value: 84.06
       objectReference: {fileID: 0}
     - target: {fileID: 785089441622362566, guid: db420f0832713de43b9d049912282509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -84497,7 +84501,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -99.6305, y: -0.31, z: 0.95}
-  m_LocalScale: {x: -10.146642, y: 0.7398027, z: 0.9461}
+  m_LocalScale: {x: 10.14664, y: 0.7398027, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -85459,10 +85463,6 @@ PrefabInstance:
     - target: {fileID: 1280756808420054365, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
       propertyPath: m_Name
       value: Tubo_Bajada
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280756808420054365, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2107099755696549549, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86481,10 +86481,6 @@ PrefabInstance:
     - target: {fileID: 1280756808420054365, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
       propertyPath: m_Name
       value: Tubo_Bajada (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280756808420054365, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2107099755696549549, guid: dc8e0e9638eef2a4a9d1390ca6704f88, type: 3}
       propertyPath: m_LocalScale.x
@@ -88518,7 +88514,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &1564263370
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -88687,7 +88683,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -120.1671, y: 3.3021002, z: 0.58}
-  m_LocalScale: {x: -3.4833698, y: 1.6201471, z: 0.9461}
+  m_LocalScale: {x: 3.48337, y: 1.6201471, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -93166,7 +93162,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -78.5566, y: 14.9279, z: 0.95}
-  m_LocalScale: {x: -10.94766, y: 0.68965065, z: 0.9461}
+  m_LocalScale: {x: 10.94766, y: 0.68965065, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -97297,7 +97293,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &1732893999
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101939,7 +101935,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -116.1382, y: -0.16910005, z: 0.95}
-  m_LocalScale: {x: -2.7462244, y: 0.7807878, z: 0.9461}
+  m_LocalScale: {x: 2.746224, y: 0.7807878, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -104629,7 +104625,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &1894519112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -105328,7 +105324,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 0.15926614, z: 10.000003}
-  m_Center: {x: -0.0000007966937, y: 0.3, z: 0.00000040199478}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!23 &1917160807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107015,7 +107011,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 10, y: 2.0756054, z: 10.000003}
-  m_Center: {x: -0.0000009727119, y: -3, z: 0.0000005629549}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!23 &1950476360
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -114933,7 +114929,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -13.5169, y: 14.9029, z: 0.95}
-  m_LocalScale: {x: -11.679282, y: 0.7398027, z: 0.9461}
+  m_LocalScale: {x: 11.67928, y: 0.7398027, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}
@@ -116940,7 +116936,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.000000104308114}
   m_LocalPosition: {x: -55.9376, y: 14.9029, z: 0.95}
-  m_LocalScale: {x: -12.373791, y: 0.7398027, z: 0.9461}
+  m_LocalScale: {x: 12, y: 0.7398027, z: 0.9461}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928421026}

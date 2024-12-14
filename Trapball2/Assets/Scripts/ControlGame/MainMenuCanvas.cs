@@ -39,7 +39,7 @@ public class MainMenuCanvas : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(menuNewGame.gameObject);
         selectButton = EventSystem.current.currentSelectedGameObject;
         antSelectButton = selectButton;
-
+        FMODUtils.setPauseEventsFX(false);
         interact = true;
     }
 

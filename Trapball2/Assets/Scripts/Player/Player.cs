@@ -138,7 +138,7 @@ public class Player : MonoBehaviour, IResettable
             {
                 ManageBallSpeed();
             }
-        } else
+        } else if (!rb.isKinematic)
         {
             rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, rb.linearVelocity.z);
         }
@@ -151,12 +151,12 @@ public class Player : MonoBehaviour, IResettable
         if (isActiveMovement())
         {
             processJumpForce();
-            checkTouchingFloor();
             checkSoundRoll();
             checkRotations();
             percentStage = getPercentPositionPlayer();
             emitter.SetParameter(FMODConstants.PERCENT_STAGE, percentStage);
         }
+        checkTouchingFloor();
     }
 
     private bool isActiveMovement()
@@ -204,22 +204,51 @@ public class Player : MonoBehaviour, IResettable
             state = StatePlayer.JUMP;
         }
     }
+    private void OnDrawGizmos()
+    {
+        // Configura el color para las esferas
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position + new Vector3(0, -0.35f, 0), 0.1f); // Suelo
 
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + new Vector3(-0.18f, -0.28f, 0), 0.1f); // Rampa izquierda
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position + new Vector3(0.18f, -0.28f, 0), 0.1f); // Rampa derecha
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + new Vector3(-0.3f, -0.155f, 0), 0.1f); // Rampa izquierda
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position + new Vector3(0.3f, -0.155f, 0), 0.1f); // Rampa derecha
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position + new Vector3(-0.33f, 0, 0), 0.1f); // Pared izquierda
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position + new Vector3(0.33f, 0, 0), 0.1f); // Pared derecha
+    }
     private bool isColliderPlatforms()
     {
         Vector3 centralOffset = new Vector3(0, -0.35f, 0); // Abajo
-        Vector3 leftRampOffset = new Vector3(-0.2f, -0.3f, 0); // Diagonal abajo izquierda (rampa)
-        Vector3 rightRampOffset = new Vector3(0.2f, -0.3f, 0); // Diagonal abajo derecha (rampa)
-        Vector3 leftWallOffset = new Vector3(-0.35f, 0, 0); // Izquierda
-        Vector3 rightWallOffset = new Vector3(0.35f, 0, 0); // Derecha
+        Vector3 leftRampOffset = new Vector3(-0.18f, -0.28f, 0); // Diagonal abajo izquierda (rampa)
+        Vector3 rightRampOffset = new Vector3(0.18f, -0.28f, 0); // Diagonal abajo derecha (rampa)
+        Vector3 leftRampOffset2 = new Vector3(-0.3f, -0.155f, 0); // Diagonal abajo izquierda (rampa)
+        Vector3 rightRampOffset2 = new Vector3(0.3f, -0.155f, 0); // Diagonal abajo derecha (rampa)
+        Vector3 leftWallOffset = new Vector3(-0.33f, 0, 0); // Izquierda
+        Vector3 rightWallOffset = new Vector3(0.33f, 0, 0); // Derecha
 
         // Detección de colisión en el suelo (directamente abajo y rampas)
         Collider[] centralColls = Physics.OverlapSphere(transform.position + centralOffset, 0.1f, jumpable.value);
         Collider[] leftRampColls = Physics.OverlapSphere(transform.position + leftRampOffset, 0.1f, jumpable.value);
         Collider[] rightRampColls = Physics.OverlapSphere(transform.position + rightRampOffset, 0.1f, jumpable.value);
+        Collider[] leftRampColls2 = Physics.OverlapSphere(transform.position + leftRampOffset2, 0.1f, jumpable.value);
+        Collider[] rightRampColls2 = Physics.OverlapSphere(transform.position + rightRampOffset2, 0.1f, jumpable.value);
         bool isOnGround = centralColls.Length > 0;
-        bool isLateralLeft = leftRampColls.Length > 0;
-        bool isLateralRight = rightRampColls.Length > 0;
+        bool isRampLateralLeft = leftRampColls.Length > 0;
+        bool isRampLateralRight = rightRampColls.Length > 0;
+        bool isRampLateralLeft2 = leftRampColls2.Length > 0;
+        bool isRampLateralRight2 = rightRampColls2.Length > 0;
 
         // Detección de colisión en las paredes laterales (izquierda y derecha)
         Collider[] leftWallColls = Physics.OverlapSphere(transform.position + leftWallOffset, 0.1f, jumpable.value);
@@ -227,37 +256,52 @@ public class Player : MonoBehaviour, IResettable
         bool isOnLeftWall = leftWallColls.Length > 0;
         bool isOnRightWall = rightWallColls.Length > 0;
 
-
         // Condición 1: Solo toca el suelo (abajo)
         if (isOnGround && !isOnLeftWall && !isOnRightWall)
         {
             return true;
         }
-        // Condición 1: Solo toca el suelo (abajo)
-        if (isLateralLeft && !isOnLeftWall && !isOnRightWall)
+        // Condición 2: Rampa hacia abajo izquierda > derecha
+        if ((isRampLateralLeft || isRampLateralLeft2) && !isOnLeftWall && !isOnRightWall)
         {
             return true;
         }
-        // Condición 1: Solo toca el suelo (abajo)
-        if (isLateralRight && !isOnLeftWall && !isOnRightWall)
+        // Condición 3: Rampa hacia abajo izquierda < derecha
+        if ((isRampLateralRight || isRampLateralRight2) && !isOnLeftWall && !isOnRightWall)
         {
             return true;
         }
 
-        // Condición 2: Está tocando ambos lados (encajonado)
+        // Condición 4: Está tocando ambos lados (encajonado)
         if (isOnLeftWall && isOnRightWall)
         {
             return true;
         }
 
-        // Condición 3: Está tocando la derecha y el suelo
+        // Condición 5: Está tocando la derecha y el suelo
         if (isOnRightWall && isOnGround)
         {
             return true;
         }
 
-        // Condición 4: Está tocando la izquierda y el suelo
+        // Condición 6: Está tocando la izquierda y el suelo
         if (isOnLeftWall && isOnGround)
+        {
+            return true;
+        }
+
+        // Condición 7: Está tocando dos rampas a la vez o dos objetos en diagonal a la vez
+        if ((isRampLateralLeft || isRampLateralLeft2) && (isRampLateralRight || isRampLateralRight2))
+        {
+            return true;
+        }
+        // Condición 7: Está tocando dos rampas a la vez o dos objetos en diagonal a la vez
+        if ((isRampLateralLeft || isRampLateralLeft2) && isOnRightWall)
+        {
+            return true;
+        }
+        // Condición 7: Está tocando dos rampas a la vez o dos objetos en diagonal a la vez
+        if (isOnLeftWall && (isRampLateralRight || isRampLateralRight2))
         {
             return true;
         }
@@ -401,7 +445,6 @@ public class Player : MonoBehaviour, IResettable
 
     void setStateBombJump()
     {
-        Debug.Log("Play Stella");
         state = StatePlayer.BOMBJUMP;
         stella.active();
         jumpBombEnabled = false;
@@ -414,7 +457,6 @@ public class Player : MonoBehaviour, IResettable
     }
     private void setStateEndBombJump(bool isWater, bool withoutRetard)
     {
-        Debug.Log("Stop Stella");
         if (isRumbleActive)
         {
             gameController.ApplyRumble(1f, 0.15f);
@@ -514,7 +556,7 @@ public class Player : MonoBehaviour, IResettable
         }
         //Ayuda para que no cueste tanto dejar la bola quieta
         //Si la bola a penas se mueve, no hay input de usuario y no está en una rampa (y == 0 + TouchingFloor) se parará por completo.
-        else if (Mathf.Abs(rb.linearVelocity.x) < 0.3f && movementPlayer == 0 && rb.linearVelocity.y == 0)
+        else if (Mathf.Abs(rb.linearVelocity.x) < 0.3f && movementPlayer == 0 && rb.linearVelocity.y == 0 && !rb.isKinematic)
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, rb.linearVelocity.z);
         }
@@ -548,7 +590,6 @@ public class Player : MonoBehaviour, IResettable
         string tag = collision.gameObject.tag;
         float yVelocity = Utils.limitValue(collision.relativeVelocity.y, FMODConstants.LIMIT_SOUND_VALUE);
         impactFloor.setParameterByName(FMODConstants.SPEED, yVelocity);
-        int layer = collision.gameObject.layer;
         switch (tag)
         {
             case "SueloPantanoso":
@@ -604,10 +645,7 @@ public class Player : MonoBehaviour, IResettable
                 // Handle other cases or do nothing
                 break;
         }
-        if (state == StatePlayer.BOMBJUMP && (layer == Layers.PLATFORM || layer == Layers.ENEMIES) && Utils.IsCollisionAboveEnemies(collision, transform.position.y))
-        {
-            collisionFloor(false, layer == Layers.ENEMIES);
-        }
+        checkCollisionforBombJump(collision.gameObject.layer, collision);
     }
 
     private void OnCollisionStay(Collision collision)
@@ -624,6 +662,16 @@ public class Player : MonoBehaviour, IResettable
                     setTerrainRollParametersAndStart(FMODConstants.MATERIAL.WOOD);
                 }
                 break;
+        }
+        checkCollisionforBombJump(collision.gameObject.layer, collision);
+
+    }
+
+    private void checkCollisionforBombJump(LayerMask layer, Collision collision)
+    {
+        if (state == StatePlayer.BOMBJUMP && (layer == Layers.PLATFORM || layer == Layers.ENEMIES) && Utils.IsBombCollision(collision, rb, transform.position.y))
+        {
+            collisionFloor(false, layer == Layers.ENEMIES);
         }
     }
 
@@ -679,7 +727,9 @@ public class Player : MonoBehaviour, IResettable
     {
         movementPlayer = 0;
         movementPlayerExpecialZ = 0;
-        rb.linearVelocity = new Vector3(0, 0, 0);
+        if (!rb.isKinematic) {
+            rb.linearVelocity = new Vector3(0, 0, 0);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -863,7 +913,7 @@ public class Player : MonoBehaviour, IResettable
                 switch (state)
                 {
                     case StatePlayer.JUMP:
-                        if (jumpBombEnabled)
+                        if (jumpBombEnabled && !isColliderPlatforms())
                         {
                             setStateBombJump();
                         }
