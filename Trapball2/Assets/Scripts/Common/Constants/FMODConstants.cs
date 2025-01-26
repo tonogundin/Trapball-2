@@ -60,6 +60,8 @@ public class FMODConstants
         UNDER_WATER,
         [FMODUtils.StringValue("event:/Ambientes/AmbienteBatalla")]
         BATTLE,
+        [FMODUtils.StringValue("event:/Voices/Ovaline_Laugh")]
+        OVALAIN_LAUGH,
     }
     public enum JUMPS
     {

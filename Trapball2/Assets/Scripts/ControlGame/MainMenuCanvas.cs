@@ -129,8 +129,9 @@ public class MainMenuCanvas : MonoBehaviour
     IEnumerator delayStepFinal()
     {
         state = StateMainMenu.FINAL;
+        SceneLoaderManager.prepareSceneLoad(SCENE.LEVEL1);
         yield return new WaitForSeconds(3.5f);
-        SceneManager.LoadSceneAsync("Intro");
+        SceneManager.LoadSceneAsync(FMODUtils.GetStringValue(SCENE.INTRO));
     }
 
     private enum StateMainMenu

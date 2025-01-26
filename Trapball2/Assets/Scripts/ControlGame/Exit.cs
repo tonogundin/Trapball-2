@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
-    public string scene;
+    public SCENE scene;
     FMODUnity.StudioEventEmitter emitter;
     private void OnTriggerEnter(Collider other)
     {
@@ -23,8 +23,9 @@ public class Exit : MonoBehaviour
         emitter = Camera.main.GetComponent<FMODUnity.StudioEventEmitter>();
         emitter.SetParameter(FMODConstants.STATE_MUSIC, (int) FMODConstants.MUSIC_STATE.FINAL);
         GameEvents.instance.finishGame.Invoke();
+        SceneLoaderManager.prepareSceneLoad(scene);
         yield return new WaitForSeconds(5.5f);
         FMODUtils.stopAllEvents();
-        SceneManager.LoadSceneAsync(scene);
+        SceneManager.LoadSceneAsync(FMODUtils.GetStringValue(SCENE.LOADING));
     }
 }

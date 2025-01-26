@@ -62,6 +62,6 @@ public class Loading : MonoBehaviour
     IEnumerator delayStepFinal()
     {
         yield return new WaitForSeconds(10f);
-        SceneManager.LoadSceneAsync("Level1");
+        SceneManager.LoadSceneAsync(SceneLoaderManager.nextScene);
     }
 }

@@ -112,7 +112,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     playerDetected = true;
                     if (Mathf.Abs(distToPlayer) <= 0.75f)
                     {
-                        dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotaci�n rara.
+                        dirToPlayer.y = 0f; //Si estamos muy cerca del player,no rotamos en y para que no haga rotación rara.
                     }
                 }
                 else
@@ -266,7 +266,7 @@ public class MouseBall2 : MonoBehaviour, IResettable
     {
         if (objectReference != null)
         {
-            // Aseg�rate de que el objeto detectado tiene un Collider
+            // Asegúrate de que el objeto detectado tiene un Collider
             Collider[] detectedColliders = objectReference.GetComponentsInChildren<Collider>();
             if (detectedColliders == null || detectedColliders.Length == 0) return false;
 
@@ -275,13 +275,13 @@ public class MouseBall2 : MonoBehaviour, IResettable
             float detectedLeftX = objectReference.transform.position.x - detectedHalfWidth;
             float detectedRightX = objectReference.transform.position.x + detectedHalfWidth;
 
-            // Obt�n la posici�n x y z del GameObject actual (el que tiene este script)
+            // Obtén la posición x y z del GameObject actual (el que tiene este script)
             float currentX = transform.position.x;
 
             // Compara las posiciones en ambos ejes
             bool isOutOfXBounds = currentX <= detectedLeftX || currentX >= detectedRightX;
 
-            return isOutOfXBounds; // Si est� fuera de los l�mites en cualquiera de los ejes, retorna true
+            return isOutOfXBounds; // Si está fuera de los límites en cualquiera de los ejes, retorna true
         }
         return false;
     }
@@ -414,20 +414,22 @@ public class MouseBall2 : MonoBehaviour, IResettable
                     {
 
                         float impact = collision.relativeVelocity.y * -1;
+                        Debug.Log("Impact: " + impact);
                         if (impact > 0)
                         {
                             if (impact >= 15)
                             {
-                                impact = 19;
+                                impact = 12;
                             }
-                            if (impact > 9 && impact < 15)
+                            else if (impact > 9 && impact < 15)
                             {
                                 impact = 9;
                             }
-                            if (impact < 5)
+                            else if (impact < 5)
                             {
                                 impact = 5;
                             }
+                            rbPlayer.linearVelocity = new Vector3(rbPlayer.linearVelocity.x, 0, 0);
                             rbPlayer.AddForce(new Vector3(0, impact, 0), ForceMode.Impulse);
                             StartCoroutine(ImpulseCooldown());
                         }
@@ -435,10 +437,10 @@ public class MouseBall2 : MonoBehaviour, IResettable
                 }
                 else
                 {
-                    // Obtenemos la direcci�n en X hacia el otro objeto
+                    // Obtenemos la dirección en X hacia el otro objeto
                     float directionToOtherX = Mathf.Sign(collision.transform.position.x - transform.position.x);
 
-                    // Obtenemos la direcci�n en X de la velocidad de nuestro objeto
+                    // Obtenemos la dirección en X de la velocidad de nuestro objeto
                     float velocityDirectionX = Mathf.Sign(rb.linearVelocity.x);
 
                     // Comparamos las dos direcciones

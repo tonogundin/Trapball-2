@@ -9,6 +9,7 @@ public class DinamicWater : MonoBehaviour
     public float speed = 0.5f;
 
     private float currentScale;
+    public GameObject waterBase;
 
 
     void Start()
@@ -22,7 +23,13 @@ public class DinamicWater : MonoBehaviour
         {
             case StateWaterDinamic.Upload:
                 if (currentScale < maxUpload)
+                {
                     currentScale += speed * Time.deltaTime;
+                }
+                if (currentScale > maxDownload + 0.15f)
+                {
+                    waterBase.SetActive(false);
+                }
                 break;
             case StateWaterDinamic.Download:
                 if (currentScale > maxDownload)
@@ -31,6 +38,10 @@ public class DinamicWater : MonoBehaviour
                     if (currentScale <= maxDownload)
                     {
                         gameObject.SetActive(false);
+                    }
+                    if (currentScale <= maxDownload + 0.15f)
+                    {
+                        waterBase.SetActive(true);
                     }
                 }
 
