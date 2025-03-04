@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
             SetupCamera();
             //StopAllCoroutines(); //Prevenir fallos cuando Waiting se queda corriendo, se hace pausa y se carga una nueva escena retomando Waiting.
             initPosForPlayerZ = especialStage ? 3.83f : 5.45f;// new Vector3(-8f, 1.40f, 5.45f);
-            InstantiateNewBall(0, true);
+            InstantiateNewBall(0.5f, true);
         
         }
     }

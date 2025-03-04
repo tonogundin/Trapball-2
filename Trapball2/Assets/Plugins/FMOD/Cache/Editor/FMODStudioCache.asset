@@ -71,8 +71,8 @@ MonoBehaviour:
     Data3: 1359388800
     Data4: 897182370
   Banks:
-  - {fileID: 27386034857978245}
   - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -128,8 +128,8 @@ MonoBehaviour:
     Data3: -1772429184
     Data4: 155299684
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -159,7 +159,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 27386034857978245}
   IsStream: 1
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: -3397075832638777286}
@@ -318,8 +318,8 @@ MonoBehaviour:
     Data3: -429088337
     Data4: -606805632
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -376,8 +376,8 @@ MonoBehaviour:
     Data3: 1420710287
     Data4: 1293108482
   Banks:
-  - {fileID: 27386034857978245}
   - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -487,8 +487,8 @@ MonoBehaviour:
     Data3: -789344862
     Data4: 2096164127
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -594,8 +594,8 @@ MonoBehaviour:
     Data3: -1146396246
     Data4: 1241200842
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -760,8 +760,8 @@ MonoBehaviour:
     Data3: 1685737346
     Data4: 973510672
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1040,8 +1040,8 @@ MonoBehaviour:
     Data3: -1591944802
     Data4: -1047444788
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1050,6 +1050,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 173
+--- !u!114 &-3010543104319297108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musica/Oraculo
+  m_EditorClassIdentifier: 
+  Path: event:/Musica/Oraculo
+  Guid:
+    Data1: -1092155338
+    Data2: 1325414309
+    Data3: -1602564444
+    Data4: -1618487247
+  Banks:
+  - {fileID: 2387650941851638265}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 53877
 --- !u!114 &-2923376604101777599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,8 +1096,8 @@ MonoBehaviour:
     Data3: -1611574607
     Data4: -1330225890
   Banks:
-  - {fileID: 27386034857978245}
   - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1252,8 +1279,8 @@ MonoBehaviour:
     Data3: 2050484878
     Data4: 174142389
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1337,8 +1364,8 @@ MonoBehaviour:
     Data3: -57636446
     Data4: 2079947479
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1422,8 +1449,8 @@ MonoBehaviour:
     Data3: -1413558892
     Data4: -77105335
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1623,12 +1650,13 @@ MonoBehaviour:
   - {fileID: 7921155510818910403}
   - {fileID: -2551934635339029037}
   - {fileID: 5409630319774150171}
+  - {fileID: -3010543104319297108}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8860583673294448850}
   StringsBanks:
   - {fileID: 8983420344077024651}
-  cacheTime: 638730077580683463
+  cacheTime: 638750745460868138
   cacheVersion: 131621
 --- !u!114 &27386034857978245
 MonoBehaviour:
@@ -1645,10 +1673,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/SFX Dynamic.bank
   Name: SFX Dynamic
   StudioPath: bank:/SFX Dynamic
-  lastModified: 638730068713025519
+  lastModified: 638741088730986048
   FileSizes:
   - Name: Desktop
-    Value: 1820704
+    Value: 1821248
   Exists: 1
 --- !u!114 &842612163569998865
 MonoBehaviour:
@@ -1669,8 +1697,8 @@ MonoBehaviour:
     Data3: -1019449463
     Data4: -496899729
   Banks:
-  - {fileID: 27386034857978245}
   - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2063,10 +2091,10 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Musica.bank
   Name: Musica
   StudioPath: bank:/Musica
-  lastModified: 638730051049939741
+  lastModified: 638750745460868138
   FileSizes:
   - Name: Desktop
-    Value: 13793248
+    Value: 15922720
   Exists: 1
 --- !u!114 &2552486512539641996
 MonoBehaviour:
@@ -2087,8 +2115,8 @@ MonoBehaviour:
     Data3: 732003717
     Data4: 1853070876
   Banks:
-  - {fileID: 27386034857978245}
   - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2115,8 +2143,8 @@ MonoBehaviour:
     Data3: -1183417462
     Data4: 783710001
   Banks:
-  - {fileID: 27386034857978245}
   - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2143,8 +2171,8 @@ MonoBehaviour:
     Data3: 1559816125
     Data4: 741189368
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2197,8 +2225,8 @@ MonoBehaviour:
     Data3: 990353588
     Data4: 981400755
   Banks:
-  - {fileID: 27386034857978245}
   - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -2480,7 +2508,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 27386034857978245}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -2505,8 +2533,8 @@ MonoBehaviour:
     Data3: 1551542444
     Data4: 1686802647
   Banks:
-  - {fileID: 27386034857978245}
   - {fileID: 8860583673294448850}
+  - {fileID: 27386034857978245}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -2534,8 +2562,8 @@ MonoBehaviour:
     Data3: -929057633
     Data4: -973880825
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2617,8 +2645,8 @@ MonoBehaviour:
     Data3: -781381974
     Data4: -532051344
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2958,8 +2986,8 @@ MonoBehaviour:
     Data3: -1560797530
     Data4: 945605478
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3007,8 +3035,8 @@ MonoBehaviour:
     Data3: -1204491628
     Data4: 1442871186
   Banks:
-  - {fileID: 8860583673294448850}
   - {fileID: 2189074460112383813}
+  - {fileID: 8860583673294448850}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -3031,7 +3059,7 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638730068286777103
+  lastModified: 638750745412430358
   FileSizes:
   - Name: Desktop
     Value: 2144096
@@ -3051,8 +3079,8 @@ MonoBehaviour:
   Path: ../../FMOD/Xavi/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638730068286827354
+  lastModified: 638750745412470944
   FileSizes:
   - Name: Desktop
-    Value: 4900
+    Value: 4938
   Exists: 1

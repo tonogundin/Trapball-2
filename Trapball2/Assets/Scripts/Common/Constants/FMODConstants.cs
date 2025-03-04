@@ -48,6 +48,10 @@ public class FMODConstants
         PLATFORM_CRACK,
         [FMODUtils.StringValue("event:/Objetos/PlatformBreaking")]
         PLATFORM_BREAKING,
+        [FMODUtils.StringValue("event:/Objetos/AscensorMagia")]
+        ELEVATOR_MAGIC,
+        [FMODUtils.StringValue("event:/Objetos/AscensorCable")]
+        ELECTRIC_CABLE,
     }
     public enum MOVE
     {

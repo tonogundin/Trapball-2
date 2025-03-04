@@ -54,6 +54,10 @@ public class Balancin : MonoBehaviour, IResettable
                 {
                     forceXBalancin -= 0.5f;
                 }
+                if (forceXBalancin < 0)
+                {
+                    forceXBalancin += 0.5f;
+                }
                 repositionMouse(rb.position.x - oldPosition.x);
             }
 
