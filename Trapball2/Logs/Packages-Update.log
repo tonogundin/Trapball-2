@@ -133,3 +133,15 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.inputsystem from version 1.11.2 to 1.12.0
+
+=== Tue Mar  4 12:11:43 2025
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ai.navigation from version 2.0.5 to 2.0.6
+  com.unity.collab-proxy from version 2.6.0 to 2.7.1
+  com.unity.inputsystem from version 1.12.0 to 1.13.0
+  com.unity.render-pipelines.universal from version 17.0.3 to 17.0.4
+  com.unity.test-framework from version 1.4.5 to 1.4.6
